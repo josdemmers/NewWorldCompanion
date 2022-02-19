@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="NewWorldCompanion.Views.Tabs.CraftingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NewWorldCompanion.Views.Tabs"
+             xmlns:converters="clr-namespace:NewWorldCompanion.Converters"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+  <Grid Margin="0 5 0 0">
+    <Grid.Resources>
+      <converters:BooleanToLearnedColorConverter x:Key="BooleanToLearnedColorConverter"/>
+      <converters:EmptyToVisibilityConverter x:Key="EmptyToVisibilityConverter"/>
+      <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+    </Grid.Resources>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition />
+      <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+
+    <StackPanel Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Orientation="Horizontal">
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterArcana}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleArcana}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageArcana}"/>
+        </ToggleButton>
+      </mah:Badged>
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterArmoring}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleArmoring}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageArmoring}"/>
+        </ToggleButton>
+      </mah:Badged>
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterCooking}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleCooking}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageCooking}"/>
+        </ToggleButton>
+      </mah:Badged>
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterEngineering}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleEngineering}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageEngineering}"/>
+        </ToggleButton>
+      </mah:Badged>
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterFurnishing}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleFurnishing}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageFurnishing}"/>
+        </ToggleButton>
+      </mah:Badged>
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterJewelcrafting}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleJewelcrafting}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageJewelcrafting}"/>
+        </ToggleButton>
+      </mah:Badged>
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterWeaponsmithing}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleWeaponsmithing}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageWeaponsmithing}"/>
+        </ToggleButton>
+      </mah:Badged>
+    </StackPanel>
+
+    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ItemNameFilter, UpdateSourceTrigger=PropertyChanged}" Width="auto"  HorizontalAlignment="Stretch" />
+    <ToggleButton Grid.Row="1" Grid.Column="0" Width="25" Height="25" Margin="4" HorizontalAlignment="Right"
+                    IsChecked="{Binding ToggleRefresh}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+      <Label Content="⟳" Padding="0" Margin="0 0 0 1"  />
+    </ToggleButton>
+
+    <ListBox Grid.Row="2" 
+             Grid.Column="0"
+             ItemsSource="{Binding Path=CraftingRecipesFiltered}" 
+             ScrollViewer.VerticalScrollBarVisibility="Visible"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             VerticalContentAlignment="Top"
+             SelectedItem="{Binding SelectedCraftingRecipe}">
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <StackPanel Orientation="Vertical" />
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Border>
+            <StackPanel Orientation="Horizontal">
+              <BulletDecorator Margin="0,0,5,0">
+                <Ellipse Fill="{Binding Learned, Converter={StaticResource BooleanToLearnedColorConverter}}" Width="10" Height="10"/>
+              </BulletDecorator>
+              <Label Margin="0,0,10,0" Content="{Binding Path=Localisation}" />
+            </StackPanel>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+    <StackPanel Grid.Row="2"
+                Grid.Column="1"
+                Orientation="Vertical"
+                Margin="5"
+                Visibility="{Binding SelectedCraftingRecipe, Converter={StaticResource EmptyToVisibilityConverter}}">
+      <CheckBox Content="{Binding SelectedCraftingRecipe.Localisation}"
+                IsChecked="{Binding SelectedCraftingRecipe.Learned}"
+                Command="{Binding CraftingRecipeLearnedCommand}"
+                CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}"/>
+      <Label Content="{Binding SelectedCraftingRecipe.Tradeskill}" />
+      <Label>
+        <Hyperlink Command="{Binding VisitNwdbCommand}" CommandParameter="{Binding SelectedCraftingRecipe.Url}">
+          nwdb.info
+        </Hyperlink>
+      </Label>
+    </StackPanel>
+    
+  </Grid>
+</UserControl>

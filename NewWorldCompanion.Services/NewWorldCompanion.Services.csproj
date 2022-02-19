@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\NewWorldCompanion\common.props" />
+  
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\CraftingRecipes.json" />
+    <None Remove="Data\javelindata_itemdefinitions_master.loc.xml" />
+    <None Remove="Data\MasterItemDefinitions_Crafting.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV" Version="4.5.5.4823" />
+    <PackageReference Include="Emgu.CV.Bitmap" Version="4.5.5.4823" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="TesserNet" Version="0.6.0" />
+    <PackageReference Include="TesserNet.System.Drawing" Version="0.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewWorldCompanion.Constants\NewWorldCompanion.Constants.csproj" />
+    <ProjectReference Include="..\NewWorldCompanion.Entities\NewWorldCompanion.Entities.csproj" />
+    <ProjectReference Include="..\NewWorldCompanion.Events\NewWorldCompanion.Events.csproj" />
+    <ProjectReference Include="..\NewWorldCompanion.Helpers\NewWorldCompanion.Helpers.csproj" />
+    <ProjectReference Include="..\NewWorldCompanion.Interfaces\NewWorldCompanion.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\CraftingRecipes.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\javelindata_itemdefinitions_master.loc.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\MasterItemDefinitions_Crafting.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

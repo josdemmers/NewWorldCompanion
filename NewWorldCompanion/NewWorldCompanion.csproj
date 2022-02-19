@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project=".\common.props" />
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\icon_waruncolored.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\arcana_trade_skill_icon_250px.png" />
+    <None Remove="Images\armoring_trade_skill_icon_250px.png" />
+    <None Remove="Images\cooking_trade_skill_icon_250px.png" />
+    <None Remove="Images\engineering_trade_skill_icon_250px.png" />
+    <None Remove="Images\furnishing_trade_skill_icon_250px.png" />
+    <None Remove="Images\jewelcrafting_trade_skill_icon_250px.png" />
+    <None Remove="Images\weaponsmithing_trade_skill_icon_250px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\arcana_trade_skill_icon_250px.png" />
+    <EmbeddedResource Include="Images\armoring_trade_skill_icon_250px.png" />
+    <EmbeddedResource Include="Images\cooking_trade_skill_icon_250px.png" />
+    <EmbeddedResource Include="Images\engineering_trade_skill_icon_250px.png" />
+    <EmbeddedResource Include="Images\furnishing_trade_skill_icon_250px.png" />
+    <EmbeddedResource Include="Images\jewelcrafting_trade_skill_icon_250px.png" />
+    <EmbeddedResource Include="Images\weaponsmithing_trade_skill_icon_250px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.5.5.4823" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="PInvoke.DwmApi" Version="0.7.104" />
+    <PackageReference Include="PInvoke.Gdi32" Version="0.7.104" />
+    <PackageReference Include="PInvoke.User32" Version="0.7.104" />
+    <PackageReference Include="Prism.Unity" Version="8.1.97" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NewWorldCompanion.Constants\NewWorldCompanion.Constants.csproj" />
+    <ProjectReference Include="..\NewWorldCompanion.Interfaces\NewWorldCompanion.Interfaces.csproj" />
+    <ProjectReference Include="..\NewWorldCompanion.Services\NewWorldCompanion.Services.csproj" />
+  </ItemGroup>
+
+</Project>
