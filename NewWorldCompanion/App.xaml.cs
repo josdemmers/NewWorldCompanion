@@ -26,6 +26,7 @@ namespace NewWorldCompanion
             containerRegistry.RegisterSingleton<IScreenCaptureHandler, ScreenCaptureHandler>();
             containerRegistry.RegisterSingleton<IScreenProcessHandler, ScreenProcessHandler>();
             containerRegistry.RegisterSingleton<IOcrHandler, OcrHandler>();
+            containerRegistry.RegisterSingleton<ISettingsManager, SettingsManager>();
         }
 
         protected override Window CreateShell()

@@ -19,14 +19,9 @@ namespace NewWorldCompanion.Services
     public class ScreenProcessHandler : IScreenProcessHandler
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ISettingsManager _settingsManager;
         private readonly IScreenCaptureHandler _screenCaptureHandler;
 
-        private int _areaLower;
-        private int _areaUpper;
-        private int _hysteresisLower;
-        private int _hysteresisUpper;
-        private int _thresholdMin;
-        private int _thresholdMax;
         private bool _isBusy = false;
         private Bitmap? _capturedImage = null;
         private Bitmap? _processedImage = null;
@@ -36,22 +31,15 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public ScreenProcessHandler(IEventAggregator eventAggregator, IScreenCaptureHandler screenCaptureHandler)
+        public ScreenProcessHandler(IEventAggregator eventAggregator, ISettingsManager settingsManager, IScreenCaptureHandler screenCaptureHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<ScreenCaptureReadyEvent>().Subscribe(HandleScreenCaptureReadyEvent);
 
             // Init services
+            _settingsManager = settingsManager;
             _screenCaptureHandler = screenCaptureHandler;
-
-            // Restore defaults
-            AreaLower = EmguConstants.AreaLower;
-            AreaUpper = EmguConstants.AreaUpper;
-            HysteresisLower = EmguConstants.HysteresisLower;
-            HysteresisUpper = EmguConstants.HysteresisUpper;
-            ThresholdMin = EmguConstants.ThresholdMin;
-            ThresholdMax = EmguConstants.ThresholdMax;
         }
 
         #endregion
@@ -60,12 +48,12 @@ namespace NewWorldCompanion.Services
 
         #region Properties
 
-        public int AreaLower { get => _areaLower; set => _areaLower = value; }
-        public int AreaUpper { get => _areaUpper; set => _areaUpper = value; }
-        public int HysteresisLower { get => _hysteresisLower; set => _hysteresisLower = value; }
-        public int HysteresisUpper { get => _hysteresisUpper; set => _hysteresisUpper = value; }
-        public int ThresholdMin { get => _thresholdMin; set => _thresholdMin = value; }
-        public int ThresholdMax { get => _thresholdMax; set => _thresholdMax = value; }
+        public int AreaLower { get => _settingsManager.Settings.EmguAreaLower; }
+        public int AreaUpper { get => _settingsManager.Settings.EmguAreaUpper; }
+        public int HysteresisLower { get => _settingsManager.Settings.EmguHysteresisLower; }
+        public int HysteresisUpper { get => _settingsManager.Settings.EmguHysteresisUpper; }
+        public int ThresholdMin { get => _settingsManager.Settings.EmguThresholdMin; }
+        public int ThresholdMax { get => _settingsManager.Settings.EmguThresholdMax; }
         public Bitmap? ProcessedImage { get => _processedImage; set => _processedImage = value; }
         public Bitmap? RoiImage { get => _roiImage; set => _roiImage = value; }
         public Bitmap? OcrImage { get => _roiImage; set => _roiImage = value; }

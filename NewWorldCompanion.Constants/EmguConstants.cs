@@ -2,12 +2,14 @@
 {
     public class EmguConstants
     {
-        public const int AreaLower = 10000;
-        public const int AreaUpper = 15000;
-        public const int HysteresisLower = 10;
-        public const int HysteresisUpper = 400;
+        // Shape detection
+        public const int DefaultAreaLower = 10000;
+        public const int DefaultAreaUpper = 15000;
+        public const int DefaultHysteresisLower = 10;
+        public const int DefaultHysteresisUpper = 400;
 
-        public const int ThresholdMin = 90;
-        public const int ThresholdMax = 255;
+        // OCR
+        public const int DefaultThresholdMin = 90;
+        public const int DefaultThresholdMax = 255;
     }
 }

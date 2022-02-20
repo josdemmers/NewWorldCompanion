@@ -12,11 +12,10 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
     public class DebugScreenOCRViewModel : BindableBase
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ISettingsManager _settingsManager;
         private readonly IScreenProcessHandler _screenProcessHandler;
         private readonly IOcrHandler _ocrHandler;
 
-        private int _thresholdMin;
-        private int _thresholdMax;
         private string _itemName = string.Empty;
         private BitmapSource? _ocrImage = null;
 
@@ -24,7 +23,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         #region Constructor
 
-        public DebugScreenOCRViewModel(IEventAggregator eventAggregator, IScreenProcessHandler screenProcessHandler, IOcrHandler ocrHandler)
+        public DebugScreenOCRViewModel(IEventAggregator eventAggregator, ISettingsManager settingsManager, IScreenProcessHandler screenProcessHandler, IOcrHandler ocrHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
@@ -32,15 +31,12 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             _eventAggregator.GetEvent<OcrTextReadyEvent>().Subscribe(HandleOcrTextReadyEvent);
 
             // Init services
+            _settingsManager = settingsManager;
             _screenProcessHandler = screenProcessHandler;
             _ocrHandler = ocrHandler;
 
             // Init View commands
             RestoreDefaultsCommand = new DelegateCommand(RestoreDefaultsExecute);
-
-            // Restore defaults
-            ThresholdMin = EmguConstants.ThresholdMin;
-            ThresholdMax = EmguConstants.ThresholdMax;
         }
 
         #endregion
@@ -53,21 +49,21 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         public int ThresholdMin
         {
-            get => _thresholdMin;
+            get => _settingsManager.Settings.EmguThresholdMin;
             set
             {
-                _thresholdMin = value;
-                _screenProcessHandler.ThresholdMin = value;
+                _settingsManager.Settings.EmguThresholdMin = value;
+                _settingsManager.SaveSettings();
                 RaisePropertyChanged(nameof(ThresholdMin));
             }
         }
         public int ThresholdMax
         {
-            get => _thresholdMax;
+            get => _settingsManager.Settings.EmguThresholdMax;
             set
             {
-                _thresholdMax = value;
-                _screenProcessHandler.ThresholdMax = value;
+                _settingsManager.Settings.EmguThresholdMax = value;
+                _settingsManager.SaveSettings();
                 RaisePropertyChanged(nameof(ThresholdMax));
             }
         }
@@ -123,8 +119,8 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         private void RestoreDefaultsExecute()
         {
-            ThresholdMin = EmguConstants.ThresholdMin;
-            ThresholdMax = EmguConstants.ThresholdMax;
+            ThresholdMin = EmguConstants.DefaultThresholdMin;
+            ThresholdMax = EmguConstants.DefaultThresholdMax;
         }
 
         #endregion

@@ -4,12 +4,12 @@ namespace NewWorldCompanion.Interfaces
 {
     public interface IScreenProcessHandler
     {
-        int AreaLower { get; set; }
-        int AreaUpper { get; set; }
-        int HysteresisLower { get; set; }
-        int HysteresisUpper { get; set; }
-        int ThresholdMin { get; set; }
-        int ThresholdMax { get; set; }
+        int AreaLower { get; }
+        int AreaUpper { get; }
+        int HysteresisLower { get; }
+        int HysteresisUpper { get; }
+        int ThresholdMin { get; }
+        int ThresholdMax { get; }
 
         Bitmap? ProcessedImage { get; }
         Bitmap? RoiImage { get; }

@@ -12,12 +12,9 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
     public class DebugScreenProcessViewModel : BindableBase
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ISettingsManager _settingsManager;
         private readonly IScreenProcessHandler _screenProcessHandler;
 
-        private int _areaLower;
-        private int _areaUpper;
-        private int _hysteresisLower;
-        private int _hysteresisUpper;
         private BitmapSource? _processedImage = null;
         private BitmapSource? _roiImage = null;
         private BitmapSource? _ocrImage = null;
@@ -26,7 +23,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         #region Constructor
 
-        public DebugScreenProcessViewModel(IEventAggregator eventAggregator, IScreenProcessHandler screenProcessHandler)
+        public DebugScreenProcessViewModel(IEventAggregator eventAggregator, ISettingsManager settingsManager, IScreenProcessHandler screenProcessHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
@@ -35,16 +32,11 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             _eventAggregator.GetEvent<OcrImageReadyEvent>().Subscribe(HandleOcrImageReadyEvent);
 
             // Init services
+            _settingsManager = settingsManager;
             _screenProcessHandler = screenProcessHandler;
 
             // Init View commands
             RestoreDefaultsCommand = new DelegateCommand(RestoreDefaultsExecute);
-
-            // Restore defaults
-            AreaLower = EmguConstants.AreaLower;
-            AreaUpper = EmguConstants.AreaUpper;
-            HysteresisLower = EmguConstants.HysteresisLower;
-            HysteresisUpper = EmguConstants.HysteresisUpper;
         }
 
         #endregion
@@ -57,41 +49,41 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         public int AreaLower
         {
-            get => _areaLower; 
+            get => _settingsManager.Settings.EmguAreaLower; 
             set
             {
-                _areaLower = value;
-                _screenProcessHandler.AreaLower = value;
+                _settingsManager.Settings.EmguAreaLower = value;
+                _settingsManager.SaveSettings();
                 RaisePropertyChanged(nameof(AreaLower));
             }
         }
         public int AreaUpper
         {
-            get => _areaUpper;
+            get => _settingsManager.Settings.EmguAreaUpper;
             set
             {
-                _areaUpper = value;
-                _screenProcessHandler.AreaUpper = value;
+                _settingsManager.Settings.EmguAreaUpper = value;
+                _settingsManager.SaveSettings();
                 RaisePropertyChanged(nameof(AreaUpper));
             }
         }
         public int HysteresisLower
         {
-            get => _hysteresisLower;
+            get => _settingsManager.Settings.EmguHysteresisLower;
             set
             {
-                _hysteresisLower = value;
-                _screenProcessHandler.HysteresisLower = value;
+                _settingsManager.Settings.EmguHysteresisLower = value;
+                _settingsManager.SaveSettings();
                 RaisePropertyChanged(nameof(HysteresisLower));
             }
         }
         public int HysteresisUpper
         {
-            get => _hysteresisUpper;
+            get => _settingsManager.Settings.EmguHysteresisUpper;
             set
             {
-                _hysteresisUpper = value;
-                _screenProcessHandler.HysteresisUpper = value;
+                _settingsManager.Settings.EmguHysteresisUpper = value;
+                _settingsManager.SaveSettings();
                 RaisePropertyChanged(nameof(HysteresisUpper));
             }
         }
@@ -167,14 +159,12 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         private void RestoreDefaultsExecute()
         {
-            AreaLower = EmguConstants.AreaLower;
-            AreaUpper = EmguConstants.AreaUpper;
-            HysteresisLower = EmguConstants.HysteresisLower;
-            HysteresisUpper = EmguConstants.HysteresisUpper;
+            AreaLower = EmguConstants.DefaultAreaLower;
+            AreaUpper = EmguConstants.DefaultAreaUpper;
+            HysteresisLower = EmguConstants.DefaultHysteresisLower;
+            HysteresisUpper = EmguConstants.DefaultHysteresisUpper;
         }
 
         #endregion
-
-
     }
 }
