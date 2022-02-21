@@ -51,7 +51,20 @@ The threshold values for OCR are used to filter out background noice. Your thres
 
 ## Usage
 
-todo
+1. Counter for each crafting category showing your missing recipes.
+2. Toggle button for each crafting category to filter the recipe list.
+3. Filter / Search field for recipe list.
+4. Toggle button to turn on/off the in-game item tooltip detection.
+5. Info panel of the current selected recipe. Use the checkbox to change the learned state.
+6. List of all recipes.
+
+![Config-2](./readme/readme-usage1.png)
+
+First make sure you have read the [Configuration](https://github.com/josdemmers/NewWorldCompanion#configuration) section and the detection of tooltips is working.
+
+Using the app for the first time requires some extra work. You'll have to visit each of the crafting stations in-game and check the recipes you have already learned. Select the recipe in the app and click the checkmark when you have already learned the recipe.
+
+No further configurations are needed. Start playing the game, when someone links a recipe in the chat or when you have some in your inventory hover your mouse over the item and the app will select the correct recipe from the list. Showing you immediately whether or not you have learned it.
 
 ## Licensing
 
