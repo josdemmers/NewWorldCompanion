@@ -17,13 +17,13 @@ A companion app for New World, to keep track of all your learned recipes.
 
 ## Planned Features
 
-- Add configuration section to make it easier to setup the app for different resolutions.
-- Keep track of the storage content of all towns in Aeternum.
-- Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
-- Add notes for when you want to write something down.
-- Add pricing data for items you hover your mouse over.
-- Add overlay to show recipe learned status directy in-game.
-- Add localisation for items. Currently English only.
+- [ ] Add configuration section to make it easier to setup the app for different resolutions.
+- [ ] Keep track of the storage content of all towns in Aeternum.
+- [ ] Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
+- [ ] Add notes for when you want to write something down.
+- [ ] Add pricing data for items you hover your mouse over.
+- [ ] Add overlay to show recipe learned status directy in-game.
+- [ ] Add localisation for items. Currently English only.
 
 ## Installation
 
