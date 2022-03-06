@@ -14,7 +14,9 @@ A companion app for New World, to keep track of all your learned recipes and cur
 ## Features
 
 - Keep track of your learned recipes.
-- Ingame overlay with price data for tradable items.
+- Ingame overlay with price data for tradable items. Supported servers:
+  - Camelot
+  - El Dorado     
 
 ## Planned Features
 
