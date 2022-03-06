@@ -8,6 +8,12 @@ namespace NewWorldCompanion.Entities
 {
     public class SettingsNWC
     {
+        // App
+        public bool DebugModeActive { get; set; } = false;
+
+        // Overlay
+        public string ServerId { get; set; } = "1";
+
         // Shape detection
         public int EmguAreaLower { get; set; } = 10000;
         public int EmguAreaUpper { get; set; } = 15000;

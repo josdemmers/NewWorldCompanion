@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:NewWorldCompanion"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:converters="clr-namespace:NewWorldCompanion.Converters"
         mc:Ignorable="d"
         Title="New World Companion" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
@@ -18,7 +19,10 @@
       <TabItem Header="Crafting">
         <ContentControl prism:RegionManager.RegionName="CraftingView"/>
       </TabItem>
-      <TabItem Header="Debug">
+      <TabItem Header="Config">
+        <ContentControl prism:RegionManager.RegionName="ConfigView"/>
+      </TabItem>
+      <TabItem Header="Debug" Visibility="{Binding Path=DebugModeActive, Converter={x:Static converters:BooleanToVisibilityConverter.Instance}}">
         <ContentControl prism:RegionManager.RegionName="DebugView"/>
       </TabItem>
     </mah:MetroAnimatedSingleRowTabControl>

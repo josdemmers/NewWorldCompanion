@@ -53,8 +53,7 @@ namespace NewWorldCompanion.Services
                 {
                     try
                     {
-                        //Image image = _screenProcessHandler.OcrImage;
-                        Image image = Image.FromFile(@"ocrimages\latest.png");
+                        Image image = Image.FromFile(@"ocrimages\itemname.png");
                         Tesseract tesseract = new Tesseract();
                         OcrText = tesseract.Read(image).Trim().Replace('\n', ' ');
 
@@ -62,6 +61,7 @@ namespace NewWorldCompanion.Services
                         tesseract.Dispose();
 
                         _eventAggregator.GetEvent<OcrTextReadyEvent>().Publish();
+                        _eventAggregator.GetEvent<OverlayShowEvent>().Publish();
                     }
                     catch (Exception) 
                     {

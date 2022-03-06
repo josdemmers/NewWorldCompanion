@@ -57,6 +57,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
                 RaisePropertyChanged(nameof(AreaLower));
             }
         }
+
         public int AreaUpper
         {
             get => _settingsManager.Settings.EmguAreaUpper;

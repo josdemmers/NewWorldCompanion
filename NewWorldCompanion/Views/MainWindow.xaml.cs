@@ -1,5 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 using NewWorldCompanion.Views.Tabs;
+using NewWorldCompanion.Views.Tabs.Config;
 using NewWorldCompanion.Views.Tabs.Debug;
 using Prism.Regions;
 using System;
@@ -39,6 +40,10 @@ namespace NewWorldCompanion.Views
             regionManager.RegisterViewWithRegion("DebugScreenCaptureView", typeof(DebugScreenCaptureView));
             regionManager.RegisterViewWithRegion("DebugScreenProcessView", typeof(DebugScreenProcessView));
             regionManager.RegisterViewWithRegion("DebugScreenOCRView", typeof(DebugScreenOCRView));
+            regionManager.RegisterViewWithRegion("ConfigView", typeof(ConfigView));
+            regionManager.RegisterViewWithRegion("ConfigOverlayView", typeof(ConfigOverlayView));
+            regionManager.RegisterViewWithRegion("ConfigScreenProcessView", typeof(DebugScreenProcessView));
+            regionManager.RegisterViewWithRegion("ConfigScreenOCRView", typeof(DebugScreenOCRView));
         }
     }
 }

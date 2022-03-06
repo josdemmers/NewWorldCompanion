@@ -943,6 +943,8 @@
 	<string key="0604_0201_ResearchNotes_Description">A leather-bound notebook, filled with pages of detailed drawings, intricate notes, and calculations.</string>
 	<string key="0604_0201_SatchelSamples">Satchel of Samples</string>
 	<string key="0604_0201_SatchelSamples_Description">A organized, yet random, assortment of leaves, twigs, and rocks.</string>
+	<string key="0604_0203_ScoutReport">Maddix's Report</string>
+	<string key="0604_0203_ScoutReport_Description">Head Scout Maddix's final notes during the defense of Bullrush Wash</string>
 	<string key="0605_0301_CoopersSoil">Cooper's Soil</string>
 	<string key="0605_0301_CoopersSoil_Description">A bag full of soil collected from Cooper's Ranch.</string>
 	<string key="0605_0301_MerrillsSoil">Merrill's Soil</string>
@@ -2096,7 +2098,7 @@
 	<string key="1hGauntletIceLostT5_Description">An Ice Gauntlet that has been used by the Lost for some time.</string>
 	<string key="1hGauntletIceLostT5_MasterName">Forsaken Ice Gauntlet</string>
 	<string key="1hgauntleticeoutpostrusht5_description">A weapon won through Outpost Rush.</string>
-	<string key="1hgauntleticeoutpostrusht5_mastername">Outpost Ice Gauntlet</string>
+	<string key="1hgauntleticeoutpostrusht5_mastername">Rusher Ice Gauntlet</string>
 	<string key="1hGauntletIcePrimevalT5_Description">You can feel the cold hand of death reaching for the bones.</string>
 	<string key="1hGauntletIcePrimevalT5_MasterName">Primordial Ice Gauntlet</string>
 	<string key="1hgauntleticesiren_st5_description">"The Siren's haunting voice echoes in your mind, her frozen tones ring out brittly."</string>
@@ -2542,13 +2544,13 @@
 	<string key="1hGauntletVoidDrownedEliteT5_Description" rel_version="Weapon_Void_Gauntlet">The crushing strength of the deepest void.</string>
 	<string key="1hGauntletVoidDrownedEliteT5_MasterName" rel_version="Weapon_Void_Gauntlet">Fist of Midnight Depths</string>
 	<string key="1hGauntletVoidDrownedT2_Description" rel_version="Weapon_Void_Gauntlet">"Wet dog smells great compared to wet, deceased pirate."</string>
-	<string key="1hGauntletVoidDrownedT2_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Ice Gauntlet</string>
+	<string key="1hGauntletVoidDrownedT2_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Void Gauntlet</string>
 	<string key="1hGauntletVoidDrownedT3_Description" rel_version="Weapon_Void_Gauntlet">"Wet dog smells great compared to wet, deceased pirate."</string>
-	<string key="1hGauntletVoidDrownedT3_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Ice Gauntlet</string>
+	<string key="1hGauntletVoidDrownedT3_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Void Gauntlet</string>
 	<string key="1hGauntletVoidDrownedT4_Description" rel_version="Weapon_Void_Gauntlet">"Wet dog smells great compared to wet, deceased pirate."</string>
-	<string key="1hGauntletVoidDrownedT4_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Ice Gauntlet</string>
+	<string key="1hGauntletVoidDrownedT4_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Void Gauntlet</string>
 	<string key="1hGauntletVoidDrownedT5_Description" rel_version="Weapon_Void_Gauntlet">"Wet dog smells great compared to wet, deceased pirate."</string>
-	<string key="1hGauntletVoidDrownedT5_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Ice Gauntlet</string>
+	<string key="1hGauntletVoidDrownedT5_MasterName" rel_version="Weapon_Void_Gauntlet">Soaked Void Gauntlet</string>
 	<string key="1hGauntletVoidDungeon1T3_Description" rel_version="Weapon_Void_Gauntlet">A Void Gauntlet found in the depths of Amrine Temple.</string>
 	<string key="1hGauntletVoidDungeon1T3_MasterName" rel_version="Weapon_Void_Gauntlet">Amrine Temple Void Gauntlet</string>
 	<string key="1hGauntletVoidDungeon2T3_Description" rel_version="Weapon_Void_Gauntlet">A Void Gauntlet found in the Shattered Obelisk.</string>
@@ -2578,7 +2580,7 @@
 	<string key="1hGauntletVoidLostT5_Description" rel_version="Weapon_Void_Gauntlet">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="1hGauntletVoidLostT5_MasterName" rel_version="Weapon_Void_Gauntlet">Forsaken Void Gauntlet</string>
 	<string key="1hGauntletVoidOutpostRushT5_Description" rel_version="Weapon_Void_Gauntlet">A weapon won through Outpost Rush.</string>
-	<string key="1hGauntletVoidOutpostRushT5_MasterName" rel_version="Weapon_Void_Gauntlet">Outpost Void Gauntlet</string>
+	<string key="1hGauntletVoidOutpostRushT5_MasterName" rel_version="Weapon_Void_Gauntlet">Rusher Void Gauntlet</string>
 	<string key="1hGauntletVoidPrimevalT5_Description" rel_version="Weapon_Void_Gauntlet">"The strong bones it's shaped from hints at the power within"</string>
 	<string key="1hGauntletVoidPrimevalT5_MasterName" rel_version="Weapon_Void_Gauntlet">Primordial Void Gauntlet</string>
 	<string key="1hGauntletVoidSiren_ST5_Description" rel_version="Weapon_Void_Gauntlet">The Siren's haunting voice echoes in your mind, a reminder of what you've lost by coming to Aeternum</string>
@@ -5320,7 +5322,6 @@
 	<string key="2hAxeT4_MasterName">Starmetal Logging Axe</string>
 	<string key="2hAxeT5_Description">2-Handed. A Logging Axe made of Orichalcum. Used to gather trees.</string>
 	<string key="2hAxeT5_MasterName">Orichalcum Logging Axe</string>
-	<string key="2hBlunderbuss_Troublemaker9000T5_Description">"A true warrior would have immediately asked about the little red lever on the side of the gun."</string>
 	<string key="2hBow_AdventurersBaneT3_Description">"Particularly good at piercing knee armor."</string>
 	<string key="2hBow_AdventurersBaneT3_MasterName">Adventurer's Bane</string>
 	<string key="2hBow_AlvarsSightT3_Description">Alvar's heartpiercing bow. Reliable and accurate.</string>
@@ -7551,7 +7552,7 @@
 	<string key="2hSpear_AppointedNegotiatorT2_Description">"Karl never gave orders without having his Appointed Negotiator around. It never failed to stop arguments before they started."</string>
 	<string key="2hSpear_AppointedNegotiatorT2_MasterName">Appointed Negotiator</string>
 	<string key="2hSpear_ArchaelogistsDefenderT5_Description">"Aeternum is an archaeologist's paradise with ruins galore to explore."</string>
-	<string key="2hSpear_ArchaelogistsDefenderT5_MasterName">Archaelogist's Defender</string>
+	<string key="2hSpear_ArchaelogistsDefenderT5_MasterName">Archaeologist's Defender</string>
 	<string key="2hSpear_ArchonsFrozenSpearT5_Description">"Mages specialize in a variety of magics, but those who favor frost have found spears to be an effective conduit for their spells."</string>
 	<string key="2hSpear_ArchonsFrozenSpearT5_MasterName">Archon's Frozen Spear</string>
 	<string key="2hSpear_AzothImbuedSpearT5_Description">"Brimming with pure azoth infusion, this spear is bursting at the seams with raw energy."</string>
@@ -10074,6 +10075,12 @@
 	<string key="9907_0053_PlantFood_MSQ_Recipe_MasterName">A recipe for plant food</string>
 	<string key="9927_0102_ScoutsNote_Description">A bloody report on the invaders, for Survivalist Riches</string>
 	<string key="9927_0102_ScoutsNote_MasterName">Scout Desdemona's Report</string>
+	<string key="9926_0103_ActivityReport_MasterName">Varangian Activity Report</string>
+	<string key="9926_0103_ActivityReport_Description">Detailed notes regarding deployment and logistics for the Varangian groups throughout the island</string>
+	<string key="9926_0103_RomacPack_MasterName">Scout Romac's Pack</string>
+	<string key="9926_0103_RomacPack_Description">A traveling satchel filled with an assortment of useful tools for any situation</string>
+	<string key="9932_0104_RomacNotebook_MasterName">Scout Romac's Notebook</string>
+	<string key="9932_0104_RomacNotebook_Description">Loose-bound pages with detailed notes on ruins, artifacts, and writings found on Aeternum</string>
 	<string key="AdamantT1_Description">Crafting item with an attunement to the Durable perk.</string>
 	<string key="AdamantT1_MasterName">Sliver of Adamant</string>
 	<string key="AdamantT2_Description">Crafting item with an attunement to the Durable perk.</string>
@@ -10251,7 +10258,7 @@
 	<string key="amulet_outpostrusht4_description">Earned through stalwart action in outpost contests.</string>
 	<string key="amulet_outpostrusht4_mastername">Outpost Amulet</string>
 	<string key="amulet_outpostrusht5_description">Earned through stalwart action in outpost contests.</string>
-	<string key="amulet_outpostrusht5_mastername">Outpost Amulet</string>
+	<string key="amulet_outpostrusht5_mastername">Rusher Amulet</string>
 	<string key="Amulet_PurifiedSentimentT3_Description">"Distilled from thoughts and beliefs over a lifetime, and frozen in stone."</string>
 	<string key="Amulet_PurifiedSentimentT3_MasterName">Purified Sentiment</string>
 	<string key="Amulet_QuestL36_Description">A well-made amulet. It will serve you as well as it served its previous wearer.</string>
@@ -11044,12 +11051,12 @@
 	<string key="CampCookingT2_MasterName">Campfire T2</string>
 	<string key="CampEngineeringT2_Description">USE: Place a Portable Workbench that is able to craft ammunitiion, basic potions, and repair any items here.</string>
 	<string key="CampEngineeringT2_MasterName">Portable Workbench</string>
-	<string key="campskin_winter01_a_description" rel_version="CampSkin_Winter1">A warm and cozy haven.</string>
-	<string key="campskin_winter01_a_mastername" rel_version="CampSkin_Winter1">Fine Cloth Camp Skin</string>
-	<string key="campskin_winter02_a_description" rel_version="CampSkin_Winter2">Protect yourself from the icy winters of Aeternum in a standing tent.</string>
-	<string key="campskin_winter02_a_mastername" rel_version="CampSkin_Winter2">Winter Star</string>
-	<string key="campskin_winter03_a_description" rel_version="CampSkin_Winter3">Enjoy the view in elegant style with this standing tent.</string>
-	<string key="campskin_winter03_a_mastername" rel_version="CampSkin_Winter3">Winter Opulence</string>
+	<string key="campskin_winter01_a_description" comment="Player Camp Skin" rel_version="CampSkin_Winter1">A warm and cozy haven.</string>
+	<string key="campskin_winter01_a_mastername" comment="Player Camp Skin" rel_version="CampSkin_Winter1">Fine Cloth Camp Skin</string>
+	<string key="campskin_winter02_a_description" comment="Player Camp Skin" rel_version="CampSkin_Winter2">Protect yourself from the icy winters of Aeternum in a standing tent.</string>
+	<string key="campskin_winter02_a_mastername" comment="Player Camp Skin" rel_version="CampSkin_Winter2">Winter Star</string>
+	<string key="campskin_winter03_a_description" comment="Player Camp Skin" rel_version="CampSkin_Winter3">Enjoy the view in elegant style with this standing tent.</string>
+	<string key="campskin_winter03_a_mastername" comment="Player Camp Skin" rel_version="CampSkin_Winter3">Winter Opulence</string>
 	<string key="CampT1_Description">Craft basic supplies and create a respawn point here.</string>
 	<string key="CampT1_MasterName">Camp Tier &lt;font face="lyshineui/fonts/CaslonAnt.font"&gt;1&lt;/font&gt;</string>
 	<string key="CampT2_Description">Craft basic supplies and create a respawn point here.</string>
@@ -12180,7 +12187,7 @@
 	<string key="Crowns_T0_MasterName">Coin</string>
 	<string key="CrystalizedAzothT1_Description">Crafting item with an attunement to the Blessed perk.</string>
 	<string key="CrystalizedAzothT1_MasterName">Sliver of Crystalized Azoth</string>
-	<string key="CrystalizedAzothT2_Description">Crafting item with an attunement to the Blessed perk.</string>
+	<string key="CrystalizedAzothT2_Description">Crafting item with an attunement to the Divine perk.</string>
 	<string key="CrystalizedAzothT2_MasterName">Shard of Crystalized Azoth</string>
 	<string key="CrystalizedAzothT3_Description">Crafting item with an attunement to the Mortal Lifesteal perk.</string>
 	<string key="CrystalizedAzothT3_MasterName">Chunk of Crystalized Azoth</string>
@@ -12972,7 +12979,7 @@
 	<string key="earring_outpostrusht4_description">Earned through stalwart action in outpost contests.</string>
 	<string key="earring_outpostrusht4_mastername">Outpost Earring</string>
 	<string key="earring_outpostrusht5_description">Earned through stalwart action in outpost contests.</string>
-	<string key="earring_outpostrusht5_mastername">Outpost Earring</string>
+	<string key="earring_outpostrusht5_mastername">Rusher Earring</string>
 	<string key="Earring_PedalT5_Description">"A petal from the flower of the sword tree"</string>
 	<string key="Earring_PedalT5_MasterName">Pedal</string>
 	<string key="Earring_ReflectedMayhemT5_Description">"Be the chaos you want to see in the world."</string>
@@ -13197,7 +13204,7 @@
 	<string key="EarringT5_MistyKismetCharm_MasterName">Misty Kismet Charm</string>
 	<string key="EarringT5_RudigersSailHook_MasterName">Rudiger's Sail Hook</string>
 	<string key="EarringT5_SeekersFoundMascot_MasterName">Seeker's Found Mascot</string>
-	<string key="EarringT5_StarboundRememberence Charm_MasterName">Starbound Rememberence Charm</string>
+	<string key="EarringT5_StarboundRememberence_Charm_MasterName">Starbound Rememberence Charm</string>
 	<string key="EarringT5_TarotsRitualTrinket_MasterName">Tarot's Ritual Trinket</string>
 	<string key="EarringT5_TheAdVenturasCharm_MasterName">The Ad Ventura's Charm</string>
 	<string key="EarringT5_TheBeastintheBulrushTrinket_MasterName">The Beast in the Bulrush Trinket</string>
@@ -13582,11 +13589,11 @@
 	<string key="FactionCoatingLostT3_MasterName">Strong Lost Coating</string>
 	<string key="FactionCoatingLostT4_Description">USE: Apply to currently drawn weapon. Gives +13% damage against Lost. Lasts for {[ConsumableItemDefinitions.CoatingLostT4.DurationOverrides / 60]} minutes or upon unequip, whichever comes first. Only one Coating may be applied to a weapon at a time.</string>
 	<string key="FactionCoatingLostT4_MasterName">Powerful Lost Coating</string>
-	<string key="FactionPotionHealthT2_Description">USE: Restore a {[StatusEffects.PotionHealT2.Health]} health + {[StatusEffects.PotionHealT2.HealthModifierPercent * 100]}% of your max health.</string>
+	<string key="FactionPotionHealthT2_Description">USE: Restore {[StatusEffects.PotionHealT2.Health]} health + {[StatusEffects.PotionHealT2.HealthModifierPercent * 100]}% of your max health.</string>
 	<string key="FactionPotionHealthT2_MasterName">Common Healing Elixir</string>
-	<string key="FactionPotionHealthT3_Description">USE: Restore a {[StatusEffects.PotionHealT3.Health]} health + {[StatusEffects.PotionHealT3.HealthModifierPercent * 100]}% of your max health.</string>
+	<string key="FactionPotionHealthT3_Description">USE: Restore {[StatusEffects.PotionHealT3.Health]} health + {[StatusEffects.PotionHealT3.HealthModifierPercent * 100]}% of your max health.</string>
 	<string key="FactionPotionHealthT3_MasterName">Strong Healing Elixir</string>
-	<string key="FactionPotionHealthT4_Description">USE: Restore a {[StatusEffects.PotionHealT4.Health]} health + {[StatusEffects.PotionHealT4.HealthModifierPercent * 100]}% of your max health.</string>
+	<string key="FactionPotionHealthT4_Description">USE: Restore {[StatusEffects.PotionHealT4.Health]} health + {[StatusEffects.PotionHealT4.HealthModifierPercent * 100]}% of your max health.</string>
 	<string key="FactionPotionHealthT4_MasterName">Powerful Healing Elixir</string>
 	<string key="FactionPotionManaT2_Description">USE: Restore a moderate portion of your Mana.</string>
 	<string key="FactionPotionManaT2_MasterName">Common Mana Elixir</string>
@@ -18675,7 +18682,7 @@
 	<string key="KeyMat_ShatteredRune_Name">Molten Rune</string>
 	<string key="KeyMat_Shell_Desc">A fancy shell used to craft a Siren Tuning Orb and can be found on creatures around Siren's Stand in Reekwater.</string>
 	<string key="KeyMat_Shell_Name">Fancy Shell</string>
-	<string key="KeyMutator_Desc" rel_version="Feature_Dungeon_Mutators">This Tuning Orb grants acces to any Mutated Expedition in Aeternum.</string>
+	<string key="KeyMutator_Desc" rel_version="Feature_Dungeon_Mutators">This Tuning Orb grants access to any Mutated Expedition in Aeternum.</string>
 	<string key="KeyMutator_Name" rel_version="Feature_Dungeon_Mutators">Mutated Expedition Tuning Orb</string>
 	<string key="KeyPart_Core_Desc">A pure energy core. This item is used to craft Tuning Orb to allow access to expeditions.</string>
 	<string key="KeyPart_Core_Name">Energy Core</string>
@@ -24284,7 +24291,7 @@
 	<string key="OR_SummonStoneBear">Ursine Summoning Stone</string>
 	<string key="OR_SummonStoneBear_Description">Summons a Bear Guardian.</string>
 	<string key="OR_SummonStoneBrute">Brute Summoning Stone</string>
-	<string key="OR_SummonStoneBrute_Description">Summons an Undead Brute Guardian.</string>
+	<string key="OR_SummonStoneBrute_Description">Summons a Corrupted Brute Guardian.</string>
 	<string key="OR_SummonStoneWraiths">Wraith Summoning Stone</string>
 	<string key="OR_SummonStoneWraiths_Description">Summons a Wraith Guardian.</string>
 	<string key="OrangeT1_Description">A sweet citrus fruit.</string>
@@ -25837,7 +25844,7 @@
 	<string key="ring_outpostrusht4_description">Earned through stalwart action in outpost contests.</string>
 	<string key="ring_outpostrusht4_mastername">Outpost Ring</string>
 	<string key="ring_outpostrusht5_description">Earned through stalwart action in outpost contests.</string>
-	<string key="ring_outpostrusht5_mastername">Outpost Ring</string>
+	<string key="ring_outpostrusht5_mastername">Rusher Ring</string>
 	<string key="Ring_PetrifiedRingT4_Description">A ring made of petrified…something…</string>
 	<string key="Ring_PetrifiedRingT4_MasterName">Petrified Ring</string>
 	<string key="Ring_PropergateT5_Description">"Only truth can stop propergration of false ideas."</string>
@@ -26115,8 +26122,7 @@
 	<string key="RingT5_SaintHernigusCrystalSignet_MasterName">Saint Hernigus' Crystal Signet</string>
 	<string key="RingT5_SaintsPilgramageHoop_MasterName">Saint's Pilgramage Hoop</string>
 	<string key="RingT5_TheIncubusHoop_MasterName">The Incubus Hoop</string>
-	<string key="ringt5_theringoftheforgerssignet _mastername">Signet Ring of the Forger</string>
-	<string key="RingT5_TheRingoftheForgersSignet_MasterName">The Ring of the Forger's Signet</string>
+	<string key="RingT5_TheRingoftheForgersSignet_MasterName">Signet Ring of the Forger</string>
 	<string key="RingT5_ThriftersLostDiamond_MasterName">Thrifter's Lost Diamond</string>
 	<string key="RingT5_TormentorsFingerCurse_MasterName">Herald's Finger Curse</string>
 	<string key="RingT5_TravellersSolaceBand_MasterName">Traveller's Solace Band</string>
@@ -26509,7 +26515,7 @@
 	<string key="Skin_Chest_Lunar02_Description" rel_version="Apparel_LunarNewYear_MTX_2">The armor seems to sculpt itself against the wearer's body like a second skin for ultimate stealth.</string>
 	<string key="Skin_Chest_Lunar02_MasterName" rel_version="Apparel_LunarNewYear_MTX_2">Jadeite Assassin Chestpiece</string>
 	<string key="Skin_Chest_Miner_Achv_Description" rel_version="Apparel_Miner_Achv">For those unafraid of getting their gloves dirty with the salt of the earth.</string>
-	<string key="Skin_Chest_Miner_Achv_MasterName" rel_version="Apparel_Miner_Achv">Mining Master's Hat</string>
+	<string key="Skin_Chest_Miner_Achv_MasterName" rel_version="Apparel_Miner_Achv">Mining Master's Apron</string>
 	<string key="Skin_Chest_RobinHood_Description" rel_version="Apparel_Robin_Hood">"One last thing before you go… your purse."</string>
 	<string key="Skin_Chest_RobinHood_MasterName" rel_version="Apparel_Robin_Hood">Robin Hood Coat</string>
 	<string key="Skin_Chest_SorcererHunterVar2_Description" rel_version="Apparel_SorcerorHunter_Wild">Cloaked in red and gold, the specter of the grave seeks hearts to collect.</string>
@@ -26522,7 +26528,7 @@
 	<string key="Skin_Chest_TwitchFisherman_MasterName" rel_version="Apparel_Fisherman_Twitch">The Royal Fisher Coat</string>
 	<string key="Skin_Chest_Valentines01_Description" rel_version="Apparel_Valentines_MTX_1">For those who find themselves lost in frequent bouts of admiration and swooning.</string>
 	<string key="Skin_Chest_Valentines01_MasterName" rel_version="Apparel_Valentines_MTX_1">Fool For Love Chest</string>
-	<string key="Skin_Chest_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
+	<string key="Skin_Chest_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor, your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
 	<string key="Skin_Chest_Valentines02_MasterName" rel_version="Apparel_Valentines_MTX_2">Knight of Devotion Chest</string>
 	<string key="skin_chest_vogue_description" rel_version="Apparel_Vogue">True art is never understood in its own time.</string>
 	<string key="skin_chest_vogue_mastername" rel_version="Apparel_Vogue">Court Couture Tunic</string>
@@ -26570,7 +26576,7 @@
 	<string key="Skin_Feet_TwitchFisherman_MasterName" rel_version="Apparel_Fisherman_Twitch">The Royal Fisher Shoes</string>
 	<string key="Skin_Feet_Valentines01_Description" rel_version="Apparel_Valentines_MTX_1">For those who find themselves lost in frequent bouts of admiration and swooning.</string>
 	<string key="Skin_Feet_Valentines01_MasterName" rel_version="Apparel_Valentines_MTX_1">Fool For Love Feet</string>
-	<string key="Skin_Feet_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
+	<string key="Skin_Feet_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor, your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
 	<string key="Skin_Feet_Valentines02_MasterName" rel_version="Apparel_Valentines_MTX_2">Knight of Devotion Feet</string>
 	<string key="skin_feet_vogue_description" rel_version="Apparel_Vogue">True art is never understood in its own time.</string>
 	<string key="skin_feet_vogue_mastername" rel_version="Apparel_Vogue">Court Couture Shoes</string>
@@ -26624,7 +26630,7 @@
 	<string key="Skin_Hands_TwitchFisherman_MasterName" rel_version="Apparel_Fisherman_Twitch">The Royal Fisher Gloves</string>
 	<string key="Skin_Hands_Valentines01_Description" rel_version="Apparel_Valentines_MTX_1">For those who find themselves lost in frequent bouts of admiration and swooning.</string>
 	<string key="Skin_Hands_Valentines01_MasterName" rel_version="Apparel_Valentines_MTX_1">Fool For Love Gloves</string>
-	<string key="Skin_Hands_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
+	<string key="Skin_Hands_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor, your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
 	<string key="Skin_Hands_Valentines02_MasterName" rel_version="Apparel_Valentines_MTX_2">Knight of Devotion Gloves</string>
 	<string key="skin_hands_vogue_description" rel_version="Apparel_Vogue">True art is never understood in its own time.</string>
 	<string key="skin_hands_vogue_mastername" rel_version="Apparel_Vogue">Court Couture Lofe</string>
@@ -26663,7 +26669,7 @@
 	<string key="Skin_Head_Lunar02_Description" rel_version="Apparel_LunarNewYear_MTX_2">The armor seems to sculpt itself against the wearer's body like a second skin for ultimate stealth.</string>
 	<string key="Skin_Head_Lunar02_MasterName" rel_version="Apparel_LunarNewYear_MTX_2">Jadeite Assassin Hat</string>
 	<string key="Skin_Head_Miner_Achv_Description" rel_version="Apparel_Miner_Achv">For those unafraid of getting their gloves dirty with the salt of the earth.</string>
-	<string key="Skin_Head_Miner_Achv_MasterName" rel_version="Apparel_Miner_Achv">Mining Master's Apron</string>
+	<string key="Skin_Head_Miner_Achv_MasterName" rel_version="Apparel_Miner_Achv">Mining Master's Hat</string>
 	<string key="Skin_Head_RobinHood_Description" rel_version="Apparel_Robin_Hood">"One last thing before you go… your purse."</string>
 	<string key="Skin_Head_RobinHood_MasterName" rel_version="Apparel_Robin_Hood">Robin Hood Helm</string>
 	<string key="Skin_Head_SorcererHunterVar2_Description" rel_version="Apparel_SorcerorHunter_Wild">Cloaked in red and gold, the specter of the grave seeks hearts to collect.</string>
@@ -26676,7 +26682,7 @@
 	<string key="Skin_Head_TwitchFisherman_MasterName" rel_version="Apparel_Fisherman_Twitch">The Royal Fisher Hat</string>
 	<string key="Skin_Head_Valentines01_Description" rel_version="Apparel_Valentines_MTX_1">For those who find themselves lost in frequent bouts of admiration and swooning.</string>
 	<string key="Skin_Head_Valentines01_MasterName" rel_version="Apparel_Valentines_MTX_1">Fool For Love Hat</string>
-	<string key="Skin_Head_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
+	<string key="Skin_Head_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor, your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
 	<string key="Skin_Head_Valentines02_MasterName" rel_version="Apparel_Valentines_MTX_2">Knight of Devotion Helm</string>
 	<string key="skin_head_vogue_description" rel_version="Apparel_Vogue">True art is never understood in its own time.</string>
 	<string key="skin_head_vogue_mastername" rel_version="Apparel_Vogue">Court Couture Hat</string>
@@ -26774,7 +26780,7 @@
 	<string key="Skin_Legs_TwitchFisherman_MasterName" rel_version="Apparel_Fisherman_Twitch">The Royal Fisher Pants</string>
 	<string key="Skin_Legs_Valentines01_Description" rel_version="Apparel_Valentines_MTX_1">For those who find themselves lost in frequent bouts of admiration and swooning.</string>
 	<string key="Skin_Legs_Valentines01_MasterName" rel_version="Apparel_Valentines_MTX_1">Fool For Love Pants</string>
-	<string key="Skin_Legs_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
+	<string key="Skin_Legs_Valentines02_Description" rel_version="Apparel_Valentines_MTX_2">Upon donning this armor, your chest swells with the urge to protect the innocent, the unguarded, and the lovers of the world.</string>
 	<string key="Skin_Legs_Valentines02_MasterName" rel_version="Apparel_Valentines_MTX_2">Knight of Devotion Pants</string>
 	<string key="skin_legs_vogue_description" rel_version="Apparel_Vogue">True art is never understood in its own time.</string>
 	<string key="skin_legs_vogue_mastername" rel_version="Apparel_Vogue">Court Couture Hose</string>
@@ -26826,7 +26832,7 @@
 	<string key="Skin_LunarNewYear_Sickle_Name" rel_version="Tool_Sickle_LunarNewYear">Harvest's Wealth</string>
 	<string key="Skin_LunarNewYear_SkinningKnife_Description" rel_version="Tool_SkinningKnife_LunarNewYear">A knife for dressing the animals of Aeternum in style.</string>
 	<string key="Skin_LunarNewYear_SkinningKnife_Name" rel_version="Tool_SkinningKnife_LunarNewYear">Resplendent Ripper</string>
-	<string key="Skin_LunarNewYear_VoidGauntlet_Description" rel_version="Weapon_VoidGauntlet_LunarNewYear_MTX">Darkness lies within the glint of gold.</string>
+	<string key="Skin_LunarNewYear_VoidGauntlet_Description" rel_version="Weapon_VoidGauntlet_LunarNewYear_MTX">"Darkness lies within the glint of gold."</string>
 	<string key="Skin_LunarNewYear_VoidGauntlet_MasterName" rel_version="Weapon_VoidGauntlet_LunarNewYear_MTX">Void's Golden Touch</string>
 	<string key="Skin_Mask_AngryEarth_Description" rel_version="MTX_October_Skins">Energy currents run through this piece of facial wear, giving the wearer the apperance of being a little more magical than they really are.</string>
 	<string key="Skin_Mask_AngryEarth_MasterName" rel_version="MTX_October_Skins">Elemental Mask</string>
@@ -26932,7 +26938,7 @@
 	<string key="Skin_ShieldK_Vinespun_MasterName" rel_version="New_World_Launch">Lavender Blossom</string>
 	<string key="Skin_ShieldR_Vinespun_Description" rel_version="New_World_Launch">"A blossoming bulwark for defending against all blows."</string>
 	<string key="Skin_ShieldR_Vinespun_MasterName" rel_version="New_World_Launch">Gaia Disc</string>
-	<string key="Skin_ShieldT_AngelsDemons_Description" rel_version="Weapon_TowerShield_AngelsDemons_MTX">"To protect from wickedness and champion purity one must have a proper shield."</string>
+	<string key="Skin_ShieldT_AngelsDemons_Description" rel_version="Weapon_TowerShield_AngelsDemons_MTX">"To protect from wickedness and champion purity, one must have a proper shield."</string>
 	<string key="Skin_ShieldT_AngelsDemons_MasterName" rel_version="Weapon_TowerShield_AngelsDemons_MTX">Angelic Bulwark</string>
 	<string key="Skin_ShieldT_Vinespun_Description" rel_version="New_World_Launch">"A guard as mighty and florid as a palace garden wall."</string>
 	<string key="Skin_ShieldT_Vinespun_MasterName" rel_version="New_World_Launch">Garden Wall</string>
@@ -27262,7 +27268,7 @@
 	<string key="ToadpotT1_MasterName">Toadpot</string>
 	<string key="ToadstoolFringeT1_Description">The fringe from the edge of a toadstool, carefully scraped.</string>
 	<string key="ToadstoolFringeT1_MasterName">Toadstool Fringe</string>
-	<string key="TolviumT1_Description">One of the many resources unique to Aeternum, this metal is to brittle to use as the basis for a weapon or armor. However, as a cutting edge or a weighted core it is unmatched.</string>
+	<string key="TolviumT1_Description">One of the many resources unique to Aeternum, this metal is too brittle to use as the basis for a weapon or armor. However, as a cutting edge or a weighted core it is unmatched.</string>
 	<string key="TolviumT1_MasterName">Tolvium</string>
 	<string key="TomatoT1_Description">The most savory fruit.</string>
 	<string key="TomatoT1_MasterName">Tomato</string>
@@ -27581,7 +27587,7 @@
 	<string key="UmbralCrystalT1_MasterName">Umbral Crystal</string>
 	<string key="UmbralGeodeT1_Description" rel_version="Feature_Dungeon_Mutators">Open this Geode to receive the powerful contents within.</string>
 	<string key="UmbralGeodeT1_MasterName" rel_version="Feature_Dungeon_Mutators">Umbral Geode</string>
-	<string key="UmbralShardT1_Description">An Azoth shard that pulses with a dark energy. It doesn't seem to be corrupted…but is it? Drag and drop onto a piece of equipment that is 590 Gear Score or higher.</string>
+	<string key="UmbralShardT1_Description">An Azoth shard that can be used to upgrade any piece of equipment that is 590 Gear Score or higher.\n\nTo use: Select the item to upgrade and click the &lt;font color="#eaeaea"&gt;Upgrade&lt;/font&gt; button.</string>
 	<string key="UmbralShardT1_MasterName">Umbral Shard</string>
 	<string key="Unarmed_Description">Unarmed</string>
 	<string key="Unarmed_MasterName">Unarmed</string>
@@ -27785,7 +27791,7 @@
 	<string key="WhisperwoodT1_MasterName">Whisperwood</string>
 	<string key="wickedtyrant_description" rel_version="RoyalCourtSkins">"Power corrupts. The Wicked Tyrant gets you that kind of power."</string>
 	<string key="wickedtyrant_mastername" rel_version="RoyalCourtSkins">Wicked Tyrant</string>
-	<string key="WildwoodT1_Description">Wildwood got its name because it doesn't just grow up, it grows in everydirection.</string>
+	<string key="WildwoodT1_Description">Wildwood got its name because it doesn't just grow up, it grows in every direction.</string>
 	<string key="WildwoodT1_MasterName">Wildwood</string>
 	<string key="WindMillT2_Description">Tier 2 Grain Mill. Refines Grain into animal Feed.</string>
 	<string key="WindMillT2_MasterName">Grain Mill T2</string>
@@ -28372,5 +28378,47 @@
 	<string key="BagofJuniperBerries_Description">A bag filled with coins and berries</string>
 	<string key="JuniperBerryT5_MasterName">Juniper Berry</string>
 	<string key="JuniperBerryT5_Description">A dark blue berry with a strong spicey smell.</string>
+	<string key="FemHeavyChest_DropT4_MasterName" rel_version="Feminine_HT4">Ficus Breastplate</string>
+	<string key="FemHeavyChest_DropT4_Description" rel_version="Feminine_HT4">You feel ready to refulgently repose on a radiant rock.</string>
+	<string key="FemHeavyHead_DropT4_MasterName" rel_version="Feminine_HT4">Ficus Breastplate</string>
+	<string key="FemHeavyHead_DropT4_Description" rel_version="Feminine_HT4">You feel ready to refulgently repose on a radiant rock.</string>
+	<string key="FemHeavyLegs_DropT4_MasterName" rel_version="Feminine_HT4">Ficus Breastplate</string>
+	<string key="FemHeavyLegs_DropT4_Description" rel_version="Feminine_HT4">You feel ready to refulgently repose on a radiant rock.</string>
+	<string key="FemHeavyFeet_DropT4_MasterName" rel_version="Feminine_HT4">Ficus Breastplate</string>
+	<string key="FemHeavyFeet_DropT4_Description" rel_version="Feminine_HT4">You feel ready to refulgently repose on a radiant rock.</string>
+	<string key="FemHeavyHands_DropT4_MasterName" rel_version="Feminine_HT4">Ficus Breastplate</string>
+	<string key="FemHeavyHands_DropT4_Description" rel_version="Feminine_HT4">You feel ready to refulgently repose on a radiant rock.</string>
+	<string key="1hGauntletIce_MasteryT2_MasterName">REPLACEME</string>
+	<string key="1hGauntletIce_MasteryT3_MasterName">REPLACEME</string>
+	<string key="1hGauntletIce_MasteryT4_MasterName">REPLACEME</string>
+	<string key="1hGauntletIce_MasteryT5_MasterName">REPLACEME</string>
+	<string key="1hGauntletIce_MasteryT2_Description">REPLACEME</string>
+	<string key="1hGauntletIce_MasteryT3_Description">REPLACEME</string>
+	<string key="1hGauntletIce_MasteryT4_Description">REPLACEME</string>
+	<string key="1hGauntletIce_MasteryT5_Description">REPLACEME</string>
+	<string key="LightChest_CultDressT5_MasterName">Cultist's Dress</string>
+	<string key="LightChest_CultDressT5_Description">With heavy hands and a heavier heart you clothe yourself in sin.</string>
+	<string key="MediumHands_CultGlovesT5_MasterName">Cultist's Work Gloves</string>
+	<string key="MediumHands_CultGlovesT5_Description">Hardened leather keeps your hands protected while performing your duties.</string>
+	<string key="EarringT5_CultTalisman_MasterName">Cultist Talisman</string>
+	<string key="EarringT5_CultTalisman_Description">A symbolic talisman worn on the ear so as to be easily seen. This signifies your status in the Cult of Renewal</string>
+	<string key="QuestRewardOres1426_MasterName">The Mine's Spoils</string>
+	<string key="QuestRewardOres1426_Description">Open this to receive a few items you... liberated, on your way out of the mine.</string>
+	<string key="QuestRewardCoin1427_MasterName">Your cut</string>
+	<string key="QuestRewardCoin1427_Description">A small payment for an expensive silence.</string>
+	<string key="EarringT5_CultMemento_MasterName">Your Payment</string>
+	<string key="EarringT5_CultMemento_Description">You feel it dragging you down.</string>
+	<string key="QuestRewardMushroom1431_MasterName">Mushroomy Box</string>
+	<string key="QuestRewardMushroom1431_Description">A few treats you grabbed from a box of mushrooms and mushroom accessories.</string>
+	<string key="MediumHead_MushroomGiftT5_MasterName">Mushroom Gift</string>
+	<string key="MediumHead_MushroomGiftT5_Description">A gift given from a friend with a mycelical profundity.</string>
+	<string key="QuestRewardHerbs1432_MasterName">Bag of Herbs</string>
+	<string key="QuestRewardHerbs1432_Description">A gift given for rescuing a waylaid traveler.</string>
+	<string key="QuestRewardCoin1435_MasterName">Dirty Coin bag</string>
+	<string key="QuestRewardCoin1435_Description">A small bag filled with dirty coins.</string>
+	<string key="2hBow_AngryEarthsWarningT5_MasterName">Angry Earth's Warning</string>
+	<string key="2hBow_AngryEarthsWarningT5_Description">What was previously a standard hunter's bow has been warped by the Land. It serves as a reminder to its wielder to fear the Earth.</string>
+	<string key="2hGreatAxe_RoyalExecutionersAxeT5_MasterName">Royal Executioner's Axe</string>
+	<string key="2hGreatAxe_RoyalExecutionersAxeT5_Description">With the fall of this blade I pray that this sinner be redeemed.</string>
 </resources>
 

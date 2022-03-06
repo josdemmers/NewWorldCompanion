@@ -47,7 +47,7 @@ namespace NewWorldCompanion.Helpers
             return bitmap;
         }
 
-        public Bitmap? GetScreenCaptureMouse(IntPtr windowHandle)
+        public Bitmap? GetScreenCaptureMouse(IntPtr windowHandle, ref int offsetX, ref int offsetY)
         {
             Bitmap? bitmap = null;
 
@@ -72,6 +72,9 @@ namespace NewWorldCompanion.Helpers
             xPos = Math.Min(Math.Max(xPos - width / 2, region.left), region.right - width);
             yPos = Math.Min(Math.Max(yPos - height / 2, region.top), region.bottom - height);
             bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle.DangerousGetHandle(), 0, 0, width, height, windowDCHandle.DangerousGetHandle(), xPos, yPos, SRCCOPY | CAPTUREBLT);
+
+            offsetX = xPos;
+            offsetY = yPos;
 
             try
             {

@@ -22,10 +22,13 @@ namespace NewWorldCompanion
         {
             // Register services
             containerRegistry.RegisterSingleton<ICraftingRecipeManager, CraftingRecipeManager>();
-            containerRegistry.RegisterSingleton<ICraftingRecipeStore, CraftingRecipeStore>();
+            containerRegistry.RegisterSingleton<IHttpClientHandler, HttpClientHandler>();
             containerRegistry.RegisterSingleton<IScreenCaptureHandler, ScreenCaptureHandler>();
             containerRegistry.RegisterSingleton<IScreenProcessHandler, ScreenProcessHandler>();
+            containerRegistry.RegisterSingleton<INewWorldDataStore, NewWorldDataStore>();
             containerRegistry.RegisterSingleton<IOcrHandler, OcrHandler>();
+            containerRegistry.RegisterSingleton<IOverlayHandler, OverlayHandler>();
+            containerRegistry.RegisterSingleton<IPriceManager, PriceManager>();
             containerRegistry.RegisterSingleton<ISettingsManager, SettingsManager>();
         }
 

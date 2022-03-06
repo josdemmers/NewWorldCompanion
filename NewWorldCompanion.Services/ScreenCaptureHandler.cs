@@ -19,9 +19,11 @@ namespace NewWorldCompanion.Services
         private DispatcherTimer _captureTimer = new();
         private DispatcherTimer _coordinatesTimer = new();
         private Bitmap? _currentScreen = null;
-        private int _delay = 200;
+        private int _delay = 100;
         private int _delayCoordinates = 100;
         private bool _isActive = true;
+        private int _offsetX = 0;
+        private int _offsetY = 0;
         private ScreenCapture _screenCapture = new ScreenCapture();
 
         // Start of Constructor region
@@ -62,6 +64,8 @@ namespace NewWorldCompanion.Services
         public bool IsActive { get => _isActive; set => _isActive = value; }
         public string MouseCoordinates { get; set; } = string.Empty;
         public string MouseCoordinatesScaled { get; set; } = string.Empty;
+        public int OffsetX { get => _offsetX; set => _offsetX = value; }
+        public int OffsetY { get => _offsetY; set => _offsetY = value; }
 
         #endregion
 
@@ -98,6 +102,8 @@ namespace NewWorldCompanion.Services
 
         private void ScreenCapture()
         {
+            bool valid = false;
+
             if (IsActive)
             {
                 try
@@ -111,8 +117,9 @@ namespace NewWorldCompanion.Services
 
                     if (windowHandle.ToInt64() > 0)
                     {
-                        _currentScreen = _screenCapture.GetScreenCaptureMouse(windowHandle) ?? _currentScreen;
+                        _currentScreen = _screenCapture.GetScreenCaptureMouse(windowHandle, ref _offsetX, ref _offsetY) ?? _currentScreen;
                         _eventAggregator.GetEvent<ScreenCaptureReadyEvent>().Publish();
+                        valid = true;
 
                         _captureTimer.Interval = TimeSpan.FromMilliseconds(Delay);
                     }
@@ -131,6 +138,11 @@ namespace NewWorldCompanion.Services
             {
                 _captureTimer.Interval = TimeSpan.FromMilliseconds(Delay * 10);
                 _captureTimer.Start();
+            }
+
+            if (!valid)
+            {
+                _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
             }
         }
 

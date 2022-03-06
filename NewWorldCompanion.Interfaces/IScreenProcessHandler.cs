@@ -14,5 +14,10 @@ namespace NewWorldCompanion.Interfaces
         Bitmap? ProcessedImage { get; }
         Bitmap? RoiImage { get; }
         Bitmap? OcrImage { get; }
+
+        int OverlayX { get; }
+        int OverlayY { get; }
+        int OverlayWidth { get; }
+        int OverlayHeigth { get; }
     }
 }

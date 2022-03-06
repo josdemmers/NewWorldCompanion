@@ -12,7 +12,7 @@ namespace NewWorldCompanion.Services
     public class CraftingRecipeManager : ICraftingRecipeManager
     {
         private readonly IEventAggregator _eventAggregator;
-        private readonly ICraftingRecipeStore _craftingRecipeStore;
+        private readonly INewWorldDataStore _newWorldDataStore;
 
         private List<CraftingRecipe> _craftingRecipes = new List<CraftingRecipe>();
 
@@ -20,13 +20,13 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public CraftingRecipeManager(IEventAggregator eventAggregator, ICraftingRecipeStore craftingRecipeStore)
+        public CraftingRecipeManager(IEventAggregator eventAggregator, INewWorldDataStore newWorldDataStore)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
 
             // Init stores
-            _craftingRecipeStore = craftingRecipeStore;
+            _newWorldDataStore = newWorldDataStore;
 
             // Init recipes
             LoadRecipes();
@@ -64,7 +64,7 @@ namespace NewWorldCompanion.Services
             }
 
             // Update recipe list
-            var recipesJson = _craftingRecipeStore.GetCraftingRecipes();
+            var recipesJson = _newWorldDataStore.GetCraftingRecipes();
             foreach (var recipeJson in recipesJson)
             {
                 var recipe = _craftingRecipes.FirstOrDefault(r => r.Id.Equals(recipeJson.Id));

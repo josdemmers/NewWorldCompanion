@@ -5,22 +5,12 @@ namespace NewWorldCompanion.Interfaces
 {
     public interface IScreenCaptureHandler
     {
-        Bitmap? CurrentScreen
-        {
-            get;
-        }
-
+        Bitmap? CurrentScreen { get; }
         bool IsActive { get; set; }
-
-        public string MouseCoordinates
-        {
-            get;
-        }
-
-        public string MouseCoordinatesScaled
-        {
-            get;
-        }
+        string MouseCoordinates { get; }
+        string MouseCoordinatesScaled { get; }
+        int OffsetX { get; }
+        int OffsetY { get; }
 
         BitmapSource? ImageSourceFromScreenCapture();
     }

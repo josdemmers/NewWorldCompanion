@@ -27,6 +27,11 @@ namespace NewWorldCompanion.Services
         private Bitmap? _processedImage = null;
         private Bitmap? _roiImage = null;
 
+        private int _overlayX = 0;
+        private int _overlayY = 0;
+        private int _overlayWidth = 0;
+        private int _overlayHeigth = 0;
+
         // Start of Constructor region
 
         #region Constructor
@@ -57,6 +62,10 @@ namespace NewWorldCompanion.Services
         public Bitmap? ProcessedImage { get => _processedImage; set => _processedImage = value; }
         public Bitmap? RoiImage { get => _roiImage; set => _roiImage = value; }
         public Bitmap? OcrImage { get => _roiImage; set => _roiImage = value; }
+        public int OverlayX { get => _overlayX; set => _overlayX = value; }
+        public int OverlayY { get => _overlayY; set => _overlayY = value; }
+        public int OverlayWidth { get => _overlayWidth; set => _overlayWidth = value; }
+        public int OverlayHeigth { get => _overlayHeigth; set => _overlayHeigth = value; }
 
         #endregion
 
@@ -141,7 +150,12 @@ namespace NewWorldCompanion.Services
                                 ((rec.Center.X - rotatedRec.Center.X > -2 && rec.Center.X - rotatedRec.Center.X < 2) || (rotatedRec.Center.X - rec.Center.X > -2 && rotatedRec.Center.X - rec.Center.X < 2)) &&
                                 ((rec.Center.Y - rotatedRec.Center.Y > -2 && rec.Center.Y - rotatedRec.Center.Y < 2) || (rotatedRec.Center.Y - rec.Center.Y > -2 && rotatedRec.Center.Y - rec.Center.Y < 2))))
                                 {
-                                    rectangleList.Add(rotatedRec);
+                                    // We only want squares
+                                    float ratio = rotatedRec.Size.Width / rotatedRec.Size.Height;
+                                    if (ratio > 0.8 && ratio < 1.2)
+                                    {
+                                        rectangleList.Add(rotatedRec);
+                                    }
                                 }
                             }
                         }
@@ -169,6 +183,12 @@ namespace NewWorldCompanion.Services
                   rectangleList[0].MinAreaRect().Height - 25
                 );
 
+                // Update overlay position
+                OverlayX = _screenCaptureHandler.OffsetX + rectangleList[0].MinAreaRect().X;
+                OverlayY = _screenCaptureHandler.OffsetY + rectangleList[0].MinAreaRect().Y - (rectangleList[0].MinAreaRect().Height + 12);
+                OverlayWidth = rectangleList[0].MinAreaRect().Width + (int)(rectangleList[0].MinAreaRect().Width * 3.25);
+                OverlayHeigth = rectangleList[0].MinAreaRect().Height;
+
                 try
                 {
                     crop = new Mat(img, roiRectangle);
@@ -176,7 +196,14 @@ namespace NewWorldCompanion.Services
                     _eventAggregator.GetEvent<RoiImageReadyEvent>().Publish();
                     ProcessImageOCR(crop);
                 }
-                catch (Exception) { }
+                catch (Exception) 
+                {
+                    _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                }
+            }
+            else
+            {
+                _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
             }
         }
 
@@ -207,7 +234,7 @@ namespace NewWorldCompanion.Services
                 }
 
                 OcrImage = imgFilter.ToBitmap();
-                imgFilter.Save(@"ocrimages\latest.png");
+                imgFilter.Save(@"ocrimages\itemname.png");
                 _eventAggregator.GetEvent<OcrImageReadyEvent>().Publish();
             }
             catch (Exception) { }
