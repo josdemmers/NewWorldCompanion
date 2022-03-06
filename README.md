@@ -14,15 +14,16 @@ A companion app for New World, to keep track of all your learned recipes.
 ## Features
 
 - Keep track of your learned recipes.
+- Ingame overlay with price data for tradable items.
 
 ## Planned Features
 
-- [ ] Add configuration section to make it easier to setup the app for different resolutions.
+- [x] Add configuration section to make it easier to setup the app for different resolutions.
 - [ ] Keep track of the storage content of all towns in Aeternum.
 - [ ] Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
 - [ ] Add notes for when you want to write something down.
-- [ ] Add pricing data for items you hover your mouse over.
-- [ ] Add overlay to show recipe learned status directy in-game.
+- [x] Add pricing data for items you hover your mouse over.
+- [x] Add overlay to show recipe learned status directy in-game.
 - [ ] Add localisation for items. Currently English only.
 
 ## Installation
@@ -73,6 +74,7 @@ MIT
 ## Thirdparty packages
 
 - [Emgu CV](https://www.emgu.com/wiki/index.php/Main_Page)
+- [GameOverlay.Net](https://github.com/michel-pi/GameOverlay.Net)
 - [MahApps.Metro](https://github.com/MahApps/MahApps.Metro)
 - [PInvoke](https://github.com/dotnet/pinvoke)
 - [Prism](https://github.com/PrismLibrary/Prism)
