@@ -1,6 +1,6 @@
 # NewWorldCompanion
 
-A companion app for New World, to keep track of all your learned recipes.
+A companion app for New World, to keep track of all your learned recipes and current trading post prices.
 
 ## Table of Contents
 
