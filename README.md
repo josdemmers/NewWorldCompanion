@@ -48,9 +48,13 @@ The app uses the tooltip of an item to read the item name. The default values wo
 
 ### OCR
 
-The threshold values for OCR are used to filter out background noice. Your threshold values are correct if you only see black text on a white background.
+The threshold values for OCR are used to filter out background noise. Your threshold values are correct if you only see black text on a white background.
 
 ![Config-2](./readme/readme-config2.png)
+
+### Overlay
+
+![Config-3](./readme/readme-config3.png)
 
 ## Usage
 
@@ -61,13 +65,21 @@ The threshold values for OCR are used to filter out background noice. Your thres
 5. Info panel of the current selected recipe. Use the checkbox to change the learned state.
 6. List of all recipes.
 
-![Config-2](./readme/readme-usage1.png)
+![Usage-1](./readme/readme-usage1.png)
 
 First make sure you have read the [Configuration](https://github.com/josdemmers/NewWorldCompanion#configuration) section and the detection of tooltips is working.
 
 Using the app for the first time requires some extra work. You'll have to visit each of the crafting stations in-game and check the recipes you have already learned. Select the recipe in the app and click the checkmark when you have already learned the recipe.
 
-No further configurations are needed. Start playing the game, when someone links a recipe in the chat or when you have some in your inventory hover your mouse over the item and the app will select the correct recipe from the list. Showing you immediately whether or not you have learned it.
+If you have selected which server to use for the price data you're done. Start playing the game, now when you want to lookup price data of an item simply hover your mouse over the item. For tradable items it will show the price data, for recipes it will show the learned status as well.
+
+## Feature show off
+
+Price overlay with recipe learned status used in the trading post.
+![nw_companion-1](./readme/nw_companion_overlay1.gif)
+
+Price overlay used in players inventory
+![nw_companion-2](./readme/nw_companion_overlay2.gif)
 
 ## Licensing
 
