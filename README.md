@@ -81,3 +81,7 @@ MIT
 - [PInvoke](https://github.com/dotnet/pinvoke)
 - [Prism](https://github.com/PrismLibrary/Prism)
 - [TesserNet](https://github.com/CptWesley/TesserNet)
+
+## Mentions
+
+The available price data is from: https://nwmarketprices.com/
