@@ -54,6 +54,8 @@ The threshold values for OCR are used to filter out background noise. Your thres
 
 ### Overlay
 
+Select which server to use the price data from. Price data is from https://nwmarketprices.com/.
+
 ![Config-3](./readme/readme-config3.png)
 
 ## Usage
