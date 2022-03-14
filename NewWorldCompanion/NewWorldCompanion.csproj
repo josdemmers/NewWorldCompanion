@@ -17,6 +17,7 @@
     <None Remove="Images\engineering_trade_skill_icon_250px.png" />
     <None Remove="Images\furnishing_trade_skill_icon_250px.png" />
     <None Remove="Images\jewelcrafting_trade_skill_icon_250px.png" />
+    <None Remove="Images\splash.png" />
     <None Remove="Images\weaponsmithing_trade_skill_icon_250px.png" />
   </ItemGroup>
 
@@ -45,6 +46,10 @@
     <ProjectReference Include="..\NewWorldCompanion.Constants\NewWorldCompanion.Constants.csproj" />
     <ProjectReference Include="..\NewWorldCompanion.Interfaces\NewWorldCompanion.Interfaces.csproj" />
     <ProjectReference Include="..\NewWorldCompanion.Services\NewWorldCompanion.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Images\splash.png" />
   </ItemGroup>
 
 </Project>
