@@ -50,7 +50,8 @@
               <Label>
                 <TextBlock>
                   <TextBlock.Text>
-                    <MultiBinding StringFormat="{}{0:00}:{1:00}:{2:00} / {3}">
+                    <MultiBinding StringFormat="{}{0:0}.{1:00}:{2:00}:{3:00} / {4}">
+                      <Binding Path="RemainingTime.Days" />
                       <Binding Path="RemainingTime.Hours" />
                       <Binding Path="RemainingTime.Minutes" />
                       <Binding Path="RemainingTime.Seconds" />
