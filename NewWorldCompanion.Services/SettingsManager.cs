@@ -51,7 +51,7 @@ namespace NewWorldCompanion.Services
 
         private void LoadSettings()
         {
-            string fileName = "Settings.json";
+            string fileName = "Config/Settings.json";
             if (File.Exists(fileName))
             {
                 using FileStream stream = File.OpenRead(fileName);
@@ -63,7 +63,10 @@ namespace NewWorldCompanion.Services
 
         public void SaveSettings()
         {
-            string fileName = "Settings.json";
+            string fileName = "Config/Settings.json";
+            string path = Path.GetDirectoryName(fileName) ?? string.Empty;
+            Directory.CreateDirectory(path);
+
             using FileStream stream = File.Create(fileName);
             var options = new JsonSerializerOptions { WriteIndented = true };
             JsonSerializer.Serialize(stream, _settings, options);

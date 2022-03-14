@@ -1,4 +1,5 @@
-﻿using NewWorldCompanion.Interfaces;
+﻿using MahApps.Metro.Controls.Dialogs;
+using NewWorldCompanion.Interfaces;
 using NewWorldCompanion.Services;
 using NewWorldCompanion.Views;
 using Prism.Ioc;
@@ -21,6 +22,7 @@ namespace NewWorldCompanion
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register services
+            containerRegistry.RegisterSingleton<ICooldownManager, CooldownManager>();
             containerRegistry.RegisterSingleton<ICraftingRecipeManager, CraftingRecipeManager>();
             containerRegistry.RegisterSingleton<IHttpClientHandler, HttpClientHandler>();
             containerRegistry.RegisterSingleton<IScreenCaptureHandler, ScreenCaptureHandler>();
@@ -30,6 +32,9 @@ namespace NewWorldCompanion
             containerRegistry.RegisterSingleton<IOverlayHandler, OverlayHandler>();
             containerRegistry.RegisterSingleton<IPriceManager, PriceManager>();
             containerRegistry.RegisterSingleton<ISettingsManager, SettingsManager>();
+
+            // Register Metro
+            containerRegistry.RegisterSingleton<IDialogCoordinator, DialogCoordinator>();
         }
 
         protected override Window CreateShell()

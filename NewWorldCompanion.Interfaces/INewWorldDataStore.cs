@@ -11,5 +11,6 @@ namespace NewWorldCompanion.Interfaces
     {
         List<CraftingRecipe> GetCraftingRecipes();
         bool IsBindOnPickup(string itemName);
+        string GetItemId(string itemName);
     }
 }

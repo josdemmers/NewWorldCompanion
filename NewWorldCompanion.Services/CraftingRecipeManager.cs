@@ -56,7 +56,7 @@ namespace NewWorldCompanion.Services
         {
             _craftingRecipes.Clear();
 
-            string fileName = "CraftingRecipeProgress.json";
+            string fileName = "Config/CraftingRecipeProgress.json";
             if (File.Exists(fileName))
             {
                 using FileStream stream = File.OpenRead(fileName);
@@ -93,7 +93,10 @@ namespace NewWorldCompanion.Services
 
         public void SaveRecipes()
         {
-            string fileName = "CraftingRecipeProgress.json";
+            string fileName = "Config/CraftingRecipeProgress.json";
+            string path = Path.GetDirectoryName(fileName) ?? string.Empty;
+            Directory.CreateDirectory(path);
+
             using FileStream stream = File.Create(fileName);
             var options = new JsonSerializerOptions { WriteIndented = true };
             JsonSerializer.Serialize(stream, CraftingRecipes, options);

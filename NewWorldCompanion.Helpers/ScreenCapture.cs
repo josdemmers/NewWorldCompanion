@@ -55,7 +55,7 @@ namespace NewWorldCompanion.Helpers
             PInvoke.User32.GetWindowRect(windowHandle, out region);
 
             int width = (int)((region.right - region.left) * 0.75);
-            int height = 400;
+            int height = (int)((region.bottom - region.top) * 0.50);
 
             PInvoke.User32.CURSORINFO cursorInfo = new PInvoke.User32.CURSORINFO();
             cursorInfo.cbSize = Marshal.SizeOf(cursorInfo);

@@ -12,7 +12,7 @@ namespace NewWorldCompanion.Entities
         public bool DebugModeActive { get; set; } = false;
 
         // Overlay
-        public string ServerId { get; set; } = "1";
+        public int PriceServerId { get; set; } = 1;
 
         // Shape detection
         public int EmguAreaLower { get; set; } = 10000;

@@ -1,4 +1,5 @@
 ﻿using NewWorldCompanion.Entities;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using Prism.Mvvm;
@@ -29,13 +30,11 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
+            _eventAggregator.GetEvent<PriceServerListUpdatedEvent>().Subscribe(HandlePriceServerListUpdatedEvent);
 
             // Init services
             _settingsManager = settingsManager;
             _priceManager = priceManager;
-
-            // Init servers
-            updateServerList();
         }
 
         #endregion
@@ -59,7 +58,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
 
                 if (_serverIndex >= 0 && Servers.Count > _serverIndex)
                 {
-                    _settingsManager.Settings.ServerId = Servers[value].Id;
+                    _settingsManager.Settings.PriceServerId = Servers[value].Id;
                     _settingsManager.SaveSettings();
                 }
             }
@@ -71,19 +70,23 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
 
         #region Events
 
+        private void HandlePriceServerListUpdatedEvent()
+        {
+            updateServerList();
+        }
+
         #endregion
 
         // Start of Methods region
 
         #region Methods
 
-
         private void updateServerList()
         {
             Servers.Clear();
             Servers.AddRange(_priceManager.Servers);
 
-            int serverIndex = Servers.ToList().FindIndex(s => s.Id == _settingsManager.Settings.ServerId);
+            int serverIndex = Servers.ToList().FindIndex(s => s.Id == _settingsManager.Settings.PriceServerId);
             if (serverIndex != -1)
             {
                 ServerIndex = serverIndex;

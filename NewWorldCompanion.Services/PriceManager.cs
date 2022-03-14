@@ -1,12 +1,11 @@
 ﻿using NewWorldCompanion.Entities;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -17,8 +16,8 @@ namespace NewWorldCompanion.Services
         private readonly IEventAggregator _eventAggregator;
         private readonly ISettingsManager _settingsManager;
         private readonly IHttpClientHandler _httpClientHandler;
+        private readonly INewWorldDataStore _newWorldDataStore;
 
-        private Dictionary<string, int> _itemMappings = new Dictionary<string, int>();
         private Dictionary<string, NwmarketpriceJson> _priceCache = new Dictionary<string, NwmarketpriceJson>();
         private List<string> _priceRequestQueue = new List<string>();
         private bool _priceRequestQueueBusy = false;
@@ -28,7 +27,7 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public PriceManager(IEventAggregator eventAggregator, ISettingsManager settingsManager, IHttpClientHandler httpClientHandler)
+        public PriceManager(IEventAggregator eventAggregator, ISettingsManager settingsManager, IHttpClientHandler httpClientHandler, INewWorldDataStore newWorldDataStore)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
@@ -36,42 +35,10 @@ namespace NewWorldCompanion.Services
             // Init services
             _settingsManager = settingsManager;
             _httpClientHandler = httpClientHandler;
+            _newWorldDataStore = newWorldDataStore;
 
             // Init servers
-            _servers.Add(new PriceServer()
-            {
-                Id = "1",
-                Name = "Camelot"
-            });
-            _servers.Add(new PriceServer()
-            {
-                Id = "2",
-                Name = "El Dorado"
-            });
-
-            Task.Run(async () =>
-            {
-                try
-                {
-                    string json = await _httpClientHandler.GetRequest("https://nwmarketprices.com/cn/") ?? string.Empty;
-                    var root = JsonSerializer.Deserialize<RootCn>(json);
-                    var mappings = JsonSerializer.Deserialize<List<List<object>>>(root?.cn ?? string.Empty) ?? new List<List<object>>();
-                    foreach (var mapping in mappings)
-                    {
-                        string key = ((JsonElement)mapping[0]).GetString() ?? string.Empty;
-                        int value = ((JsonElement)mapping[1]).GetInt32();
-
-                        if (!string.IsNullOrWhiteSpace(key))
-                        {
-                            _itemMappings.TryAdd(key, value);
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-
-                }
-            });
+            UpdateServerList();
         }
 
         #endregion
@@ -80,7 +47,7 @@ namespace NewWorldCompanion.Services
 
         #region Properties
 
-        public string ServerId { get => _settingsManager.Settings.ServerId; }
+        public int ServerId { get => _settingsManager.Settings.PriceServerId; }
         public List<PriceServer> Servers { get => _servers; set => _servers = value; }
 
         #endregion
@@ -94,6 +61,37 @@ namespace NewWorldCompanion.Services
         // Start of Methods region
 
         #region Methods
+
+        private async void UpdateServerList()
+        {
+            try
+            {
+                string json = await _httpClientHandler.GetRequest("https://nwmarketprices.com/servers/") ?? string.Empty;
+                var root = JsonSerializer.Deserialize<RootServers>(json);
+                var mappings = JsonSerializer.Deserialize<List<List<object>>>(root?.servers ?? string.Empty) ?? new List<List<object>>();
+                foreach (var mapping in mappings)
+                {
+                    string serverName = ((JsonElement)mapping[0]).GetString() ?? string.Empty;
+                    int serverId = ((JsonElement)mapping[1]).GetInt32();
+
+                    if (!string.IsNullOrWhiteSpace(serverName))
+                    {
+                        _servers.Add(new PriceServer()
+                        {
+                            Id = serverId,
+                            Name = serverName
+                        });
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+            _eventAggregator.GetEvent<PriceServerListUpdatedEvent>().Publish();
+        }
 
         public NwmarketpriceJson GetPriceData(string itemName)
         {
@@ -111,22 +109,33 @@ namespace NewWorldCompanion.Services
                     _priceRequestQueueBusy = true;
                     Task task = Task.Run(async () =>
                     {
-                        bool isValid = _itemMappings.TryGetValue(itemName, out var itemId);
-                        if (isValid)
+                        string itemId = _newWorldDataStore.GetItemId(itemName);
+                        if (!string.IsNullOrWhiteSpace(itemId))
                         {
                             try
                             {
-                                string uri = $"https://nwmarketprices.com/{itemId}/{ServerId}?cn_id={itemId}";
-                                string json = await _httpClientHandler.GetRequest(uri) ?? string.Empty;
-
-                                var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json);
-                                if (nwmarketpriceJson != null)
+                                string uri = $"https://nwmarketprices.com/0/{ServerId}?cn_id={itemId.ToLower()}";
+                                string json = await _httpClientHandler.GetRequest(uri);
+                                if (!string.IsNullOrWhiteSpace(json))
                                 {
-                                    Debug.WriteLine($"item_name: {nwmarketpriceJson.item_name}");
-                                    Debug.WriteLine($"recent_lowest_price: {nwmarketpriceJson.recent_lowest_price}");
-                                    Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked}");
+                                    var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json);
+                                    if (nwmarketpriceJson != null)
+                                    {
+                                        Debug.WriteLine($"item_name: {nwmarketpriceJson.item_name}");
+                                        Debug.WriteLine($"recent_lowest_price: {nwmarketpriceJson.recent_lowest_price}");
+                                        Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked}");
 
-                                    _priceCache[itemName] = nwmarketpriceJson;
+                                        _priceCache[itemName] = nwmarketpriceJson;
+                                    }
+                                }
+                                else
+                                {
+                                    _priceCache[itemName] = new NwmarketpriceJson
+                                    {
+                                        item_name = itemName,
+                                        recent_lowest_price = "no data",
+                                        last_checked = "no data"
+                                    };
                                 }
                             }
                             catch (Exception){};
@@ -147,9 +156,9 @@ namespace NewWorldCompanion.Services
 
         #endregion
 
-        private class RootCn
+        private class RootServers
         {
-            public string cn { get; set; } = string.Empty;
+            public string servers { get; set; } = string.Empty;
         }
     }
 }

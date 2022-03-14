@@ -36,14 +36,15 @@ namespace NewWorldCompanion.Views
 
             // Regions
             regionManager.RegisterViewWithRegion("CraftingView", typeof(CraftingView));
-            regionManager.RegisterViewWithRegion("DebugView", typeof(DebugView));
-            regionManager.RegisterViewWithRegion("DebugScreenCaptureView", typeof(DebugScreenCaptureView));
-            regionManager.RegisterViewWithRegion("DebugScreenProcessView", typeof(DebugScreenProcessView));
-            regionManager.RegisterViewWithRegion("DebugScreenOCRView", typeof(DebugScreenOCRView));
             regionManager.RegisterViewWithRegion("ConfigView", typeof(ConfigView));
             regionManager.RegisterViewWithRegion("ConfigOverlayView", typeof(ConfigOverlayView));
             regionManager.RegisterViewWithRegion("ConfigScreenProcessView", typeof(DebugScreenProcessView));
             regionManager.RegisterViewWithRegion("ConfigScreenOCRView", typeof(DebugScreenOCRView));
+            regionManager.RegisterViewWithRegion("CooldownView", typeof(CooldownView));
+            regionManager.RegisterViewWithRegion("DebugView", typeof(DebugView));
+            regionManager.RegisterViewWithRegion("DebugScreenCaptureView", typeof(DebugScreenCaptureView));
+            regionManager.RegisterViewWithRegion("DebugScreenProcessView", typeof(DebugScreenProcessView));
+            regionManager.RegisterViewWithRegion("DebugScreenOCRView", typeof(DebugScreenOCRView));
         }
     }
 }

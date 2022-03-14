@@ -224,7 +224,13 @@ namespace NewWorldCompanion.ViewModels.Tabs
             // As the view is accessed by the UI it will need to be created on the UI thread
             Application.Current?.Dispatcher?.Invoke(() =>
             {
-                ItemNameFilter = _ocrHandler.OcrText;
+                //TODO Cleanup name. For example Toilvium -> Tolvium
+
+                // Only set filter for recipe items.
+                if (CraftingRecipes.Any(recipe => recipe.Localisation.ToLower().Contains(_ocrHandler.OcrText)))
+                {
+                    ItemNameFilter = _ocrHandler.OcrText;
+                }
             });
         }
 

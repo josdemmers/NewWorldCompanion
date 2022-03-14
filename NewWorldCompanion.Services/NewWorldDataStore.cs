@@ -145,6 +145,7 @@ namespace NewWorldCompanion.Services
 
         public bool IsBindOnPickup(string itemName)
         {
+            //TODO Needs improvement. Look into more properties like IsTradable, quests, etc.
             var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
             var item = _masterItemDefinitionsCraftingJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             if (item != null)
@@ -152,6 +153,17 @@ namespace NewWorldCompanion.Services
                 return item.BindOnPickup;
             }
             return true;
+        }
+
+        public string GetItemId(string itemName)
+        {
+            var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
+            var item = _masterItemDefinitionsCraftingJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
+            if (item != null)
+            {
+                return item.ItemID;
+            }
+            return string.Empty;
         }
 
         #endregion

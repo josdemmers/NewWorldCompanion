@@ -19,6 +19,9 @@
       <TabItem Header="Crafting">
         <ContentControl prism:RegionManager.RegionName="CraftingView"/>
       </TabItem>
+      <TabItem Header="Cooldowns">
+        <ContentControl prism:RegionManager.RegionName="CooldownView"/>
+      </TabItem>
       <TabItem Header="Config">
         <ContentControl prism:RegionManager.RegionName="ConfigView"/>
       </TabItem>
