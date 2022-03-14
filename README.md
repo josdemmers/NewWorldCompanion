@@ -9,20 +9,22 @@ A companion app for New World, to keep track of all your learned recipes and cur
 - [Installation](https://github.com/josdemmers/NewWorldCompanion#installation)
 - [Configuration](https://github.com/josdemmers/NewWorldCompanion#configuration)
 - [Usage](https://github.com/josdemmers/NewWorldCompanion#Usage)
-- [Licensing](https://github.com/josdemmers/NewWorldCompanion#licensing)
+- [Troubleshooting](https://github.com/josdemmers/NewWorldCompanion#Troubleshooting)
+- [Feature show off](https://github.com/josdemmers/NewWorldCompanion#feature-show-off)
 
 ## Features
 
 - Keep track of your learned recipes.
+- Monitor all your cooldowns.
 - Ingame overlay with price data for tradable items. Supported servers:
-  - Camelot
-  - El Dorado     
+  - Since v1.0.2.0 the server list is updated at each application launch. For the complete list of supported servers check: https://nwmarketprices.com/
+  - Barri, Camelot, Dry Tree, El Dorado
 
 ## Planned Features
 
 - [x] Add configuration section to make it easier to setup the app for different resolutions.
 - [ ] Keep track of the storage content of all towns in Aeternum.
-- [ ] Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
+- [x] Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
 - [ ] Add notes for when you want to write something down.
 - [x] Add pricing data for items you hover your mouse over.
 - [x] Add overlay to show recipe learned status directy in-game.
@@ -32,7 +34,7 @@ A companion app for New World, to keep track of all your learned recipes and cur
 
 - Download the latest version from [Releases](https://github.com/josdemmers/NewWorldCompanion/releases)
 - Extract files and run NewWorldCompanion.exe
-- Updating from an previous version? Make sure to copy your CraftingRecipeProgress.json and Settings.json to keep your current progress.
+- Updating from an previous version? Make sure to copy your Config folder to keep your current progress.
 
 ## Configuration
 
@@ -74,6 +76,14 @@ First make sure you have read the [Configuration](https://github.com/josdemmers/
 Using the app for the first time requires some extra work. You'll have to visit each of the crafting stations in-game and check the recipes you have already learned. Select the recipe in the app and click the checkmark when you have already learned the recipe.
 
 If you have selected which server to use for the price data you're done. Start playing the game, now when you want to lookup price data of an item simply hover your mouse over the item. For tradable items it will show the price data, for recipes it will show the learned status as well.
+
+## Troubleshooting
+
+### The configuration page ScreenProcess does not show an orange outline around the item icon.
+
+- The default settings work with a 2560x1440 resolution
+- Use the area threshold sliders if you have another resolution
+- Make sure your monitor and ingame resolution are the same.
 
 ## Feature show off
 
