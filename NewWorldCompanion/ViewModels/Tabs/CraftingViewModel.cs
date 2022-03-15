@@ -227,7 +227,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
                 //TODO Cleanup name. For example Toilvium -> Tolvium
 
                 // Only set filter for recipe items.
-                if (CraftingRecipes.Any(recipe => recipe.Localisation.Contains(_ocrHandler.OcrText)))
+                if (CraftingRecipes.Any(recipe => recipe.Localisation.StartsWith(_ocrHandler.OcrText)))
                 {
                     ItemNameFilter = _ocrHandler.OcrText;
                 }
