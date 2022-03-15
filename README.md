@@ -62,6 +62,8 @@ Select which server to use the price data from. Price data is from https://nwmar
 
 ## Usage
 
+![Usage-1](./readme/readme-usage1.png)
+
 1. Counter for each crafting category showing your missing recipes.
 2. Toggle button for each crafting category to filter the recipe list.
 3. Filter / Search field for recipe list.
@@ -69,13 +71,19 @@ Select which server to use the price data from. Price data is from https://nwmar
 5. Info panel of the current selected recipe. Use the checkbox to change the learned state.
 6. List of all recipes.
 
-![Usage-1](./readme/readme-usage1.png)
-
 First make sure you have read the [Configuration](https://github.com/josdemmers/NewWorldCompanion#configuration) section and the detection of tooltips is working.
 
 Using the app for the first time requires some extra work. You'll have to visit each of the crafting stations in-game and check the recipes you have already learned. Select the recipe in the app and click the checkmark when you have already learned the recipe.
 
 If you have selected which server to use for the price data you're done. Start playing the game, now when you want to lookup price data of an item simply hover your mouse over the item. For tradable items it will show the price data, for recipes it will show the learned status as well.
+
+![Usage-2](./readme/readme-usage2.png)
+
+1. Enter name for cooldown.
+2. Add cooldown.
+3. Reset cooldown timer.
+4. Configure cooldown timer.
+5. Delete cooldown timer.
 
 ## Troubleshooting
 
