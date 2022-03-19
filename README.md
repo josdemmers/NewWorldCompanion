@@ -28,7 +28,7 @@ A companion app for New World, to keep track of all your learned recipes and cur
 - [x] Add pricing data for items you hover your mouse over.
 - [x] Add overlay to show recipe learned status directy in-game.
 - [ ] Add localisation for items. Currently English only.
-- [ ] Crafting cost calculator
+- [ ] Crafting cost calculator.
 
 ## Installation
 
