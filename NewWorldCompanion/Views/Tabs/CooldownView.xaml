@@ -47,7 +47,7 @@
                 <Ellipse Fill="{Binding Ready, Converter={StaticResource BooleanToLearnedColorConverter}}" Width="10" Height="10"/>
               </BulletDecorator>
               <Label Margin="0,0,0,0" Width="175" Content="{Binding Path=Name}" />
-              <Label>
+              <Label Width="150">
                 <TextBlock>
                   <TextBlock.Text>
                     <MultiBinding StringFormat="{}{0:0}.{1:00}:{2:00}:{3:00} / {4}">

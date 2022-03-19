@@ -37,6 +37,8 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private BitmapSource? _imageWeaponsmithing = null;
 
         private CraftingRecipe _selectedCraftingRecipe = new CraftingRecipe();
+        private bool _filterRecipeLearned = true;
+        private bool _filterRecipeUnlearned = true;
         private bool _toggleArcana = true;
         private bool _toggleArmoring = true;
         private bool _toggleCooking = true;
@@ -132,6 +134,27 @@ namespace NewWorldCompanion.ViewModels.Tabs
                 }
             }
         }
+
+        public bool FilterRecipeLearned
+        {
+            get => _filterRecipeLearned;
+            set
+            {
+                _filterRecipeLearned = value;
+                CraftingRecipesFiltered?.Refresh();
+            }
+        }
+
+        public bool FilterRecipeUnlearned
+        {
+            get => _filterRecipeUnlearned;
+            set
+            {
+                _filterRecipeUnlearned = value;
+                CraftingRecipesFiltered?.Refresh();
+            }
+        }
+
         public bool ToggleArcana
         {
             get => _toggleArcana;
@@ -302,6 +325,11 @@ namespace NewWorldCompanion.ViewModels.Tabs
             if (allowed)
             {
                 allowed = string.IsNullOrWhiteSpace(ItemNameFilter) ? true : craftingRecipe.Localisation.ToLower().Contains(ItemNameFilter.ToLower());
+            }
+
+            if (allowed)
+            {
+                allowed = (FilterRecipeLearned ? craftingRecipe.Learned : false) || (FilterRecipeUnlearned ? !craftingRecipe.Learned : false);
             }
 
             return allowed;
