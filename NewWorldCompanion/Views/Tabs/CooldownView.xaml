@@ -60,13 +60,13 @@
                   </TextBlock.Text>
                 </TextBlock>
               </Label>
-              <Button BorderThickness="0" Background="Transparent" Command="{Binding Path=DataContext.RefreshCooldownCommand, RelativeSource={RelativeSource AncestorType={x:Type local:CooldownView}}}" CommandParameter="{Binding}">
+              <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding Path=DataContext.RefreshCooldownCommand, RelativeSource={RelativeSource AncestorType={x:Type local:CooldownView}}}" CommandParameter="{Binding}">
                 <iconPacks:PackIconMaterial Kind="Refresh" />
               </Button>
-              <Button BorderThickness="0" Background="Transparent" Command="{Binding Path=DataContext.ConfigCooldownCommand, RelativeSource={RelativeSource AncestorType={x:Type local:CooldownView}}}" CommandParameter="{Binding}">
+              <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding Path=DataContext.ConfigCooldownCommand, RelativeSource={RelativeSource AncestorType={x:Type local:CooldownView}}}" CommandParameter="{Binding}">
                 <iconPacks:PackIconMaterial Kind="Cog" />
               </Button>
-              <Button BorderThickness="0" Background="Transparent" Command="{Binding Path=DataContext.DeleteCooldownCommand, RelativeSource={RelativeSource AncestorType={x:Type local:CooldownView}}}" CommandParameter="{Binding}">
+              <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding Path=DataContext.DeleteCooldownCommand, RelativeSource={RelativeSource AncestorType={x:Type local:CooldownView}}}" CommandParameter="{Binding}">
                 <iconPacks:PackIconMaterial Kind="DeleteForever" />
               </Button>
             </StackPanel>

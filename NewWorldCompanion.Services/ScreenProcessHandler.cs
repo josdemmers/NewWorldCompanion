@@ -179,7 +179,7 @@ namespace NewWorldCompanion.Services
                 (
                   rectangleList[0].MinAreaRect().X + rectangleList[0].MinAreaRect().Width + 5,
                   rectangleList[0].MinAreaRect().Y,
-                  (int)(rectangleList[0].MinAreaRect().Width * 3.25),
+                  (int)(rectangleList[0].MinAreaRect().Width * 3.30),
                   rectangleList[0].MinAreaRect().Height - 25
                 );
 
@@ -191,6 +191,9 @@ namespace NewWorldCompanion.Services
 
                 try
                 {
+                    // Validate width
+                    roiRectangle.Width = (roiRectangle.X + roiRectangle.Width) <= img.Width ? roiRectangle.Width : roiRectangle.Width - (roiRectangle.X + roiRectangle.Width - img.Width);
+
                     crop = new Mat(img, roiRectangle);
                     RoiImage = crop.ToBitmap();
                     _eventAggregator.GetEvent<RoiImageReadyEvent>().Publish();

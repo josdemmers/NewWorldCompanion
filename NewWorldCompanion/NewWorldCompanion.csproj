@@ -52,4 +52,14 @@
     <SplashScreen Include="Images\splash.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config\OcrMappings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

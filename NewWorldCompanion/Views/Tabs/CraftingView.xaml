@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:local="clr-namespace:NewWorldCompanion.Views.Tabs"
              xmlns:converters="clr-namespace:NewWorldCompanion.Converters"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
@@ -108,10 +109,15 @@
                 Orientation="Vertical"
                 Margin="5"
                 Visibility="{Binding SelectedCraftingRecipe, Converter={StaticResource EmptyToVisibilityConverter}}">
-      <CheckBox Content="{Binding SelectedCraftingRecipe.Localisation}"
+      <StackPanel Orientation="Horizontal">
+        <CheckBox Content="{Binding SelectedCraftingRecipe.Localisation}"
                 IsChecked="{Binding SelectedCraftingRecipe.Learned}"
                 Command="{Binding CraftingRecipeLearnedCommand}"
                 CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}"/>
+        <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding CopyRecipeNameCommand}" CommandParameter="{Binding SelectedCraftingRecipe}">
+          <iconPacks:PackIconMaterial Kind="ContentCopy" />
+        </Button>
+      </StackPanel>
       <Label Content="{Binding SelectedCraftingRecipe.Tradeskill}" />
       <Label>
         <Hyperlink Command="{Binding VisitNwdbCommand}" CommandParameter="{Binding SelectedCraftingRecipe.Url}">

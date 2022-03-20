@@ -1,8 +1,13 @@
-﻿using NewWorldCompanion.Events;
+﻿using NewWorldCompanion.Entities;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text.Json;
 using TesserNet;
 
 namespace NewWorldCompanion.Services
@@ -11,6 +16,8 @@ namespace NewWorldCompanion.Services
     {
         private readonly IEventAggregator _eventAggregator;
         private readonly IScreenProcessHandler _screenProcessHandler;
+
+        private List<OcrMapping> _ocrMappings = new List<OcrMapping>();
 
         private bool _isBusy = false;
         private string _ocrText = string.Empty;
@@ -28,6 +35,8 @@ namespace NewWorldCompanion.Services
             // Init services
             _screenProcessHandler = screenProcessHandler;
 
+            // Init ocr mappings
+            UpdateOcrMappings();
         }
 
         #endregion
@@ -55,7 +64,9 @@ namespace NewWorldCompanion.Services
                     {
                         Image image = Image.FromFile(@"ocrimages\itemname.png");
                         Tesseract tesseract = new Tesseract();
-                        OcrText = tesseract.Read(image).Trim().Replace('\n', ' ');
+                        string ocrText = tesseract.Read(image).Trim().Replace('\n', ' ');
+                        var mapping = _ocrMappings.FirstOrDefault(m => m.key.Equals(ocrText), new OcrMapping{ key = ocrText, value = ocrText });
+                        OcrText = mapping.value;
 
                         image.Dispose();
                         tesseract.Dispose();
@@ -77,6 +88,21 @@ namespace NewWorldCompanion.Services
         // Start of Methods region
 
         #region Methods
+
+        private void UpdateOcrMappings()
+        {
+            try
+            {
+                _ocrMappings.Clear();
+                string fileName = "Config/OcrMappings.json";
+                if (File.Exists(fileName))
+                {
+                    using FileStream stream = File.OpenRead(fileName);
+                    _ocrMappings = JsonSerializer.Deserialize<List<OcrMapping>>(stream) ?? new List<OcrMapping>();
+                }
+            }
+            catch (Exception){}
+        }
 
         #endregion
     }

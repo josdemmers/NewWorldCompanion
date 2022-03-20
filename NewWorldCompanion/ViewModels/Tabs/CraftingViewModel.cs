@@ -74,6 +74,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
             // Init View commands
             CraftingRecipeLearnedCommand = new DelegateCommand<object>(CraftingRecipeLearnedExecute);
             VisitNwdbCommand = new DelegateCommand<object>(VisitNwdbExecute);
+            CopyRecipeNameCommand = new DelegateCommand<object>(CopyRecipeNameExecute);
 
             // Init filter views
             CreateCraftingRecipesFilteredView();
@@ -98,6 +99,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
         public DelegateCommand<object> CraftingRecipeLearnedCommand { get; }
         public DelegateCommand<object> VisitNwdbCommand { get; }
+        public DelegateCommand<object> CopyRecipeNameCommand { get; }
 
         public ObservableCollection<CraftingRecipe> CraftingRecipes { get => _craftingRecipes; set => _craftingRecipes = value; }
         public ListCollectionView? CraftingRecipesFiltered { get; private set; }
@@ -247,8 +249,6 @@ namespace NewWorldCompanion.ViewModels.Tabs
             // As the view is accessed by the UI it will need to be created on the UI thread
             Application.Current?.Dispatcher?.Invoke(() =>
             {
-                //TODO Cleanup name. For example Toilvium -> Tolvium
-
                 // Only set filter for recipe items.
                 if (CraftingRecipes.Any(recipe => recipe.Localisation.StartsWith(_ocrHandler.OcrText)))
                 {
@@ -272,6 +272,21 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private void VisitNwdbExecute(object url)
         {
             Process.Start(new ProcessStartInfo(url as string ?? string.Empty) { UseShellExecute = true });
+        }
+
+        private void CopyRecipeNameExecute(object obj)
+        {
+            // Note: New World does not accept the following special characters when using copy/paste: ':', '''.
+            try
+            {
+                var recipe = (CraftingRecipe)obj;
+                string recipeName = recipe.Localisation.Contains(':') ?
+                    recipe.Localisation.Substring(recipe.Localisation.IndexOf(':') + 1) :
+                    recipe.Localisation;
+
+                System.Windows.Clipboard.SetText(recipeName.Trim());
+            }
+            catch (Exception) { }
         }
 
         private void CreateCraftingRecipesFilteredView()

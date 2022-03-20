@@ -201,7 +201,6 @@ namespace NewWorldCompanion.Services
         private void HandleOcrTextReadyEvent()
         {
             _itemName = _ocrHandler.OcrText;
-            //TODO Cleanup name. For example Toilvium -> Tolvium
             if (!_itemName.Equals(_itemNamePrevious))
             {
                 _priceManager.UpdatePriceData(_itemName);
