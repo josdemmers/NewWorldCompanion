@@ -280,9 +280,16 @@ namespace NewWorldCompanion.ViewModels.Tabs
             try
             {
                 var recipe = (CraftingRecipe)obj;
+
+                // Remove ':'
                 string recipeName = recipe.Localisation.Contains(':') ?
                     recipe.Localisation.Substring(recipe.Localisation.IndexOf(':') + 1) :
                     recipe.Localisation;
+
+                // Remove '''
+                recipeName = recipeName.Contains('\'') ?
+                    recipeName.Substring(0, recipeName.IndexOf('\'')) :
+                    recipeName;
 
                 System.Windows.Clipboard.SetText(recipeName.Trim());
             }
