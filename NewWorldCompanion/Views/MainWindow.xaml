@@ -8,7 +8,7 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:converters="clr-namespace:NewWorldCompanion.Converters"
         mc:Ignorable="d"
-        Title="New World Companion" Height="450" Width="800"
+        Title="{Binding WindowTitle}" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
   <Grid>
     <Grid.RowDefinitions>

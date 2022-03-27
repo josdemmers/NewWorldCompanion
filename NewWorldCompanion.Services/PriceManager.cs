@@ -126,6 +126,7 @@ namespace NewWorldCompanion.Services
                                         Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked}");
 
                                         _priceCache[itemName] = nwmarketpriceJson;
+                                        _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Publish();
                                     }
                                 }
                                 else

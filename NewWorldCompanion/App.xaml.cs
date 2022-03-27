@@ -32,6 +32,7 @@ namespace NewWorldCompanion
             containerRegistry.RegisterSingleton<IOverlayHandler, OverlayHandler>();
             containerRegistry.RegisterSingleton<IPriceManager, PriceManager>();
             containerRegistry.RegisterSingleton<ISettingsManager, SettingsManager>();
+            containerRegistry.RegisterSingleton<IVersionManager, VersionManager>();
 
             // Register Metro
             containerRegistry.RegisterSingleton<IDialogCoordinator, DialogCoordinator>();

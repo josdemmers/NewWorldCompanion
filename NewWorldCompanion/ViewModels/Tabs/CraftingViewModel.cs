@@ -25,6 +25,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private readonly ICraftingRecipeManager _craftingRecipeManager;
         private readonly IScreenCaptureHandler _screenCaptureHandler;
         private readonly IOcrHandler _ocrHandler;
+        private readonly IPriceManager _priceManager;
 
         private ObservableCollection<CraftingRecipe> _craftingRecipes = new ObservableCollection<CraftingRecipe>();
 
@@ -55,21 +56,26 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private int _counterJewelcrafting = 0;
         private int _counterWeaponsmithing = 0;
         private string _ItemNameFilter = string.Empty;
+        private string _selectedCraftingRecipePrice = string.Empty;
+        private string _selectedCraftingRecipePriceAvg = string.Empty;
 
         // Start of Constructor region
 
         #region Constructor
 
-        public CraftingViewModel(IEventAggregator eventAggregator, ICraftingRecipeManager craftingRecipeManager, IScreenCaptureHandler screenCaptureHandler, IOcrHandler ocrHandler)
+        public CraftingViewModel(IEventAggregator eventAggregator, ICraftingRecipeManager craftingRecipeManager, IScreenCaptureHandler screenCaptureHandler, IOcrHandler ocrHandler,
+            IPriceManager priceManager)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OcrTextReadyEvent>().Subscribe(HandleOcrTextReadyEvent);
+            _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Subscribe(HandlePriceCacheUpdatedEvent);
 
             // Init services
             _craftingRecipeManager = craftingRecipeManager;
             _screenCaptureHandler = screenCaptureHandler;
             _ocrHandler = ocrHandler;
+            _priceManager = priceManager;
 
             // Init View commands
             CraftingRecipeLearnedCommand = new DelegateCommand<object>(CraftingRecipeLearnedExecute);
@@ -112,7 +118,6 @@ namespace NewWorldCompanion.ViewModels.Tabs
         public BitmapSource? ImageJewelcrafting { get => _imageJewelcrafting; set => SetProperty(ref _imageJewelcrafting, value, () => { RaisePropertyChanged(nameof(ImageJewelcrafting)); }); }
         public BitmapSource? ImageWeaponsmithing { get => _imageWeaponsmithing; set => SetProperty(ref _imageWeaponsmithing, value, () => { RaisePropertyChanged(nameof(ImageWeaponsmithing)); }); }
 
-        public CraftingRecipe SelectedCraftingRecipe { get => _selectedCraftingRecipe; set => SetProperty(ref _selectedCraftingRecipe, value, () => { RaisePropertyChanged(nameof(SelectedCraftingRecipe)); }); }
         public int CounterArcana { get => _counterArcana; set => SetProperty(ref _counterArcana, value, () => { RaisePropertyChanged(nameof(CounterArcana)); }); }
         public int CounterArmoring { get => _counterArmoring; set => SetProperty(ref _counterArmoring, value, () => { RaisePropertyChanged(nameof(CounterArmoring)); }); }
         public int CounterCooking { get => _counterCooking; set => SetProperty(ref _counterCooking, value, () => { RaisePropertyChanged(nameof(CounterCooking)); }); }
@@ -120,6 +125,18 @@ namespace NewWorldCompanion.ViewModels.Tabs
         public int CounterFurnishing { get => _counterFurnishing; set => SetProperty(ref _counterFurnishing, value, () => { RaisePropertyChanged(nameof(CounterFurnishing)); }); }
         public int CounterJewelcrafting { get => _counterJewelcrafting; set => SetProperty(ref _counterJewelcrafting, value, () => { RaisePropertyChanged(nameof(CounterJewelcrafting)); }); }
         public int CounterWeaponsmithing { get => _counterWeaponsmithing; set => SetProperty(ref _counterWeaponsmithing, value, () => { RaisePropertyChanged(nameof(CounterWeaponsmithing)); }); }
+
+        public CraftingRecipe SelectedCraftingRecipe
+        {
+            get => _selectedCraftingRecipe;
+            set
+            {
+                SetProperty(ref _selectedCraftingRecipe, value, () => { RaisePropertyChanged(nameof(SelectedCraftingRecipe)); });
+                RaisePropertyChanged(nameof(SelectedCraftingRecipePrice));
+                RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvg));
+            }
+        }
+
         public string ItemNameFilter
         {
             get => _ItemNameFilter;
@@ -231,6 +248,51 @@ namespace NewWorldCompanion.ViewModels.Tabs
             }
         }
 
+        public string SelectedCraftingRecipePrice
+        { 
+            get
+            {
+                _selectedCraftingRecipePrice = string.Empty;
+
+                if(SelectedCraftingRecipe != null)
+                {
+                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.Localisation);
+                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.Localisation);
+                    if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+                    {
+                        string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
+
+                        _selectedCraftingRecipePrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
+                            nwmarketpriceJson.recent_lowest_price :
+                            $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                    }
+                }
+                return _selectedCraftingRecipePrice;
+            }
+        }
+
+        public string SelectedCraftingRecipePriceAvg
+        {
+            get
+            {
+                _selectedCraftingRecipePriceAvg = string.Empty;
+
+                if (SelectedCraftingRecipe != null)
+                {
+                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.Localisation);
+                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.Localisation);
+                    if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+                    {
+                        string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
+                        _selectedCraftingRecipePriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ?
+                            _selectedCraftingRecipePriceAvg :
+                            $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
+                    }
+                }
+                return _selectedCraftingRecipePriceAvg;
+            }
+        }
+
         #endregion
 
         // Start of Events region
@@ -256,6 +318,13 @@ namespace NewWorldCompanion.ViewModels.Tabs
                 }
             });
         }
+
+        private void HandlePriceCacheUpdatedEvent()
+        {
+            RaisePropertyChanged(nameof(SelectedCraftingRecipePrice));
+            RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvg));
+        }
+
 
         #endregion
 

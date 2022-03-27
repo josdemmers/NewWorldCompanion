@@ -118,6 +118,8 @@
           <iconPacks:PackIconMaterial Kind="ContentCopy" />
         </Button>
       </StackPanel>
+      <Label Content="{Binding SelectedCraftingRecipePrice}" />
+      <Label Content="{Binding SelectedCraftingRecipePriceAvg}" />
       <Label Content="{Binding SelectedCraftingRecipe.Tradeskill}" />
       <Label>
         <Hyperlink Command="{Binding VisitNwdbCommand}" CommandParameter="{Binding SelectedCraftingRecipe.Url}">

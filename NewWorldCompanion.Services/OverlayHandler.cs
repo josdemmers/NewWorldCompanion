@@ -130,8 +130,20 @@ namespace NewWorldCompanion.Services
             NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(itemName);
 
             string infoItemName = itemName;
-            string infoPrice = string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name) ? "Price: Loading..." : $"Price: {nwmarketpriceJson.recent_lowest_price}";
-            string infoPriceDate = string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name) ? string.Empty : nwmarketpriceJson.last_checked;
+            string infoPrice = "Loading...";
+            string infoPriceAvg = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+            {
+                string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
+
+                infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ? 
+                    nwmarketpriceJson.recent_lowest_price : 
+                    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ? 
+                    infoPriceAvg : 
+                    $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
+            }
 
             // Do not show Bind on pickup items.
             if (!_newWorldDataStore.IsBindOnPickup(itemName))
@@ -140,7 +152,7 @@ namespace NewWorldCompanion.Services
                 gfx.ClearScene(_brushes["background"]);
                 gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 20, infoItemName);
                 gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 40, infoPrice);
-                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 60, infoPriceDate);
+                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 60, infoPriceAvg);
                 gfx.DrawRectangle(_brushes["border"], 0, 0, _overlayWidth, _overlayHeigth, 1);
             }
             else
@@ -156,15 +168,27 @@ namespace NewWorldCompanion.Services
             bool learnedStatus = craftingRecipe.Learned;
             string infoItemName = craftingRecipe.Localisation;
             string infoLearned = $"Learned: {learnedStatus}";
-            string infoPrice = string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name) ? "Price: Loading..." : $"Price: {nwmarketpriceJson.recent_lowest_price}";
-            string infoPriceDate = string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name) ? string.Empty : nwmarketpriceJson.last_checked;
+            string infoPrice = "Loading...";
+            string infoPriceAvg = string.Empty;
+
+            if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+            {
+                string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
+
+                infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
+                    nwmarketpriceJson.recent_lowest_price :
+                    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ?
+                    infoPriceAvg :
+                    $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
+            }
 
             var gfx = e.Graphics;
             gfx.ClearScene(_brushes["background"]);
             gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 20, infoItemName);
             gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 40, infoLearned);
             gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 60, infoPrice);
-            gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 80, infoPriceDate);
+            gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 80, infoPriceAvg);
             gfx.DrawRectangle(_brushes["border"], 0, 0, _overlayWidth, _overlayHeigth, 1);
         }
 
