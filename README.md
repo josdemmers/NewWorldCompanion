@@ -16,9 +16,8 @@ A companion app for New World, to keep track of all your learned recipes and cur
 
 - Keep track of your learned recipes.
 - Monitor all your cooldowns.
-- Ingame overlay with price data for tradable items. Supported servers:
-  - Since v1.0.2.0 the server list is updated at each application launch. For the complete list of supported servers check: https://nwmarketprices.com/
-  - Barri, Camelot, Dry Tree, El Dorado
+- Ingame overlay with price data for tradable items.
+  - Supported servers: The server list is updated at each application launch. For the complete list of supported servers check: https://nwmarketprices.com/
 
 ## Planned Features
 
@@ -38,11 +37,11 @@ A companion app for New World, to keep track of all your learned recipes and cur
 
 ## Configuration
 
-Note: Default settings are tested running New World with Window Mode: Fullscreen, at 2560x1440.
+Note: Default settings are tested running New World with Window Mode: Fullscreen.
 
 ### Item tooltips
 
-The app uses the tooltip of an item to read the item name. The default values work with a resolution of 2560x1440. To make it work with other configurations you can tweak the following settings.
+The app uses the tooltip of an item to read the item name. There are configuration presets for the resolutions 1920x1080 and 2560x1440. To make it work with other configurations you can tweak the following settings.
 - Hysteresis thresholds: The lower you set those thresholds the more objects it will detect. This setting is unrelated to your resolution and the default value should work in most cases.
 - Area thresholds: The min and max values for this threshold depend on your resolution. It is used to filter out unrelated objects so that only the item tooltip is recognized. The values are correct when you see a single orange outline around the item icon. As shown in the image below. If you do not see an outline start with the lowest min value and the highest max value. Then increase the min value step-by-step, and decrease the max value step-by-step. Do not keep those settings at their lowest/highest values as that will detect many other objects besides the item tooltip.
 
@@ -89,8 +88,7 @@ If you have selected which server to use for the price data you're done. Start p
 
 ### The configuration page ScreenProcess does not show an orange outline around the item icon.
 
-- The default settings work with a 2560x1440 resolution
-- Use the area threshold sliders if you have another resolution
+- Use the area threshold sliders if you have another resolution than the available presets.
 - Make sure your monitor and ingame resolution are the same.
 
 ## Feature show off
