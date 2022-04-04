@@ -5,6 +5,7 @@ using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace NewWorldCompanion.ViewModels.Tabs.Debug
@@ -89,6 +90,8 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             }
         }
 
+        public object? SelectedPresetConfig { get; set; }
+
         public BitmapSource? ProcessedImage
         {
             get => _processedImage;
@@ -160,8 +163,22 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         private void RestoreDefaultsExecute()
         {
-            AreaLower = EmguConstants.DefaultAreaLower;
-            AreaUpper = EmguConstants.DefaultAreaUpper;
+            switch ((SelectedPresetConfig as ComboBoxItem)?.Content ?? string.Empty)
+            {
+                case "1920x1080":
+                    AreaLower = EmguConstants.Default19201080AreaLower;
+                    AreaUpper = EmguConstants.Default19201080AreaUpper;
+                    break;
+                case "2560x1440":
+                    AreaLower = EmguConstants.Default25601440AreaLower;
+                    AreaUpper = EmguConstants.Default25601440AreaUpper;
+                    break;
+                default:
+                    AreaLower = EmguConstants.Default19201080AreaLower;
+                    AreaUpper = EmguConstants.Default19201080AreaUpper;
+                    break;
+            }
+
             HysteresisLower = EmguConstants.DefaultHysteresisLower;
             HysteresisUpper = EmguConstants.DefaultHysteresisUpper;
         }

@@ -116,6 +116,10 @@ namespace NewWorldCompanion.Services
                             {
                                 string uri = $"https://nwmarketprices.com/0/{ServerId}?cn_id={itemId.ToLower()}";
                                 string json = await _httpClientHandler.GetRequest(uri);
+
+                                Debug.WriteLine($"uri: {uri}");
+                                Debug.WriteLine($"json: {json}");
+
                                 if (!string.IsNullOrWhiteSpace(json))
                                 {
                                     var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json);
