@@ -45,8 +45,8 @@ namespace NewWorldCompanion.Services
         {
             get
             {
-                Version version = Assembly.GetExecutingAssembly().GetName().Version;
-                return version.ToString();
+                Version? version = Assembly.GetExecutingAssembly().GetName().Version;
+                return version?.ToString() ?? string.Empty;
             }
         }
 

@@ -22,6 +22,9 @@
       <TabItem Header="Cooldowns">
         <ContentControl prism:RegionManager.RegionName="CooldownView"/>
       </TabItem>
+      <TabItem Header="Storage">
+        <ContentControl prism:RegionManager.RegionName="StorageView"/>
+      </TabItem>
       <TabItem Header="Config">
         <ContentControl prism:RegionManager.RegionName="ConfigView"/>
       </TabItem>

@@ -12,5 +12,7 @@ namespace NewWorldCompanion.Interfaces
         List<CraftingRecipe> GetCraftingRecipes();
         bool IsBindOnPickup(string itemName);
         string GetItemId(string itemName);
+        MasterItemDefinitionsCraftingJson? GetItem(string itemId);
+        string GetLevenshteinItemName(string itemName);
     }
 }

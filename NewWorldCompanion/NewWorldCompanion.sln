@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWorldCompanion.Entities"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWorldCompanion.Constants", "..\NewWorldCompanion.Constants\NewWorldCompanion.Constants.csproj", "{60207170-63C1-4B48-ACD0-23BF52F48B69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewWorldCompanion.Helpers", "..\NewWorldCompanion.Helpers\NewWorldCompanion.Helpers.csproj", "{8C579F0B-F416-464B-A61C-EB7A6DA3ECFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWorldCompanion.Helpers", "..\NewWorldCompanion.Helpers\NewWorldCompanion.Helpers.csproj", "{8C579F0B-F416-464B-A61C-EB7A6DA3ECFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewWorldCompanion.Events", "..\NewWorldCompanion.Events\NewWorldCompanion.Events.csproj", "{C303697D-767D-4945-B1EE-E0E9F482AEA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWorldCompanion.Events", "..\NewWorldCompanion.Events\NewWorldCompanion.Events.csproj", "{C303697D-767D-4945-B1EE-E0E9F482AEA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewWorldCompanion.Extensions", "..\NewWorldCompanion.Extensions\NewWorldCompanion.Extensions.csproj", "{B3C4645D-19EA-4587-8F17-BD9391891E1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{C303697D-767D-4945-B1EE-E0E9F482AEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C303697D-767D-4945-B1EE-E0E9F482AEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C303697D-767D-4945-B1EE-E0E9F482AEA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C4645D-19EA-4587-8F17-BD9391891E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C4645D-19EA-4587-8F17-BD9391891E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C4645D-19EA-4587-8F17-BD9391891E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C4645D-19EA-4587-8F17-BD9391891E1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

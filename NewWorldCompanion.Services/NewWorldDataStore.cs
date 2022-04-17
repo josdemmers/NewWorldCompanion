@@ -4,6 +4,7 @@ using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -71,7 +72,7 @@ namespace NewWorldCompanion.Services
                     options.Converters.Add(new BoolConverter());
 
                     _masterItemDefinitionsCraftingJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsCraftingJson>>(stream, options) ?? new List<MasterItemDefinitionsCraftingJson>();
-                    _masterItemDefinitionsCraftingJson.RemoveAll(item => item.BindOnPickup);
+                    //_masterItemDefinitionsCraftingJson.RemoveAll(item => item.BindOnPickup);
                 }
             }
 
@@ -106,10 +107,10 @@ namespace NewWorldCompanion.Services
                         string key = loc.Attribute("key")?.Value ?? string.Empty;
                         string value = loc.Value;
 
+                        // TODO Add support for items not in _masterItemDefinitionsCraftingJson
                         if (_masterItemDefinitionsCraftingJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {
                             _itemDefinitionsLocalisation.Add(key.ToLower(), value);
-                            
                         }
                     }
                 }
@@ -145,7 +146,7 @@ namespace NewWorldCompanion.Services
 
         public bool IsBindOnPickup(string itemName)
         {
-            //TODO Needs improvement. Look into more properties like IsTradable, quests, etc.
+            // TODO Needs improvement. Look into more properties like IsTradable, quests, etc.
             var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
             var item = _masterItemDefinitionsCraftingJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             if (item != null)
@@ -164,6 +165,37 @@ namespace NewWorldCompanion.Services
                 return item.ItemID;
             }
             return string.Empty;
+        }
+
+        public MasterItemDefinitionsCraftingJson? GetItem(string itemId)
+        {
+            var item = _masterItemDefinitionsCraftingJson.FirstOrDefault(i => i.ItemID.Equals(itemId, StringComparison.OrdinalIgnoreCase));
+            if (item != null)
+            {
+                return item;
+            }
+            return null;
+        }
+
+        public string GetLevenshteinItemName(string itemName)
+        {
+            int currentDistance = int.MaxValue;
+            string currentItem = string.Empty;
+
+            foreach (var item in _itemDefinitionsLocalisation)
+            {
+                int distance = LevenshteinDistance.Compute(itemName, item.Value);
+                if (distance <= currentDistance)
+                {
+                    currentDistance = distance;
+                    currentItem = item.Value;
+                }
+                if (currentDistance == 0) break;
+            }
+
+            Debug.WriteLine($"Levenshtein. Item: {itemName}, Match: {currentItem}, Distance: {currentDistance}");
+
+            return currentDistance <= 3 ? currentItem : itemName;
         }
 
         #endregion

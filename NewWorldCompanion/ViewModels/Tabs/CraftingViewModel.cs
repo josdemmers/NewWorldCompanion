@@ -55,7 +55,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private int _counterFurnishing = 0;
         private int _counterJewelcrafting = 0;
         private int _counterWeaponsmithing = 0;
-        private string _ItemNameFilter = string.Empty;
+        private string _itemNameFilter = string.Empty;
         private string _selectedCraftingRecipePrice = string.Empty;
         private string _selectedCraftingRecipePriceAvg = string.Empty;
 
@@ -139,10 +139,10 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
         public string ItemNameFilter
         {
-            get => _ItemNameFilter;
+            get => _itemNameFilter;
             set
             {
-                _ItemNameFilter = value;
+                _itemNameFilter = value;
                 RaisePropertyChanged(nameof(ItemNameFilter));
 
                 CraftingRecipesFiltered?.Refresh();

@@ -12,6 +12,10 @@
     "value": "Orichalcum"
   },
   {
+    "key": "Orichaleum Ingot",
+    "value": "Orichalcum Ingot"
+  },
+  {
     "key": "Recipe: Meatioaf",
     "value": "Recipe: Meatloaf"
   },
@@ -50,5 +54,9 @@
   {
     "key": "Toilvium",
     "value": "Tolvium"
+  },
+  {
+    "key": "Umbrali Shard",
+    "value": "Umbral Shard"
   }
 ]

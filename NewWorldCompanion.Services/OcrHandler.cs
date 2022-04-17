@@ -15,6 +15,7 @@ namespace NewWorldCompanion.Services
     public class OcrHandler : IOcrHandler
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly INewWorldDataStore _newWorldDataStore;
         private readonly IScreenProcessHandler _screenProcessHandler;
 
         private List<OcrMapping> _ocrMappings = new List<OcrMapping>();
@@ -26,13 +27,14 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public OcrHandler(IEventAggregator eventAggregator, IScreenProcessHandler screenProcessHandler)
+        public OcrHandler(IEventAggregator eventAggregator, INewWorldDataStore newWorldDataStore, IScreenProcessHandler screenProcessHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OcrImageReadyEvent>().Subscribe(HandleOcrImageReadyEvent);
 
             // Init services
+            _newWorldDataStore = newWorldDataStore;
             _screenProcessHandler = screenProcessHandler;
 
             // Init ocr mappings
@@ -67,6 +69,7 @@ namespace NewWorldCompanion.Services
                         string ocrText = tesseract.Read(image).Trim().Replace('\n', ' ');
                         var mapping = _ocrMappings.FirstOrDefault(m => m.key.Equals(ocrText), new OcrMapping{ key = ocrText, value = ocrText });
                         OcrText = mapping.value;
+                        OcrText = _newWorldDataStore.GetLevenshteinItemName(OcrText);
 
                         image.Dispose();
                         tesseract.Dispose();

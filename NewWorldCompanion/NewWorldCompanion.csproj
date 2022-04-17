@@ -44,6 +44,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NewWorldCompanion.Constants\NewWorldCompanion.Constants.csproj" />
+    <ProjectReference Include="..\NewWorldCompanion.Extensions\NewWorldCompanion.Extensions.csproj" />
     <ProjectReference Include="..\NewWorldCompanion.Interfaces\NewWorldCompanion.Interfaces.csproj" />
     <ProjectReference Include="..\NewWorldCompanion.Services\NewWorldCompanion.Services.csproj" />
   </ItemGroup>

@@ -4,6 +4,7 @@ using NewWorldCompanion.Interfaces;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
+using System;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -37,6 +38,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
             // Init View commands
             RestoreDefaultsCommand = new DelegateCommand(RestoreDefaultsExecute);
+            CopyItemNameCommand = new DelegateCommand(CopyItemNameExecute);
         }
 
         #endregion
@@ -46,6 +48,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         #region Properties
 
         public DelegateCommand RestoreDefaultsCommand { get; }
+        public DelegateCommand CopyItemNameCommand { get; }
 
         public int ThresholdMin
         {
@@ -121,6 +124,15 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         {
             ThresholdMin = EmguConstants.DefaultThresholdMin;
             ThresholdMax = EmguConstants.DefaultThresholdMax;
+        }
+
+        private void CopyItemNameExecute()
+        {
+            try
+            {
+                System.Windows.Clipboard.SetText(ItemName);
+            }
+            catch (Exception) { }
         }
 
         #endregion

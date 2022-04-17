@@ -110,7 +110,8 @@ namespace NewWorldCompanion.Services
                     Task task = Task.Run(async () =>
                     {
                         string itemId = _newWorldDataStore.GetItemId(itemName);
-                        if (!string.IsNullOrWhiteSpace(itemId))
+                        bool isBindOnPickup = _newWorldDataStore.IsBindOnPickup(itemName);
+                        if (!string.IsNullOrWhiteSpace(itemId) && !isBindOnPickup)
                         {
                             try
                             {
