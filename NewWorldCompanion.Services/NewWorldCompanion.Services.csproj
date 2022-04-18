@@ -10,8 +10,12 @@
 
   <ItemGroup>
     <None Remove="Data\CraftingRecipes.json" />
+    <None Remove="Data\HouseItems.json" />
+    <None Remove="Data\javelindata_housingitems.loc.xml" />
     <None Remove="Data\javelindata_itemdefinitions_master.loc.xml" />
     <None Remove="Data\MasterItemDefinitions_Crafting.json" />
+    <None Remove="Data\MasterItemDefinitions_Loot.json" />
+    <None Remove="Data\MasterItemDefinitions_Quest.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,12 +40,16 @@
     <EmbeddedResource Include="Data\CraftingRecipes.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\HouseItems.json" />
+    <EmbeddedResource Include="Data\javelindata_housingitems.loc.xml" />
     <EmbeddedResource Include="Data\javelindata_itemdefinitions_master.loc.xml">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Data\MasterItemDefinitions_Crafting.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\MasterItemDefinitions_Loot.json" />
+    <EmbeddedResource Include="Data\MasterItemDefinitions_Quest.json" />
   </ItemGroup>
 
 </Project>

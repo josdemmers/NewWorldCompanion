@@ -70,14 +70,7 @@ namespace NewWorldCompanion.Services
                 return result != 0 ? result : string.Compare(x.Name, y.Name, StringComparison.Ordinal);
             });
             _items.Clear();
-            _items = new ObservableCollection<Item>(sortedItems);        
-
-            // Sort list
-            //_items.ToList().Sort((x, y) =>
-            //{
-            //    int result = string.Compare(x.Storage, y.Storage, StringComparison.Ordinal);
-            //    return result != 0 ? result : string.Compare(x.Name, y.Name, StringComparison.Ordinal);
-            //});
+            _items = new ObservableCollection<Item>(sortedItems);
 
             SaveStorage();
         }

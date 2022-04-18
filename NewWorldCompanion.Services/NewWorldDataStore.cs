@@ -19,8 +19,9 @@ namespace NewWorldCompanion.Services
     {
         private readonly IEventAggregator _eventAggregator;
 
-        private List<MasterItemDefinitionsCraftingJson> _masterItemDefinitionsCraftingJson = new List<MasterItemDefinitionsCraftingJson>();
+        private List<MasterItemDefinitionsJson> _masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
         private List<CraftingRecipeJson> _craftingRecipesJson = new List<CraftingRecipeJson>();
+        private List<HouseItemsJson> _houseItemsJson = new List<HouseItemsJson>();
         private Dictionary<string, string> _itemDefinitionsLocalisation = new Dictionary<string, string>();
 
         // Start of Constructor region
@@ -42,8 +43,6 @@ namespace NewWorldCompanion.Services
 
         #region Properties
 
-
-
         #endregion
 
         // Start of Methods region
@@ -55,8 +54,9 @@ namespace NewWorldCompanion.Services
             var assembly = Assembly.GetExecutingAssembly();
             string resourcePath = string.Empty;
 
-            // MasterItemDefinitionsCrafting Json
-            _masterItemDefinitionsCraftingJson.Clear();
+            // MasterItemDefinitions Crafting
+            _masterItemDefinitionsJson.Clear();
+            var masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
             resourcePath = "MasterItemDefinitions_Crafting.json";
             resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
             using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
@@ -71,8 +71,50 @@ namespace NewWorldCompanion.Services
                     // register the converter
                     options.Converters.Add(new BoolConverter());
 
-                    _masterItemDefinitionsCraftingJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsCraftingJson>>(stream, options) ?? new List<MasterItemDefinitionsCraftingJson>();
-                    //_masterItemDefinitionsCraftingJson.RemoveAll(item => item.BindOnPickup);
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                    _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
+                }
+            }
+
+            // MasterItemDefinitions Loot
+            masterItemDefinitionsJson.Clear();
+            resourcePath = "MasterItemDefinitions_Loot.json";
+            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
+            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                    _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
+                }
+            }
+
+            // MasterItemDefinitions Quest
+            masterItemDefinitionsJson.Clear();
+            resourcePath = "MasterItemDefinitions_Quest.json";
+            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
+            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                    _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
                 }
             }
 
@@ -89,7 +131,19 @@ namespace NewWorldCompanion.Services
                 }
             }
 
-            // ItemDefinitionsLocalisation Xml
+            // HouseItems Json
+            _houseItemsJson.Clear();
+            resourcePath = "HouseItems.json";
+            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
+            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            {
+                if (stream != null)
+                {
+                    _houseItemsJson = JsonSerializer.Deserialize<List<HouseItemsJson>>(stream) ?? new List<HouseItemsJson>();
+                }
+            }
+
+            // ItemDefinitionsLocalisation
             _itemDefinitionsLocalisation.Clear();
             resourcePath = "javelindata_itemdefinitions_master.loc.xml";
             resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
@@ -107,8 +161,38 @@ namespace NewWorldCompanion.Services
                         string key = loc.Attribute("key")?.Value ?? string.Empty;
                         string value = loc.Value;
 
-                        // TODO Add support for items not in _masterItemDefinitionsCraftingJson
-                        if (_masterItemDefinitionsCraftingJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
+                        // Supported items so far:
+                        // MasterItemDefinitions_Crafting.json
+                        // MasterItemDefinitions_Loot.json
+                        // MasterItemDefinitions_Quest.json
+                        if (_masterItemDefinitionsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
+                        {
+                            _itemDefinitionsLocalisation.Add(key.ToLower(), value);
+                        }
+                    }
+                }
+            }
+
+            // ItemDefinitionsLocalisation - HouseItems
+            resourcePath = "javelindata_housingitems.loc.xml";
+            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
+            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            {
+                if (stream != null)
+                {
+                    var xml = XDocument.Load(stream);
+                    var query = from loc in xml.Descendants()
+                                where loc.Name.LocalName == "string"
+                                select loc;
+
+                    foreach (var loc in query)
+                    {
+                        string key = loc.Attribute("key")?.Value ?? string.Empty;
+                        string value = loc.Value;
+
+                        // Supported items so far:
+                        // HouseItems.json
+                        if (_houseItemsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {
                             _itemDefinitionsLocalisation.Add(key.ToLower(), value);
                         }
@@ -124,8 +208,8 @@ namespace NewWorldCompanion.Services
             {
                 string id = craftingRecipeJson.RequiredAchievementID;
                 string tradeskill = craftingRecipeJson.Tradeskill;
-                string itemId = _masterItemDefinitionsCraftingJson.FirstOrDefault(d => d.SalvageAchievement.Equals(craftingRecipeJson.RequiredAchievementID, StringComparison.OrdinalIgnoreCase))?.ItemID ?? string.Empty;
-                string localisationId = _masterItemDefinitionsCraftingJson.FirstOrDefault(d => d.SalvageAchievement.Equals(craftingRecipeJson.RequiredAchievementID, StringComparison.OrdinalIgnoreCase))?.Name ?? string.Empty;
+                string itemId = _masterItemDefinitionsJson.FirstOrDefault(d => d.SalvageAchievement.Equals(craftingRecipeJson.RequiredAchievementID, StringComparison.OrdinalIgnoreCase))?.ItemID ?? string.Empty;
+                string localisationId = _masterItemDefinitionsJson.FirstOrDefault(d => d.SalvageAchievement.Equals(craftingRecipeJson.RequiredAchievementID, StringComparison.OrdinalIgnoreCase))?.Name ?? string.Empty;
                 string localisation = _itemDefinitionsLocalisation.GetValueOrDefault(localisationId.Trim(new char[] { '@' }).ToLower()) ?? localisationId.Trim(new char[] { '@' });
 
                 if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(tradeskill) &&
@@ -146,12 +230,16 @@ namespace NewWorldCompanion.Services
 
         public bool IsBindOnPickup(string itemName)
         {
-            // TODO Needs improvement. Look into more properties like IsTradable, quests, etc.
             var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
-            var item = _masterItemDefinitionsCraftingJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
+            var item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
+            var houseItem = _houseItemsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             if (item != null)
             {
                 return item.BindOnPickup;
+            }
+            if (houseItem != null)
+            {
+                return houseItem.BindOnPickup;
             }
             return true;
         }
@@ -159,20 +247,30 @@ namespace NewWorldCompanion.Services
         public string GetItemId(string itemName)
         {
             var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
-            var item = _masterItemDefinitionsCraftingJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
+            MasterItemDefinitionsJson? item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
+            HouseItemsJson? houseItem = _houseItemsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             if (item != null)
             {
                 return item.ItemID;
             }
+            if (houseItem != null)
+            {
+                return houseItem.HouseItemID;
+            }
             return string.Empty;
         }
 
-        public MasterItemDefinitionsCraftingJson? GetItem(string itemId)
+        public ItemDefinition? GetItem(string itemId)
         {
-            var item = _masterItemDefinitionsCraftingJson.FirstOrDefault(i => i.ItemID.Equals(itemId, StringComparison.OrdinalIgnoreCase));
+            var item = _masterItemDefinitionsJson.FirstOrDefault(i => i.ItemID.Equals(itemId, StringComparison.OrdinalIgnoreCase));
+            var houseItem = _houseItemsJson.FirstOrDefault(i => i.HouseItemID.Equals(itemId, StringComparison.OrdinalIgnoreCase));
             if (item != null)
             {
                 return item;
+            }
+            if (houseItem != null)
+            {
+                return houseItem;
             }
             return null;
         }
@@ -199,7 +297,6 @@ namespace NewWorldCompanion.Services
         }
 
         #endregion
-
 
     }
 }

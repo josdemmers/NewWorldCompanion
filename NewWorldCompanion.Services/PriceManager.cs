@@ -18,6 +18,8 @@ namespace NewWorldCompanion.Services
         private readonly IHttpClientHandler _httpClientHandler;
         private readonly INewWorldDataStore _newWorldDataStore;
 
+        private readonly object priceRequestLock = new object();
+
         private Dictionary<string, NwmarketpriceJson> _priceCache = new Dictionary<string, NwmarketpriceJson>();
         private List<string> _priceRequestQueue = new List<string>();
         private bool _priceRequestQueueBusy = false;
@@ -104,58 +106,61 @@ namespace NewWorldCompanion.Services
             if (!_priceCache.ContainsKey(itemName))
             {
                 if (!_priceRequestQueue.Contains(itemName)) _priceRequestQueue.Add(itemName);
-                if (!_priceRequestQueueBusy)
+                lock(priceRequestLock)
                 {
-                    _priceRequestQueueBusy = true;
-                    Task task = Task.Run(async () =>
+                    if (!_priceRequestQueueBusy)
                     {
-                        string itemId = _newWorldDataStore.GetItemId(itemName);
-                        bool isBindOnPickup = _newWorldDataStore.IsBindOnPickup(itemName);
-                        if (!string.IsNullOrWhiteSpace(itemId) && !isBindOnPickup)
+                        _priceRequestQueueBusy = true;
+                        Task task = Task.Run(async () =>
                         {
-                            try
+                            string itemId = _newWorldDataStore.GetItemId(itemName);
+                            bool isBindOnPickup = _newWorldDataStore.IsBindOnPickup(itemName);
+                            if (!string.IsNullOrWhiteSpace(itemId) && !isBindOnPickup)
                             {
-                                string uri = $"https://nwmarketprices.com/0/{ServerId}?cn_id={itemId.ToLower()}";
-                                string json = await _httpClientHandler.GetRequest(uri);
-
-                                Debug.WriteLine($"uri: {uri}");
-                                Debug.WriteLine($"json: {json}");
-
-                                if (!string.IsNullOrWhiteSpace(json))
+                                try
                                 {
-                                    var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json);
-                                    if (nwmarketpriceJson != null)
-                                    {
-                                        Debug.WriteLine($"item_name: {nwmarketpriceJson.item_name}");
-                                        Debug.WriteLine($"recent_lowest_price: {nwmarketpriceJson.recent_lowest_price}");
-                                        Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked}");
+                                    string uri = $"https://nwmarketprices.com/0/{ServerId}?cn_id={itemId.ToLower()}";
+                                    string json = await _httpClientHandler.GetRequest(uri);
 
-                                        _priceCache[itemName] = nwmarketpriceJson;
-                                        _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Publish();
+                                    Debug.WriteLine($"uri: {uri}");
+                                    Debug.WriteLine($"json: {json}");
+
+                                    if (!string.IsNullOrWhiteSpace(json))
+                                    {
+                                        var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json);
+                                        if (nwmarketpriceJson != null)
+                                        {
+                                            Debug.WriteLine($"item_name: {nwmarketpriceJson.item_name}");
+                                            Debug.WriteLine($"recent_lowest_price: {nwmarketpriceJson.recent_lowest_price}");
+                                            Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked}");
+
+                                            _priceCache[itemName] = nwmarketpriceJson;
+                                            _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Publish();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        _priceCache[itemName] = new NwmarketpriceJson
+                                        {
+                                            item_name = itemName,
+                                            recent_lowest_price = "no data",
+                                            last_checked = "no data"
+                                        };
                                     }
                                 }
-                                else
-                                {
-                                    _priceCache[itemName] = new NwmarketpriceJson
-                                    {
-                                        item_name = itemName,
-                                        recent_lowest_price = "no data",
-                                        last_checked = "no data"
-                                    };
-                                }
+                                catch (Exception) { };
                             }
-                            catch (Exception){};
-                        }
 
-                        // Always remove from queue, even with exceptions.
-                        _priceRequestQueue.RemoveAll(item => item.Equals(itemName));
-                        _priceRequestQueueBusy = false;
-                        if (_priceRequestQueue.Any())
-                        {
-                            Task.Delay(100).Wait();
-                            UpdatePriceData(_priceRequestQueue.First());
-                        }
-                    });
+                            // Always remove from queue, even with exceptions.
+                            _priceRequestQueue.RemoveAll(item => item.Equals(itemName));
+                            _priceRequestQueueBusy = false;
+                            if (_priceRequestQueue.Any())
+                            {
+                                Task.Delay(100).Wait();
+                                UpdatePriceData(_priceRequestQueue.First());
+                            }
+                        });
+                    }
                 }
             }
         }

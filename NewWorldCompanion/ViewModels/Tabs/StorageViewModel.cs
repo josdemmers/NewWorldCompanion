@@ -176,7 +176,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
                                         // TODO item count
                                         Count = 0,
                                         ItemID = itemId,
-                                        Name = _newWorldDataStore.GetItem(itemId)?.Name ?? string.Empty,
+                                        Name = itemDefinition.Name,
                                         Localisation = _itemName,
                                         Storage = SelectedStorage
                                     });
