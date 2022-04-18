@@ -22,7 +22,7 @@ A companion app for New World, to keep track of all your learned recipes and cur
 ## Planned Features
 
 - [x] Add configuration section to make it easier to setup the app for different resolutions.
-- [ ] Keep track of the storage content of all towns in Aeternum.
+- [x] Keep track of the storage content of all towns in Aeternum.
 - [x] Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
 - [x] Add pricing data for items you hover your mouse over.
 - [x] Add overlay to show recipe learned status directy in-game.
@@ -84,6 +84,14 @@ If you have selected which server to use for the price data you're done. Start p
 3. Reset cooldown timer.
 4. Configure cooldown timer.
 5. Delete cooldown timer.
+
+![Usage-3](./readme/readme-usage3.png)
+
+1. Filter items in storage.
+2. Show/hide preferred storages using checkbox.
+3. Current selected storage.
+4. Remove all items from selected storage.
+5. Toggle item recording for selected storage.
 
 ## Troubleshooting
 
