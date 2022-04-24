@@ -19,6 +19,7 @@ namespace NewWorldCompanion.Services
         private DispatcherTimer _captureTimer = new();
         private DispatcherTimer _coordinatesTimer = new();
         private Bitmap? _currentScreen = null;
+        private Bitmap? _currentScreenMouseArea = null;
         private int _delay = 100;
         private int _delayCoordinates = 100;
         private bool _isActive = true;
@@ -59,6 +60,7 @@ namespace NewWorldCompanion.Services
         #region Properties
 
         public Bitmap? CurrentScreen { get => _currentScreen; set => _currentScreen = value; }
+        public Bitmap? CurrentScreenMouseArea { get => _currentScreenMouseArea; set => _currentScreenMouseArea = value; }
         public int Delay { get => _delay; set => _delay = value; }
         public int DelayCoordinates { get => _delayCoordinates; set => _delayCoordinates = value; }
         public bool IsActive { get => _isActive; set => _isActive = value; }
@@ -118,6 +120,7 @@ namespace NewWorldCompanion.Services
                     if (windowHandle.ToInt64() > 0)
                     {
                         _currentScreen = _screenCapture.GetScreenCaptureMouse(windowHandle, ref _offsetX, ref _offsetY) ?? _currentScreen;
+                        _currentScreenMouseArea = _screenCapture.GetScreenCaptureMouseArea(windowHandle) ?? _currentScreenMouseArea;
                         _eventAggregator.GetEvent<ScreenCaptureReadyEvent>().Publish();
                         valid = true;
 
@@ -171,6 +174,18 @@ namespace NewWorldCompanion.Services
             if (CurrentScreen != null)
             {
                 return Helpers.ScreenCapture.ImageSourceFromBitmap(CurrentScreen);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public BitmapSource? ImageSourceFromScreenCaptureMouseArea()
+        {
+            if (CurrentScreenMouseArea != null)
+            {
+                return Helpers.ScreenCapture.ImageSourceFromBitmap(CurrentScreenMouseArea);
             }
             else
             {

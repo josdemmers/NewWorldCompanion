@@ -52,7 +52,10 @@
     <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
       <Image Height="150" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding ProcessedImage}"/>
       <Image Height="100" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding RoiImage}"/>
-      <Image Height="100" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding OcrImage}"/>
+      <StackPanel Orientation="Horizontal">
+        <Image Height="100" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding OcrImage}"/>
+        <Image Width="100" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding OcrImageCount}"/>
+      </StackPanel>
     </StackPanel>
   </Grid>
 </UserControl>

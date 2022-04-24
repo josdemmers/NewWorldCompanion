@@ -6,6 +6,7 @@ using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -128,6 +129,7 @@ namespace NewWorldCompanion.Services
         private void DrawGraphicsItem(DrawGraphicsEventArgs e, string itemName)
         {
             NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(itemName);
+            NumberStyles style = NumberStyles.AllowDecimalPoint;
 
             string infoItemName = itemName;
             string infoPrice = "Loading...";
@@ -137,9 +139,12 @@ namespace NewWorldCompanion.Services
             {
                 string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
 
-                infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ? 
-                    nwmarketpriceJson.recent_lowest_price : 
-                    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                //infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ? 
+                //    nwmarketpriceJson.recent_lowest_price : 
+                //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
+                    decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2"):
+                $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                 infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ? 
                     infoPriceAvg : 
                     $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
@@ -164,6 +169,7 @@ namespace NewWorldCompanion.Services
         private void DrawGraphicsRecipe(DrawGraphicsEventArgs e, CraftingRecipe craftingRecipe)
         {
             NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(craftingRecipe.Localisation);
+            NumberStyles style = NumberStyles.AllowDecimalPoint;
 
             bool learnedStatus = craftingRecipe.Learned;
             string infoItemName = craftingRecipe.Localisation;
@@ -175,8 +181,11 @@ namespace NewWorldCompanion.Services
             {
                 string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
 
+                //infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
+                //    nwmarketpriceJson.recent_lowest_price :
+                //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                 infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
-                    nwmarketpriceJson.recent_lowest_price :
+                    decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2") :
                     $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                 infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ?
                     infoPriceAvg :

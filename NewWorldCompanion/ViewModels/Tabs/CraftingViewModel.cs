@@ -9,6 +9,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -258,12 +259,16 @@ namespace NewWorldCompanion.ViewModels.Tabs
                 {
                     _priceManager.UpdatePriceData(SelectedCraftingRecipe.Localisation);
                     NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.Localisation);
+                    NumberStyles style = NumberStyles.AllowDecimalPoint;
                     if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
                     {
                         string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
 
+                        //_selectedCraftingRecipePrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
+                        //    nwmarketpriceJson.recent_lowest_price :
+                        //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                         _selectedCraftingRecipePrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
-                            nwmarketpriceJson.recent_lowest_price :
+                            decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2") :
                             $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                     }
                 }

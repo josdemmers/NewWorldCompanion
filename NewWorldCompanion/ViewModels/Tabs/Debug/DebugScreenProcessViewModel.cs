@@ -19,6 +19,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         private BitmapSource? _processedImage = null;
         private BitmapSource? _roiImage = null;
         private BitmapSource? _ocrImage = null;
+        private BitmapSource? _ocrImageCount = null;
 
         // Start of Constructor region
 
@@ -31,6 +32,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             _eventAggregator.GetEvent<ProcessedImageReadyEvent>().Subscribe(HandleProcessedImageReadyEvent);
             _eventAggregator.GetEvent<RoiImageReadyEvent>().Subscribe(HandleRoiImageReadyEvent);
             _eventAggregator.GetEvent<OcrImageReadyEvent>().Subscribe(HandleOcrImageReadyEvent);
+            _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Subscribe(HandleOcrImageCountReadyEvent);
 
             // Init services
             _settingsManager = settingsManager;
@@ -122,6 +124,16 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             }
         }
 
+        public BitmapSource? OcrImageCount
+        {
+            get => _ocrImageCount;
+            set
+            {
+                _ocrImageCount = value;
+                RaisePropertyChanged(nameof(OcrImageCount));
+            }
+        }
+
         #endregion
 
         // Start of Events region
@@ -152,6 +164,15 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             Application.Current?.Dispatcher?.Invoke(() =>
             {
                 OcrImage = Helpers.ScreenCapture.ImageSourceFromBitmap(_screenProcessHandler.OcrImage);
+            });
+        }
+
+        private void HandleOcrImageCountReadyEvent()
+        {
+            // As the view is accessed by the UI it will need to be created on the UI thread
+            Application.Current?.Dispatcher?.Invoke(() =>
+            {
+                OcrImageCount = Helpers.ScreenCapture.ImageSourceFromBitmap(_screenProcessHandler.OcrImageCount);
             });
         }
 

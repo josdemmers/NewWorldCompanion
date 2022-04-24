@@ -14,6 +14,7 @@ namespace NewWorldCompanion.Interfaces
         Bitmap? ProcessedImage { get; }
         Bitmap? RoiImage { get; }
         Bitmap? OcrImage { get; }
+        Bitmap? OcrImageCount { get; }
 
         int OverlayX { get; }
         int OverlayY { get; }

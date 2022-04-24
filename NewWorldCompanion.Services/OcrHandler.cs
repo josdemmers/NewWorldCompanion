@@ -22,6 +22,7 @@ namespace NewWorldCompanion.Services
 
         private bool _isBusy = false;
         private string _ocrText = string.Empty;
+        private string _ocrTextCount = string.Empty;
 
         // Start of Constructor region
 
@@ -32,6 +33,7 @@ namespace NewWorldCompanion.Services
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OcrImageReadyEvent>().Subscribe(HandleOcrImageReadyEvent);
+            _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Subscribe(HandleOcrImageCountReadyEvent);
 
             // Init services
             _newWorldDataStore = newWorldDataStore;
@@ -48,6 +50,7 @@ namespace NewWorldCompanion.Services
         #region Properties
 
         public string OcrText { get => _ocrText; set => _ocrText = value; }
+        public string OcrTextCount { get => _ocrTextCount; set => _ocrTextCount = value; }
 
         #endregion
 
@@ -78,6 +81,34 @@ namespace NewWorldCompanion.Services
                         _eventAggregator.GetEvent<OverlayShowEvent>().Publish();
                     }
                     catch (Exception) 
+                    {
+                        _isBusy = false;
+                    }
+                }
+                _isBusy = false;
+            }
+        }
+
+        private void HandleOcrImageCountReadyEvent()
+        {
+            if (!_isBusy)
+            {
+                _isBusy = true;
+                if (_screenProcessHandler.OcrImage != null)
+                {
+                    try
+                    {
+                        Image image = Image.FromFile(@"ocrimages\itemcount.png");
+                        Tesseract tesseract = new Tesseract();
+                        string ocrText = tesseract.Read(image).Trim().Replace('\n', ' ');
+                        OcrTextCount = ocrText;
+
+                        image.Dispose();
+                        tesseract.Dispose();
+
+                        _eventAggregator.GetEvent<OcrTextCountReadyEvent>().Publish();
+                    }
+                    catch (Exception)
                     {
                         _isBusy = false;
                     }

@@ -27,7 +27,10 @@
       </StackPanel>
     </StackPanel>
     <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
-      <Image Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding CapturedImage}"/>
+      <StackPanel Orientation="Horizontal">
+        <Image Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding CapturedImage}"/>
+        <Image Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding CapturedImageCount}"/>
+      </StackPanel>
       <Image Height="150" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding ProcessedImage}"/>
     </StackPanel>
   </Grid>

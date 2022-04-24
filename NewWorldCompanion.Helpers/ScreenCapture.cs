@@ -94,6 +94,50 @@ namespace NewWorldCompanion.Helpers
             return bitmap;
         }
 
+        public Bitmap? GetScreenCaptureMouseArea(IntPtr windowHandle)
+        {
+            Bitmap? bitmap = null;
+
+            PInvoke.RECT region;
+            PInvoke.User32.GetWindowRect(windowHandle, out region);
+
+            int width = 100;
+            int height = 50;
+
+            PInvoke.User32.CURSORINFO cursorInfo = new PInvoke.User32.CURSORINFO();
+            cursorInfo.cbSize = Marshal.SizeOf(cursorInfo);
+            PInvoke.User32.GetCursorInfo(ref cursorInfo);
+            int xPos = cursorInfo.ptScreenPos.x;
+            int yPos = cursorInfo.ptScreenPos.y;
+
+            var desktopWindowHandle = PInvoke.User32.GetDesktopWindow();
+            var windowDCHandle = PInvoke.User32.GetWindowDC(desktopWindowHandle);
+            var memoryDCHandle = PInvoke.Gdi32.CreateCompatibleDC(windowDCHandle);
+            var bitmapHandle = PInvoke.Gdi32.CreateCompatibleBitmap(windowDCHandle, width, height);
+            var bitmapOldHandle = PInvoke.Gdi32.SelectObject(memoryDCHandle, bitmapHandle);
+
+            xPos = Math.Min(Math.Max(xPos - width / 2, region.left), region.right - width);
+            yPos = Math.Min(Math.Max(yPos, region.top), region.bottom - height);
+            bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle.DangerousGetHandle(), 0, 0, width, height, windowDCHandle.DangerousGetHandle(), xPos, yPos, SRCCOPY | CAPTUREBLT);
+
+            try
+            {
+                if (status)
+                {
+                    bitmap = Image.FromHbitmap(bitmapHandle);
+                }
+            }
+            finally
+            {
+                PInvoke.Gdi32.SelectObject(memoryDCHandle, bitmapOldHandle);
+                PInvoke.Gdi32.DeleteObject(bitmapHandle);
+                PInvoke.Gdi32.DeleteDC(memoryDCHandle);
+                PInvoke.User32.ReleaseDC(desktopWindowHandle, windowDCHandle.DangerousGetHandle());
+            }
+
+            return bitmap;
+        }
+
         public static BitmapSource? ImageSourceFromBitmap(Bitmap? bitmap)
         {
             if (bitmap != null)

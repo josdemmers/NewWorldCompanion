@@ -14,8 +14,8 @@ namespace NewWorldCompanion.Entities
     {
         public string item_name { get; set; } = string.Empty;
         public string last_checked { get; set; } = string.Empty;
-        public string recent_lowest_price { get; set; } = string.Empty;
-        //public double recent_lowest_price { get; set; } = 0.0;
+        //public string recent_lowest_price { get; set; } = string.Empty;
+        public double recent_lowest_price { get; set; } = 0.0;
         public List<object> avg_graph_data { get; set; } = new List<object>();
 
         [JsonIgnore]

@@ -24,8 +24,11 @@ namespace NewWorldCompanion.Services
 
         private bool _isBusy = false;
         private Bitmap? _capturedImage = null;
+        private Bitmap? _capturedImageCount = null;
         private Bitmap? _processedImage = null;
         private Bitmap? _roiImage = null;
+        private Bitmap? _ocrImage = null;
+        private Bitmap? _ocrImageCount = null;
 
         private int _overlayX = 0;
         private int _overlayY = 0;
@@ -61,7 +64,9 @@ namespace NewWorldCompanion.Services
         public int ThresholdMax { get => _settingsManager.Settings.EmguThresholdMax; }
         public Bitmap? ProcessedImage { get => _processedImage; set => _processedImage = value; }
         public Bitmap? RoiImage { get => _roiImage; set => _roiImage = value; }
-        public Bitmap? OcrImage { get => _roiImage; set => _roiImage = value; }
+        //public Bitmap? OcrImage { get => _roiImage; set => _roiImage = value; }
+        public Bitmap? OcrImage { get => _ocrImage; set => _ocrImage = value; }
+        public Bitmap? OcrImageCount { get => _ocrImageCount; set => _ocrImageCount = value; }
         public int OverlayX { get => _overlayX; set => _overlayX = value; }
         public int OverlayY { get => _overlayY; set => _overlayY = value; }
         public int OverlayWidth { get => _overlayWidth; set => _overlayWidth = value; }
@@ -79,8 +84,11 @@ namespace NewWorldCompanion.Services
             {
                 _isBusy = true;
                 _capturedImage = _screenCaptureHandler.CurrentScreen;
+                _capturedImageCount = _screenCaptureHandler.CurrentScreenMouseArea;
                 Image<Bgr, byte> imageCV = _capturedImage.ToImage<Bgr, byte>();
+                Image<Bgr, byte> imageCountCV = _capturedImageCount.ToImage<Bgr, byte>();
 
+                ProcessImageCount(imageCountCV.Mat);
                 ProcessImage(imageCV.Mat);
 
                 _isBusy = false;
@@ -214,6 +222,11 @@ namespace NewWorldCompanion.Services
             }
         }
 
+        private void ProcessImageCount(Mat img)
+        {
+            ProcessImageCountOCR(img);
+        }
+
         private void ProcessImageOCR(Mat img)
         {
             try
@@ -243,6 +256,39 @@ namespace NewWorldCompanion.Services
                 OcrImage = imgFilter.ToBitmap();
                 imgFilter.Save(@"ocrimages\itemname.png");
                 _eventAggregator.GetEvent<OcrImageReadyEvent>().Publish();
+            }
+            catch (Exception) { }
+        }
+
+        private void ProcessImageCountOCR(Mat img)
+        {
+            try
+            {
+                Mat imgFilter = new Mat(img.Size, DepthType.Cv8U, 3);
+
+                // Convert the image to grayscale
+                CvInvoke.CvtColor(img, imgFilter, ColorConversion.Bgr2Gray);
+
+                // Apply threshold
+                //CvInvoke.Threshold(imgFilter, imgFilter, 0, 255, ThresholdType.Otsu);
+                //CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.Binary);
+                CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.BinaryInv);
+
+                // Thinning and Skeletonization
+                //Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new System.Drawing.Size(2, 2), new System.Drawing.Point(-1, -1));
+                //CvInvoke.Erode(imgFilter, imgFilter, element, new System.Drawing.Point(-1, -1), 1, BorderType.Constant, new MCvScalar(255, 255, 255));
+
+                // Filter out the noise
+                //CvInvoke.GaussianBlur(imgFilter, imgFilter, new System.Drawing.Size(0, 0), 1, 0, BorderType.Default);
+
+                if (!Directory.Exists(@"ocrimages\"))
+                {
+                    DirectoryInfo directoryInfo = Directory.CreateDirectory(@"ocrimages\");
+                }
+
+                OcrImageCount = imgFilter.ToBitmap();
+                imgFilter.Save(@"ocrimages\itemcount.png");
+                _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Publish();
             }
             catch (Exception) { }
         }

@@ -1,5 +1,6 @@
 ﻿using NewWorldCompanion.Entities;
 using NewWorldCompanion.Events;
+using NewWorldCompanion.Helpers;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
@@ -127,12 +128,22 @@ namespace NewWorldCompanion.Services
 
                                     if (!string.IsNullOrWhiteSpace(json))
                                     {
-                                        var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json);
+                                        // create the options
+                                        var options = new JsonSerializerOptions()
+                                        {
+                                            WriteIndented = true
+                                        };
+                                        // register the converter
+                                        options.Converters.Add(new DoubleConverter());
+
+                                        var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json, options);
                                         if (nwmarketpriceJson != null)
                                         {
                                             Debug.WriteLine($"item_name: {nwmarketpriceJson.item_name}");
                                             Debug.WriteLine($"recent_lowest_price: {nwmarketpriceJson.recent_lowest_price}");
                                             Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked}");
+
+                                            nwmarketpriceJson.item_name = string.IsNullOrEmpty(nwmarketpriceJson.item_name) ? itemName : nwmarketpriceJson.item_name;
 
                                             _priceCache[itemName] = nwmarketpriceJson;
                                             _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Publish();
@@ -143,7 +154,7 @@ namespace NewWorldCompanion.Services
                                         _priceCache[itemName] = new NwmarketpriceJson
                                         {
                                             item_name = itemName,
-                                            recent_lowest_price = "no data",
+                                            recent_lowest_price = 0.00,
                                             last_checked = "no data"
                                         };
                                     }

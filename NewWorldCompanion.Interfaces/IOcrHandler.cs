@@ -3,5 +3,6 @@
     public interface IOcrHandler
     {
         string OcrText { get; }
+        string OcrTextCount { get; }
     }
 }

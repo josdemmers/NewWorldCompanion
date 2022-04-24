@@ -13,4 +13,8 @@ namespace NewWorldCompanion.Events
     public class OcrImageReadyEvent : PubSubEvent
     {
     }
+
+    public class OcrImageCountReadyEvent : PubSubEvent
+    {
+    }
 }

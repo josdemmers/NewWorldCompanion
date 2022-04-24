@@ -163,6 +163,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
                                 if (item != null)
                                 {
                                     // TODO item count
+                                    //item.Count = int.TryParse(_ocrHandler.OcrTextCount, out int itemCount) ? itemCount : 0;
                                     item.Count = 0;
                                 }
                             }
@@ -174,6 +175,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
                                     Items.Add(new Item()
                                     {
                                         // TODO item count
+                                        //Count = int.TryParse(_ocrHandler.OcrTextCount, out int itemCount) ? itemCount : 0;
                                         Count = 0,
                                         ItemID = itemId,
                                         Name = itemDefinition.Name,

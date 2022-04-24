@@ -29,7 +29,10 @@
     <Button Grid.Row="2" Grid.Column="0" Content="Restore defaults" Command="{Binding RestoreDefaultsCommand}"/>
 
     <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
-      <Image Height="150" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding OcrImage}"/>
+      <StackPanel Orientation="Horizontal">
+        <Image Height="150" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding OcrImage}"/>
+        <Image Width="100" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding OcrImageCount}"/>
+      </StackPanel>
     </StackPanel>
 
     <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
@@ -37,6 +40,13 @@
       <StackPanel Orientation="Horizontal">
         <Label Content="{Binding ItemName}"/>
         <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding CopyItemNameCommand}">
+          <iconPacks:PackIconMaterial Kind="ContentCopy" />
+        </Button>
+      </StackPanel>
+      <Label Content="Item count: "/>
+      <StackPanel Orientation="Horizontal">
+        <Label Content="{Binding ItemCount}"/>
+        <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding CopyItemCountCommand}">
           <iconPacks:PackIconMaterial Kind="ContentCopy" />
         </Button>
       </StackPanel>

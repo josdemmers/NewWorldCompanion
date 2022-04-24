@@ -14,6 +14,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         private readonly IScreenProcessHandler _screenProcessHandler;
 
         private BitmapSource? _capturedImage = null;
+        private BitmapSource? _capturedImageCount = null;
         private BitmapSource? _processedImage = null;
         private string _mouseCoordinates = string.Empty;
         private string _mouseCoordinatesScaled = string.Empty;
@@ -48,6 +49,16 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             {
                 _capturedImage = value;
                 RaisePropertyChanged(nameof(CapturedImage));
+            }
+        }
+
+        public BitmapSource? CapturedImageCount
+        {
+            get => _capturedImageCount;
+            set
+            {
+                _capturedImageCount = value;
+                RaisePropertyChanged(nameof(CapturedImageCount));
             }
         }
 
@@ -93,6 +104,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             Application.Current?.Dispatcher?.Invoke(() =>
             {
                 CapturedImage = _screenCaptureHandler.ImageSourceFromScreenCapture();
+                CapturedImageCount = _screenCaptureHandler.ImageSourceFromScreenCaptureMouseArea();
             });
         }
 
