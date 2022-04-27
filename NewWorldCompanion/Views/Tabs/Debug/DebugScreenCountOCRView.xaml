@@ -48,7 +48,18 @@
     <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5">
       <Label Content="Item count: "/>
       <StackPanel Orientation="Horizontal">
-        <Label Content="{Binding ItemCount}"/>
+        <Label>
+          <Label.Content>
+            <TextBlock>
+              <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} ({1})">
+                  <Binding Path="ItemCount" />
+                  <Binding Path="ItemCountRaw" />
+                </MultiBinding>
+              </TextBlock.Text>
+            </TextBlock>
+          </Label.Content>
+        </Label>
         <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding CopyItemCountCommand}">
           <iconPacks:PackIconMaterial Kind="ContentCopy" />
         </Button>

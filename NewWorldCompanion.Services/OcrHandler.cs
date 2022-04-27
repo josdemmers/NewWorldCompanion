@@ -25,6 +25,7 @@ namespace NewWorldCompanion.Services
 
         private string _ocrText = string.Empty;
         private string _ocrTextCount = string.Empty;
+        private string _ocrTextCountRaw = string.Empty;
 
         // Start of Constructor region
 
@@ -53,6 +54,7 @@ namespace NewWorldCompanion.Services
 
         public string OcrText { get => _ocrText; set => _ocrText = value; }
         public string OcrTextCount { get => _ocrTextCount; set => _ocrTextCount = value; }
+        public string OcrTextCountRaw { get => _ocrTextCountRaw; set => _ocrTextCountRaw = value; }
 
         #endregion
 
@@ -97,7 +99,10 @@ namespace NewWorldCompanion.Services
                         Image image = Image.FromFile(@"ocrimages\itemcount.png");
                         Tesseract tesseract = new Tesseract();
                         string ocrText = tesseract.Read(image).Trim().Replace('\n', ' ');
-                        OcrTextCount = ocrText;
+                        OcrTextCountRaw = ocrText;
+                        // Remove non-numeric characters
+                        ocrText = new string(ocrText.Where(c => char.IsDigit(c)).ToArray());
+                        OcrTextCount = string.IsNullOrWhiteSpace(ocrText) ? OcrTextCount : ocrText;
 
                         image.Dispose();
                         tesseract.Dispose();

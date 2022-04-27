@@ -43,7 +43,7 @@
 
     <DataGrid Grid.Row="3" Grid.Column="0"  ItemsSource="{Binding ItemsFiltered}" AutoGenerateColumns="False">
       <DataGrid.Columns>
-        <!--<DataGridTextColumn Header="Count" Binding="{Binding Count}"/>-->
+        <DataGridTextColumn Header="Count" Binding="{Binding Count}"/>
         <DataGridTextColumn Header="Item" Binding="{Binding Localisation}"/>
         <DataGridTextColumn Header="Location" Binding="{Binding Storage}"/>
       </DataGrid.Columns>

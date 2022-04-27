@@ -9,7 +9,7 @@ namespace NewWorldCompanion.Entities
 {
     public class Item
     {
-        public int Count { get; set; } = 0;
+        public int Count { get; set; } = 1;
         /// <value>Unique identifier for items. Nwdb uses this to identify items</value>
         public string ItemID { get; set; } = string.Empty;
         public string Localisation { get; set; } = string.Empty;

@@ -20,6 +20,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         private readonly IOcrHandler _ocrHandler;
 
         private string _itemCount = string.Empty;
+        private string _itemCountRaw = string.Empty;
         private BitmapSource? _ocrImageCount = null;
         private BitmapSource? _ocrImageCountRaw = null;
 
@@ -64,6 +65,16 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             {
                 _itemCount = value;
                 RaisePropertyChanged(nameof(ItemCount));
+            }
+        }
+
+        public string ItemCountRaw
+        {
+            get => _itemCountRaw;
+            set
+            {
+                _itemCountRaw = value;
+                RaisePropertyChanged(nameof(ItemCountRaw));
             }
         }
 
@@ -169,6 +180,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             Application.Current?.Dispatcher?.Invoke(() =>
             {
                 ItemCount = _ocrHandler.OcrTextCount;
+                ItemCountRaw = _ocrHandler.OcrTextCountRaw;
             });
         }
 

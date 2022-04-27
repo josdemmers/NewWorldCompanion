@@ -162,9 +162,11 @@ namespace NewWorldCompanion.ViewModels.Tabs
                                 var item = Items.FirstOrDefault(i => i.Storage.Equals(SelectedStorage) && i.ItemID.Equals(itemId));
                                 if (item != null)
                                 {
-                                    // TODO item count
-                                    //item.Count = int.TryParse(_ocrHandler.OcrTextCount, out int itemCount) ? itemCount : 0;
-                                    item.Count = 0;
+                                    item.Count = int.TryParse(_ocrHandler.OcrTextCount, out int itemCount) ? itemCount : 1;
+                                    Application.Current?.Dispatcher?.Invoke(() =>
+                                    {
+                                        ItemsFiltered?.Refresh();
+                                    });
                                 }
                             }
                             else
@@ -174,9 +176,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
                                     // Add item
                                     Items.Add(new Item()
                                     {
-                                        // TODO item count
-                                        //Count = int.TryParse(_ocrHandler.OcrTextCount, out int itemCount) ? itemCount : 0;
-                                        Count = 0,
+                                        Count = int.TryParse(_ocrHandler.OcrTextCount, out int itemCount) ? itemCount : 1,
                                         ItemID = itemId,
                                         Name = itemDefinition.Name,
                                         Localisation = _itemName,

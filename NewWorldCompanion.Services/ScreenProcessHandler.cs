@@ -65,6 +65,9 @@ namespace NewWorldCompanion.Services
         public int HysteresisUpper { get => _settingsManager.Settings.EmguHysteresisUpper; }
         public int ThresholdMin { get => _settingsManager.Settings.EmguThresholdMin; }
         public int ThresholdMax { get => _settingsManager.Settings.EmguThresholdMax; }
+        public int ThresholdOcrMaxR { get => _settingsManager.Settings.EmguThresholdMaxR; }
+        public int ThresholdOcrMaxG { get => _settingsManager.Settings.EmguThresholdMaxG; }
+        public int ThresholdOcrMaxB { get => _settingsManager.Settings.EmguThresholdMaxB; }
         public Bitmap? ProcessedImage { get => _processedImage; set => _processedImage = value; }
         public Bitmap? RoiImage { get => _roiImage; set => _roiImage = value; }
         //public Bitmap? OcrImage { get => _roiImage; set => _roiImage = value; }
@@ -270,20 +273,7 @@ namespace NewWorldCompanion.Services
             {
                 Mat imgFilter = new Mat(img.Size, DepthType.Cv8U, 3);
 
-                // Convert the image to grayscale
-                CvInvoke.CvtColor(img, imgFilter, ColorConversion.Bgr2Gray);
-
-                // Apply threshold
-                //CvInvoke.Threshold(imgFilter, imgFilter, 0, 255, ThresholdType.Otsu);
-                //CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.Binary);
-                CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.BinaryInv);
-
-                // Thinning and Skeletonization
-                //Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new System.Drawing.Size(2, 2), new System.Drawing.Point(-1, -1));
-                //CvInvoke.Erode(imgFilter, imgFilter, element, new System.Drawing.Point(-1, -1), 1, BorderType.Constant, new MCvScalar(255, 255, 255));
-
-                // Filter out the noise
-                //CvInvoke.GaussianBlur(imgFilter, imgFilter, new System.Drawing.Size(0, 0), 1, 0, BorderType.Default);
+                CvInvoke.InRange(img, new ScalarArray(new MCvScalar(0, 0, 0)), new ScalarArray(new MCvScalar(ThresholdOcrMaxR, ThresholdOcrMaxG, ThresholdOcrMaxB)), imgFilter);
 
                 if (!Directory.Exists(@"ocrimages\"))
                 {
@@ -294,12 +284,6 @@ namespace NewWorldCompanion.Services
                 OcrImageCount = imgFilter.ToBitmap();
                 img.Save(@"ocrimages\itemcountraw.png");
                 imgFilter.Save(@"ocrimages\itemcount.png");
-
-                if(!File.Exists(@"ocrimages\itemcountdebug.png"))
-                {
-                    img.Save(@"ocrimages\itemcountdebug.png");
-                }
-
                 _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Publish();
             }
             catch (Exception) { }
@@ -319,21 +303,6 @@ namespace NewWorldCompanion.Services
                     Mat imgFilter = new Mat(img.Size, DepthType.Cv8U, 3);
 
                     CvInvoke.InRange(img, new ScalarArray(new MCvScalar(minR, minG, minB)), new ScalarArray(new MCvScalar(maxR, maxG, maxB)), imgFilter);
-
-                    // Convert the image to grayscale
-                    //CvInvoke.CvtColor(img, imgFilter, ColorConversion.Bgr2Gray);
-
-                    // Apply threshold
-                    //CvInvoke.Threshold(imgFilter, imgFilter, 0, 255, ThresholdType.Otsu);
-                    //CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.Binary);
-                    //CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.BinaryInv);
-
-                    // Thinning and Skeletonization
-                    //Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new System.Drawing.Size(2, 2), new System.Drawing.Point(-1, -1));
-                    //CvInvoke.Erode(imgFilter, imgFilter, element, new System.Drawing.Point(-1, -1), 1, BorderType.Constant, new MCvScalar(255, 255, 255));
-
-                    // Filter out the noise
-                    //CvInvoke.GaussianBlur(imgFilter, imgFilter, new System.Drawing.Size(0, 0), 1, 0, BorderType.Default);
 
                     if (!Directory.Exists(@"ocrimages\"))
                     {

@@ -23,5 +23,8 @@ namespace NewWorldCompanion.Entities
         // OCR
         public int EmguThresholdMin { get; set; } = 90;
         public int EmguThresholdMax { get; set; } = 255;
+        public int EmguThresholdMaxR { get; set; } = 200;
+        public int EmguThresholdMaxG { get; set; } = 235;
+        public int EmguThresholdMaxB { get; set; } = 255;
     }
 }

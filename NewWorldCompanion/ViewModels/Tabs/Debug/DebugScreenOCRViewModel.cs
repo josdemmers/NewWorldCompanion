@@ -19,6 +19,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         private string _itemName = string.Empty;
         private string _itemCount = string.Empty;
+        private string _itemCountRaw = string.Empty;
         private BitmapSource? _ocrImage = null;
         private BitmapSource? _ocrImageCount = null;
 
@@ -66,6 +67,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
                 RaisePropertyChanged(nameof(ThresholdMin));
             }
         }
+        
         public int ThresholdMax
         {
             get => _settingsManager.Settings.EmguThresholdMax;
@@ -74,6 +76,39 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
                 _settingsManager.Settings.EmguThresholdMax = value;
                 _settingsManager.SaveSettings();
                 RaisePropertyChanged(nameof(ThresholdMax));
+            }
+        }
+
+        public int ThresholdMaxR
+        {
+            get => _settingsManager.Settings.EmguThresholdMaxR;
+            set
+            {
+                _settingsManager.Settings.EmguThresholdMaxR = value;
+                _settingsManager.SaveSettings();
+                RaisePropertyChanged(nameof(ThresholdMaxR));
+            }
+        }
+
+        public int ThresholdMaxG
+        {
+            get => _settingsManager.Settings.EmguThresholdMaxG;
+            set
+            {
+                _settingsManager.Settings.EmguThresholdMaxG = value;
+                _settingsManager.SaveSettings();
+                RaisePropertyChanged(nameof(ThresholdMaxG));
+            }
+        }
+
+        public int ThresholdMaxB
+        {
+            get => _settingsManager.Settings.EmguThresholdMaxB;
+            set
+            {
+                _settingsManager.Settings.EmguThresholdMaxB = value;
+                _settingsManager.SaveSettings();
+                RaisePropertyChanged(nameof(ThresholdMaxB));
             }
         }
 
@@ -94,6 +129,16 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             {
                 _itemCount = value;
                 RaisePropertyChanged(nameof(ItemCount));
+            }
+        }
+
+        public string ItemCountRaw
+        {
+            get => _itemCountRaw;
+            set
+            {
+                _itemCountRaw = value;
+                RaisePropertyChanged(nameof(ItemCountRaw));
             }
         }
 
@@ -156,6 +201,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             Application.Current?.Dispatcher?.Invoke(() =>
             {
                 ItemCount = _ocrHandler.OcrTextCount;
+                ItemCountRaw = _ocrHandler.OcrTextCountRaw;
             });
         }
 
@@ -169,6 +215,9 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         {
             ThresholdMin = EmguConstants.DefaultThresholdMin;
             ThresholdMax = EmguConstants.DefaultThresholdMax;
+            ThresholdMaxR = EmguConstants.DefaultThresholdMaxR;
+            ThresholdMaxG = EmguConstants.DefaultThresholdMaxG;
+            ThresholdMaxB = EmguConstants.DefaultThresholdMaxB;
         }
 
         private void CopyItemNameExecute()

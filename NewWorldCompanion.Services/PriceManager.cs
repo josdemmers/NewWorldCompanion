@@ -165,9 +165,10 @@ namespace NewWorldCompanion.Services
                             // Always remove from queue, even with exceptions.
                             _priceRequestQueue.RemoveAll(item => item.Equals(itemName));
                             _priceRequestQueueBusy = false;
+                            Task.Delay(100).Wait();
+
                             if (_priceRequestQueue.Any())
                             {
-                                Task.Delay(100).Wait();
                                 UpdatePriceData(_priceRequestQueue.First());
                             }
                         });

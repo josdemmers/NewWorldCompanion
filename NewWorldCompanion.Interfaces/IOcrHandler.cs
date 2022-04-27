@@ -4,5 +4,6 @@
     {
         string OcrText { get; }
         string OcrTextCount { get; }
+        string OcrTextCountRaw { get; }
     }
 }

@@ -14,5 +14,8 @@
         // OCR
         public const int DefaultThresholdMin = 90;
         public const int DefaultThresholdMax = 255;
+        public const int DefaultThresholdMaxR = 200;
+        public const int DefaultThresholdMaxG = 235;
+        public const int DefaultThresholdMaxB = 255;
     }
 }

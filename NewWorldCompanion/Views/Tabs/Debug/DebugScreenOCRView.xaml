@@ -14,9 +14,12 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="200"/>
       <ColumnDefinition Width="Auto"/>
       <ColumnDefinition Width="200"/>
       <ColumnDefinition Width="*"/>
@@ -26,16 +29,24 @@
     <Slider Grid.Row="0" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding ThresholdMin}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
     <Label Grid.Row="1" Grid.Column="0" Content="Max Threshold" />
     <Slider Grid.Row="1" Grid.Column="1" Minimum="0" Maximum="255" Value="{Binding ThresholdMax}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
-    <Button Grid.Row="2" Grid.Column="0" Content="Restore defaults" Command="{Binding RestoreDefaultsCommand}"/>
 
-    <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical">
+    <Label Grid.Row="0" Grid.Column="2" Content="Max Threshold R" />
+    <Slider Grid.Row="0" Grid.Column="3" Minimum="0" Maximum="255" Value="{Binding ThresholdMaxR}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
+    <Label Grid.Row="1" Grid.Column="2" Content="Max Threshold G" />
+    <Slider Grid.Row="1" Grid.Column="3" Minimum="0" Maximum="255" Value="{Binding ThresholdMaxG}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
+    <Label Grid.Row="2" Grid.Column="2" Content="Max Threshold B" />
+    <Slider Grid.Row="2" Grid.Column="3" Minimum="0" Maximum="255" Value="{Binding ThresholdMaxB}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
+
+    <Button Grid.Row="3" Grid.Column="0" Content="Restore defaults" Command="{Binding RestoreDefaultsCommand}"/>
+
+    <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Orientation="Vertical">
       <StackPanel Orientation="Horizontal">
         <Image Height="150" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding OcrImage}"/>
         <Image Width="100" HorizontalAlignment="Left" VerticalAlignment="top" Source="{Binding OcrImageCount}"/>
       </StackPanel>
     </StackPanel>
 
-    <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+    <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5">
       <Label Content="Item name: "/>
       <StackPanel Orientation="Horizontal">
         <Label Content="{Binding ItemName}"/>
@@ -45,7 +56,18 @@
       </StackPanel>
       <Label Content="Item count: "/>
       <StackPanel Orientation="Horizontal">
-        <Label Content="{Binding ItemCount}"/>
+        <Label>
+          <Label.Content>
+            <TextBlock>
+              <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0} ({1})">
+                  <Binding Path="ItemCount" />
+                  <Binding Path="ItemCountRaw" />
+                </MultiBinding>
+              </TextBlock.Text>
+            </TextBlock>
+          </Label.Content>
+        </Label>
         <Button BorderThickness="0" Background="Transparent" Focusable="False" Command="{Binding CopyItemCountCommand}">
           <iconPacks:PackIconMaterial Kind="ContentCopy" />
         </Button>
