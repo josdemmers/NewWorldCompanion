@@ -75,7 +75,7 @@ namespace NewWorldCompanion.Services
                         string ocrText = tesseract.Read(image).Trim().Replace('\n', ' ');
                         var mapping = _ocrMappings.FirstOrDefault(m => m.key.Equals(ocrText), new OcrMapping { key = ocrText, value = ocrText });
                         OcrText = mapping.value;
-                        OcrText = _newWorldDataStore.GetLevenshteinItemName(OcrText);
+                        OcrText = string.IsNullOrWhiteSpace(OcrText) ? string.Empty : _newWorldDataStore.GetLevenshteinItemName(OcrText);
 
                         image.Dispose();
                         tesseract.Dispose();
