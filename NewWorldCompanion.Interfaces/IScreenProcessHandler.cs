@@ -15,10 +15,13 @@ namespace NewWorldCompanion.Interfaces
         Bitmap? RoiImage { get; }
         Bitmap? OcrImage { get; }
         Bitmap? OcrImageCount { get; }
+        Bitmap? OcrImageCountRaw { get; }
 
         int OverlayX { get; }
         int OverlayY { get; }
         int OverlayWidth { get; }
         int OverlayHeigth { get; }
+
+        void ProcessImageCountOCRDebug(int minR, int minG, int minB, int maxR, int maxG, int maxB);
     }
 }

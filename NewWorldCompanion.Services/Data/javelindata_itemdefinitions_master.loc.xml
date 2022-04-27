@@ -869,8 +869,6 @@
 	<string key="0411_0414_StarstoneDiadem_Description">A sparkling crown with a Starstone in the center.</string>
 	<string key="0425_0101_Truffle">Delicious Truffle</string>
 	<string key="0425_0101_Truffle_Description">A heavy, fragrant mushroom used for a variety of delicious purposes</string>
-	<string key="0426_TwistedLifeMagicEssence">Twisted Life Magic Essence</string>
-	<string key="0426_TwistedLifeMagicEssence_Description">A collection of life magic that has somehow gone horribly awry, twisted and tainted.</string>
 	<string key="05_Battle_Plans_Description">Faction War Item</string>
 	<string key="05_Battle_Plans_Mastername">Reekwater Battle Plans</string>
 	<string key="05_Secret_Orders_Description">Faction War Item</string>
@@ -1171,8 +1169,8 @@
 	<string key="0722_0101_WoodenHandle_Description">A sturdy stock of Ironwood to grip when twirling and slashing.</string>
 	<string key="0724_0101_CorruptionTingedFish">Corruption-Tinged Fish</string>
 	<string key="0724_0101_CorruptionTingedFish_Description">A fish touched by the powers of Corruption.</string>
-	<string key="0726_0107_ShardOfMadness" rel_version="DEPRECATED_January_2022">Shard of Madness</string>
-	<string key="0726_0107_ShardOfMadness_description" rel_version="DEPRECATED_January_2022">A pulsating shard from the twisted mind of Isabella De Leon, a tangible piece of her madness.</string>
+	<string key="0726_0107_ShardOfMadness" rel_version="Quest_Expedition_Myrkgard">Shard of Madness</string>
+	<string key="0726_0107_ShardOfMadness_description" rel_version="Quest_Expedition_Myrkgard">A pulsating shard from the twisted mind of Isabella De Leon, a tangible piece of her madness.</string>
 	<string key="0801_0101_BlackPigment">Black Pigment</string>
 	<string key="0801_0101_BlackPigment_Description">A sample of midnight black pigment that can be turned into ink.</string>
 	<string key="0802_0101_AirDragonStatuette">Air Dragon Statuette</string>
@@ -1827,30 +1825,28 @@
 	<string key="1510_1507_EasternRunestone_Description">A runestone that pulses with light and warmth whenever it is brought near drink.</string>
 	<string key="1510_1507_WesternRunestone">Western Runestone</string>
 	<string key="1510_1507_WesternRunestone_Description">A runestone that pulses with light and warmth whenever it is brought near drink.</string>
-	<string key="1524_1515_GemmasBrooch">Gemma's Brooch</string>
-	<string key="1524_1515_GemmasBrooch_Description">A poorly carved cameo of what could be a cluster of grapes, or perhaps a diseased cabbage.</string>
-	<string key="1524_1515_HeartShapedLocket">Heart-Shaped Locket</string>
-	<string key="1524_1515_HeartShapedLocket_Description">The inscription inside reads, "To my beloved Alice, may she always rest close to my heart."</string>
-	<string key="1524_1515_RosariosManifest">Captain Cross's Manifest</string>
-	<string key="1524_1515_RosariosManifest_Description">This manifest contains a full list of all the crew sailing under Captain Cross. And more importantly, it doesn't mention anyone by the name of Santiago Salazar.</string>
-	<string key="1524_1515_SalazarsRing">Salvator's Ring</string>
-	<string key="1524_1515_SalazarsRing_Description">One stone to remember, and two for a promise never broken. \nBut what did this ring promise?</string>
-	<string key="1524_1517_PirateDoubloons">Pirate Doubloons</string>
-	<string key="1524_1517_PirateDoubloons_Description">Twice stolen, these coins attract more trouble than shoals attract shipwrecks.</string>
-	<string key="1525_1518_MyrtilusBow">Myrtilus's Bow</string>
-	<string key="1525_1518_MyrtilusBow_Description">Grown to fit Myrtilus's hand, the strength of oak mixed with the flexibility of willow.</string>
-	<string key="1525_1519_ThornArrows">Thornpoint Arrows</string>
-	<string key="1525_1519_ThornArrows_Description">It is said that once the arrows are embedded, they put down roots, becoming impossible to remove.</string>
-	<string key="1525_1520_NutrientStalks">Nutrient Stalks</string>
-	<string key="1525_1520_NutrientStalks_Description">Filled with everything a growing dryad needs to survive out in the wilds.</string>
-	<string key="1527_1524_PoseidonsBounty">Poseidon's Goblet</string>
-	<string key="1527_1524_PoseidonsBounty_Description">A golden goblet from the deepest depths of the sea, locked in a chest, then forgotten on a lonely spit of land.</string>
-	<string key="1528_1526_SeaGlassCharms">Sea Glass Charms</string>
-	<string key="1528_1526_SeaGlassCharms_Description">Polished by the sea, these charms chime in the breeze, bringing luck enough to weather any storm.</string>
+	<string key="1524_1515_GemmasBrooch" rel_version="Quest_Supplement_Restless">Gemma's Brooch</string>
+	<string key="1524_1515_GemmasBrooch_Description" rel_version="Quest_Supplement_Restless">A poorly carved cameo of what could be a cluster of grapes, or perhaps a diseased cabbage.</string>
+	<string key="1524_1515_HeartShapedLocket" rel_version="Quest_Supplement_Restless">Heart-Shaped Locket</string>
+	<string key="1524_1515_HeartShapedLocket_Description" rel_version="Quest_Supplement_Restless">The inscription inside reads, "To my beloved Alice, may she always rest close to my heart."</string>
+	<string key="1524_1515_RosariosManifest" rel_version="Quest_Supplement_Restless">Captain Cross's Manifest</string>
+	<string key="1524_1515_RosariosManifest_Description" rel_version="Quest_Supplement_Restless">This manifest contains a full list of all the crew sailing under Captain Cross. And more importantly, it doesn't mention anyone by the name of Santiago Salazar.</string>
+	<string key="1524_1515_SalazarsRing" rel_version="Quest_Supplement_Restless">Salvator's Ring</string>
+	<string key="1524_1515_SalazarsRing_Description" rel_version="Quest_Supplement_Restless">One stone to remember, and two for a promise never broken. \nBut what did this ring promise?</string>
+	<string key="1524_1517_PirateDoubloons" rel_version="Quest_Supplement_Restless">Pirate Doubloons</string>
+	<string key="1524_1517_PirateDoubloons_Description" rel_version="Quest_Supplement_Restless">Twice stolen, these coins attract more trouble than shoals attract shipwrecks.</string>
+	<string key="1525_1518_MyrtilusBow" rel_version="Quest_Supplement_Restless">Myrtilus's Bow</string>
+	<string key="1525_1518_MyrtilusBow_Description" rel_version="Quest_Supplement_Restless">Grown to fit Myrtilus's hand, the strength of oak mixed with the flexibility of willow.</string>
+	<string key="1525_1519_ThornArrows" rel_version="Quest_Supplement_Restless">Thornpoint Arrows</string>
+	<string key="1525_1519_ThornArrows_Description" rel_version="Quest_Supplement_Restless">It is said that once the arrows are embedded, they put down roots, becoming impossible to remove.</string>
+	<string key="1525_1520_NutrientStalks" rel_version="Quest_Supplement_Restless">Nutrient Stalks</string>
+	<string key="1525_1520_NutrientStalks_Description" rel_version="Quest_Supplement_Restless">Filled with everything a growing dryad needs to survive out in the wilds.</string>
+	<string key="1527_1524_PoseidonsBounty" rel_version="Quest_Supplement_Restless">Poseidon's Goblet</string>
+	<string key="1527_1524_PoseidonsBounty_Description" rel_version="Quest_Supplement_Restless">A golden goblet from the deepest depths of the sea, locked in a chest, then forgotten on a lonely spit of land.</string>
+	<string key="1528_1526_SeaGlassCharms" rel_version="Quest_Supplement_Restless">Sea Glass Charms</string>
+	<string key="1528_1526_SeaGlassCharms_Description" rel_version="Quest_Supplement_Restless">Polished by the sea, these charms chime in the breeze, bringing luck enough to weather any storm.</string>
 	<string key="1599_1513_HunkOfMeat">Hunk of Meat</string>
 	<string key="1599_1513_HunkOfMeat_Description">A juicy hunk of meat sourced from a Corrupted. Perfect for an Alligator.</string>
-	<string key="1133_Handbill_Description">A printed handbill with a map.</string>
-	<string key="1133_Handbill">Printed Handbill</string>
 	<string key="1hBrokenOarT1_Description">1-Handed.</string>
 	<string key="1hBrokenOarT1_MasterName">Broken Oar</string>
 	<string key="1helementalgauntlet_ice_wintert2_description" rel_version="Event_WinterConvergence_Perm">A suspended ice crystal sends forth blasts of pure winter energy.</string>
@@ -2055,8 +2051,8 @@
 	<string key="1hGauntletIce_SyndicateRank4_MasterName">Syndicate Cabalist Ice Gauntlet</string>
 	<string key="1hGauntletIce_SyndicateRank5_Description">A well-made ice gauntlet for Syndicate Alchemists.</string>
 	<string key="1hGauntletIce_SyndicateRank5_MasterName">Syndicate Alchemist Ice Gauntlet</string>
-	<string key="1hGauntletIce_TaiyingsHeartT4_Description">"Ambition. Loss. Victory. Defeat. The heart endures."</string>
-	<string key="1hGauntletIce_TaiyingsHeartT4_MasterName">Taiyings Heart</string>
+	<string key="1hGauntletIce_TaiyingsHeartT4_Description" rel_version="DS_Mut_Weapon">"Ambition. Loss. Victory. Defeat. The heart endures."</string>
+	<string key="1hGauntletIce_TaiyingsHeartT4_MasterName" rel_version="DS_Mut_Weapon">Taiyings Heart</string>
 	<string key="1hGauntletIce_TheFragmentT5_Description">0</string>
 	<string key="1hGauntletIce_TheFragmentT5_MasterName">The Fragment</string>
 	<string key="1hGauntletIce_ThundersnowT4_Description">"It's rare, but when it happens…it's breathtaking."</string>
@@ -2091,7 +2087,7 @@
 	<string key="1hGauntletIceAngryEarthT2_MasterName">Primeval Ice Gauntlet</string>
 	<string key="1hGauntletIceAngryEarthT3_Description">An Ice Gauntlet that has been used by the Angry Earth for some time.</string>
 	<string key="1hGauntletIceAngryEarthT3_MasterName">Primeval Ice Gauntlet</string>
-	<string key="1hGauntletIceAngryEarthT4_Description">An Ice Gauntlet that has been used by the Angry Earth for some time.</string>
+	<string key="1hGauntletIceAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">An Ice Gauntlet that has been used by the Angry Earth for some time.</string>
 	<string key="1hGauntletIceAngryEarthT4_MasterName">Primeval Ice Gauntlet</string>
 	<string key="1hGauntletIceAngryEarthT5_Description">An Ice Gauntlet that has been used by the Angry Earth for some time.</string>
 	<string key="1hGauntletIceAngryEarthT5_MasterName">Primeval Ice Gauntlet</string>
@@ -2107,7 +2103,7 @@
 	<string key="1hGauntletIceCorruptedT4_MasterName">Defiled Ice Gauntlet</string>
 	<string key="1hGauntletIceCorruptedT5_Description">An Ice Gauntlet that has been used by the Corrupted for some time.</string>
 	<string key="1hGauntletIceCorruptedT5_MasterName">Defiled Ice Gauntlet</string>
-	<string key="1hGauntletIceCraftedDungeon1T3_Description">A replica of an Ice Gauntlet found in the depths of Amrine Temple.</string>
+	<string key="1hGauntletIceCraftedDungeon1T3_Description" rel_version="Event_WinterConvergence_Perm">A replica of an Ice Gauntlet found in the depths of Amrine Temple.</string>
 	<string key="1hGauntletIceCraftedDungeon1T3_MasterName">Amrine Temple Ice Gauntlet</string>
 	<string key="1hGauntletIceCraftedDungeon2T3_Description">A replica of an Ice Gauntlet found in the Shattered Obelisk.</string>
 	<string key="1hGauntletIceCraftedDungeon2T3_MasterName">Obelisk Guard Ice Gauntlet</string>
@@ -2145,8 +2141,8 @@
 	<string key="1hGauntletIceDungeon2T3_MasterName">Obelisk Guard Ice Gauntlet</string>
 	<string key="1hGauntletIceDungeon4T4_Description">An Ice Gauntlet found in The Depths.</string>
 	<string key="1hGauntletIceDungeon4T4_MasterName">Deepwatcher's Ice Gauntlet</string>
-	<string key="1hGauntletIceDungeon5T4_Description">An Ice Gauntlet found in the Dynasty Shipyard</string>
-	<string key="1hGauntletIceDungeon5T4_MasterName">Shipyard Sentinel Ice Gauntlet</string>
+	<string key="1hGauntletIceDungeon5T4_Description" rel_version="DS_Mut_Weapon">An Ice Gauntlet found in the Dynasty Shipyard</string>
+	<string key="1hGauntletIceDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Ice Gauntlet</string>
 	<string key="1hGauntletIceDungeon6T5_Description">An Ice Gauntlet found in the Lazarus Instrumentality.</string>
 	<string key="1hGauntletIceDungeon6T5_MasterName">Lazarus Watcher Ice Gauntlet</string>
 	<string key="1hGauntletIceDungeon7T5_Description">An Ice Gauntlet found in the Garden of Genesis.</string>
@@ -2163,7 +2159,7 @@
 	<string key="1hgauntleticelostelitet4_mastername">Winter's Clutch</string>
 	<string key="1hgauntleticelostelitet5_description">"The cries of the fallen echo in each wintery breath."</string>
 	<string key="1hgauntleticelostelitet5_mastername">Forlorn Wind</string>
-	<string key="1hGauntletIceLostT2_Description">An Ice Gauntlet that has been used by the Lost for some time.</string>
+	<string key="1hGauntletIceLostT2_Description" rel_version="Event_WinterConvergence_Perm">An Ice Gauntlet that has been used by the Lost for some time.</string>
 	<string key="1hGauntletIceLostT2_MasterName">Forsaken Ice Gauntlet</string>
 	<string key="1hGauntletIceLostT3_Description">An Ice Gauntlet that has been used by the Lost for some time.</string>
 	<string key="1hGauntletIceLostT3_MasterName">Forsaken Ice Gauntlet</string>
@@ -2763,7 +2759,7 @@
 	<string key="1hkiteshieldangryearthelitet5_mastername">Dryad Kite Shield</string>
 	<string key="1hKiteShieldAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hKiteShieldAngryEarthT3_MasterName">Primeval Kite Shield</string>
-	<string key="1hKiteShieldAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="1hKiteShieldAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hKiteShieldAngryEarthT4_MasterName">Primeval Kite Shield</string>
 	<string key="1hKiteShieldAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hKiteShieldAngryEarthT5_MasterName">Primeval Kite Shield</string>
@@ -3217,8 +3213,8 @@
 	<string key="1hLongsword_PrimordialEdgeT5_MasterName">Primordial Edge</string>
 	<string key="1hLongsword_PrismaticVistaT2_Description">"Hold it up to the light, I think you'll like what you find."</string>
 	<string key="1hLongsword_PrismaticVistaT2_MasterName">Prismatic Vista</string>
-	<string key="1hLongsword_PromiseofPowerT4_Description">"Do not resist. I possess that which you desire."</string>
-	<string key="1hLongsword_PromiseofPowerT4_MasterName">Promise of Power</string>
+	<string key="1hLongsword_PromiseofPowerT4_Description" rel_version="DS_Mut_Weapon">"Do not resist. I possess that which you desire."</string>
+	<string key="1hLongsword_PromiseofPowerT4_MasterName" rel_version="DS_Mut_Weapon">Promise of Power</string>
 	<string key="1hLongsword_PureOfHeartT2_Description">"Many a knight have crashed against their dragons. Many a knight have failed."</string>
 	<string key="1hLongsword_PureOfHeartT2_MasterName">Pure of Heart</string>
 	<string key="1hLongsword_QuestL23_Description">A well-made weapon. It will serve you as well as it served its previous wielder.</string>
@@ -3423,7 +3419,7 @@
 	<string key="1hLongswordAngryEarthT2_MasterName">Primeval Longsword</string>
 	<string key="1hLongswordAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hLongswordAngryEarthT3_MasterName">Primeval Longsword</string>
-	<string key="1hLongswordAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="1hLongswordAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hLongswordAngryEarthT4_MasterName">Primeval Longsword</string>
 	<string key="1hLongswordAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hLongswordAngryEarthT5_MasterName">Primeval Longsword</string>
@@ -3485,8 +3481,8 @@
 	<string key="1hLongswordDungeon2T3_MasterName">Obelisk Guard Longsword</string>
 	<string key="1hLongswordDungeon4T4_Description">A longsword found in The Depths.</string>
 	<string key="1hLongswordDungeon4T4_MasterName">Deepwatcher Longsword</string>
-	<string key="1hLongswordDungeon5T4_Description">A longsword found while exploring the Dynasty Shipyard.</string>
-	<string key="1hLongswordDungeon5T4_MasterName">Shipyard Sentinel Longsword</string>
+	<string key="1hLongswordDungeon5T4_Description" rel_version="DS_Mut_Weapon">A longsword found while exploring the Dynasty Shipyard.</string>
+	<string key="1hLongswordDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Longsword</string>
 	<string key="1hLongswordDungeon6T5_Description">A longsword found in the Lazarus Instrumentality.</string>
 	<string key="1hLongswordDungeon6T5_MasterName">Lazarus Watcher Longsword</string>
 	<string key="1hLongswordDungeon7T5_Description">A longsword found in the Garden of Genesis.</string>
@@ -3497,7 +3493,7 @@
 	<string key="1hlongsworddynastyelitet5_mastername">Great Measure</string>
 	<string key="1hLongswordFanaticT5_Description">"His eagerness to spread the message of his faith was equal only to his willingness to denouce those who did not share it."</string>
 	<string key="1hLongswordFanaticT5_MasterName">Fanatic's Longsword</string>
-	<string key="1hLongswordGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="1hLongswordGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="1hLongswordGraverobberT4_MasterName">Graverobber's Longsword</string>
 	<string key="1hLongswordGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="1hLongswordGuardianT4_MasterName">Guardian's Longsword</string>
@@ -3509,7 +3505,7 @@
 	<string key="1hlongswordlostelitet4_mastername">Whickering Soul</string>
 	<string key="1hlongswordlostelitet5_description">"This implement of carnage has been patched over a lifetime of slaughter, at times with the very bone of it's victims."</string>
 	<string key="1hlongswordlostelitet5_mastername">Primal Butcher</string>
-	<string key="1hLongswordLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="1hLongswordLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="1hLongswordLostT2_MasterName">Forsaken Longsword</string>
 	<string key="1hLongswordLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="1hLongswordLostT3_MasterName">Forsaken Longsword</string>
@@ -3802,8 +3798,8 @@
 	<string key="1hRapier_QuestL34_MasterName">Adventurer's Rapier</string>
 	<string key="1hRapier_RapierofArcaneTricksT5_Description">"What's up my sleeve? Youll see soon enough."</string>
 	<string key="1hRapier_RapierofArcaneTricksT5_MasterName">Rapier of Arcane Tricks</string>
-	<string key="1hRapier_RapierofForgottenQueensT4_Description">"Buried among the tombs of queens past, forgotten among the masses of generous rulers the realm had known."</string>
-	<string key="1hRapier_RapierofForgottenQueensT4_MasterName">Rapier of Forgotten Queens</string>
+	<string key="1hRapier_RapierofForgottenQueensT4_Description" rel_version="DS_Mut_Weapon">"Buried among the tombs of queens past, forgotten among the masses of generous rulers the realm had known."</string>
+	<string key="1hRapier_RapierofForgottenQueensT4_MasterName" rel_version="DS_Mut_Weapon">Rapier of Forgotten Queens</string>
 	<string key="1hRapier_RapieroftheDarkSwashbucklerT2_Description">"She disappeared as soon as she arrived, leaving a trail of corpses in her wake."</string>
 	<string key="1hRapier_RapieroftheDarkSwashbucklerT2_MasterName">Rapier of the Dark Swashbuckler</string>
 	<string key="1hRapier_RapieroftheGrandChampionT5_Description">"At the end of the melee there was but one person left standing."</string>
@@ -4004,7 +4000,7 @@
 	<string key="1hRapierCorruptedT4_MasterName">Defiled Rapier</string>
 	<string key="1hRapierCorruptedT5_Description">A rapier that was possessed by the Corrupted at some point in time.</string>
 	<string key="1hRapierCorruptedT5_MasterName">Defiled Rapier</string>
-	<string key="1hRapierCraftedDungeon1T3_Description">A replica of a rapier found in the depths of Amrine Temple.</string>
+	<string key="1hRapierCraftedDungeon1T3_Description" rel_version="Event_WinterConvergence_Perm">A replica of a rapier found in the depths of Amrine Temple.</string>
 	<string key="1hRapierCraftedDungeon1T3_MasterName">Amrine Temple Rapier</string>
 	<string key="1hRapierCraftedDungeon2T3_Description">A replica of a rapier found in the Starstone Barrows.</string>
 	<string key="1hRapierCraftedDungeon2T3_MasterName">Obelisk Guard Rapier</string>
@@ -4042,8 +4038,8 @@
 	<string key="1hRapierDungeon2T3_MasterName">Obelisk Guard Rapier</string>
 	<string key="1hRapierDungeon4T4_Description">A rapier found in The Depths.</string>
 	<string key="1hRapierDungeon4T4_MasterName">Deepwatcher Rapier</string>
-	<string key="1hRapierDungeon5T4_Description">A rapier found while exploring the Dynasty Shipyard.</string>
-	<string key="1hRapierDungeon5T4_MasterName">Shipyard Sentinel Rapier</string>
+	<string key="1hRapierDungeon5T4_Description" rel_version="DS_Mut_Weapon">A rapier found while exploring the Dynasty Shipyard.</string>
+	<string key="1hRapierDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Rapier</string>
 	<string key="1hRapierDungeon6T5_Description">A rapier found in the Lazarus Instrumentality.</string>
 	<string key="1hRapierDungeon6T5_MasterName">Lazarus Watcher Rapier</string>
 	<string key="1hRapierDungeon7T5_Description">A rapier found in the Garden of Genesis.</string>
@@ -4170,7 +4166,7 @@
 	<string key="1hRoundShieldAngryEarthT2_MasterName">Primeval Round Shield</string>
 	<string key="1hRoundShieldAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hRoundShieldAngryEarthT3_MasterName">Primeval Round Shield</string>
-	<string key="1hRoundShieldAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="1hRoundShieldAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hRoundShieldAngryEarthT4_MasterName">Primeval Round Shield</string>
 	<string key="1hRoundShieldAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hRoundShieldAngryEarthT5_MasterName">Primeval Round Shield</string>
@@ -4240,7 +4236,7 @@
 	<string key="1hRoundShieldGlassT4_MasterName">Glass Round Shield</string>
 	<string key="1hRoundShieldGlassT5_Description">DESCRIPTION PENDING</string>
 	<string key="1hRoundShieldGlassT5_MasterName">Glass Round Shield</string>
-	<string key="1hRoundShieldGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="1hRoundShieldGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="1hRoundShieldGraverobberT4_MasterName">Graverobber's Round Shield</string>
 	<string key="1hRoundShieldGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="1hRoundShieldGuardianT4_MasterName">Guardian's Round Shield</string>
@@ -4260,7 +4256,7 @@
 	<string key="1hroundshieldlostelitet4_mastername">Barbed Respite</string>
 	<string key="1hroundshieldlostelitet5_description">"Countless ages cannot wear the steely resolve granted by this ediface."</string>
 	<string key="1hroundshieldlostelitet5_mastername">Undaunted Guardian</string>
-	<string key="1hRoundShieldLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="1hRoundShieldLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="1hRoundShieldLostT2_MasterName">Forsaken Round Shield</string>
 	<string key="1hRoundShieldLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="1hRoundShieldLostT3_MasterName">Forsaken Round Shield</string>
@@ -4675,8 +4671,8 @@
 	<string key="1hSwordWavebornT4_MasterName">Waveborn Sword</string>
 	<string key="1hSwordWavebornT5_Description">DESCRIPTION PENDING</string>
 	<string key="1hSwordWavebornT5_MasterName">Waveborn Sword</string>
-	<string key="1hThrowingAxe_AccursedEndT4_Description">"Your destiny was never your own. From the beginning my curse was upon you."</string>
-	<string key="1hThrowingAxe_AccursedEndT4_MasterName">Accursed End</string>
+	<string key="1hThrowingAxe_AccursedEndT4_Description" rel_version="DS_Mut_Weapon">"Your destiny was never your own. From the beginning my curse was upon you."</string>
+	<string key="1hThrowingAxe_AccursedEndT4_MasterName" rel_version="DS_Mut_Weapon">Accursed End</string>
 	<string key="1hThrowingAxe_AdjucatorofPainT4_Description">"Who shall my axe strike? Why must I choose but one of you."</string>
 	<string key="1hThrowingAxe_AdjucatorofPainT4_MasterName">Adjucator of Pain</string>
 	<string key="1hThrowingAxe_AlakazhamsIncantationT5_Description">"The mythical wizard was said to have blessed this hatchet with his power before bestowing it on a brave Ranger."</string>
@@ -4832,8 +4828,8 @@
 	<string key="1hThrowingAxe_DoomsEdgeT5_MasterName">Doom's Edge</string>
 	<string key="1hThrowingAxe_DragonsbloodT2_Description">"Let this token remind you of your history. You are one of us."</string>
 	<string key="1hThrowingAxe_DragonsbloodT2_MasterName">Dragonsblood</string>
-	<string key="1hThrowingAxe_DreadwakeT4_Description">“The feared pirate commander succumbed to the corruption. His ship would appear around the shores of Aeternum, his axe in hand, and all that followed was death and destruction.”</string>
-	<string key="1hThrowingAxe_DreadwakeT4_MasterName">Dreadwake</string>
+	<string key="1hThrowingAxe_DreadwakeT4_Description" rel_version="DS_Mut_Weapon">“The feared pirate commander succumbed to the corruption. His ship would appear around the shores of Aeternum, his axe in hand, and all that followed was death and destruction.”</string>
+	<string key="1hThrowingAxe_DreadwakeT4_MasterName" rel_version="DS_Mut_Weapon">Dreadwake</string>
 	<string key="1hThrowingAxe_DreamhackerT4_Description">"I live more in my dreams than I do in my life."</string>
 	<string key="1hThrowingAxe_DreamhackerT4_MasterName">Dreamhacker</string>
 	<string key="1hThrowingAxe_DunwealdT4_Description">"There are many places that remain sacred to the Dryads. Defending these holy sites is of the utmost importance to them."</string>
@@ -5151,7 +5147,7 @@
 	<string key="1hThrowingAxeAngryEarthT2_MasterName">Primeval Hatchet</string>
 	<string key="1hThrowingAxeAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hThrowingAxeAngryEarthT3_MasterName">Primeval Hatchet</string>
-	<string key="1hThrowingAxeAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="1hThrowingAxeAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hThrowingAxeAngryEarthT4_MasterName">Primeval Hatchet</string>
 	<string key="1hThrowingAxeAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hThrowingAxeAngryEarthT5_MasterName">Primeval Hatchet</string>
@@ -5211,8 +5207,8 @@
 	<string key="1hThrowingAxeDungeon2T3_MasterName">Obelisk Guard Hatchet</string>
 	<string key="1hThrowingAxeDungeon4T4_Description">A hatchet found in The Depths.</string>
 	<string key="1hThrowingAxeDungeon4T4_MasterName">Deepwatcher Hatchet</string>
-	<string key="1hThrowingAxeDungeon5T4_Description">A hatchet found while exploring the Dynasty Shipyard.</string>
-	<string key="1hThrowingAxeDungeon5T4_MasterName">Shipyard Sentinel Hatchet</string>
+	<string key="1hThrowingAxeDungeon5T4_Description" rel_version="DS_Mut_Weapon">A hatchet found while exploring the Dynasty Shipyard.</string>
+	<string key="1hThrowingAxeDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Hatchet</string>
 	<string key="1hThrowingAxeDungeon6T5_Description">A hatchet found in the Lazarus Instrumentality.</string>
 	<string key="1hThrowingAxeDungeon6T5_MasterName">Lazarus Watcher Hatchet</string>
 	<string key="1hThrowingAxeDungeon7T5_Description">A hatchet found in the Garden of Genesis.</string>
@@ -5247,7 +5243,7 @@
 	<string key="1hThrowingAxeGlassT4_MasterName">Glass Hatchet</string>
 	<string key="1hThrowingAxeGlassT5_Description">DESCRIPTION PENDING</string>
 	<string key="1hThrowingAxeGlassT5_MasterName">Glass Hatchet</string>
-	<string key="1hThrowingAxeGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="1hThrowingAxeGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="1hThrowingAxeGraverobberT4_MasterName">Graverobber's Hatchet</string>
 	<string key="1hThrowingAxeGreatCleaveT5_Description">A Hatchet, given as a gift after fighting the Corrupted in Great Cleave.</string>
 	<string key="1hThrowingAxeGreatCleaveT5_MasterName">Great Cleave Chopper</string>
@@ -5267,7 +5263,7 @@
 	<string key="1hthrowingaxelostelitet4_mastername">Farcleaver</string>
 	<string key="1hthrowingaxelostelitet5_description">"This aged blade turns itself in the hand as though it seeks the enemies throat."</string>
 	<string key="1hthrowingaxelostelitet5_mastername">Spinecutter</string>
-	<string key="1hThrowingAxeLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="1hThrowingAxeLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="1hThrowingAxeLostT2_MasterName">Forsaken Hatchet</string>
 	<string key="1hThrowingAxeLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="1hThrowingAxeLostT3_MasterName">Forsaken Hatchet</string>
@@ -5335,7 +5331,7 @@
 	<string key="1hTowerShieldAncientT5_MasterName">Ancient Tower Shield</string>
 	<string key="1htowershieldangryearthelitet5_description">"The tallest oaks shelter the younger trees in the forest, like this shield shelters you."</string>
 	<string key="1htowershieldangryearthelitet5_mastername">Dryad Tower Shield</string>
-	<string key="1hTowerShieldAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="1hTowerShieldAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hTowerShieldAngryEarthT4_MasterName">Primeval Tower Shield</string>
 	<string key="1hTowerShieldAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="1hTowerShieldAngryEarthT5_MasterName">Primeval Tower Shield</string>
@@ -5522,8 +5518,8 @@
 	<string key="2hBow_BowoftheCrystalPalaceT5_MasterName">Bow of the Crystal Palace</string>
 	<string key="2hBow_BowoftheDarkRangerT3_Description">"They saw only a hooded figure with glowing red eyes. The very next moment they found an arrow lodged in their heart."</string>
 	<string key="2hBow_BowoftheDarkRangerT3_MasterName">Bow of the Dark Ranger</string>
-	<string key="2hBow_BowoftheEnchantressT4_Description">"Sing my song and receive my power."</string>
-	<string key="2hBow_BowoftheEnchantressT4_MasterName">Bow of the Enchantress</string>
+	<string key="2hBow_BowoftheEnchantressT4_Description" rel_version="DS_Mut_Weapon">"Sing my song and receive my power."</string>
+	<string key="2hBow_BowoftheEnchantressT4_MasterName" rel_version="DS_Mut_Weapon">Bow of the Enchantress</string>
 	<string key="2hBow_BowoftheShadowsT3_Description">"Do not let the light see what you do in the dark."</string>
 	<string key="2hBow_BowoftheShadowsT3_MasterName">Bow of the Shadows</string>
 	<string key="2hBow_BowoftheWoodsDemonT5_Description">"Spriggans are bastardly beings. Not quite the friendly natural spirits you might be used to."</string>
@@ -5838,8 +5834,8 @@
 	<string key="2hBow_SyndicateRank5_MasterName">Syndicate Alchemist Bow</string>
 	<string key="2hBow_TasteofGriefT4_Description">"Each arrow causes as sharp a pain as an empty stomach, and the weakness that comes from too little food."</string>
 	<string key="2hBow_TasteofGriefT4_MasterName">Taste of Grief</string>
-	<string key="2hBow_TempestsCallT4_Description">"She called for me to find Her, and so I left a trail of blood in my wake as I sought Her out."</string>
-	<string key="2hBow_TempestsCallT4_MasterName">Tempest's Call</string>
+	<string key="2hBow_TempestsCallT4_Description" rel_version="DS_Mut_Weapon">"She called for me to find Her, and so I left a trail of blood in my wake as I sought Her out."</string>
+	<string key="2hBow_TempestsCallT4_MasterName" rel_version="DS_Mut_Weapon">Tempest's Call</string>
 	<string key="2hBow_TerroroftheSeasT5_Description">"Blackbeard's sigil was enough to make ships flee. But once other ships were in range of his arrows, they had no hope of surviving."</string>
 	<string key="2hBow_TerroroftheSeasT5_MasterName">Terror of the Seas</string>
 	<string key="2hBow_TheDemonLordsBowT5_Description">"Ripped from the corpse of a fallen entity, the power this bow exudes overwhelm's you."</string>
@@ -5950,7 +5946,7 @@
 	<string key="2hBowAngryEarthT2_MasterName">Primeval Bow</string>
 	<string key="2hBowAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hBowAngryEarthT3_MasterName">Primeval Bow</string>
-	<string key="2hBowAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="2hBowAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hBowAngryEarthT4_MasterName">Primeval Bow</string>
 	<string key="2hBowAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hBowAngryEarthT5_MasterName">Primeval Bow</string>
@@ -6016,8 +6012,8 @@
 	<string key="2hBowDungeon2T3_MasterName">Obelisk Guard Bow</string>
 	<string key="2hBowDungeon4T4_Description">A bow found in The Depths.</string>
 	<string key="2hBowDungeon4T4_MasterName">Deepwatcher Bow</string>
-	<string key="2hBowDungeon5T4_Description">A bow found while exploring the Dynasty Shipyard.</string>
-	<string key="2hBowDungeon5T4_MasterName">Shipyard Sentinel Bow</string>
+	<string key="2hBowDungeon5T4_Description" rel_version="DS_Mut_Weapon">A bow found while exploring the Dynasty Shipyard.</string>
+	<string key="2hBowDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Bow</string>
 	<string key="2hBowDungeon6T5_Description">A bow found in the Lazarus Instrumentality.</string>
 	<string key="2hBowDungeon6T5_MasterName">Lazarus Watcher Bow</string>
 	<string key="2hBowDungeon7T5_Description">A bow found in the Garden of Genesis.</string>
@@ -6054,7 +6050,7 @@
 	<string key="2hBowGlassT4_MasterName">Glass Bow</string>
 	<string key="2hBowGlassT5_Description">DESCRIPTION PENDING</string>
 	<string key="2hBowGlassT5_MasterName">Glass Bow</string>
-	<string key="2hBowGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="2hBowGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="2hBowGraverobberT4_MasterName">Graverobber's Flatbow</string>
 	<string key="2hBowGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="2hBowGuardianT4_MasterName">Guardian's Flatbow</string>
@@ -6074,7 +6070,7 @@
 	<string key="2hbowlostelitet4_mastername">Iron Briar</string>
 	<string key="2hbowlostelitet5_description">"Faster than the hare, fiercer than the wolf."</string>
 	<string key="2hbowlostelitet5_mastername">Beastcatcher</string>
-	<string key="2hBowLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="2hBowLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hBowLostT2_MasterName">Forsaken Bow</string>
 	<string key="2hBowLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hBowLostT3_MasterName">Forsaken Bow</string>
@@ -6452,8 +6448,8 @@
 	<string key="2hGreataxe_IcestrikerT3_MasterName">Icestriker</string>
 	<string key="2hGreataxe_IceyDecapitatorT5_Description">"Either the cold will kill you or I will."</string>
 	<string key="2hGreataxe_IceyDecapitatorT5_MasterName">Icy Decapitator</string>
-	<string key="2hGreataxe_InnerPeaceT4_Description">"Now that your enemies are dead, I hope you find peace."</string>
-	<string key="2hGreataxe_InnerPeaceT4_MasterName">Inner Peace</string>
+	<string key="2hGreataxe_InnerPeaceT4_Description" rel_version="DS_Mut_Weapon">"Now that your enemies are dead, I hope you find peace."</string>
+	<string key="2hGreataxe_InnerPeaceT4_MasterName" rel_version="DS_Mut_Weapon">Inner Peace</string>
 	<string key="2hGreataxe_InnocenceT5_Description">"What is your sin?"</string>
 	<string key="2hGreataxe_InnocenceT5_MasterName">Innocence</string>
 	<string key="2hGreataxe_InsatiableGreataxeT5_Description">"More... I need more."</string>
@@ -6725,7 +6721,7 @@
 	<string key="2hGreatAxeAngryEarthT2_MasterName">Primeval Great Axe</string>
 	<string key="2hGreatAxeAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hGreatAxeAngryEarthT3_MasterName">Primeval Great Axe</string>
-	<string key="2hGreatAxeAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="2hGreatAxeAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hGreatAxeAngryEarthT4_MasterName">Primeval Great Axe</string>
 	<string key="2hGreatAxeAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hGreatAxeAngryEarthT5_MasterName">Primeval Great Axe</string>
@@ -6789,8 +6785,8 @@
 	<string key="2hGreataxeDungeon2T3_MasterName">Obelisk Guard Great Axe</string>
 	<string key="2hGreataxeDungeon4T4_Description">A great axe found in The Depths.</string>
 	<string key="2hGreataxeDungeon4T4_MasterName">Deepwatcher Great Axe</string>
-	<string key="2hGreataxeDungeon5T4_Description">A great axe found while exploring the Dynasty Shipyard.</string>
-	<string key="2hGreataxeDungeon5T4_MasterName">Shipyard Sentinel Great Axe</string>
+	<string key="2hGreataxeDungeon5T4_Description" rel_version="DS_Mut_Weapon">A great axe found while exploring the Dynasty Shipyard.</string>
+	<string key="2hGreataxeDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Great Axe</string>
 	<string key="2hGreataxeDungeon6T5_Description">A great axe found in the Lazarus Instrumentality.</string>
 	<string key="2hGreataxeDungeon6T5_MasterName">Lazarus Watcher Great Axe</string>
 	<string key="2hGreataxeDungeon7T5_Description">A great axe found in the Garden of Genesis.</string>
@@ -6827,7 +6823,7 @@
 	<string key="2hGreatAxeGlassT5_MasterName">Glass Great Axe</string>
 	<string key="2hGreatAxeGoldenAxeperienceT4_Description">"All that glitters is the keen edge of a great axe at your enemy's throat."</string>
 	<string key="2hGreatAxeGoldenAxeperienceT4_MasterName">Golden Axeperience</string>
-	<string key="2hGreataxeGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="2hGreataxeGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="2hGreataxeGraverobberT4_MasterName">Graverobber's Great Axe</string>
 	<string key="2hGreataxeGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="2hGreataxeGuardianT4_MasterName">Guardian's Great Axe</string>
@@ -6847,7 +6843,7 @@
 	<string key="2hgreataxelostelitet4_mastername">Timeworn Executioner</string>
 	<string key="2hgreataxelostelitet5_description">"A doom as inevitable as the tick of a deadly clock."</string>
 	<string key="2hgreataxelostelitet5_mastername">Pendulous Foe</string>
-	<string key="2hGreatAxeLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="2hGreatAxeLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hGreatAxeLostT2_MasterName">Forsaken Great Axe</string>
 	<string key="2hGreatAxeLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hGreatAxeLostT3_MasterName">Forsaken Great Axe</string>
@@ -6941,8 +6937,8 @@
 	<string key="2hKiteShieldDungeon2T3_MasterName">Obelisk Guard Kite Shield</string>
 	<string key="2hKiteShieldDungeon4T4_Description">A kite shield found in The Depths.</string>
 	<string key="2hKiteShieldDungeon4T4_MasterName">Deepwatcher Kite Shield</string>
-	<string key="2hKiteShieldDungeon5T4_Description">A kite shield found while exploring the Dynasty Shipyard.</string>
-	<string key="2hKiteShieldDungeon5T4_MasterName">Shipyard Sentinel Kite Shield</string>
+	<string key="2hKiteShieldDungeon5T4_Description" rel_version="DS_Mut_Weapon">A kite shield found while exploring the Dynasty Shipyard.</string>
+	<string key="2hKiteShieldDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Kite Shield</string>
 	<string key="2hKiteShieldDungeon6T5_Description">A kite shield found in the Lazarus Instrumentality.</string>
 	<string key="2hKiteShieldDungeon6T5_MasterName">Lazarus Watcher Kite Shield</string>
 	<string key="2hKiteShieldDungeon7T5_Description">A kite shield found in the Garden of Genesis.</string>
@@ -7269,8 +7265,8 @@
 	<string key="2hMusket_LittleSimonsBBGunT3_MasterName">Little Simon's BB Gun</string>
 	<string key="2hMusket_LongLostMusketT2_Description">"I knew I had left you somewhere!"</string>
 	<string key="2hMusket_LongLostMusketT2_MasterName">Long Lost Musket</string>
-	<string key="2hMusket_MadmansHeadhunterT4_Description">"None are safe when the madman is on the loose."</string>
-	<string key="2hMusket_MadmansHeadhunterT4_MasterName">Madman's Headhunter</string>
+	<string key="2hMusket_MadmansHeadhunterT4_Description" rel_version="DS_Mut_Weapon">"None are safe when the madman is on the loose."</string>
+	<string key="2hMusket_MadmansHeadhunterT4_MasterName" rel_version="DS_Mut_Weapon">Madman's Headhunter</string>
 	<string key="2hMusket_MagisEmissaryT5_Description">"We come in peace. Do not mistake that for weakness."</string>
 	<string key="2hMusket_MagisEmissaryT5_MasterName">Magi's Emissary</string>
 	<string key="2hMusket_MagmaLoadedRifleT3_Description">"My bullets will pierce your skin and you will beg for mercy."</string>
@@ -7513,7 +7509,7 @@
 	<string key="2hMusketAngryEarthT2_MasterName">Primeval Musket</string>
 	<string key="2hMusketAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hMusketAngryEarthT3_MasterName">Primeval Musket</string>
-	<string key="2hMusketAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="2hMusketAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hMusketAngryEarthT4_MasterName">Primeval Musket</string>
 	<string key="2hmusketangryeartht5_description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hmusketangryeartht5_mastername">Primeval Musket</string>
@@ -7577,8 +7573,8 @@
 	<string key="2hMusketDungeon2T3_MasterName">Obelisk Guard Musket</string>
 	<string key="2hMusketDungeon4T4_Description">A musket found in The Depths.</string>
 	<string key="2hMusketDungeon4T4_MasterName">Deepwatcher Musket</string>
-	<string key="2hMusketDungeon5T4_Description">A musket found while exploring the Dynasty Shipyard.</string>
-	<string key="2hMusketDungeon5T4_MasterName">Shipyard Sentinel Musket</string>
+	<string key="2hMusketDungeon5T4_Description" rel_version="DS_Mut_Weapon">A musket found while exploring the Dynasty Shipyard.</string>
+	<string key="2hMusketDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Musket</string>
 	<string key="2hMusketDungeon6T5_Description">A musket found in the Lazarus Instrumentality.</string>
 	<string key="2hMusketDungeon6T5_MasterName">Lazarus Watcher Musket</string>
 	<string key="2hMusketDungeon7T5_Description">A musket found in the Garden of Genesis.</string>
@@ -7613,7 +7609,7 @@
 	<string key="2hMusketGlassT4_MasterName">Glass Musket</string>
 	<string key="2hMusketGlassT5_Description">DESCRIPTION PENDING</string>
 	<string key="2hMusketGlassT5_MasterName">Glass Musket</string>
-	<string key="2hMusketGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="2hMusketGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="2hMusketGraverobberT4_MasterName">Graverobber's Musket</string>
 	<string key="2hMusketGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="2hMusketGuardianT4_MasterName">Guardian's Musket</string>
@@ -7633,7 +7629,7 @@
 	<string key="2hmusketlostelitet4_mastername">Distant Sovereignity</string>
 	<string key="2hmusketlostelitet5_description">"A warrior announces his intent with a shout."</string>
 	<string key="2hmusketlostelitet5_mastername">Thunderous Rebuff</string>
-	<string key="2hMusketLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="2hMusketLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hMusketLostT2_MasterName">Forsaken Musket</string>
 	<string key="2hMusketLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hMusketLostT3_MasterName">Forsaken Musket</string>
@@ -7721,8 +7717,8 @@
 	<string key="2hRoundShieldDungeon2T3_MasterName">Obelisk Guard Round Shield</string>
 	<string key="2hRoundShieldDungeon4T4_Description">A round shield found in The Depths.</string>
 	<string key="2hRoundShieldDungeon4T4_MasterName">Deepwatcher Round Shield</string>
-	<string key="2hRoundShieldDungeon5T4_Description">A round shield found whie exploring the Dynasty Shipyard.</string>
-	<string key="2hRoundShieldDungeon5T4_MasterName">Shipyard Sentinel Round Shield</string>
+	<string key="2hRoundShieldDungeon5T4_Description" rel_version="DS_Mut_Weapon">A round shield found whie exploring the Dynasty Shipyard.</string>
+	<string key="2hRoundShieldDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Round Shield</string>
 	<string key="2hRoundShieldDungeon6T5_Description">A round shield found in the Lazarus Instrumentality.</string>
 	<string key="2hRoundShieldDungeon6T5_MasterName">Lazarus Watcher Round Shield</string>
 	<string key="2hRoundShieldDungeon7T5_Description">A round shield found in the Garden of Genesis.</string>
@@ -7845,8 +7841,8 @@
 	<string key="2hSpear_FallenFriendT4_MasterName">Fallen Friend</string>
 	<string key="2hSpear_FarmersHopeT5_Description">"Bandits descended on the farm, prepared to steal all the farmer had worked to grow. She gripped her trusty friend and prepared to fight."</string>
 	<string key="2hSpear_FarmersHopeT5_MasterName">Farmer's Hope</string>
-	<string key="2hSpear_FarseersSpearT4_Description">"Gaze into my crystals and see your future."</string>
-	<string key="2hSpear_FarseersSpearT4_MasterName">Farseer's Spear</string>
+	<string key="2hSpear_FarseersSpearT4_Description" rel_version="DS_Mut_Weapon">"Gaze into my crystals and see your future."</string>
+	<string key="2hSpear_FarseersSpearT4_MasterName" rel_version="DS_Mut_Weapon">Farseer's Spear</string>
 	<string key="2hSpear_FlawlessGrandmastersSpearT5_Description">"To become a grandmaster spearman requires decades of training and dedication. When one achieves such an unparalleled feat they are given a spear crafted by the finest artisans of Aeternum."</string>
 	<string key="2hSpear_FlawlessGrandmastersSpearT5_MasterName">Flawless Grandmaster's Spear</string>
 	<string key="2hSpear_FootmansRoyalPikeT3_Description">"A standard issue pike for the royal guard, the craftsmanship of this weapon is immaculate."</string>
@@ -8170,7 +8166,7 @@
 	<string key="2hSpearAngryEarthT2_MasterName">Primeval Spear</string>
 	<string key="2hSpearAngryEarthT3_Description">A spear that appears to have been wielded by the Angry Earth at some point.</string>
 	<string key="2hSpearAngryEarthT3_MasterName">Primeval Spear</string>
-	<string key="2hSpearAngryEarthT4_Description">A spear that appears to have been wielded by the Angry Earth at some point.</string>
+	<string key="2hSpearAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A spear that appears to have been wielded by the Angry Earth at some point.</string>
 	<string key="2hSpearAngryEarthT4_MasterName">Primeval Spear</string>
 	<string key="2hSpearAngryEarthT5_Description">A spear that appears to have been wielded by the Angry Earth at some point.</string>
 	<string key="2hSpearAngryEarthT5_MasterName">Primeval Spear</string>
@@ -8192,7 +8188,7 @@
 	<string key="2hSpearCorruptedT4_MasterName">Defiled Spear</string>
 	<string key="2hSpearCorruptedT5_Description">A spear that appears to have been wielded by the Corrupted at some point.</string>
 	<string key="2hSpearCorruptedT5_MasterName">Defiled Spear</string>
-	<string key="2hSpearCraftedDungeon1T3_Description">A replica of a spear found in the depths of Amrine Temple.</string>
+	<string key="2hSpearCraftedDungeon1T3_Description" rel_version="Event_WinterConvergence_Perm">A replica of a spear found in the depths of Amrine Temple.</string>
 	<string key="2hSpearCraftedDungeon1T3_MasterName">Amrine Temple Spear</string>
 	<string key="2hSpearCraftedDungeon2T3_Description">A replica of a spear found in the Starstone Barrows.</string>
 	<string key="2hSpearCraftedDungeon2T3_MasterName">Obelisk Guard Spear</string>
@@ -8230,8 +8226,8 @@
 	<string key="2hSpearDungeon2T3_MasterName">Obelisk Guard Spear</string>
 	<string key="2hSpearDungeon4T4_Description">A spear found in The Depths.</string>
 	<string key="2hSpearDungeon4T4_MasterName">Deepwatcher Spear</string>
-	<string key="2hSpearDungeon5T4_Description">A spear found while exploring the Dynasty Shipyard.</string>
-	<string key="2hSpearDungeon5T4_MasterName">Shipyard Sentinel Spear</string>
+	<string key="2hSpearDungeon5T4_Description" rel_version="DS_Mut_Weapon">A spear found while exploring the Dynasty Shipyard.</string>
+	<string key="2hSpearDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Spear</string>
 	<string key="2hSpearDungeon6T5_Description">A spear found in the Lazarus Instrumentality.</string>
 	<string key="2hSpearDungeon6T5_MasterName">Lazarus Watcher Spear</string>
 	<string key="2hSpearDungeon7T5_Description">A spear found in the Garden of Genesis.</string>
@@ -8282,7 +8278,7 @@
 	<string key="2hspearlostelitet4_mastername">Inelegant Barb</string>
 	<string key="2hspearlostelitet5_description">"Few escape the malign strike of the Devil's brochette."</string>
 	<string key="2hspearlostelitet5_mastername">Reaper's Lance</string>
-	<string key="2hSpearLostT2_Description">A spear that appears to have been wielded by the Lost at some point.</string>
+	<string key="2hSpearLostT2_Description" rel_version="Event_WinterConvergence_Perm">A spear that appears to have been wielded by the Lost at some point.</string>
 	<string key="2hSpearLostT2_MasterName">Forsaken Spear</string>
 	<string key="2hSpearLostT3_Description">A spear that appears to have been wielded by the Lost at some point.</string>
 	<string key="2hSpearLostT3_MasterName">Forsaken Spear</string>
@@ -8499,8 +8495,8 @@
 	<string key="2hStaffFire_FlamesoftheBreachT5_MasterName">Flames of the Breach</string>
 	<string key="2hStaffFire_FlameswornGreatStaffT5_Description">"A hulking staff of the flamesworn mages."</string>
 	<string key="2hStaffFire_FlameswornGreatStaffT5_MasterName">Flamesworn Great Staff</string>
-	<string key="2hStaffFire_FlamewakeT4_Description">"All that remains in my path is ash and dust."</string>
-	<string key="2hStaffFire_FlamewakeT4_MasterName">Flamewake</string>
+	<string key="2hStaffFire_FlamewakeT4_Description" rel_version="DS_Mut_Weapon">"All that remains in my path is ash and dust."</string>
+	<string key="2hStaffFire_FlamewakeT4_MasterName" rel_version="DS_Mut_Weapon">Flamewake</string>
 	<string key="2hStaffFire_FlamewhisperT3_Description">"The subtlest spark can grow into the most powerful fire."</string>
 	<string key="2hStaffFire_FlamewhisperT3_MasterName">Flamewhisper</string>
 	<string key="2hStaffFire_FlamingBranchT3_Description">"A massive branch with an everburning flame affixed to the end."</string>
@@ -8771,7 +8767,7 @@
 	<string key="2hStaffFireAngryEarthT2_MasterName">Primeval Fire Staff</string>
 	<string key="2hStaffFireAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hStaffFireAngryEarthT3_MasterName">Primeval Fire Staff</string>
-	<string key="2hStaffFireAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="2hStaffFireAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hStaffFireAngryEarthT4_MasterName">Primeval Fire Staff</string>
 	<string key="2hStaffFireAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hStaffFireAngryEarthT5_MasterName">Primeval Fire Staff</string>
@@ -8831,8 +8827,8 @@
 	<string key="2hStaffFireDungeon2T3_MasterName">Obelisk Guard Fire Staff</string>
 	<string key="2hStaffFireDungeon4T4_Description">A fire staff found in The Depths.</string>
 	<string key="2hStaffFireDungeon4T4_MasterName">Deepwatcher Fire Staff</string>
-	<string key="2hStaffFireDungeon5T4_Description">A fire staff found while exploring the Dynasty Shipyard.</string>
-	<string key="2hStaffFireDungeon5T4_MasterName">Shipyard Sentinel Fire Staff</string>
+	<string key="2hStaffFireDungeon5T4_Description" rel_version="DS_Mut_Weapon">A fire staff found while exploring the Dynasty Shipyard.</string>
+	<string key="2hStaffFireDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Fire Staff</string>
 	<string key="2hStaffFireDungeon6T5_Description">A fire staff found in the Lazarus Instrumentality.</string>
 	<string key="2hStaffFireDungeon6T5_MasterName">Lazarus Watcher Fire Staff</string>
 	<string key="2hStaffFireDungeon7T5_Description">A fire staff found in the Garden of Genesis.</string>
@@ -8867,7 +8863,7 @@
 	<string key="2hStaffFireGlassT4_MasterName">Glass Fire Staff</string>
 	<string key="2hStaffFireGlassT5_Description">DESCRIPTION PENDING</string>
 	<string key="2hStaffFireGlassT5_MasterName">Glass Fire Staff</string>
-	<string key="2hStaffFireGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="2hStaffFireGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="2hStaffFireGraverobberT4_MasterName">Graverobber's Fire Staff</string>
 	<string key="2hStaffFireGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="2hStaffFireGuardianT4_MasterName">Guardian's Fire Staff</string>
@@ -8885,7 +8881,7 @@
 	<string key="2hstafffirelostelitet4_mastername">Gaoler's Light</string>
 	<string key="2hstafffirelostelitet5_description">"Stoked by a breath of unrelenting purpose."</string>
 	<string key="2hstafffirelostelitet5_mastername">Ember Undying</string>
-	<string key="2hStaffFireLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="2hStaffFireLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hStaffFireLostT2_MasterName">Forsaken Fire Staff</string>
 	<string key="2hStaffFireLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hStaffFireLostT3_MasterName">Forsaken Fire Staff</string>
@@ -9069,8 +9065,8 @@
 	<string key="2hStaffLife_GlimmeringMercyT5_MasterName">Glimmering Mercy</string>
 	<string key="2hStaffLife_GlowingBranchT4_Description">"This staff appears as if it was ripped from the Azoth Tree itself."</string>
 	<string key="2hStaffLife_GlowingBranchT4_MasterName">Glowing Branch</string>
-	<string key="2hStaffLife_GlowingLifecrystalStaffT4_Description">"The crystal tipped staff radiates pure life energy, healing all around it."</string>
-	<string key="2hStaffLife_GlowingLifecrystalStaffT4_MasterName">Glowing Lifecrystal Staff</string>
+	<string key="2hStaffLife_GlowingLifecrystalStaffT4_Description" rel_version="DS_Mut_Weapon">"The crystal tipped staff radiates pure life energy, healing all around it."</string>
+	<string key="2hStaffLife_GlowingLifecrystalStaffT4_MasterName" rel_version="DS_Mut_Weapon">Glowing Lifecrystal Staff</string>
 	<string key="2hStaffLife_GlowingLifestaffT2_Description">"The staff glows when nearby corruption."</string>
 	<string key="2hStaffLife_GlowingLifestaffT2_MasterName">Glowing Life Staff</string>
 	<string key="2hStaffLife_GortansTaintedStaffT5_Description">"Corruption has recently set in on the staff as its former master succumbed just days ago."</string>
@@ -9371,7 +9367,7 @@
 	<string key="2hStaffLifeAngryEarthT2_MasterName">Primeval Life Staff</string>
 	<string key="2hStaffLifeAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hStaffLifeAngryEarthT3_MasterName">Primeval Life Staff</string>
-	<string key="2hStaffLifeAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="2hStaffLifeAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hStaffLifeAngryEarthT4_MasterName">Primeval Life Staff</string>
 	<string key="2hStaffLifeAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hStaffLifeAngryEarthT5_MasterName">Primeval Life Staff</string>
@@ -9431,8 +9427,8 @@
 	<string key="2hStaffLifeDungeon2T3_MasterName">Obelisk Guard Life Staff</string>
 	<string key="2hStaffLifeDungeon4T4_Description">A life staff found in The Depths.</string>
 	<string key="2hStaffLifeDungeon4T4_MasterName">Deepwatcher Life Staff</string>
-	<string key="2hStaffLifeDungeon5T4_Description">A life staff found while exploring the Dynasty Shipyard.</string>
-	<string key="2hStaffLifeDungeon5T4_MasterName">Shipyard Sentinel Life Staff</string>
+	<string key="2hStaffLifeDungeon5T4_Description" rel_version="DS_Mut_Weapon">A life staff found while exploring the Dynasty Shipyard.</string>
+	<string key="2hStaffLifeDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel Life Staff</string>
 	<string key="2hStaffLifeDungeon6T5_Description">A life staff found in the Lazarus Instrumentality.</string>
 	<string key="2hStaffLifeDungeon6T5_MasterName">Lazarus Watcher Life Staff</string>
 	<string key="2hStaffLifeDungeon7T5_Description">A life staff found in the Garden of Genesis.</string>
@@ -9469,7 +9465,7 @@
 	<string key="2hStaffLifeGlassT4_MasterName">Glass Life Staff</string>
 	<string key="2hStaffLifeGlassT5_Description">DESCRIPTION PENDING</string>
 	<string key="2hStaffLifeGlassT5_MasterName">Glass Life Staff</string>
-	<string key="2hStaffLifeGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="2hStaffLifeGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="2hStaffLifeGraverobberT4_MasterName">Graverobber's Life Staff</string>
 	<string key="2hStaffLifeGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="2hStaffLifeGuardianT4_MasterName">Guardian's Life Staff</string>
@@ -9487,7 +9483,7 @@
 	<string key="2hstafflifelostelitet4_mastername">Venerable Radiance</string>
 	<string key="2hstafflifelostelitet5_description">"Every sunset bears the promise of dawn."</string>
 	<string key="2hstafflifelostelitet5_mastername">Twilight Beacon</string>
-	<string key="2hStaffLifeLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="2hStaffLifeLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hStaffLifeLostT2_MasterName">Forsaken Life Staff</string>
 	<string key="2hStaffLifeLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hStaffLifeLostT3_MasterName">Forsaken Life Staff</string>
@@ -9541,8 +9537,8 @@
 	<string key="2hTowerShieldCraftedDungeon9T5_MasterName" rel_version="Expedition_ShatterMtn_00">Corrupted Heart Tower Shield</string>
 	<string key="2hTowerShieldDungeon4T4_Description">A tower shield found in The Depths.</string>
 	<string key="2hTowerShieldDungeon4T4_MasterName">Deepwatcher Tower Shield</string>
-	<string key="2hTowerShieldDungeon5T4_Description">A tower shield found while exploring the Dynasty Shipyard.</string>
-	<string key="2hTowerShieldDungeon5T4_MasterName">Shipyard Sentinal Tower Shield</string>
+	<string key="2hTowerShieldDungeon5T4_Description" rel_version="DS_Mut_Weapon">A tower shield found while exploring the Dynasty Shipyard.</string>
+	<string key="2hTowerShieldDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinal Tower Shield</string>
 	<string key="2hTowerShieldDungeon6T5_Description">A tower shield found in the Lazarus Instrumentality.</string>
 	<string key="2hTowerShieldDungeon6T5_MasterName">Lazarus Watcher Tower Shield</string>
 	<string key="2hTowerShieldDungeon7T5_Description">A tower shield found in the Garden of Genesis.</string>
@@ -9713,8 +9709,8 @@
 	<string key="2hWarhammer_ForceofNatureT3_MasterName">Force of Nature</string>
 	<string key="2hWarhammer_ForgottenExperimentT4_Description">"Of the many experiments left beind by the Ancients, this war hammer is one of the more peculiar ones. The hammer vibrates at all times, humming some strange song."</string>
 	<string key="2hWarhammer_ForgottenExperimentT4_MasterName">Forgotten Experiment</string>
-	<string key="2hWarhammer_FrostforgedWarhammerT4_Description">"The entire weight of the tundra lingers behind your swing."</string>
-	<string key="2hWarhammer_FrostforgedWarhammerT4_MasterName">Frostforged War Hammer</string>
+	<string key="2hWarhammer_FrostforgedWarhammerT4_Description" rel_version="DS_Mut_Weapon">"The entire weight of the tundra lingers behind your swing."</string>
+	<string key="2hWarhammer_FrostforgedWarhammerT4_MasterName" rel_version="DS_Mut_Weapon">Frostforged War Hammer</string>
 	<string key="2hWarhammer_FullMoonT5_Description">"Blessed be the Night Sky Queen. May she guide the tides of your fate."</string>
 	<string key="2hWarhammer_FullMoonT5_MasterName">Full Moon</string>
 	<string key="2hWarhammer_FuryT5_Description">"A thief you can trust is no thief to you."</string>
@@ -10060,7 +10056,7 @@
 	<string key="2hWarhammerAngryEarthT2_MasterName">Primeval War Hammer</string>
 	<string key="2hWarhammerAngryEarthT3_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hWarhammerAngryEarthT3_MasterName">Primeval War Hammer</string>
-	<string key="2hWarhammerAngryEarthT4_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
+	<string key="2hWarhammerAngryEarthT4_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hWarhammerAngryEarthT4_MasterName">Primeval War Hammer</string>
 	<string key="2hWarhammerAngryEarthT5_Description">A weapon that seems to have been wielded by the Angry Earth at some point in its history.</string>
 	<string key="2hWarhammerAngryEarthT5_MasterName">Primeval War Hammer</string>
@@ -10122,8 +10118,8 @@
 	<string key="2hWarhammerDungeon2T3_MasterName">Obelisk Guard War Hammer</string>
 	<string key="2hWarhammerDungeon4T4_Description">A war hammer found in The Depths.</string>
 	<string key="2hWarhammerDungeon4T4_MasterName">Deepwatcher War Hammer</string>
-	<string key="2hWarhammerDungeon5T4_Description">A war hammer found while exploring the Dynasty Shipyard.</string>
-	<string key="2hWarhammerDungeon5T4_MasterName">Shipyard Sentinel War Hammer</string>
+	<string key="2hWarhammerDungeon5T4_Description" rel_version="DS_Mut_Weapon">A war hammer found while exploring the Dynasty Shipyard.</string>
+	<string key="2hWarhammerDungeon5T4_MasterName" rel_version="DS_Mut_Weapon">Shipyard Sentinel War Hammer</string>
 	<string key="2hWarhammerDungeon6T5_Description">A war hammer found in the Lazarus Instrumentality.</string>
 	<string key="2hWarhammerDungeon6T5_MasterName">Lazarus Watcher War Hammer</string>
 	<string key="2hWarhammerDungeon7T5_Description">A war hammer found in the Garden of Genesis.</string>
@@ -10160,7 +10156,7 @@
 	<string key="2hWarhammerGlassT4_MasterName">Glass War Hammer</string>
 	<string key="2hWarhammerGlassT5_Description">DESCRIPTION PENDING</string>
 	<string key="2hWarhammerGlassT5_MasterName">Glass War Hammer</string>
-	<string key="2hWarhammerGraverobberT4_Description">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
+	<string key="2hWarhammerGraverobberT4_Description" rel_version="Event_WinterConvergence_Perm">"They laughed and said 'The dead don't fight back!' I laughed with them."</string>
 	<string key="2hWarhammerGraverobberT4_MasterName">Graverobber's War Hammer</string>
 	<string key="2hWarhammerGuardianT4_Description">"I stand unwavering before the precipice of eternity."</string>
 	<string key="2hWarhammerGuardianT4_MasterName">Guardian's War Hammer</string>
@@ -10180,7 +10176,7 @@
 	<string key="2hwarhammerlostelitet4_mastername">Weighty Argument</string>
 	<string key="2hwarhammerlostelitet5_description">"This hammer swings swift as inexorable fate."</string>
 	<string key="2hwarhammerlostelitet5_mastername">Unrelenting Maul</string>
-	<string key="2hWarhammerLostT2_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
+	<string key="2hWarhammerLostT2_Description" rel_version="Event_WinterConvergence_Perm">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hWarhammerLostT2_MasterName">Forsaken War Hammer</string>
 	<string key="2hWarhammerLostT3_Description">A weapon that seems to have been wielded by the Lost at some point in its history.</string>
 	<string key="2hWarhammerLostT3_MasterName">Forsaken War Hammer</string>
@@ -10729,7 +10725,7 @@
 	<string key="AmuletT4_FiendsChoker_MasterName">Fiend's Choker</string>
 	<string key="AmuletT4_FortunesFavor_MasterName">Fortune's Favor</string>
 	<string key="AmuletT4_HematiteMortalityChain_MasterName">Hematite Mortality Chain</string>
-	<string key="AmuletT4_KeepersPendant_MasterName">Keeper's Pendant</string>
+	<string key="AmuletT4_KeepersPendant_MasterName" rel_version="DS_Mut_Weapon">Keeper's Pendant</string>
 	<string key="AmuletT4_MenofArmsMascot_MasterName">Men of Arms Mascot</string>
 	<string key="AmuletT4_RufusCollar_Description">"He was a good boy, before and after the Corruption."</string>
 	<string key="AmuletT4_RufusCollar_MasterName">Rufus' Collar</string>
@@ -10752,9 +10748,8 @@
 	<string key="AmuletT5_InvictaCharm_MasterName">Invicta Charm</string>
 	<string key="AmuletT5_IsabellasAmuletT5_Description" rel_version="Expedition_ShatterMtn_00">This amulet is ancient and powerful. It bears a fresh inscription: "spem relinquere somniantibus."</string>
 	<string key="AmuletT5_IsabellasAmuletT5_MasterName" rel_version="Expedition_ShatterMtn_00">Isabella's Amulet</string>
-	<string key="AmuletT5_M_Mut_Description" rel_version="Feature_Dungeon_Mutators">Corrupted with evil intent.</string>
-	<string key="AmuletT5_M_Mut_MasterName" rel_version="Feature_Dungeon_Mutators">Myrkgard's Amulet</string>
-	<string key="amulett5_malaciteorbchain _mastername">Malachite Orb</string>
+	<string key="AmuletT5_M_Mut_Description" rel_version="ShatterMtn_Accessories_Mut">Corrupted with evil intent.</string>
+	<string key="AmuletT5_M_Mut_MasterName" rel_version="ShatterMtn_Accessories_Mut">Myrkgard's Amulet</string>
 	<string key="AmuletT5_MalaciteOrbChain_MasterName">Malacite Orb Chain</string>
 	<string key="AmuletT5_OraclesAmulet_MasterName">Oracle's Amulet</string>
 	<string key="AmuletT5_ProphecyFulfillmentCharm_MasterName">Prophecy Fulfillment Charm</string>
@@ -13435,14 +13430,14 @@
 	<string key="EarringSTRT4_MasterName">Platinum Barbarian Earring</string>
 	<string key="EarringSTRT5_MasterName">Orichalcum Barbarian Earring</string>
 	<string key="EarringT4_AncientNagaEarring_MasterName">Ancient Naga Earring</string>
-	<string key="EarringT4_BloodlinesCurseEarring_MasterName">Bloodline's Curse Earring</string>
+	<string key="EarringT4_BloodlinesCurseEarring_MasterName" rel_version="DS_Mut_Weapon">Bloodline's Curse Earring</string>
 	<string key="EarringT4_BloodspillStud_MasterName">Bloodspill Stud</string>
 	<string key="EarringT4_CharmoftheConchSong_MasterName">Charm of the Conch Song</string>
 	<string key="EarringT4_EarringoftheEmraldDream_MasterName">Earring of the Emrald Dream</string>
 	<string key="EarringT4_GuidedPrayerToken_MasterName">Guided Prayer Token</string>
 	<string key="EarringT4_HeartsTendrilTrinket_MasterName">Heart's Tendril Trinket</string>
 	<string key="EarringT4_ScorchedAsherEarring_MasterName">Scorched Asher Earring</string>
-	<string key="EarringT4_ShardofLithomancy_MasterName">Shard of Lithomancy</string>
+	<string key="EarringT4_ShardofLithomancy_MasterName" rel_version="DS_Mut_Weapon">Shard of Lithomancy</string>
 	<string key="EarringT4_StormsJourneyToken_MasterName">Storm's Journey Token</string>
 	<string key="EarringT4_TheBlessedWyrdwoodEarring_MasterName">The Blessed Wyrdwood Earring</string>
 	<string key="EarringT4_TheBonedustTrinket_MasterName">The Bonedust Trinket</string>
@@ -13582,10 +13577,6 @@
 	<string key="EtchedHandguardT5_MasterName">Etched Handguard</string>
 	<string key="eternalicet1_description">A crafting material of extraordinary rarity.</string>
 	<string key="eternalicet1_mastername">Eternal Ice</string>
-	<string key="EvergreenArmorShardT5_Description" rel_version="Feature_Dungeon_Mutators">An armor fragment that has an aura of nature magic.</string>
-	<string key="EvergreenArmorShardT5_MasterName" rel_version="Feature_Dungeon_Mutators">Evergreen Armor Shard</string>
-	<string key="EvergreenWeaponShardT5_Description" rel_version="Feature_Dungeon_Mutators">A weapon fragment that has an aura of nature magic.</string>
-	<string key="EvergreenWeaponShardT5_MasterName" rel_version="Feature_Dungeon_Mutators">Evergreen Weapon Shard</string>
 	<string key="ExpeditionBackstory_DescriptionItem_Description">The backstory that you've been provided is meant to be representative of player power through natural play at its level range. Gem slots and attribute perks may be limited, and gear score slightly lower than what the player is able to equip.</string>
 	<string key="ExpeditionBackstory_DescriptionItem_MasterName">Expedition Backstory</string>
 	<string key="Faction_Armaments01_T2_Description">A cache of weapons to plunder our enemies</string>
@@ -15589,16 +15580,12 @@
 	<string key="FragmentedMusketT1_MasterName">Fragmented Musket</string>
 	<string key="FrogfishTailT1_Description">The tail of a Frogfish.</string>
 	<string key="FrogfishTailT1_MasterName">Frogfish Tail</string>
-	<string key="FrozenArmorShardT5_Description" rel_version="Feature_Dungeon_Mutators">A frosty armor fragment that is perpetually cold to the touch.</string>
-	<string key="FrozenArmorShardT5_MasterName" rel_version="Feature_Dungeon_Mutators">Frozen Armor Shard</string>
 	<string key="FrozenFangT1_Description">Crafting item with an attunement to the Vorpal perk.</string>
 	<string key="FrozenFangT1_MasterName">Chilled Fang</string>
 	<string key="FrozenFangT2_Description">Crafting item with an attunement to the Frozen Protection perk.</string>
 	<string key="FrozenFangT2_MasterName">Frigid Fang</string>
 	<string key="FrozenFangT3_Description">Crafting item with an attunement to the Chain Ice perk.</string>
 	<string key="FrozenFangT3_MasterName">Frozen Fang</string>
-	<string key="FrozenWeaponShardT5_Description" rel_version="Feature_Dungeon_Mutators">A frosty weapon fragment that is perpetually cold to the touch.</string>
-	<string key="FrozenWeaponShardT5_MasterName" rel_version="Feature_Dungeon_Mutators">Frozen Weapon Shard</string>
 	<string key="FruitCookedT1_Description">USE: Provides Basic Health Recovery for 30 minutes.</string>
 	<string key="FruitCookedT1_MasterName">Cooked Fruit</string>
 	<string key="FruitT1_Description">Cooking ingredient. Can be consumed, but only provides a very small amount of HP recovery. Ingredients are far more potent when cooked.</string>
@@ -16539,7 +16526,7 @@
 	<string key="HeavyChest_AncientElite2T5_MasterName">Timeworn Breastplate</string>
 	<string key="HeavyChest_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyChest_AngryEarth1T2_MasterName">Primeval Breastplate</string>
-	<string key="HeavyChest_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="HeavyChest_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyChest_AngryEarth1T3_MasterName">Primeval Breastplate</string>
 	<string key="HeavyChest_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyChest_AngryEarth1T4_MasterName">Primeval Breastplate</string>
@@ -16679,12 +16666,12 @@
 	<string key="HeavyChest_DunecrawlersBreastplateT5_MasterName">Dunecrawler's Breastplate</string>
 	<string key="HeavyChest_Dungeon1T3_Description">The armor of an Amrine Temple Guard.</string>
 	<string key="HeavyChest_Dungeon1T3_MasterName">Amrine Guard Breastplate</string>
-	<string key="HeavyChest_Dungeon2T3_Description">The armor of a former member of Ancient Infantry.</string>
+	<string key="HeavyChest_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former member of Ancient Infantry.</string>
 	<string key="HeavyChest_Dungeon2T3_MasterName">Obelisk Infantry Breastplate</string>
 	<string key="HeavyChest_Dungeon4T4_Description">The armor of a Deepwarden.</string>
 	<string key="HeavyChest_Dungeon4T4_MasterName">Deepwarden's Battleplate</string>
-	<string key="HeavyChest_Dungeon5T4_Description">The armor of a member of the Shipyard Guard.</string>
-	<string key="HeavyChest_Dungeon5T4_MasterName">Shipyard Guard Breastplate</string>
+	<string key="HeavyChest_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Guard.</string>
+	<string key="HeavyChest_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Guard Breastplate</string>
 	<string key="HeavyChest_Dungeon6T5_Description">Plate armor worn by Guardians.</string>
 	<string key="HeavyChest_Dungeon6T5_MasterName">Guardian Plate Chestguard</string>
 	<string key="HeavyChest_Dungeon7T5_Description">The armor of a Dryad Guard.</string>
@@ -16831,7 +16818,7 @@
 	<string key="HeavyChest_OR1T5_MasterName">Rusher Plate Chestguard</string>
 	<string key="HeavyChest_PlateDropT2_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyChest_PlateDropT2_MasterName">Plate Breastplate</string>
-	<string key="HeavyChest_PlateDropT3_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
+	<string key="HeavyChest_PlateDropT3_Description" rel_version="Event_WinterConvergence_Perm">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyChest_PlateDropT3_MasterName">Plate Breastplate</string>
 	<string key="HeavyChest_PlateDropT4_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyChest_PlateDropT4_MasterName">Plate Breastplate</string>
@@ -16935,7 +16922,7 @@
 	<string key="HeavyFeet_AncientElite2T5_MasterName">Timeworn Boots</string>
 	<string key="HeavyFeet_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyFeet_AngryEarth1T2_MasterName">Primeval Boots</string>
-	<string key="HeavyFeet_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="HeavyFeet_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyFeet_AngryEarth1T3_MasterName">Primeval Boots</string>
 	<string key="HeavyFeet_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyFeet_AngryEarth1T4_MasterName">Primeval Boots</string>
@@ -17061,12 +17048,12 @@
 	<string key="heavyfeet_drownedelite1t5_mastername">Waterlogged Greaves</string>
 	<string key="HeavyFeet_Dungeon1T3_Description">The armor of an Amrine Temple Guard.</string>
 	<string key="HeavyFeet_Dungeon1T3_MasterName">Amrine Guard Boots</string>
-	<string key="HeavyFeet_Dungeon2T3_Description">The armor of a former member of Ancient Infantry.</string>
+	<string key="HeavyFeet_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former member of Ancient Infantry.</string>
 	<string key="HeavyFeet_Dungeon2T3_MasterName">Obelisk Infantry Boots</string>
 	<string key="HeavyFeet_Dungeon4T4_Description">The armor of a Deepwarden.</string>
 	<string key="HeavyFeet_Dungeon4T4_MasterName">Deepwarden's Battlestompers</string>
-	<string key="HeavyFeet_Dungeon5T4_Description">The armor of a member of the Shipyard Guard.</string>
-	<string key="HeavyFeet_Dungeon5T4_MasterName">Shipyard Guard Boots</string>
+	<string key="HeavyFeet_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Guard.</string>
+	<string key="HeavyFeet_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Guard Boots</string>
 	<string key="HeavyFeet_Dungeon6T5_Description">Plate armor worn by Guardians.</string>
 	<string key="HeavyFeet_Dungeon6T5_MasterName">Guardian Plate Boots</string>
 	<string key="HeavyFeet_Dungeon7T5_Description">The armor of a Dryad Guard.</string>
@@ -17201,7 +17188,7 @@
 	<string key="HeavyFeet_OR1T5_MasterName">Rusher Plate Boots</string>
 	<string key="HeavyFeet_PlateDropT2_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyFeet_PlateDropT2_MasterName">Plate Boots</string>
-	<string key="HeavyFeet_PlateDropT3_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
+	<string key="HeavyFeet_PlateDropT3_Description" rel_version="Event_WinterConvergence_Perm">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyFeet_PlateDropT3_MasterName">Plate Boots</string>
 	<string key="HeavyFeet_PlateDropT4_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyFeet_PlateDropT4_MasterName">Plate Boots</string>
@@ -17299,7 +17286,7 @@
 	<string key="HeavyHands_AncientElite2T5_MasterName">Timeworn Gauntlets</string>
 	<string key="HeavyHands_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyHands_AngryEarth1T2_MasterName">Primeval Gauntlets</string>
-	<string key="HeavyHands_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="HeavyHands_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyHands_AngryEarth1T3_MasterName">Primeval Gauntlets</string>
 	<string key="HeavyHands_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyHands_AngryEarth1T4_MasterName">Primeval Gauntlets</string>
@@ -17421,12 +17408,12 @@
 	<string key="heavyhands_drownedelite1t5_mastername">Waterlogged Gauntlets</string>
 	<string key="HeavyHands_Dungeon1T3_Description">The armor of an Amrine Temple Guard.</string>
 	<string key="HeavyHands_Dungeon1T3_MasterName">Amrine Guard Gauntlets</string>
-	<string key="HeavyHands_Dungeon2T3_Description">The armor of a former member of Ancient Infantry.</string>
+	<string key="HeavyHands_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former member of Ancient Infantry.</string>
 	<string key="HeavyHands_Dungeon2T3_MasterName">Obelisk Infantry Gauntlets</string>
 	<string key="HeavyHands_Dungeon4T4_Description">The armor of a Deepwarden.</string>
 	<string key="HeavyHands_Dungeon4T4_MasterName">Deepwarden's Battlebraces</string>
-	<string key="HeavyHands_Dungeon5T4_Description">The armor of a member of the Shipyard Guard.</string>
-	<string key="HeavyHands_Dungeon5T4_MasterName">Shipyard Guard Gauntlets</string>
+	<string key="HeavyHands_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Guard.</string>
+	<string key="HeavyHands_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Guard Gauntlets</string>
 	<string key="HeavyHands_Dungeon6T5_Description">Plate armor worn by Guardians.</string>
 	<string key="HeavyHands_Dungeon6T5_MasterName">Guardian Plate Gauntlets</string>
 	<string key="HeavyHands_Dungeon7T5_Description">The armor of a Dryad Guard.</string>
@@ -17567,7 +17554,7 @@
 	<string key="HeavyHands_OR1T5_MasterName">Rusher Plate Gauntlets</string>
 	<string key="HeavyHands_PlateDropT2_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyHands_PlateDropT2_MasterName">Plate Gauntlets</string>
-	<string key="HeavyHands_PlateDropT3_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
+	<string key="HeavyHands_PlateDropT3_Description" rel_version="Event_WinterConvergence_Perm">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyHands_PlateDropT3_MasterName">Plate Gauntlets</string>
 	<string key="HeavyHands_PlateDropT4_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyHands_PlateDropT4_MasterName">Plate Gauntlets</string>
@@ -17659,7 +17646,7 @@
 	<string key="HeavyHead_AncientElite2T5_MasterName">Timeworn Helm</string>
 	<string key="HeavyHead_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyHead_AngryEarth1T2_MasterName">Primeval Helm</string>
-	<string key="HeavyHead_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="HeavyHead_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyHead_AngryEarth1T3_MasterName">Primeval Helm</string>
 	<string key="HeavyHead_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyHead_AngryEarth1T4_MasterName">Primeval Helm</string>
@@ -17779,12 +17766,12 @@
 	<string key="heavyhead_drownedelite1t5_mastername">Waterlogged Helm</string>
 	<string key="HeavyHead_Dungeon1T3_Description">The armor of an Amrine Temple Guard.</string>
 	<string key="HeavyHead_Dungeon1T3_MasterName">Amrine Guard Helm</string>
-	<string key="HeavyHead_Dungeon2T3_Description">The armor of a former member of Ancient Infantry.</string>
+	<string key="HeavyHead_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former member of Ancient Infantry.</string>
 	<string key="HeavyHead_Dungeon2T3_MasterName">Obelisk Infantry Helm</string>
 	<string key="HeavyHead_Dungeon4T4_Description">The armor of a Deepwarden.</string>
 	<string key="HeavyHead_Dungeon4T4_MasterName">Deepwarden's Battlehelm</string>
-	<string key="HeavyHead_Dungeon5T4_Description">The armor of a member of the Shipyard Guard.</string>
-	<string key="HeavyHead_Dungeon5T4_MasterName">Shipyard Guard Helm</string>
+	<string key="HeavyHead_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Guard.</string>
+	<string key="HeavyHead_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Guard Helm</string>
 	<string key="HeavyHead_Dungeon6T5_Description">Plate armor worn by Guardians.</string>
 	<string key="HeavyHead_Dungeon6T5_MasterName">Guardian Plate Helm</string>
 	<string key="HeavyHead_Dungeon7T5_Description">The armor of a Dryad Guard.</string>
@@ -17943,7 +17930,7 @@
 	<string key="HeavyHead_OR1T5_MasterName">Rusher Plate Helm</string>
 	<string key="HeavyHead_PlateDropT2_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyHead_PlateDropT2_MasterName">Plate Helm</string>
-	<string key="HeavyHead_PlateDropT3_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
+	<string key="HeavyHead_PlateDropT3_Description" rel_version="Event_WinterConvergence_Perm">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyHead_PlateDropT3_MasterName">Plate Helm</string>
 	<string key="HeavyHead_PlateDropT4_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyHead_PlateDropT4_MasterName">Plate Helm</string>
@@ -18045,7 +18032,7 @@
 	<string key="HeavyLegs_AncientElite2T5_MasterName">Timeworn Greaves</string>
 	<string key="HeavyLegs_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyLegs_AngryEarth1T2_MasterName">Primeval Greaves</string>
-	<string key="HeavyLegs_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="HeavyLegs_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyLegs_AngryEarth1T3_MasterName">Primeval Greaves</string>
 	<string key="HeavyLegs_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="HeavyLegs_AngryEarth1T4_MasterName">Primeval Greaves</string>
@@ -18163,12 +18150,12 @@
 	<string key="heavylegs_drownedelite1t5_mastername">Waterlogged Cuisses</string>
 	<string key="HeavyLegs_Dungeon1T3_Description">The armor of an Amrine Temple Guard.</string>
 	<string key="HeavyLegs_Dungeon1T3_MasterName">Amrine Guard Greaves</string>
-	<string key="HeavyLegs_Dungeon2T3_Description">The armor of a former member of Ancient Infantry.</string>
+	<string key="HeavyLegs_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former member of Ancient Infantry.</string>
 	<string key="HeavyLegs_Dungeon2T3_MasterName">Obelisk Infantry Greaves</string>
 	<string key="HeavyLegs_Dungeon4T4_Description">The armor of a Deepwarden.</string>
 	<string key="HeavyLegs_Dungeon4T4_MasterName">Deepwarden's Battleguards</string>
-	<string key="HeavyLegs_Dungeon5T4_Description">The armor of a member of the Shipyard Guard.</string>
-	<string key="HeavyLegs_Dungeon5T4_MasterName">Shipyard Guard Greaves</string>
+	<string key="HeavyLegs_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Guard.</string>
+	<string key="HeavyLegs_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Guard Greaves</string>
 	<string key="HeavyLegs_Dungeon6T5_Description">Plate armor worn by Guardians.</string>
 	<string key="HeavyLegs_Dungeon6T5_MasterName">Guardian Plate Greaves</string>
 	<string key="HeavyLegs_Dungeon7T5_Description">The armor of a Dryad Guard.</string>
@@ -18311,7 +18298,7 @@
 	<string key="HeavyLegs_OR1T5_MasterName">Rusher Plate Greaves</string>
 	<string key="HeavyLegs_PlateDropT2_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyLegs_PlateDropT2_MasterName">Plate Greaves</string>
-	<string key="HeavyLegs_PlateDropT3_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
+	<string key="HeavyLegs_PlateDropT3_Description" rel_version="Event_WinterConvergence_Perm">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyLegs_PlateDropT3_MasterName">Plate Greaves</string>
 	<string key="HeavyLegs_PlateDropT4_Description">Plate armor. On the heavier side, but offers good overall protection.</string>
 	<string key="HeavyLegs_PlateDropT4_MasterName">Plate Greaves</string>
@@ -19752,7 +19739,7 @@
 	<string key="LightChest_AncientElite2T5_MasterName">Timeworn Cloth Shirt</string>
 	<string key="LightChest_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightChest_AngryEarth1T2_MasterName">Primeval Cloth Shirt</string>
-	<string key="LightChest_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="LightChest_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightChest_AngryEarth1T3_MasterName">Primeval Cloth Shirt</string>
 	<string key="LightChest_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightChest_AngryEarth1T4_MasterName">Primeval Cloth Shirt</string>
@@ -19914,12 +19901,12 @@
 	<string key="LightChest_DS_Boss_MutT5_MasterName" rel_version="DS_Mut_Armor">Empress Zhou's Embroidered Tunic</string>
 	<string key="LightChest_Dungeon1T3_Description">The armor of an Amrine Temple Scout.</string>
 	<string key="LightChest_Dungeon1T3_MasterName">Amrine Scout Coat</string>
-	<string key="LightChest_Dungeon2T3_Description">The armor of a former Obelisk Outrider.</string>
+	<string key="LightChest_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Outrider.</string>
 	<string key="LightChest_Dungeon2T3_MasterName">Obelisk Outrider Shirt</string>
 	<string key="LightChest_Dungeon4T4_Description">The armor of a Deepmist Spy.</string>
 	<string key="LightChest_Dungeon4T4_MasterName">Deepmist Spy's Shirt</string>
-	<string key="LightChest_Dungeon5T4_Description">The armor of a member of the Shipyard Watch.</string>
-	<string key="LightChest_Dungeon5T4_MasterName">Shipyard Watch Shirt</string>
+	<string key="LightChest_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Watch.</string>
+	<string key="LightChest_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Watch Shirt</string>
 	<string key="LightChest_Dungeon6T5_Description">The armor of a Guardian Flanker.</string>
 	<string key="LightChest_Dungeon6T5_MasterName">Guardian Flanker Shirt</string>
 	<string key="LightChest_Dungeon7T5_Description">The armor of an Dryad Patroller.</string>
@@ -20100,7 +20087,7 @@
 	<string key="LightChest_SoulwardensSpiritualRobesT5_MasterName">Soulwarden's Spiritual Robes</string>
 	<string key="lightchest_spriggant5_description">The vines are flexible yet provide greater protection than you might expect.</string>
 	<string key="LightChest_SprigganT5_MasterName">Living Vines Chestpiece</string>
-	<string key="LightChest_StyleF04_T2_Description">A fashionable corset dress.</string>
+	<string key="LightChest_StyleF04_T2_Description" rel_version="Event_WinterConvergence_Perm">A fashionable corset dress.</string>
 	<string key="LightChest_StyleF04_T2_MasterName">Cloth Corset Dress</string>
 	<string key="LightChest_StyleF05_T3_Description">A gothic dress, for the darkness inside us all.</string>
 	<string key="LightChest_StyleF05_T3_MasterName">Cloth Gothic Dress</string>
@@ -20216,7 +20203,7 @@
 	<string key="LightFeet_AncientElite2T5_MasterName">Timeworn Cloth Boots</string>
 	<string key="LightFeet_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightFeet_AngryEarth1T2_MasterName">Primeval Cloth Shoes</string>
-	<string key="LightFeet_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="LightFeet_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightFeet_AngryEarth1T3_MasterName">Primeval Cloth Shoes</string>
 	<string key="LightFeet_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightFeet_AngryEarth1T4_MasterName">Primeval Cloth Shoes</string>
@@ -20378,12 +20365,12 @@
 	<string key="LightFeet_DS_Boss_MutT5_MasterName" rel_version="DS_Mut_Armor">Empress Zhou's Embroidered Shoes</string>
 	<string key="LightFeet_Dungeon1T3_Description">The armor of an Amrine Temple Scout.</string>
 	<string key="LightFeet_Dungeon1T3_MasterName">Amrine Scout Shoes</string>
-	<string key="LightFeet_Dungeon2T3_Description">The armor of a former Obelisk Outrider.</string>
+	<string key="LightFeet_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Outrider.</string>
 	<string key="LightFeet_Dungeon2T3_MasterName">Obelisk Outrider Shoes</string>
 	<string key="LightFeet_Dungeon4T4_Description">The armor of a Deepmist Spy.</string>
 	<string key="LightFeet_Dungeon4T4_MasterName">Deepmist Spy's Shoes</string>
-	<string key="LightFeet_Dungeon5T4_Description">The armor of a member of the Shipyard Watch.</string>
-	<string key="LightFeet_Dungeon5T4_MasterName">Shipyard Watch Shoes</string>
+	<string key="LightFeet_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Watch.</string>
+	<string key="LightFeet_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Watch Shoes</string>
 	<string key="LightFeet_Dungeon6T5_Description">The armor of a Guardian Flanker.</string>
 	<string key="LightFeet_Dungeon6T5_MasterName">Guardian Flanker Shoes</string>
 	<string key="LightFeet_Dungeon7T5_Description">The armor of an Dryad Patroller.</string>
@@ -20550,7 +20537,7 @@
 	<string key="LightFeet_StyleF13_T2_MasterName">Embossed Shoes</string>
 	<string key="LightFeet_StyleF14_T3_Description">Shoes in a style that insists propriety.</string>
 	<string key="LightFeet_StyleF14_T3_MasterName">Prim Shoes</string>
-	<string key="LightFeet_StyleF15_T4_Description">Formal shoes for formal occasions.</string>
+	<string key="LightFeet_StyleF15_T4_Description" rel_version="Event_WinterConvergence_Perm">Formal shoes for formal occasions.</string>
 	<string key="LightFeet_StyleF15_T4_MasterName">Formal Shoes</string>
 	<string key="LightFeet_SyndicateRank1_Description">Light armor made for members of the Syndicate.</string>
 	<string key="LightFeet_SyndicateRank1_MasterName">Syndicate Adept Footwear</string>
@@ -20650,7 +20637,7 @@
 	<string key="LightHands_AncientElite2T5_MasterName">Timeworn Cloth Gloves</string>
 	<string key="LightHands_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightHands_AngryEarth1T2_MasterName">Primeval Cloth Gloves</string>
-	<string key="LightHands_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="LightHands_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightHands_AngryEarth1T3_MasterName">Primeval Cloth Gloves</string>
 	<string key="LightHands_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightHands_AngryEarth1T4_MasterName">Primeval Cloth Gloves</string>
@@ -20808,12 +20795,12 @@
 	<string key="LightHands_DS_Boss_MutT5_MasterName" rel_version="DS_Mut_Armor">Empress Zhou's Embroidered Claws</string>
 	<string key="LightHands_Dungeon1T3_Description">The armor of an Amrine Temple Scout.</string>
 	<string key="LightHands_Dungeon1T3_MasterName">Amrine Scout Gloves</string>
-	<string key="LightHands_Dungeon2T3_Description">The armor of a former Obelisk Outrider.</string>
+	<string key="LightHands_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Outrider.</string>
 	<string key="LightHands_Dungeon2T3_MasterName">Obelisk Outrider Gloves</string>
 	<string key="LightHands_Dungeon4T4_Description">The armor of a Deepmist Spy.</string>
 	<string key="LightHands_Dungeon4T4_MasterName">Deepmist Spy's Gloves</string>
-	<string key="LightHands_Dungeon5T4_Description">The armor of a member of the Shipyard Watch.</string>
-	<string key="LightHands_Dungeon5T4_MasterName">Shipyard Watch Gloves</string>
+	<string key="LightHands_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Watch.</string>
+	<string key="LightHands_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Watch Gloves</string>
 	<string key="LightHands_Dungeon6T5_Description">The armor of a Guardian Flanker.</string>
 	<string key="LightHands_Dungeon6T5_MasterName">Guardian Flanker Gloves</string>
 	<string key="LightHands_Dungeon7T5_Description">The armor of an Dryad Patroller.</string>
@@ -20976,7 +20963,7 @@
 	<string key="LightHands_SprigganT5_MasterName">Living Vines Gloves</string>
 	<string key="LightHands_SQRewardEbonscaleTT5_Description">"Give me guilded hands and I can give you the world"</string>
 	<string key="LightHands_SQRewardEbonscaleTT5_MasterName">Lifegiver's Gloves</string>
-	<string key="LightHands_StyleF07_T2_Description">Gloves with bows on them.</string>
+	<string key="LightHands_StyleF07_T2_Description" rel_version="Event_WinterConvergence_Perm">Gloves with bows on them.</string>
 	<string key="LightHands_StyleF07_T2_MasterName">Bowed Gloves</string>
 	<string key="LightHands_StyleF08_T3_Description">Gloves with frills on them.</string>
 	<string key="LightHands_StyleF08_T3_MasterName">Frilled Gloves</string>
@@ -21082,7 +21069,7 @@
 	<string key="LightHead_AncientElite2T5_MasterName">Timeworn Cloth Hat</string>
 	<string key="LightHead_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightHead_AngryEarth1T2_MasterName">Primeval Cloth Hat</string>
-	<string key="LightHead_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="LightHead_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightHead_AngryEarth1T3_MasterName">Primeval Cloth Hat</string>
 	<string key="LightHead_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightHead_AngryEarth1T4_MasterName">Primeval Cloth Hat</string>
@@ -21254,12 +21241,12 @@
 	<string key="LightHead_DS_Boss_MutT5_MasterName" rel_version="DS_Mut_Armor">Empress Zhou's Crown</string>
 	<string key="LightHead_Dungeon1T3_Description">The armor of an Amrine Temple Scout.</string>
 	<string key="LightHead_Dungeon1T3_MasterName">Amrine Scout Hat</string>
-	<string key="LightHead_Dungeon2T3_Description">The armor of a former Obelisk Outrider.</string>
+	<string key="LightHead_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Outrider.</string>
 	<string key="LightHead_Dungeon2T3_MasterName">Obelisk Outrider Hat</string>
 	<string key="LightHead_Dungeon4T4_Description">The armor of a Deepmist Spy.</string>
 	<string key="LightHead_Dungeon4T4_MasterName">Deepmist Spy's Hat</string>
-	<string key="LightHead_Dungeon5T4_Description">The armor of a member of the Shipyard Watch.</string>
-	<string key="LightHead_Dungeon5T4_MasterName">Shipyard Watch Hat</string>
+	<string key="LightHead_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Watch.</string>
+	<string key="LightHead_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Watch Hat</string>
 	<string key="LightHead_Dungeon6T5_Description">The armor of a Guardian Flanker.</string>
 	<string key="LightHead_Dungeon6T5_MasterName">Guardian Flanker Hat</string>
 	<string key="LightHead_Dungeon7T5_Description">The armor of an Dryad Patroller.</string>
@@ -21374,8 +21361,8 @@
 	<string key="LightHead_Mask1_T3_MasterName">Masquerade Mask</string>
 	<string key="LightHead_Mask2_T4_Description">"A faint image stained her sight, giving glimpses of a promising future. Or perhaps, her forgotten past."</string>
 	<string key="LightHead_Mask2_T4_MasterName">Ethereal Visage</string>
-	<string key="LightHead_Mask3_T4_Description">"May you find others who seek your cause, and the power to destroy those that do not."</string>
-	<string key="LightHead_Mask3_T4_MasterName">Zealous Embrace</string>
+	<string key="LightHead_Mask3_T4_Description" rel_version="DS_Mut_Weapon">"May you find others who seek your cause, and the power to destroy those that do not."</string>
+	<string key="LightHead_Mask3_T4_MasterName" rel_version="DS_Mut_Weapon">Zealous Embrace</string>
 	<string key="LightHead_Mask4_T5_Description">"Poisonous... poisonous... venomous... poisonous... aha! Wait, no... poisonous..."</string>
 	<string key="LightHead_Mask4_T5_MasterName">Warden's Guise</string>
 	<string key="LightHead_Mask5_T5_Description">"Though he hadn't stepped into battle himself, his eyes had seen war. Swords returned chipped, shields dented. But the items that didn't return were always far more apparent."</string>
@@ -21436,7 +21423,7 @@
 	<string key="LightHead_StyleF01_T2_MasterName">Veiled Hairband</string>
 	<string key="LightHead_StyleF02_T3_Description">A very fancy hat.</string>
 	<string key="LightHead_StyleF02_T3_MasterName">Embellished Hat</string>
-	<string key="LightHead_StyleF03_T4_Description">A fascinator fit for a day in royal court.</string>
+	<string key="LightHead_StyleF03_T4_Description" rel_version="Event_WinterConvergence_Perm">A fascinator fit for a day in royal court.</string>
 	<string key="LightHead_StyleF03_T4_MasterName">Court Fascinator</string>
 	<string key="LightHead_SwashbucklersFeatheredCapT5_Description">"There's no more perfect time for a duel than the present."</string>
 	<string key="LightHead_SwashbucklersFeatheredCapT5_MasterName">Swashbuckler's Feathered Cap</string>
@@ -21540,7 +21527,7 @@
 	<string key="LightLegs_AncientElite2T5_MasterName">Timeworn Cloth Pants</string>
 	<string key="LightLegs_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightLegs_AngryEarth1T2_MasterName">Primeval Cloth Pants</string>
-	<string key="LightLegs_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="LightLegs_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightLegs_AngryEarth1T3_MasterName">Primeval Cloth Pants</string>
 	<string key="LightLegs_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="LightLegs_AngryEarth1T4_MasterName">Primeval Cloth Pants</string>
@@ -21698,12 +21685,12 @@
 	<string key="LightLegs_DS_Boss_MutT5_MasterName" rel_version="DS_Mut_Armor">Empress Zhou's Embroidered Pants</string>
 	<string key="LightLegs_Dungeon1T3_Description">The armor of an Amrine Temple Scout.</string>
 	<string key="LightLegs_Dungeon1T3_MasterName">Amrine Scout Leggings</string>
-	<string key="LightLegs_Dungeon2T3_Description">The armor of a former Obelisk Outrider.</string>
+	<string key="LightLegs_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Outrider.</string>
 	<string key="LightLegs_Dungeon2T3_MasterName">Obelisk Outrider Leggings</string>
 	<string key="LightLegs_Dungeon4T4_Description">The armor of a Deepmist Spy.</string>
 	<string key="LightLegs_Dungeon4T4_MasterName">Deepmist Spy's Leggings</string>
-	<string key="LightLegs_Dungeon5T4_Description">The armor of a member of the Shipyard Watch.</string>
-	<string key="LightLegs_Dungeon5T4_MasterName">Shipyard Watch Leggings</string>
+	<string key="LightLegs_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a member of the Shipyard Watch.</string>
+	<string key="LightLegs_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Watch Leggings</string>
 	<string key="LightLegs_Dungeon6T5_Description">The armor of a Guardian Flanker.</string>
 	<string key="LightLegs_Dungeon6T5_MasterName">Guardian Flanker Pants</string>
 	<string key="LightLegs_Dungeon7T5_Description">The armor of an Dryad Patroller.</string>
@@ -21870,7 +21857,7 @@
 	<string key="LightLegs_StyleF10_T2_MasterName">Lace Trimmed Leggings</string>
 	<string key="LightLegs_StyleF11_T3_Description">Leggings with ruffled accents.</string>
 	<string key="LightLegs_StyleF11_T3_MasterName">Ruffled Leggings</string>
-	<string key="LightLegs_StyleF12_T4_Description">Leggings with frilled accents.</string>
+	<string key="LightLegs_StyleF12_T4_Description" rel_version="Event_WinterConvergence_Perm">Leggings with frilled accents.</string>
 	<string key="LightLegs_StyleF12_T4_MasterName">Frilled Leggings</string>
 	<string key="LightLegs_SyndicateRank1_Description">Light armor made for members of the Syndicate.</string>
 	<string key="LightLegs_SyndicateRank1_MasterName">Syndicate Adept Leggings</string>
@@ -22142,7 +22129,7 @@
 	<string key="MediumChest_AncientElite2T5_MasterName">Timeworn Leather Coat</string>
 	<string key="MediumChest_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumChest_AngryEarth1T2_MasterName">Primeval Leather Coat</string>
-	<string key="MediumChest_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="MediumChest_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumChest_AngryEarth1T3_MasterName">Primeval Leather Coat</string>
 	<string key="MediumChest_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumChest_AngryEarth1T4_MasterName">Primeval Leather Coat</string>
@@ -22270,12 +22257,12 @@
 	<string key="mediumchest_drownedelite1t5_mastername">Waterlogged Coat</string>
 	<string key="MediumChest_Dungeon1T3_Description">The armor of an Amrine Temple Tracker.</string>
 	<string key="MediumChest_Dungeon1T3_MasterName">Amrine Tracker Coat</string>
-	<string key="MediumChest_Dungeon2T3_Description">The armor of a former Obelisk Pathfinder.</string>
+	<string key="MediumChest_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Pathfinder.</string>
 	<string key="MediumChest_Dungeon2T3_MasterName">Obelisk Pathfinder Coat</string>
 	<string key="MediumChest_Dungeon4T4_Description">The armor of a Depthguard.</string>
 	<string key="MediumChest_Dungeon4T4_MasterName">Depthguard's Coat</string>
-	<string key="MediumChest_Dungeon5T4_Description">The armor of a Shipyard Lookout.</string>
-	<string key="MediumChest_Dungeon5T4_MasterName">Shipyard Lookout Coat</string>
+	<string key="MediumChest_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a Shipyard Lookout.</string>
+	<string key="MediumChest_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Lookout Coat</string>
 	<string key="MediumChest_Dungeon6T5_Description">The armor of a Guardian Spearmarshal.</string>
 	<string key="MediumChest_Dungeon6T5_MasterName">Guardian Spearmarshal Coat</string>
 	<string key="MediumChest_Dungeon7T5_Description">The armor of an Dryad Stalker.</string>
@@ -22482,7 +22469,7 @@
 	<string key="MediumChest_SyndicateT5_MasterName">Syndicate Alchemist Coat</string>
 	<string key="MediumChest_TruthbearersLeatherChestguardT4_Description">"I care not for your feelings, only for the truth."</string>
 	<string key="MediumChest_TruthbearersLeatherChestguardT4_MasterName">Truthbearer's Leather Chestguard</string>
-	<string key="MediumChest_UndeadBerserkerT2_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
+	<string key="MediumChest_UndeadBerserkerT2_Description" rel_version="Event_WinterConvergence_Perm">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumChest_UndeadBerserkerT2_MasterName">Swashbuckler Coat</string>
 	<string key="MediumChest_UndeadBerserkerT3_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumChest_UndeadBerserkerT3_MasterName">Swashbuckler Coat</string>
@@ -22571,7 +22558,7 @@
 	<string key="MediumFeet_AncientElite2T5_MasterName">Timeworn Leather Boots</string>
 	<string key="MediumFeet_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumFeet_AngryEarth1T2_MasterName">Primeval Leather Boots</string>
-	<string key="MediumFeet_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="MediumFeet_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumFeet_AngryEarth1T3_MasterName">Primeval Leather Boots</string>
 	<string key="MediumFeet_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumFeet_AngryEarth1T4_MasterName">Primeval Leather Boots</string>
@@ -22687,12 +22674,12 @@
 	<string key="mediumfeet_drownedelite1t5_mastername">Waterlogged Boots</string>
 	<string key="MediumFeet_Dungeon1T3_Description">The armor of an Amrine Temple Tracker.</string>
 	<string key="MediumFeet_Dungeon1T3_MasterName">Amrine Tracker Shoes</string>
-	<string key="MediumFeet_Dungeon2T3_Description">The armor of a former Obelisk Pathfinder.</string>
+	<string key="MediumFeet_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Pathfinder.</string>
 	<string key="MediumFeet_Dungeon2T3_MasterName">Obelisk Pathfinder Boots</string>
 	<string key="MediumFeet_Dungeon4T4_Description">The armor of a Depthguard.</string>
 	<string key="MediumFeet_Dungeon4T4_MasterName">Depthguard's Boots</string>
-	<string key="MediumFeet_Dungeon5T4_Description">The armor of a Shipyard Lookout.</string>
-	<string key="MediumFeet_Dungeon5T4_MasterName">Shipyard Lookout Boots</string>
+	<string key="MediumFeet_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a Shipyard Lookout.</string>
+	<string key="MediumFeet_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Lookout Boots</string>
 	<string key="MediumFeet_Dungeon6T5_Description">The armor of a Guardian Spearmarshal.</string>
 	<string key="MediumFeet_Dungeon6T5_MasterName">Guardian Spearmarshal Boots</string>
 	<string key="MediumFeet_Dungeon7T5_Description">The armor of an Dryad Stalker.</string>
@@ -22883,7 +22870,7 @@
 	<string key="MediumFeet_SyndicateT4_MasterName">Syndicate Exemplar Boots</string>
 	<string key="MediumFeet_SyndicateT5_Description">Armor adorned with the colors and insignia of the Syndicate</string>
 	<string key="MediumFeet_SyndicateT5_MasterName">Syndicate Alchemist Boots</string>
-	<string key="MediumFeet_UndeadBerserkerT2_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
+	<string key="MediumFeet_UndeadBerserkerT2_Description" rel_version="Event_WinterConvergence_Perm">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumFeet_UndeadBerserkerT2_MasterName">Swashbuckler Boots</string>
 	<string key="MediumFeet_UndeadBerserkerT3_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumFeet_UndeadBerserkerT3_MasterName">Swashbuckler Boots</string>
@@ -22969,7 +22956,7 @@
 	<string key="MediumHands_AncientElite2T5_MasterName">Timeworn Leather Gloves</string>
 	<string key="MediumHands_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumHands_AngryEarth1T2_MasterName">Primeval Leather Gloves</string>
-	<string key="MediumHands_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="MediumHands_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumHands_AngryEarth1T3_MasterName">Primeval Leather Gloves</string>
 	<string key="MediumHands_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumHands_AngryEarth1T4_MasterName">Primeval Leather Gloves</string>
@@ -23085,12 +23072,12 @@
 	<string key="mediumhands_drownedelite1t5_mastername">Waterlogged Gloves</string>
 	<string key="MediumHands_Dungeon1T3_Description">The armor of an Amrine Temple Tracker.</string>
 	<string key="MediumHands_Dungeon1T3_MasterName">Amrine Tracker Gloves</string>
-	<string key="MediumHands_Dungeon2T3_Description">The armor of a former Obelisk Pathfinder.</string>
+	<string key="MediumHands_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Pathfinder.</string>
 	<string key="MediumHands_Dungeon2T3_MasterName">Obelisk Pathfinder Gloves</string>
 	<string key="MediumHands_Dungeon4T4_Description">The armor of a Depthguard.</string>
 	<string key="MediumHands_Dungeon4T4_MasterName">Depthguard's Gloves</string>
-	<string key="MediumHands_Dungeon5T4_Description">The armor of a Shipyard Lookout.</string>
-	<string key="MediumHands_Dungeon5T4_MasterName">Shipyard Lookout Gloves</string>
+	<string key="MediumHands_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a Shipyard Lookout.</string>
+	<string key="MediumHands_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Lookout Gloves</string>
 	<string key="MediumHands_Dungeon6T5_Description">The armor of a Guardian Spearmarshal.</string>
 	<string key="MediumHands_Dungeon6T5_MasterName">Guardian Spearmarshal Gloves</string>
 	<string key="MediumHands_Dungeon7T5_Description">The armor of an Dryad Stalker.</string>
@@ -23279,7 +23266,7 @@
 	<string key="MediumHands_SyndicateT4_MasterName">Syndicate Exemplar Mitts</string>
 	<string key="MediumHands_SyndicateT5_Description">Armor adorned with the colors and insignia of the Syndicate</string>
 	<string key="MediumHands_SyndicateT5_MasterName">Syndicate Alchemist Mitts</string>
-	<string key="MediumHands_UndeadBerserkerT2_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
+	<string key="MediumHands_UndeadBerserkerT2_Description" rel_version="Event_WinterConvergence_Perm">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumHands_UndeadBerserkerT2_MasterName">Swashbuckler Gloves</string>
 	<string key="MediumHands_UndeadBerserkerT3_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumHands_UndeadBerserkerT3_MasterName">Swashbuckler Gloves</string>
@@ -23365,7 +23352,7 @@
 	<string key="MediumHead_AncientElite2T5_MasterName">Timeworn Leather Hat</string>
 	<string key="MediumHead_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumHead_AngryEarth1T2_MasterName">Primeval Leather Hat</string>
-	<string key="MediumHead_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="MediumHead_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumHead_AngryEarth1T3_MasterName">Primeval Leather Hat</string>
 	<string key="MediumHead_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumHead_AngryEarth1T4_MasterName">Primeval Leather Hat</string>
@@ -23483,12 +23470,12 @@
 	<string key="mediumhead_drownedelite1t5_mastername">Waterlogged Headgear</string>
 	<string key="MediumHead_Dungeon1T3_Description">The armor of an Amrine Temple Tracker.</string>
 	<string key="MediumHead_Dungeon1T3_MasterName">Amrine Tracker Hat</string>
-	<string key="MediumHead_Dungeon2T3_Description">The armor of a former Obelisk Pathfinder.</string>
+	<string key="MediumHead_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Pathfinder.</string>
 	<string key="MediumHead_Dungeon2T3_MasterName">Obelisk Pathfinder Hat</string>
 	<string key="MediumHead_Dungeon4T4_Description">The armor of a Depthguard.</string>
 	<string key="MediumHead_Dungeon4T4_MasterName">Depthguard's Hat</string>
-	<string key="MediumHead_Dungeon5T4_Description">The armor of a Shipyard Lookout.</string>
-	<string key="MediumHead_Dungeon5T4_MasterName">Shipyard Lookout Hat</string>
+	<string key="MediumHead_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a Shipyard Lookout.</string>
+	<string key="MediumHead_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Lookout Hat</string>
 	<string key="MediumHead_Dungeon6T5_Description">The armor of a Guardian Spearmarshal.</string>
 	<string key="MediumHead_Dungeon6T5_MasterName">Guardian Spearmarshal Hat</string>
 	<string key="MediumHead_Dungeon7T5_Description">The armor of an Dryad Stalker.</string>
@@ -23715,7 +23702,7 @@
 	<string key="MediumHead_SyndicateT4_MasterName">Syndicate Exemplar Headgear</string>
 	<string key="MediumHead_SyndicateT5_Description">Armor adorned with the colors and insignia of the Syndicate</string>
 	<string key="MediumHead_SyndicateT5_MasterName">Syndicate Alchemist Headgear</string>
-	<string key="MediumHead_UndeadBerserkerT2_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
+	<string key="MediumHead_UndeadBerserkerT2_Description" rel_version="Event_WinterConvergence_Perm">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumHead_UndeadBerserkerT2_MasterName">Swashbuckler Hat</string>
 	<string key="MediumHead_UndeadBerserkerT3_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumHead_UndeadBerserkerT3_MasterName">Swashbuckler Hat</string>
@@ -23801,7 +23788,7 @@
 	<string key="MediumLegs_AncientElite2T5_MasterName">Timeworn Leather Pants</string>
 	<string key="MediumLegs_AngryEarth1T2_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumLegs_AngryEarth1T2_MasterName">Primeval Leather Pants</string>
-	<string key="MediumLegs_AngryEarth1T3_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
+	<string key="MediumLegs_AngryEarth1T3_Description" rel_version="Event_WinterConvergence_Perm">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumLegs_AngryEarth1T3_MasterName">Primeval Leather Pants</string>
 	<string key="MediumLegs_AngryEarth1T4_Description">A piece of armor that has been in the possession of the Angry Earth for some time.</string>
 	<string key="MediumLegs_AngryEarth1T4_MasterName">Primeval Leather Pants</string>
@@ -23917,12 +23904,12 @@
 	<string key="mediumlegs_drownedelite1t5_mastername">Waterlogged Pants</string>
 	<string key="MediumLegs_Dungeon1T3_Description">The armor of an Amrine Temple Tracker.</string>
 	<string key="MediumLegs_Dungeon1T3_MasterName">Amrine Tracker Leggings</string>
-	<string key="MediumLegs_Dungeon2T3_Description">The armor of a former Obelisk Pathfinder.</string>
+	<string key="MediumLegs_Dungeon2T3_Description" rel_version="Event_WinterConvergence_Perm">The armor of a former Obelisk Pathfinder.</string>
 	<string key="MediumLegs_Dungeon2T3_MasterName">Obelisk Pathfinder Pants</string>
 	<string key="MediumLegs_Dungeon4T4_Description">The armor of a Depthguard.</string>
 	<string key="MediumLegs_Dungeon4T4_MasterName">Depthguard's Pants</string>
-	<string key="MediumLegs_Dungeon5T4_Description">The armor of a Shipyard Lookout.</string>
-	<string key="MediumLegs_Dungeon5T4_MasterName">Shipyard Lookout Pants</string>
+	<string key="MediumLegs_Dungeon5T4_Description" rel_version="DS_Mut_Armor">The armor of a Shipyard Lookout.</string>
+	<string key="MediumLegs_Dungeon5T4_MasterName" rel_version="DS_Mut_Armor">Shipyard Lookout Pants</string>
 	<string key="MediumLegs_Dungeon6T5_Description">The armor of a Guardian Spearmarshal.</string>
 	<string key="MediumLegs_Dungeon6T5_MasterName">Guardian Spearmarshal Leggings</string>
 	<string key="MediumLegs_Dungeon7T5_Description">The armor of an Dryad Stalker.</string>
@@ -24113,7 +24100,7 @@
 	<string key="MediumLegs_SyndicateT4_MasterName">Syndicate Exemplar Pants</string>
 	<string key="MediumLegs_SyndicateT5_Description">Armor adorned with the colors and insignia of the Syndicate</string>
 	<string key="MediumLegs_SyndicateT5_MasterName">Syndicate Alchemist Pants</string>
-	<string key="MediumLegs_UndeadBerserkerT2_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
+	<string key="MediumLegs_UndeadBerserkerT2_Description" rel_version="Event_WinterConvergence_Perm">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumLegs_UndeadBerserkerT2_MasterName">Swashbuckler Pants</string>
 	<string key="MediumLegs_UndeadBerserkerT3_Description">An old, smelly, barnacle-encrusted piece of clothing formerly worn by some pirate you've probably never heard of.</string>
 	<string key="MediumLegs_UndeadBerserkerT3_MasterName">Swashbuckler Pants</string>
@@ -24441,8 +24428,8 @@
 	<string key="Omega_AzothStaff_MasterName">Omega Azoth Staff</string>
 	<string key="Omega_Bag_T5_Description">An omega version bag.</string>
 	<string key="Omega_Bag_T5_MasterName">Omega Bag</string>
-	<string key="Omega_Blunderbuss_Description">Omega version blunderbuss.</string>
-	<string key="Omega_Blunderbuss_MasterName">Omega Blunderbuss</string>
+	<string key="Omega_Blunderbuss_Description" rel_version="Weapon_Blunderbuss">Omega version blunderbuss.</string>
+	<string key="Omega_Blunderbuss_MasterName" rel_version="Weapon_Blunderbuss">Omega Blunderbuss</string>
 	<string key="Omega_Bow_Description">Omega version bow.</string>
 	<string key="Omega_Bow_MasterName">Omega Bow</string>
 	<string key="Omega_Box_Armor_Ranger_Description">A box containing omega armor equipment wih the Ranger (DEX) stat line.</string>
@@ -26505,7 +26492,7 @@
 	<string key="RingT3_UrmirsSignetRing_MasterName">Urmir's  Signet Ring</string>
 	<string key="RingT3_ZionsPrayerRing_MasterName">Zion's Prayer Ring</string>
 	<string key="RingT4_BandofEncapsulatedSouls_MasterName">Band of Encapsulated Souls</string>
-	<string key="RingT4_BandofOceansOath_MasterName">Band of Ocean's Oath</string>
+	<string key="RingT4_BandofOceansOath_MasterName" rel_version="DS_Mut_Weapon">Band of Ocean's Oath</string>
 	<string key="RingT4_BandoftheDoomedLovers_MasterName">Band of the Doomed Lovers</string>
 	<string key="RingT4_CartographistsSignet_Description">"It feels good to be lost in the right direction."</string>
 	<string key="RingT4_CartographistsSignet_MasterName">Cartographist's Signet</string>
@@ -26534,8 +26521,8 @@
 	<string key="RingT5_HoopofTheCursedSon_MasterName">Hoop of The Cursed Son</string>
 	<string key="RingT5_LI_Mut_Description" rel_version="Feature_Dungeon_Mutators">Part of an ancient promise lost to time.</string>
 	<string key="RingT5_LI_Mut_MasterName" rel_version="Feature_Dungeon_Mutators">Instrumentality's Ring</string>
-	<string key="EarringT5_M_Mut_Description" rel_version="Feature_Dungeon_Mutators">Corrupted with evil intent.</string>
-	<string key="EarringT5_M_Mut_MasterName" rel_version="Feature_Dungeon_Mutators">Myrkgard's Earring</string>
+	<string key="EarringT5_M_Mut_Description" rel_version="ShatterMtn_Accessories_Mut">Corrupted with evil intent.</string>
+	<string key="EarringT5_M_Mut_MasterName" rel_version="ShatterMtn_Accessories_Mut">Myrkgard's Earring</string>
 	<string key="RingT5_RingofBloodyValentine_MasterName">Bloody Valentine's Ring</string>
 	<string key="RingT5_RingofSeadogsWatch_MasterName">Ring of Seadog's Watch</string>
 	<string key="RingT5_RudigersJourneyBand_MasterName">Rudiger's Journey Band</string>
@@ -26901,6 +26888,8 @@
 	<string key="SiegeSupply_MasterName">Siege Supplies</string>
 	<string key="SilkWeaveT4_Description">Used in the refinement of Silk.</string>
 	<string key="SilkWeaveT4_MasterName">Silkweave</string>
+	<string key="Skin_AngelsDemons_Blunderbuss_Description" rel_version="Weapon_Blunderbuss_AngelsDemons_MTX">"It feels warm in your hand, pulsing a kind of oppressive heat that almost smells of sulfur."</string>
+	<string key="Skin_AngelsDemons_Blunderbuss_MasterName" rel_version="Weapon_Blunderbuss_AngelsDemons_MTX">Blunderbuss of Brimstone</string>
 	<string key="Skin_AngelsDemons_VoidGauntlet_Description" rel_version="Weapon_VoidGauntlet_AngelsDemons_MTX">"A fallen angel makes for a monstrous bearer of sacrifice."</string>
 	<string key="Skin_AngelsDemons_VoidGauntlet_MasterName" rel_version="Weapon_VoidGauntlet_AngelsDemons_MTX">Moloch's Fall</string>
 	<string key="Skin_AnglesDemon_FireStaff_Description" rel_version="New_World_Launch">“Tormented hellfire crackles within.”</string>
@@ -28009,16 +27998,16 @@
 	<string key="TwinWolves_MasterName" rel_version="Weapon_TwinWolves">Twin Wolves</string>
 	<string key="TwistcapT1_Description">The flesh of a Twistcap mushroom.</string>
 	<string key="TwistcapT1_MasterName">Twistcap Spiral</string>
-	<string key="twitchpiratechest_description" rel_version="New_World_Launch">"If dead men tell no tales, who will speak of your glory?"</string>
-	<string key="twitchpiratechest_mastername" rel_version="New_World_Launch">Swashbuckler Coat</string>
-	<string key="twitchpiratefeet_description" rel_version="New_World_Launch">"If dead men tell no tales, who will speak of your glory?"</string>
-	<string key="twitchpiratefeet_mastername" rel_version="New_World_Launch">Swashbuckler Shoes</string>
-	<string key="twitchpiratehands_description" rel_version="New_World_Launch">"If dead men tell no tales, who will speak of your glory?"</string>
-	<string key="twitchpiratehands_mastername" rel_version="New_World_Launch">Swashbuckler Gloves</string>
-	<string key="twitchpiratehead_description" rel_version="New_World_Launch">"If dead men tell no tales, who will speak of your glory?"</string>
-	<string key="twitchpiratehead_mastername" rel_version="New_World_Launch">Swashbuckler Hat</string>
-	<string key="twitchpiratelegs_description" rel_version="New_World_Launch">"If dead men tell no tales, who will speak of your glory?"</string>
-	<string key="twitchpiratelegs_mastername" rel_version="New_World_Launch">Swashbuckler Leggings</string>
+	<string key="twitchpiratechest_description" rel_version="Apparel_Pirate">"If dead men tell no tales, who will speak of your glory?"</string>
+	<string key="twitchpiratechest_mastername" rel_version="Apparel_Pirate">Swashbuckler Coat</string>
+	<string key="twitchpiratefeet_description" rel_version="Apparel_Pirate">"If dead men tell no tales, who will speak of your glory?"</string>
+	<string key="twitchpiratefeet_mastername" rel_version="Apparel_Pirate">Swashbuckler Shoes</string>
+	<string key="twitchpiratehands_description" rel_version="Apparel_Pirate">"If dead men tell no tales, who will speak of your glory?"</string>
+	<string key="twitchpiratehands_mastername" rel_version="Apparel_Pirate">Swashbuckler Gloves</string>
+	<string key="twitchpiratehead_description" rel_version="Apparel_Pirate">"If dead men tell no tales, who will speak of your glory?"</string>
+	<string key="twitchpiratehead_mastername" rel_version="Apparel_Pirate">Swashbuckler Hat</string>
+	<string key="twitchpiratelegs_description" rel_version="Apparel_Pirate">"If dead men tell no tales, who will speak of your glory?"</string>
+	<string key="twitchpiratelegs_mastername" rel_version="Apparel_Pirate">Swashbuckler Leggings</string>
 	<string key="UmbralCrystalT1_Description">A full-sized Azoth Crystal, but the light is gone from this one. Instead, it seems to absorb the life around it. Used for empowering weapons and armor.</string>
 	<string key="UmbralCrystalT1_MasterName">Umbral Crystal</string>
 	<string key="UmbralGeodeT1_Description" rel_version="Feature_Dungeon_Mutators">Open this Geode to receive the powerful contents within.</string>
@@ -28746,8 +28735,6 @@
 	<string key="2hBlunderbussDropT4_Description" rel_version="Weapon_Blunderbuss">While it is a mass produced gun, it has served many adventurers quite well.</string>
 	<string key="2hBlunderbussDropT5_MasterName" rel_version="Weapon_Blunderbuss">Blunderbuss</string>
 	<string key="2hBlunderbussDropT5_Description" rel_version="Weapon_Blunderbuss">While it is a mass produced gun, it has served many adventurers quite well.</string>
-	<string key="2hBlunderbussLegionT5_MasterName" rel_version="Weapon_Blunderbuss">REPLACEME</string>
-	<string key="2hBlunderbussLegionT5_Description" rel_version="Weapon_Blunderbuss">REPLACEME</string>
 	<string key="2hBlunderbussLostEliteT5_MasterName" rel_version="Weapon_Blunderbuss">Ghastly Gun</string>
 	<string key="2hBlunderbussLostEliteT5_Description" rel_version="Weapon_Blunderbuss">An incredibly haunted weapon.</string>
 	<string key="2hBlunderbussAncientEliteT5_MasterName" rel_version="Weapon_Blunderbuss">Crystalline Blunderbuss</string>
@@ -28760,8 +28747,6 @@
 	<string key="2hBlunderbussDynastyEliteT5_Description" rel_version="Weapon_Blunderbuss">Never intended as a weapon of war, it was nonetheless adapted.</string>
 	<string key="2hBlunderbussDrownedEliteT5_MasterName" rel_version="Weapon_Blunderbuss">Brined Metal</string>
 	<string key="2hBlunderbussDrownedEliteT5_Description" rel_version="Weapon_Blunderbuss">Seasoned by the depths.</string>
-	<string key="2hBlunderbussLegionEliteT5_MasterName" rel_version="Weapon_Blunderbuss">REPLACEME</string>
-	<string key="2hBlunderbussLegionEliteT5_Description" rel_version="Weapon_Blunderbuss">REPLACEME</string>
 	<string key="2hBlunderbussBreachT5_MasterName" rel_version="Weapon_Blunderbuss">Breach Closer's Blunderbuss</string>
 	<string key="2hBlunderbussBreachT5_Description" rel_version="Weapon_Blunderbuss">A Blunderbuss forged for Breach</string>
 	<string key="2hBlunderbussInvasionT5_MasterName" rel_version="Weapon_Blunderbuss">Invasion Blunderbuss</string>
@@ -28784,8 +28769,6 @@
 	<string key="2hBlunderbuss_Eternal_MutT5_Description" rel_version="Weapon_Blunderbuss">Due to its time spent within eternal voids, this weapon has mutated to better suit its eternal prison.</string>
 	<string key="2hBlunderbuss_Ice_MutT5_MasterName" rel_version="Weapon_Blunderbuss">Icebound Blunderbuss</string>
 	<string key="2hBlunderbuss_Ice_MutT5_Description" rel_version="Weapon_Blunderbuss">Due to its time spent within frozen worlds, this weapon has mutated to better suit its frostbitten prison.</string>
-	<string key="2hBlunderbussDungeon3T4_MasterName" rel_version="Weapon_Blunderbuss">REPLACEME</string>
-	<string key="2hBlunderbussDungeon3T4_Description" rel_version="Weapon_Blunderbuss">REPLACEME</string>
 	<string key="2hBlunderbussDungeon4T4_MasterName" rel_version="Weapon_Blunderbuss">Deepwatcher's Blunderbuss</string>
 	<string key="2hBlunderbussDungeon4T4_Description" rel_version="Weapon_Blunderbuss">A blunderbuss found within The Depths</string>
 	<string key="2hBlunderbussDungeon5T4_MasterName" rel_version="Weapon_Blunderbuss">Shipyard Sentinel's Blunderbuss</string>
@@ -28794,12 +28777,8 @@
 	<string key="2hBlunderbussDungeon6T5_Description" rel_version="Weapon_Blunderbuss">A Blunderbuss found within the Lazarus Instrumentality.</string>
 	<string key="2hBlunderbussDungeon7T5_MasterName" rel_version="Weapon_Blunderbuss">Garden Keeper's Blunderbuss</string>
 	<string key="2hBlunderbussDungeon7T5_Description" rel_version="Weapon_Blunderbuss">A Blunderbuss found within the Garden of Genesis.</string>
-	<string key="2hBlunderbussDungeon8T5_MasterName" rel_version="Weapon_Blunderbuss">REPLACEME</string>
-	<string key="2hBlunderbussDungeon8T5_Description" rel_version="Weapon_Blunderbuss">REPLACEME</string>
 	<string key="2hBlunderbussDungeon9T5_MasterName" rel_version="Weapon_Blunderbuss">A Blunderbuss found in Tempest's Heart.</string>
 	<string key="2hBlunderbussDungeon9T5_Description" rel_version="Weapon_Blunderbuss">Corrupted Heart Blunderbuss</string>
-	<string key="2hBlunderbussDungeon10T5_MasterName" rel_version="Weapon_Blunderbuss">REPLACEME</string>
-	<string key="2hBlunderbussDungeon10T5_Description" rel_version="Weapon_Blunderbuss">REPLACEME</string>
 	<string key="2hBlunderbussWarT5_MasterName" rel_version="Weapon_Blunderbuss">War Blunderbuss</string>
 	<string key="2hBlunderbussWarT5_Description" rel_version="Weapon_Blunderbuss">A blunderbuss forged for War.</string>
 	<string key="2hBlunderbussOutpostRushT5_MasterName" rel_version="Weapon_Blunderbuss">Outpost Blunderbuss</string>
@@ -28902,10 +28881,6 @@
 	<string key="Shard_Amulet_Description">This resource can be used at an outfitting station to craft an amulet with specific attribute.</string>
 	<string key="Shard_Earring_MasterName">Timeless Earring Shard</string>
 	<string key="Shard_Earring_Description">This resource can be used at an outfitting station to craft an earring with specific attribute.</string>
-	<string key="1224_Viking_Ceremonial_Goblet_MasterName">Revna's goblet</string>
-	<string key="1224_Viking_Ceremonial_Goblet_description">A ceremonial goblet from the lost Unfrid clan</string>
-	<string key="1224_Viking_Ceremonial_Dagger_MasterName">Revna's dagger</string>
-	<string key="1224_Viking_Ceremonial_Dagger_description">A ceremonial dagger from the lost Unfrid clan</string>
 	<string key="EarringDropT5_MasterName">Old Earring</string>
 	<string key="RingDropT5_MasterName">Old Ring</string>
 	<string key="AmuletDropT5_MasterName">Old Amulet</string>
@@ -29145,8 +29120,6 @@
 	<string key="2hBlunderbuss_BrickBreakerT5_Description" rel_version="Weapon_Blunderbuss">This weapon fires with enough force to shatter stone.</string>
 	<string key="2hBlunderbuss_TheGardenerT5_MasterName" rel_version="Weapon_Blunderbuss">The Gardener</string>
 	<string key="2hBlunderbuss_TheGardenerT5_Description" rel_version="Weapon_Blunderbuss">The residents didn't quite care for the caretaker.</string>
-	<string key="2hBlunderbussCraftedDungeon3T4_MasterName" rel_version="Weapon_Blunderbuss">Cavern Sentry Blunderbuss</string>
-	<string key="2hBlunderbussCraftedDungeon3T4_Description" rel_version="Weapon_Blunderbuss">A replica of a Blunderbuss found in Eridanus Caverns.</string>
 	<string key="2hBlunderbussCraftedDungeon4T4_MasterName" rel_version="Weapon_Blunderbuss">Deepwatcher Blunderbuss</string>
 	<string key="2hBlunderbussCraftedDungeon4T4_Description" rel_version="Weapon_Blunderbuss">A replica of a Blunderbuss found in The Depths.</string>
 	<string key="2hBlunderbussCraftedDungeon5T4_MasterName" rel_version="Weapon_Blunderbuss">Shipyard Sentinel's Blunderbuss</string>
@@ -29155,12 +29128,16 @@
 	<string key="2hBlunderbussCraftedDungeon6T5_Description" rel_version="Weapon_Blunderbuss">A replica of a Blunderbuss found in the Lazarus Instrumentality.</string>
 	<string key="2hBlunderbussCraftedDungeon7T5_MasterName" rel_version="Weapon_Blunderbuss">Garden Keeper Blunderbuss</string>
 	<string key="2hBlunderbussCraftedDungeon7T5_Description" rel_version="Weapon_Blunderbuss">A replica of a Blunderbuss found in the Garden of Genesis.</string>
-	<string key="2hBlunderbussCraftedDungeon9T5_MasterName" rel_version="Expedition_ShatterMtn_00">A replica of a Blunderbuss found in Tempest's Heart.</string>
-	<string key="2hBlunderbussCraftedDungeon9T5_Description" rel_version="Expedition_ShatterMtn_00">Corrupted Heart Blunderbuss</string>
+	<string key="2hBlunderbussCraftedDungeon9T5_MasterName" rel_version="Weapon_Blunderbuss">Corrupted Heart Blunderbuss</string>
+	<string key="2hBlunderbussCraftedDungeon9T5_Description" rel_version="Weapon_Blunderbuss">A replica of a Blunderbuss found in Tempest's Heart.</string>
 	<string key="CampSkin_Floral01_A_MasterName" comment="Player Camp Skin" rel_version="CampSkin_Floral_1">Herbalist's Home</string>
 	<string key="CampSkin_Floral01_A_Description" comment="Player Camp Skin" rel_version="CampSkin_Floral_1">For the growth and maintenance of a blossoming botanist. Just add water!</string>
 	<string key="CampSkin_Love01_A_MasterName" comment="Player Camp Skin" rel_version="CampSkin_Love_1">Edifice of Eros</string>
 	<string key="CampSkin_Love01_A_Description" comment="Player Camp Skin" rel_version="CampSkin_Love_1">Sharing a tent in Aeternum is among one of the most intimate experiences adventurers can experience, and this one is conveniently large for whatever your idea of a romantic night in is.</string>
+	<string key="CampSkin_Fortune01_A_MasterName" comment="Player Camp Skin" rel_version="CampSkin_Fortune_1">Fortune Teller's Tent</string>
+	<string key="CampSkin_Fortune01_A_Description" comment="Player Camp Skin" rel_version="CampSkin_Fortune_1">Whether your specialty is palm-reading or tarot cards, customers will line up at this tent for your predictions.</string>
+	<string key="CampSkin_Fortune02_A_MasterName" comment="Player Camp Skin" rel_version="CampSkin_Fortune_2">Full Moon Marquee</string>
+	<string key="CampSkin_Fortune02_A_Description" comment="Player Camp Skin" rel_version="CampSkin_Fortune_2">Shelter from the cold and rough wilds of Aeternum under the phases of the ever-changing moon.</string>
 	<string key="Skin_Chest_Wicked_MasterName" rel_version="Apparel_Wicked_Costume">Red Ripping Hood Chest</string>
 	<string key="Skin_Head_Wicked_MasterName" rel_version="Apparel_Wicked_Costume">Red Ripping Hood Head</string>
 	<string key="Skin_Legs_Wicked_MasterName" rel_version="Apparel_Wicked_Costume">Red Ripping Hood Legs</string>
@@ -29280,16 +29257,60 @@
 	<string key="Earring_TempestuousEarringT5_MasterName" rel_version="Quest_Expedition_Myrkgard">Tempestuous Earring</string>
 	<string key="Ring_TempestuousRingT5_MasterName" rel_version="Quest_Expedition_Myrkgard">Tempestuous Ring</string>
 	<string key="Amulet_TempestuousAmuletT5_MasterName" rel_version="Quest_Expedition_Myrkgard">Tempestuous Amulet</string>
-	<string key="2hBlunderbuss_LastArgumentT5_MasterName">Last Argument</string>
-	<string key="2hBlunderbuss_LastArgumentT5_Description">When the final word isn't a word at all</string>
-	<string key="2hBlunderbuss_TempestuousBlunderbussT5_MasterName" rel_version="Quest_Expedition_Myrkgard">Tempestuous Blunderbuss</string>
-	<string key="2hBlunderbuss_TempestuousBlunderbussT5_Description" rel_version="Quest_Expedition_Myrkgard">The fury of The Tempest strikes through vigilant foes.</string>
+	<string key="2hBlunderbuss_LastArgumentT5_MasterName" rel_version="Weapon_Blunderbuss">Last Argument</string>
+	<string key="2hBlunderbuss_LastArgumentT5_Description" rel_version="Weapon_Blunderbuss">When the final word isn't a word at all</string>
+	<string key="2hBlunderbuss_TempestuousBlunderbussT5_MasterName" rel_version="Weapon_Blunderbuss">Tempestuous Blunderbuss</string>
+	<string key="2hBlunderbuss_TempestuousBlunderbussT5_Description" rel_version="Weapon_Blunderbuss">The fury of The Tempest strikes through vigilant foes.</string>
+	<string key="Skin_Chest_FateFortuneTellerL_MasterName" rel_version="Apparel_Fortune_1">Moonborne Coat</string>
+	<string key="Skin_Head_FateFortuneTellerL_MasterName" rel_version="Apparel_Fortune_1">Moonborne Hat</string>
+	<string key="Skin_Legs_FateFortuneTellerL_MasterName" rel_version="Apparel_Fortune_1">Moonborne Pants</string>
+	<string key="Skin_Feet_FateFortuneTellerL_MasterName" rel_version="Apparel_Fortune_1">Moonborne Shoes</string>
+	<string key="Skin_Hands_FateFortuneTellerL_MasterName" rel_version="Apparel_Fortune_1">Moonborne Gloves</string>
+	<string key="Skin_ShieldT_FateFortune_MasterName" rel_version="Weapon_Shield_Fortune_MTX">Hekate's Tower</string>
+	<string key="Skin_Spear_FateFortune_MasterName" rel_version="Weapon_Spear_Fortune_MTX">Faith's Lance</string>
+	<string key="Skin_Hatchet_FateFortune_MasterName" rel_version="Weapon_Hatchet_Fortune_MTX">Crescent's Curve</string>
+	<string key="Skin_Lifestaff_FateFortune_MasterName" rel_version="Weapon_LifeStaff_Fortune_MTX">The Magician's Delight</string>
+	<string key="Skin_Blunderbuss_FateFortune_MasterName" rel_version="Weapon_Blunderbuss_Fortune_MTX">Fortuneteller</string>
+	<string key="Skin_VoidGauntlet_FateFortune_MasterName" rel_version="Weapon_VoidGauntlet_Fortune_MTX">Setting Sun's Darkness</string>
+	<string key="Skin_FateFortune_AzothScepter_Name" rel_version="MTX_Tool_Skins_Fortune">Staff of the Sun</string>
+	<string key="Skin_FateFortune_FishingPole_Name" rel_version="MTX_Tool_Skins_Fortune">Scepter Pole</string>
+	<string key="Skin_FateFortune_LoggingAxe_Name" rel_version="MTX_Tool_Skins_Fortune">Golden Chop</string>
+	<string key="Skin_FateFortune_Pickaxe_Name" rel_version="MTX_Tool_Skins_Fortune">Aurate Pick</string>
+	<string key="Skin_FateFortune_Sickle_Name" rel_version="MTX_Tool_Skins_Fortune">Crescent Sickle</string>
+	<string key="Skin_FateFortune_SkinningKnife_Name" rel_version="MTX_Tool_Skins_Fortune">Moonslice</string>
+	<string key="Skin_Chest_FateFortuneTellerL_Description" rel_version="Apparel_Fortune_1">Imbued with the shining powers of the crescent moon, lighting up Aeternum just as the lunar surface does at night.</string>
+	<string key="Skin_Head_FateFortuneTellerL_Description" rel_version="Apparel_Fortune_1">Imbued with the shining powers of the crescent moon, lighting up Aeternum just as the lunar surface does at night.</string>
+	<string key="Skin_Legs_FateFortuneTellerL_Description" rel_version="Apparel_Fortune_1">Imbued with the shining powers of the crescent moon, lighting up Aeternum just as the lunar surface does at night.</string>
+	<string key="Skin_Feet_FateFortuneTellerL_Description" rel_version="Apparel_Fortune_1">Imbued with the shining powers of the crescent moon, lighting up Aeternum just as the lunar surface does at night.</string>
+	<string key="Skin_Hands_FateFortuneTellerL_Description" rel_version="Apparel_Fortune_1">Imbued with the shining powers of the crescent moon, lighting up Aeternum just as the lunar surface does at night.</string>
+	<string key="Skin_ShieldT_FateFortune_Description" rel_version="Weapon_Shield_Fortune_MTX">Phases of the moon wax and wane, but the power of this shield is a splendorous constant.</string>
+	<string key="Skin_Spear_FateFortune_Description" rel_version="Weapon_Spear_Fortune_MTX">Put your faith in the ever-moving heavens above and strike forth, chosen one.</string>
+	<string key="Skin_Hatchet_FateFortune_Description" rel_version="Weapon_Hatchet_Fortune_MTX">Hack and slice with the elegance of the moon shimmering over Lake Guinevere.</string>
+	<string key="Skin_Lifestaff_FateFortune_Description" rel_version="Weapon_LifeStaff_Fortune_MTX">Wielded by countless mages before you, the staff is still light and tingling with magic.</string>
+	<string key="Skin_Blunderbuss_FateFortune_Description" rel_version="Weapon_Blunderbuss_Fortune_MTX">Reveal the destinies of those who would cross you.</string>
+	<string key="Skin_VoidGauntlet_FateFortune_Description" rel_version="Weapon_VoidGauntlet_Fortune_MTX">Dusk envelopes the western side of Aeternum and quickly sweeps the land as the sun sets for you.</string>
+	<string key="Skin_FateFortune_AzothScepter_Description" rel_version="MTX_Tool_Skins_Fortune">Shines as brightly as the sun in the sky.</string>
+	<string key="Skin_FateFortune_FishingPole_Description" rel_version="MTX_Tool_Skins_Fortune">Fish love shiny things, and frankly, so do humans.</string>
+	<string key="Skin_FateFortune_LoggingAxe_Description" rel_version="MTX_Tool_Skins_Fortune">Don't let the filigree fool you, this wood axe can cut through the thickest of branches.</string>
+	<string key="Skin_FateFortune_Pickaxe_Description" rel_version="MTX_Tool_Skins_Fortune">The swinging of this pickaxe resembles the arc of the sun in the sky.</string>
+	<string key="Skin_FateFortune_Sickle_Description" rel_version="MTX_Tool_Skins_Fortune">As the moon waxes and wanes so do the harvests.</string>
+	<string key="Skin_FateFortune_SkinningKnife_Description" rel_version="MTX_Tool_Skins_Fortune">Skin with the power of the moon on your side.</string>
 	<string key="QuestRewardIsabella2_MasterName" rel_version="Quest_Expedition_Myrkgard">Ranger's Tempestuous Weapons Stash</string>
 	<string key="QuestRewardIsabella3_MasterName" rel_version="Quest_Expedition_Myrkgard">Magician's Tempestuous Weapons Stash</string>
 	<string key="QuestRewardIsabella4_MasterName" rel_version="Quest_Expedition_Myrkgard">Soldier's Tempestuous Armor Stash</string>
 	<string key="QuestRewardIsabella5_MasterName" rel_version="Quest_Expedition_Myrkgard">Ranger's Tempestuous Armor Stash</string>
 	<string key="QuestRewardIsabella6_MasterName" rel_version="Quest_Expedition_Myrkgard">Magician's Tempestuous Armor Stash</string>
 	<string key="QuestRewardIsabella7_MasterName" rel_version="Quest_Expedition_Myrkgard">Tempestuous Cache</string>
+	<string key="Skin_Chest_FateFortuneSteampunkH_MasterName" rel_version="Apparel_Fortune_2">Starbound Coat</string>
+	<string key="Skin_Head_FateFortuneSteampunkH_MasterName" rel_version="Apparel_Fortune_2">Starbound Hat</string>
+	<string key="Skin_Legs_FateFortuneSteampunkH_MasterName" rel_version="Apparel_Fortune_2">Starbound Tights</string>
+	<string key="Skin_Feet_FateFortuneSteampunkH_MasterName" rel_version="Apparel_Fortune_2">Starbound Shoes</string>
+	<string key="Skin_Hands_FateFortuneSteampunkH_MasterName" rel_version="Apparel_Fortune_2">Starbound Gloves</string>
+	<string key="Skin_Chest_FateFortuneSteampunkH_Description" rel_version="Apparel_Fortune_2">The star shines on, bathing Aeternum in the golden light of redemption.</string>
+	<string key="Skin_Head_FateFortuneSteampunkH_Description" rel_version="Apparel_Fortune_2">The star shines on, bathing Aeternum in the golden light of redemption.</string>
+	<string key="Skin_Legs_FateFortuneSteampunkH_Description" rel_version="Apparel_Fortune_2">The star shines on, bathing Aeternum in the golden light of redemption.</string>
+	<string key="Skin_Feet_FateFortuneSteampunkH_Description" rel_version="Apparel_Fortune_2">The star shines on, bathing Aeternum in the golden light of redemption.</string>
+	<string key="Skin_Hands_FateFortuneSteampunkH_Description" rel_version="Apparel_Fortune_2">The star shines on, bathing Aeternum in the golden light of redemption.</string>
 	<string key="Amulet_QuestReward_Watcher_MasterName">Watcher's Warding Charm</string>
 	<string key="Amulet_QuestReward_Watcher_Description">This lovingly handmade charm has been worn smooth by many different wearers.</string>
 	<string key="2hSpear_QuestReward_Constable_MasterName">Constable's Boar Spear</string>
@@ -29314,258 +29335,16 @@
 	<string key="2hMusket_QuestReward_Corruption_Description">One blast from its muzzle will terrify the Corrupted. Redemption cometh!</string>
 	<string key="MediumFeet_QuestReward_Hermit_MasterName">Lonely Soles</string>
 	<string key="MediumFeet_QuestReward_Hermit_Description">The truth won't burden your feet any longer.</string>
-	<string key="PvP_Potions_Small_AttackT1_a_MasterName">Small Aggressive Potion Pack T1</string>
-	<string key="PvP_Potions_Small_AttackT1_b_MasterName">Small Aggressive Potion Pack T1</string>
-	<string key="PvP_Potions_Small_AttackT1_c_MasterName">Small Aggressive Potion Pack T1</string>
-	<string key="PvP_Potions_Small_AttackT2_a_MasterName">Small Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AttackT2_b_MasterName">Small Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AttackT2_c_MasterName">Small Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AttackT3_a_MasterName">Small Aggressive Potion Pack T3</string>
-	<string key="PvP_Potions_Small_AttackT3_b_MasterName">Small Aggressive Potion Pack T3</string>
-	<string key="PvP_Potions_Small_AttackT3_c_MasterName">Small Aggressive Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_AttackT1_a_MasterName">Medium Aggressive Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_AttackT1_b_MasterName">Medium Aggressive Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_AttackT1_c_MasterName">Medium Aggressive Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_AttackT2_a_MasterName">Medium Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_AttackT2_b_MasterName">Medium Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_AttackT2_c_MasterName">Medium Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_AttackT3_a_MasterName">Medium Aggressive Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_AttackT3_b_MasterName">Medium Aggressive Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_AttackT3_c_MasterName">Medium Aggressive Potion Pack T3</string>
-	<string key="PvP_Potions_Large_AttackT1_MasterName">Large Aggressive Potion Pack T1</string>
-	<string key="PvP_Potions_Large_AttackT2_MasterName">Large Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Large_AttackT3_MasterName">Large Aggressive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_DefenceT1_a_MasterName">Small Defensive Potion Pack T1</string>
-	<string key="PvP_Potions_Small_DefenceT1_b_MasterName">Small Defensive Potion Pack T1</string>
-	<string key="PvP_Potions_Small_DefenceT1_c_MasterName">Small Defensive Potion Pack T1</string>
-	<string key="PvP_Potions_Small_DefenceT2_a_MasterName">Small Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_DefenceT2_b_MasterName">Small Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_DefenceT2_c_MasterName">Small Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_DefenceT3_a_MasterName">Small Defensive Potion Pack T3</string>
-	<string key="PvP_Potions_Small_DefenceT3_b_MasterName">Small Defensive Potion Pack T3</string>
-	<string key="PvP_Potions_Small_DefenceT3_c_MasterName">Small Defensive Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_DefenceT1_a_MasterName">Medium Defensive Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_DefenceT1_b_MasterName">Medium Defensive Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_DefenceT1_c_MasterName">Medium Defensive Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_DefenceT2_a_MasterName">Medium Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_DefenceT2_b_MasterName">Medium Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_DefenceT2_c_MasterName">Medium Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_DefenceT3_a_MasterName">Medium Defensive Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_DefenceT3_b_MasterName">Medium Defensive Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_DefenceT3_c_MasterName">Medium Defensive Potion Pack T3</string>
-	<string key="PvP_Potions_Large_DefenceT1_MasterName">Large Defensive Potion Pack T1</string>
-	<string key="PvP_Potions_Large_DefenceT2_MasterName">Large Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Large_DefenceT3_MasterName">Large Defensive Potion Pack T2</string>
-	<string key="PvP_Potions_Small_LostT1_a_MasterName">Small Lost Potion Pack T1</string>
-	<string key="PvP_Potions_Small_LostT1_b_MasterName">Small Lost Potion Pack T1</string>
-	<string key="PvP_Potions_Small_LostT1_c_MasterName">Small Lost Potion Pack T1</string>
-	<string key="PvP_Potions_Small_LostT2_a_MasterName">Small Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Small_LostT2_b_MasterName">Small Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Small_LostT2_c_MasterName">Small Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Small_LostT3_a_MasterName">Small Lost Potion Pack T3</string>
-	<string key="PvP_Potions_Small_LostT3_b_MasterName">Small Lost Potion Pack T3</string>
-	<string key="PvP_Potions_Small_LostT3_c_MasterName">Small Lost Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_LostT1_a_MasterName">Medium Lost Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_LostT1_b_MasterName">Medium Lost Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_LostT1_c_MasterName">Medium Lost Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_LostT2_a_MasterName">Medium Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_LostT2_b_MasterName">Medium Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_LostT2_c_MasterName">Medium Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_LostT3_a_MasterName">Medium Lost Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_LostT3_b_MasterName">Medium Lost Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_LostT3_c_MasterName">Medium Lost Potion Pack T3</string>
-	<string key="PvP_Potions_Large_LostT1_MasterName">Large Lost Potion Pack T1</string>
-	<string key="PvP_Potions_Large_LostT2_MasterName">Large Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Large_LostT3_MasterName">Large Lost Potion Pack T2</string>
-	<string key="PvP_Potions_Small_CorruptedT1_a_MasterName">Small Corrupted Potion Pack T1</string>
-	<string key="PvP_Potions_Small_CorruptedT1_b_MasterName">Small Corrupted Potion Pack T1</string>
-	<string key="PvP_Potions_Small_CorruptedT1_c_MasterName">Small Corrupted Potion Pack T1</string>
-	<string key="PvP_Potions_Small_CorruptedT2_a_MasterName">Small Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Small_CorruptedT2_b_MasterName">Small Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Small_CorruptedT2_c_MasterName">Small Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Small_CorruptedT3_a_MasterName">Small Corrupted Potion Pack T3</string>
-	<string key="PvP_Potions_Small_CorruptedT3_b_MasterName">Small Corrupted Potion Pack T3</string>
-	<string key="PvP_Potions_Small_CorruptedT3_c_MasterName">Small Corrupted Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_CorruptedT1_a_MasterName">Medium Corrupted Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_CorruptedT1_b_MasterName">Medium Corrupted Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_CorruptedT1_c_MasterName">Medium Corrupted Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_CorruptedT2_a_MasterName">Medium Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_CorruptedT2_b_MasterName">Medium Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_CorruptedT2_c_MasterName">Medium Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_CorruptedT3_a_MasterName">Medium Corrupted Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_CorruptedT3_b_MasterName">Medium Corrupted Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_CorruptedT3_c_MasterName">Medium Corrupted Potion Pack T3</string>
-	<string key="PvP_Potions_Large_CorruptedT1_MasterName">Large Corrupted Potion Pack T1</string>
-	<string key="PvP_Potions_Large_CorruptedT2_MasterName">Large Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Large_CorruptedT3_MasterName">Large Corrupted Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AncientT1_a_MasterName">Small Ancient Potion Pack T1</string>
-	<string key="PvP_Potions_Small_AncientT1_b_MasterName">Small Ancient Potion Pack T1</string>
-	<string key="PvP_Potions_Small_AncientT1_c_MasterName">Small Ancient Potion Pack T1</string>
-	<string key="PvP_Potions_Small_AncientT2_a_MasterName">Small Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AncientT2_b_MasterName">Small Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AncientT2_c_MasterName">Small Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AncientT3_a_MasterName">Small Ancient Potion Pack T3</string>
-	<string key="PvP_Potions_Small_AncientT3_b_MasterName">Small Ancient Potion Pack T3</string>
-	<string key="PvP_Potions_Small_AncientT3_c_MasterName">Small Ancient Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_AncientT1_a_MasterName">Medium Ancient Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_AncientT1_b_MasterName">Medium Ancient Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_AncientT1_c_MasterName">Medium Ancient Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_AncientT2_a_MasterName">Medium Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_AncientT2_b_MasterName">Medium Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_AncientT2_c_MasterName">Medium Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_AncientT3_a_MasterName">Medium Ancient Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_AncientT3_b_MasterName">Medium Ancient Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_AncientT3_c_MasterName">Medium Ancient Potion Pack T3</string>
-	<string key="PvP_Potions_Large_AncientT1_MasterName">Large Ancient Potion Pack T1</string>
-	<string key="PvP_Potions_Large_AncientT2_MasterName">Large Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Large_AncientT3_MasterName">Large Ancient Potion Pack T2</string>
-	<string key="PvP_Potions_Small_BeastT1_a_MasterName">Small Beast Potion Pack T1</string>
-	<string key="PvP_Potions_Small_BeastT1_b_MasterName">Small Beast Potion Pack T1</string>
-	<string key="PvP_Potions_Small_BeastT1_c_MasterName">Small Beast Potion Pack T1</string>
-	<string key="PvP_Potions_Small_BeastT2_a_MasterName">Small Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Small_BeastT2_b_MasterName">Small Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Small_BeastT2_c_MasterName">Small Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Small_BeastT3_a_MasterName">Small Beast Potion Pack T3</string>
-	<string key="PvP_Potions_Small_BeastT3_b_MasterName">Small Beast Potion Pack T3</string>
-	<string key="PvP_Potions_Small_BeastT3_c_MasterName">Small Beast Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_BeastT1_a_MasterName">Medium Beast Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_BeastT1_b_MasterName">Medium Beast Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_BeastT1_c_MasterName">Medium Beast Potion Pack T1</string>
-	<string key="PvP_Potions_Medium_BeastT2_a_MasterName">Medium Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_BeastT2_b_MasterName">Medium Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_BeastT2_c_MasterName">Medium Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Medium_BeastT3_a_MasterName">Medium Beast Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_BeastT3_b_MasterName">Medium Beast Potion Pack T3</string>
-	<string key="PvP_Potions_Medium_BeastT3_c_MasterName">Medium Beast Potion Pack T3</string>
-	<string key="PvP_Potions_Large_BeastT1_MasterName">Large Beast Potion Pack T1</string>
-	<string key="PvP_Potions_Large_BeastT2_MasterName">Large Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Large_BeastT3_MasterName">Large Beast Potion Pack T2</string>
-	<string key="PvP_Potions_Small_AttackT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AttackT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AttackT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_AttackT1_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_AttackT2_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_AttackT3_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_DefenceT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_DefenceT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_DefenceT1_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_DefenceT2_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_DefenceT3_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_LostT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_LostT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_LostT1_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_LostT2_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_LostT3_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_CorruptedT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_CorruptedT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_CorruptedT1_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_CorruptedT2_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_CorruptedT3_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_AncientT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_AncientT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_AncientT1_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_AncientT2_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_AncientT3_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Small_BeastT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT1_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT1_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT1_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT2_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT2_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT2_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT3_a_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT3_b_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Medium_BeastT3_c_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_BeastT1_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_BeastT2_Description">Description of the contents of this potion pack goes here.</string>
-	<string key="PvP_Potions_Large_BeastT3_Description">Description of the contents of this potion pack goes here.</string>
+	<string key="Skin_Chest_FanaticSaintL_MasterName" rel_version="Apparel_FanaticSaint_Prime_Light">Holy Vanguard Chest</string>
+	<string key="Skin_Head_FanaticSaintL_MasterName" rel_version="Apparel_FanaticSaint_Prime_Light">Holy Vanguard Helm</string>
+	<string key="Skin_Legs_FanaticSaintL_MasterName" rel_version="Apparel_FanaticSaint_Prime_Light">Holy Vanguard Pants</string>
+	<string key="Skin_Feet_FanaticSaintL_MasterName" rel_version="Apparel_FanaticSaint_Prime_Light">Holy Vanguard Boots</string>
+	<string key="Skin_Hands_FanaticSaintL_MasterName" rel_version="Apparel_FanaticSaint_Prime_Light">Holy Vanguard Gloves</string>
+	<string key="Skin_Chest_FanaticSaintL_Description" rel_version="Apparel_FanaticSaint_Prime_Light">Wear this graceful light armor to dodge circles around your enemies.</string>
+	<string key="Skin_Head_FanaticSaintL_Description" rel_version="Apparel_FanaticSaint_Prime_Light">Wear this graceful light armor to dodge circles around your enemies.</string>
+	<string key="Skin_Legs_FanaticSaintL_Description" rel_version="Apparel_FanaticSaint_Prime_Light">Wear this graceful light armor to dodge circles around your enemies.</string>
+	<string key="Skin_Feet_FanaticSaintL_Description" rel_version="Apparel_FanaticSaint_Prime_Light">Wear this graceful light armor to dodge circles around your enemies.</string>
+	<string key="Skin_Hands_FanaticSaintL_Description" rel_version="Apparel_FanaticSaint_Prime_Light">Wear this graceful light armor to dodge circles around your enemies.</string>
 	<string key="QuestStarterCache1_MasterName">Battleworn Warhammer Box</string>
 	<string key="QuestStarterCache1_Description">A box containing much needed supplies for survival on Aeternum.</string>
 	<string key="QuestStarterCache2_MasterName">Battleworn Hatchet Box</string>
@@ -29646,5 +29425,9 @@
 	<string key="2hBlunderbuss_CovenantRank5_Description">A well-made blunderbuss for Covenant Adjudicators.</string>
 	<string key="KeyPart_CoreIsabella_Name">Tempest's Core</string>
 	<string key="KeyPart_CoreIsabella_Desc">A pure energy core. This item is used to craft a Tempest's Heart Tuning Orb to allow access to the Tempest's Heart expedition.</string>
+	<string key="MadnessIncarnateT1_MasterName" rel_version="Expedition_ShatterMtn_00">Madness Incarnate</string>
+	<string key="MadnessIncarnateT1_Description" rel_version="Expedition_ShatterMtn_00">Madness so great it has manfested into this physical form</string>
+	<string key="DesecratedFleshT1_MasterName" rel_version="Expedition_ShatterMtn_00">Desecrated Flesh</string>
+	<string key="DesecratedFleshT1_Description" rel_version="Expedition_ShatterMtn_00">A chunk of flesh saturated with aborrhent evil</string>
 </resources>
 

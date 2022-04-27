@@ -23,6 +23,9 @@
       <TabItem Header="ScreenOCR">
         <ContentControl prism:RegionManager.RegionName="DebugScreenOCRView"/>
       </TabItem>
+      <TabItem Header="ScreenCountOCR">
+        <ContentControl prism:RegionManager.RegionName="DebugScreenCountOCRView"/>
+      </TabItem>
     </mah:MetroAnimatedSingleRowTabControl>
   </Grid>
 </UserControl>

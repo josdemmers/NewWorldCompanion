@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <FileVersion>1.0.4.2</FileVersion>
-    <Version>1.0.4.2</Version>
+    <FileVersion>1.0.4.3</FileVersion>
+    <Version>1.0.4.3</Version>
     <Copyright>Copyright © 2022</Copyright>
   </PropertyGroup>
 </Project>

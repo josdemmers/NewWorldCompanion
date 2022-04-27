@@ -18,9 +18,11 @@ namespace NewWorldCompanion.Services
         private readonly INewWorldDataStore _newWorldDataStore;
         private readonly IScreenProcessHandler _screenProcessHandler;
 
+        private readonly object nameLock = new object();
+        private readonly object countLock = new object();
+
         private List<OcrMapping> _ocrMappings = new List<OcrMapping>();
 
-        private bool _isBusy = false;
         private string _ocrText = string.Empty;
         private string _ocrTextCount = string.Empty;
 
@@ -60,9 +62,8 @@ namespace NewWorldCompanion.Services
 
         private void HandleOcrImageReadyEvent()
         {
-            if (!_isBusy)
+            lock (nameLock)
             {
-                _isBusy = true;
                 if (_screenProcessHandler.OcrImage != null)
                 {
                     try
@@ -70,7 +71,7 @@ namespace NewWorldCompanion.Services
                         Image image = Image.FromFile(@"ocrimages\itemname.png");
                         Tesseract tesseract = new Tesseract();
                         string ocrText = tesseract.Read(image).Trim().Replace('\n', ' ');
-                        var mapping = _ocrMappings.FirstOrDefault(m => m.key.Equals(ocrText), new OcrMapping{ key = ocrText, value = ocrText });
+                        var mapping = _ocrMappings.FirstOrDefault(m => m.key.Equals(ocrText), new OcrMapping { key = ocrText, value = ocrText });
                         OcrText = mapping.value;
                         OcrText = _newWorldDataStore.GetLevenshteinItemName(OcrText);
 
@@ -80,21 +81,16 @@ namespace NewWorldCompanion.Services
                         _eventAggregator.GetEvent<OcrTextReadyEvent>().Publish();
                         _eventAggregator.GetEvent<OverlayShowEvent>().Publish();
                     }
-                    catch (Exception) 
-                    {
-                        _isBusy = false;
-                    }
+                    catch (Exception) { }
                 }
-                _isBusy = false;
             }
         }
 
         private void HandleOcrImageCountReadyEvent()
         {
-            if (!_isBusy)
+            lock (countLock)
             {
-                _isBusy = true;
-                if (_screenProcessHandler.OcrImage != null)
+                if (_screenProcessHandler.OcrImageCount != null)
                 {
                     try
                     {
@@ -108,12 +104,8 @@ namespace NewWorldCompanion.Services
 
                         _eventAggregator.GetEvent<OcrTextCountReadyEvent>().Publish();
                     }
-                    catch (Exception)
-                    {
-                        _isBusy = false;
-                    }
+                    catch (Exception) { }
                 }
-                _isBusy = false;
             }
         }
 

@@ -22,6 +22,8 @@ namespace NewWorldCompanion.Services
         private readonly ISettingsManager _settingsManager;
         private readonly IScreenCaptureHandler _screenCaptureHandler;
 
+        private readonly object ocrDebugLock = new object();
+
         private bool _isBusy = false;
         private Bitmap? _capturedImage = null;
         private Bitmap? _capturedImageCount = null;
@@ -29,6 +31,7 @@ namespace NewWorldCompanion.Services
         private Bitmap? _roiImage = null;
         private Bitmap? _ocrImage = null;
         private Bitmap? _ocrImageCount = null;
+        private Bitmap? _ocrImageCountRaw = null;
 
         private int _overlayX = 0;
         private int _overlayY = 0;
@@ -67,6 +70,7 @@ namespace NewWorldCompanion.Services
         //public Bitmap? OcrImage { get => _roiImage; set => _roiImage = value; }
         public Bitmap? OcrImage { get => _ocrImage; set => _ocrImage = value; }
         public Bitmap? OcrImageCount { get => _ocrImageCount; set => _ocrImageCount = value; }
+        public Bitmap? OcrImageCountRaw { get => _ocrImageCountRaw; set => _ocrImageCountRaw = value; }
         public int OverlayX { get => _overlayX; set => _overlayX = value; }
         public int OverlayY { get => _overlayY; set => _overlayY = value; }
         public int OverlayWidth { get => _overlayWidth; set => _overlayWidth = value; }
@@ -211,7 +215,7 @@ namespace NewWorldCompanion.Services
                     _eventAggregator.GetEvent<RoiImageReadyEvent>().Publish();
                     ProcessImageOCR(crop);
                 }
-                catch (Exception) 
+                catch (Exception)
                 {
                     _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
                 }
@@ -286,11 +290,63 @@ namespace NewWorldCompanion.Services
                     DirectoryInfo directoryInfo = Directory.CreateDirectory(@"ocrimages\");
                 }
 
+                OcrImageCountRaw = img.ToBitmap();
                 OcrImageCount = imgFilter.ToBitmap();
+                img.Save(@"ocrimages\itemcountraw.png");
                 imgFilter.Save(@"ocrimages\itemcount.png");
+
+                if(!File.Exists(@"ocrimages\itemcountdebug.png"))
+                {
+                    img.Save(@"ocrimages\itemcountdebug.png");
+                }
+
                 _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Publish();
             }
             catch (Exception) { }
+        }
+
+        public void ProcessImageCountOCRDebug(int minR, int minG, int minB, int maxR, int maxG, int maxB)
+        {
+            //https://stackoverflow.com/questions/26218280/thresholding-rgb-image-in-opencv
+            //https://stackoverflow.com/questions/16407267/how-to-use-cvinrange-in-emgu-cv
+
+
+            lock (ocrDebugLock)
+            {
+                try
+                {
+                    var img = new Mat(@"ocrimages\itemcountdebug.png");
+                    Mat imgFilter = new Mat(img.Size, DepthType.Cv8U, 3);
+
+                    CvInvoke.InRange(img, new ScalarArray(new MCvScalar(minR, minG, minB)), new ScalarArray(new MCvScalar(maxR, maxG, maxB)), imgFilter);
+
+                    // Convert the image to grayscale
+                    //CvInvoke.CvtColor(img, imgFilter, ColorConversion.Bgr2Gray);
+
+                    // Apply threshold
+                    //CvInvoke.Threshold(imgFilter, imgFilter, 0, 255, ThresholdType.Otsu);
+                    //CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.Binary);
+                    //CvInvoke.Threshold(imgFilter, imgFilter, ThresholdMin, ThresholdMax, ThresholdType.BinaryInv);
+
+                    // Thinning and Skeletonization
+                    //Mat element = CvInvoke.GetStructuringElement(ElementShape.Rectangle, new System.Drawing.Size(2, 2), new System.Drawing.Point(-1, -1));
+                    //CvInvoke.Erode(imgFilter, imgFilter, element, new System.Drawing.Point(-1, -1), 1, BorderType.Constant, new MCvScalar(255, 255, 255));
+
+                    // Filter out the noise
+                    //CvInvoke.GaussianBlur(imgFilter, imgFilter, new System.Drawing.Size(0, 0), 1, 0, BorderType.Default);
+
+                    if (!Directory.Exists(@"ocrimages\"))
+                    {
+                        DirectoryInfo directoryInfo = Directory.CreateDirectory(@"ocrimages\");
+                    }
+
+                    OcrImageCountRaw = img.ToBitmap();
+                    OcrImageCount = imgFilter.ToBitmap();
+                    imgFilter.Save(@"ocrimages\itemcount.png");
+                    _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Publish();
+                }
+                catch (Exception) { }
+            }
         }
 
         #endregion

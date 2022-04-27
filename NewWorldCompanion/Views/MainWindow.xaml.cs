@@ -47,6 +47,7 @@ namespace NewWorldCompanion.Views
             regionManager.RegisterViewWithRegion("DebugScreenCaptureView", typeof(DebugScreenCaptureView));
             regionManager.RegisterViewWithRegion("DebugScreenProcessView", typeof(DebugScreenProcessView));
             regionManager.RegisterViewWithRegion("DebugScreenOCRView", typeof(DebugScreenOCRView));
+            regionManager.RegisterViewWithRegion("DebugScreenCountOCRView", typeof(DebugScreenCountOCRView));
         }
     }
 }
