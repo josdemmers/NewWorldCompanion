@@ -26,8 +26,8 @@ A companion app for New World, to keep track of all your learned recipes and cur
 - [x] Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
 - [x] Add pricing data for items you hover your mouse over.
 - [x] Add overlay to show recipe learned status directy in-game.
-- [ ] Add localisation for items. Currently English only.
-- [ ] Crafting cost calculator.
+- [ ] ~~Add localisation for items. Currently English only.~~
+- [ ] ~~Crafting cost calculator.~~
 
 ## Installation
 
