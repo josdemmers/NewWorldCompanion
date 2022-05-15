@@ -1,16 +1,14 @@
 ﻿using MahApps.Metro.Controls.Dialogs;
+using Microsoft.Extensions.DependencyInjection;
 using NewWorldCompanion.Interfaces;
 using NewWorldCompanion.Services;
 using NewWorldCompanion.Views;
+using NLog.Extensions.Logging;
 using Prism.Ioc;
 using Prism.Unity;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
+using Unity;
+using Unity.Microsoft.DependencyInjection;
 
 namespace NewWorldCompanion
 {
@@ -38,6 +36,19 @@ namespace NewWorldCompanion
             // Register Metro
             containerRegistry.RegisterSingleton<IDialogCoordinator, DialogCoordinator>();
         }
+
+        protected override IContainerExtension CreateContainerExtension()
+        {
+            var serviceCollection = new ServiceCollection();
+            serviceCollection.AddLogging(loggingBuilder =>
+                loggingBuilder.AddNLog(configFileRelativePath: "Config/NLog.config"));
+
+            var container = new UnityContainer();
+            container.BuildServiceProvider(serviceCollection);
+
+            return new UnityContainerExtension(container);
+        }
+
 
         protected override Window CreateShell()
         {

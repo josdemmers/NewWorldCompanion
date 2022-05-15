@@ -1,4 +1,5 @@
-﻿using NewWorldCompanion.Constants;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Constants;
 using NewWorldCompanion.Entities;
 using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
@@ -23,6 +24,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
     public class CraftingViewModel : BindableBase
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
         private readonly ICraftingRecipeManager _craftingRecipeManager;
         private readonly IScreenCaptureHandler _screenCaptureHandler;
         private readonly IOcrHandler _ocrHandler;
@@ -64,13 +66,16 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
         #region Constructor
 
-        public CraftingViewModel(IEventAggregator eventAggregator, ICraftingRecipeManager craftingRecipeManager, IScreenCaptureHandler screenCaptureHandler, IOcrHandler ocrHandler,
+        public CraftingViewModel(IEventAggregator eventAggregator, ILogger<CraftingViewModel> logger, ICraftingRecipeManager craftingRecipeManager, IScreenCaptureHandler screenCaptureHandler, IOcrHandler ocrHandler,
             IPriceManager priceManager)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OcrTextReadyEvent>().Subscribe(HandleOcrTextReadyEvent);
             _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Subscribe(HandlePriceCacheUpdatedEvent);
+
+            // Init logger
+            _logger = logger;
 
             // Init services
             _craftingRecipeManager = craftingRecipeManager;
@@ -367,7 +372,10 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
                 System.Windows.Clipboard.SetText(recipeName.Trim());
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
         }
 
         private void CreateCraftingRecipesFilteredView()

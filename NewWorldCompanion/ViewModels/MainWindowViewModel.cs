@@ -1,4 +1,5 @@
-﻿using NewWorldCompanion.Events;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using Prism.Mvvm;
@@ -12,6 +13,7 @@ namespace NewWorldCompanion.ViewModels
     public class MainWindowViewModel : BindableBase
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
         private readonly ISettingsManager _settingsManager;
         private readonly IOverlayHandler _overlayHandler;
         private readonly IVersionManager _versionManager;
@@ -22,11 +24,14 @@ namespace NewWorldCompanion.ViewModels
 
         #region Constructor
 
-        public MainWindowViewModel(IEventAggregator eventAggregator, ISettingsManager settingsManager, IOverlayHandler overlayHandler, IVersionManager versionManager)
+        public MainWindowViewModel(IEventAggregator eventAggregator, ILogger<MainWindowViewModel> logger, ISettingsManager settingsManager, IOverlayHandler overlayHandler, IVersionManager versionManager)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<VersionInfoUpdatedEvent>().Subscribe(HandleVersionInfoUpdatedEvent);
+
+            // Init logger
+            _logger = logger;
 
             // Init services
             _settingsManager = settingsManager;
@@ -61,6 +66,8 @@ namespace NewWorldCompanion.ViewModels
                 WindowTitle = $"New World Companion v{Assembly.GetExecutingAssembly().GetName().Version}";
             }
             RaisePropertyChanged(nameof(WindowTitle));
+
+            _logger.LogInformation(WindowTitle);
         }
 
         #endregion

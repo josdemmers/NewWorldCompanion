@@ -1,4 +1,5 @@
-﻿using NewWorldCompanion.Entities;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Entities;
 using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 using TesserNet;
 
@@ -15,6 +17,7 @@ namespace NewWorldCompanion.Services
     public class OcrHandler : IOcrHandler
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
         private readonly INewWorldDataStore _newWorldDataStore;
         private readonly IScreenProcessHandler _screenProcessHandler;
 
@@ -31,12 +34,15 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public OcrHandler(IEventAggregator eventAggregator, INewWorldDataStore newWorldDataStore, IScreenProcessHandler screenProcessHandler)
+        public OcrHandler(IEventAggregator eventAggregator, ILogger<OcrHandler> logger, INewWorldDataStore newWorldDataStore, IScreenProcessHandler screenProcessHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OcrImageReadyEvent>().Subscribe(HandleOcrImageReadyEvent);
             _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Subscribe(HandleOcrImageCountReadyEvent);
+
+            // Init logger
+            _logger = logger;
 
             // Init services
             _newWorldDataStore = newWorldDataStore;
@@ -83,7 +89,10 @@ namespace NewWorldCompanion.Services
                         _eventAggregator.GetEvent<OcrTextReadyEvent>().Publish();
                         _eventAggregator.GetEvent<OverlayShowEvent>().Publish();
                     }
-                    catch (Exception) { }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+                    }
                 }
             }
         }
@@ -109,7 +118,10 @@ namespace NewWorldCompanion.Services
 
                         _eventAggregator.GetEvent<OcrTextCountReadyEvent>().Publish();
                     }
-                    catch (Exception) { }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+                    }
                 }
             }
         }
@@ -132,7 +144,10 @@ namespace NewWorldCompanion.Services
                     _ocrMappings = JsonSerializer.Deserialize<List<OcrMapping>>(stream) ?? new List<OcrMapping>();
                 }
             }
-            catch (Exception){}
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
         }
 
         #endregion

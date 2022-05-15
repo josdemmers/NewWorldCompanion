@@ -1,4 +1,5 @@
-﻿using NewWorldCompanion.Entities;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Entities;
 using NewWorldCompanion.Events;
 using NewWorldCompanion.Helpers;
 using NewWorldCompanion.Interfaces;
@@ -7,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -15,6 +17,7 @@ namespace NewWorldCompanion.Services
     public class PriceManager : IPriceManager
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
         private readonly ISettingsManager _settingsManager;
         private readonly IHttpClientHandler _httpClientHandler;
         private readonly INewWorldDataStore _newWorldDataStore;
@@ -30,10 +33,13 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public PriceManager(IEventAggregator eventAggregator, ISettingsManager settingsManager, IHttpClientHandler httpClientHandler, INewWorldDataStore newWorldDataStore)
+        public PriceManager(IEventAggregator eventAggregator, ILogger<PriceManager> logger, ISettingsManager settingsManager, IHttpClientHandler httpClientHandler, INewWorldDataStore newWorldDataStore)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
+
+            // Init logger
+            _logger = logger;
 
             // Init services
             _settingsManager = settingsManager;
@@ -88,9 +94,9 @@ namespace NewWorldCompanion.Services
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
             }
 
             _eventAggregator.GetEvent<PriceServerListUpdatedEvent>().Publish();
@@ -159,7 +165,10 @@ namespace NewWorldCompanion.Services
                                         };
                                     }
                                 }
-                                catch (Exception) { };
+                                catch (Exception ex)
+                                {
+                                    _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+                                }
                             }
 
                             // Always remove from queue, even with exceptions.

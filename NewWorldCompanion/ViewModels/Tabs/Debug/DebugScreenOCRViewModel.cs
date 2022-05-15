@@ -1,10 +1,12 @@
-﻿using NewWorldCompanion.Constants;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Constants;
 using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using System;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -13,6 +15,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
     public class DebugScreenOCRViewModel : BindableBase
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
         private readonly ISettingsManager _settingsManager;
         private readonly IScreenProcessHandler _screenProcessHandler;
         private readonly IOcrHandler _ocrHandler;
@@ -27,7 +30,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         #region Constructor
 
-        public DebugScreenOCRViewModel(IEventAggregator eventAggregator, ISettingsManager settingsManager, IScreenProcessHandler screenProcessHandler, IOcrHandler ocrHandler)
+        public DebugScreenOCRViewModel(IEventAggregator eventAggregator, ILogger<DebugScreenOCRViewModel> logger, ISettingsManager settingsManager, IScreenProcessHandler screenProcessHandler, IOcrHandler ocrHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
@@ -35,6 +38,9 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Subscribe(HandleOcrImageCountReadyEvent);
             _eventAggregator.GetEvent<OcrTextReadyEvent>().Subscribe(HandleOcrTextReadyEvent);
             _eventAggregator.GetEvent<OcrTextCountReadyEvent>().Subscribe(HandleOcrTextCountReadyEvent);
+
+            // Init logger
+            _logger = logger;
 
             // Init services
             _settingsManager = settingsManager;
@@ -226,7 +232,10 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             {
                 System.Windows.Clipboard.SetText(ItemName);
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
         }
 
         private void CopyItemCountExecute()
@@ -235,7 +244,10 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             {
                 System.Windows.Clipboard.SetText(ItemCount);
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
         }
 
         #endregion

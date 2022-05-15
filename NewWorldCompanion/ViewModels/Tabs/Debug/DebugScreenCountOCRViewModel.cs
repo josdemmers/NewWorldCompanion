@@ -1,4 +1,5 @@
-﻿using NewWorldCompanion.Events;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Commands;
 using Prism.Events;
@@ -6,6 +7,7 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,6 +18,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
     public class DebugScreenCountOCRViewModel : BindableBase
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
         private readonly IScreenProcessHandler _screenProcessHandler;
         private readonly IOcrHandler _ocrHandler;
 
@@ -35,12 +38,15 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
 
         #region Constructor
 
-        public DebugScreenCountOCRViewModel(IEventAggregator eventAggregator, IScreenProcessHandler screenProcessHandler, IOcrHandler ocrHandler)
+        public DebugScreenCountOCRViewModel(IEventAggregator eventAggregator, ILogger<DebugScreenCountOCRViewModel> logger, IScreenProcessHandler screenProcessHandler, IOcrHandler ocrHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Subscribe(HandleOcrImageCountReadyEvent);
             _eventAggregator.GetEvent<OcrTextCountReadyEvent>().Subscribe(HandleOcrTextCountReadyEvent);
+
+            // Init logger
+            _logger = logger;
 
             // Init services
             _screenProcessHandler = screenProcessHandler;
@@ -196,7 +202,10 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             {
                 System.Windows.Clipboard.SetText(ItemCount);
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
         }
 
         #endregion

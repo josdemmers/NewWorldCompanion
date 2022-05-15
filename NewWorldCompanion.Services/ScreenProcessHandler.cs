@@ -2,6 +2,7 @@
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
+using Microsoft.Extensions.Logging;
 using NewWorldCompanion.Constants;
 using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +21,8 @@ namespace NewWorldCompanion.Services
     public class ScreenProcessHandler : IScreenProcessHandler
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
+
         private readonly ISettingsManager _settingsManager;
         private readonly IScreenCaptureHandler _screenCaptureHandler;
 
@@ -42,11 +46,14 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public ScreenProcessHandler(IEventAggregator eventAggregator, ISettingsManager settingsManager, IScreenCaptureHandler screenCaptureHandler)
+        public ScreenProcessHandler(IEventAggregator eventAggregator, ILogger<ScreenProcessHandler> logger, ISettingsManager settingsManager, IScreenCaptureHandler screenCaptureHandler)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<ScreenCaptureReadyEvent>().Subscribe(HandleScreenCaptureReadyEvent);
+
+            // Init logger
+            _logger = logger;
 
             // Init services
             _settingsManager = settingsManager;
@@ -218,8 +225,10 @@ namespace NewWorldCompanion.Services
                     _eventAggregator.GetEvent<RoiImageReadyEvent>().Publish();
                     ProcessImageOCR(crop);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+
                     _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
                 }
             }
@@ -264,7 +273,10 @@ namespace NewWorldCompanion.Services
                 imgFilter.Save(@"ocrimages\itemname.png");
                 _eventAggregator.GetEvent<OcrImageReadyEvent>().Publish();
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
         }
 
         private void ProcessImageCountOCR(Mat img)
@@ -286,7 +298,10 @@ namespace NewWorldCompanion.Services
                 imgFilter.Save(@"ocrimages\itemcount.png");
                 _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Publish();
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
         }
 
         public void ProcessImageCountOCRDebug(int minR, int minG, int minB, int maxR, int maxG, int maxB)
@@ -314,7 +329,10 @@ namespace NewWorldCompanion.Services
                     imgFilter.Save(@"ocrimages\itemcount.png");
                     _eventAggregator.GetEvent<OcrImageCountReadyEvent>().Publish();
                 }
-                catch (Exception) { }
+                catch(Exception ex)
+                {
+                    _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+                }
             }
         }
 

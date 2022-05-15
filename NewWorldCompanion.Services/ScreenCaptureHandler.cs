@@ -1,10 +1,12 @@
-﻿using NewWorldCompanion.Events;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Helpers;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
@@ -15,6 +17,7 @@ namespace NewWorldCompanion.Services
     public class ScreenCaptureHandler : IScreenCaptureHandler
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
 
         private DispatcherTimer _captureTimer = new();
         private DispatcherTimer _coordinatesTimer = new();
@@ -31,10 +34,13 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public ScreenCaptureHandler(IEventAggregator eventAggregator)
+        public ScreenCaptureHandler(IEventAggregator eventAggregator, ILogger<ScreenCaptureHandler> logger)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
+
+            // Init logger
+            _logger = logger;
 
             // Capture timer
             _captureTimer = new DispatcherTimer
@@ -128,11 +134,15 @@ namespace NewWorldCompanion.Services
                     }
                     else
                     {
-                        _captureTimer.Interval = TimeSpan.FromMilliseconds(Delay * 10);
+                        _logger.LogWarning($"{MethodBase.GetCurrentMethod()?.Name}: Invalid windowHandle. NewWorld processes found: {processes.Length}. Retry in 10 seconds.");
+
+                        _captureTimer.Interval = TimeSpan.FromMilliseconds(Delay * 100);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+
                     _captureTimer.Interval = TimeSpan.FromMilliseconds(Delay * 10);
                 }
                 _captureTimer.Start();
