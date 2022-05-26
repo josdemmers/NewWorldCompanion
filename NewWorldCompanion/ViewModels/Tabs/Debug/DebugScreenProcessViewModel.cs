@@ -194,6 +194,10 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
                     AreaLower = EmguConstants.Default25601440AreaLower;
                     AreaUpper = EmguConstants.Default25601440AreaUpper;
                     break;
+                case "3840x2160":
+                    AreaLower = EmguConstants.Default38402160AreaLower;
+                    AreaUpper = EmguConstants.Default38402160AreaUpper;
+                    break;
                 default:
                     AreaLower = EmguConstants.Default19201080AreaLower;
                     AreaUpper = EmguConstants.Default19201080AreaUpper;

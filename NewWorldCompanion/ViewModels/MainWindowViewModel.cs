@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using System;
@@ -37,6 +38,9 @@ namespace NewWorldCompanion.ViewModels
             _settingsManager = settingsManager;
             _overlayHandler = overlayHandler;
             _versionManager = versionManager;
+
+            // Init View commands
+            LaunchNWCOnGitHubCommand = new DelegateCommand(LaunchNWCOnGitHubExecute);
         }
 
         #endregion
@@ -44,6 +48,8 @@ namespace NewWorldCompanion.ViewModels
         // Start of Properties region
 
         #region Properties
+
+        public DelegateCommand LaunchNWCOnGitHubCommand { get; }
 
         public bool DebugModeActive { get => _settingsManager.Settings.DebugModeActive; }
         public string WindowTitle { get => _windowTitle; set => _windowTitle = value; }
@@ -75,6 +81,18 @@ namespace NewWorldCompanion.ViewModels
         // Start of Methods region
 
         #region Methods
+
+        private void LaunchNWCOnGitHubExecute()
+        {
+            try
+            {
+                Process.Start(new ProcessStartInfo("https://github.com/josdemmers/NewWorldCompanion/releases") { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
+        }
 
         #endregion
 

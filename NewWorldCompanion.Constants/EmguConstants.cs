@@ -7,6 +7,8 @@
         public const int Default19201080AreaUpper = 7000;
         public const int Default25601440AreaLower = 10000;
         public const int Default25601440AreaUpper = 15000;
+        public const int Default38402160AreaLower = 22600;
+        public const int Default38402160AreaUpper = 26600;
 
         public const int DefaultHysteresisLower = 10;
         public const int DefaultHysteresisUpper = 400;

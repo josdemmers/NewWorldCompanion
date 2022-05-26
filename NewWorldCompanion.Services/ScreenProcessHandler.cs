@@ -203,7 +203,9 @@ namespace NewWorldCompanion.Services
                   rectangleList[0].MinAreaRect().X + rectangleList[0].MinAreaRect().Width + 5,
                   rectangleList[0].MinAreaRect().Y,
                   (int)(rectangleList[0].MinAreaRect().Width * 3.30),
-                  rectangleList[0].MinAreaRect().Height - 17
+                  //rectangleList[0].MinAreaRect().Height
+                  //rectangleList[0].MinAreaRect().Height - 17 // 1080p, 1440p
+                  rectangleList[0].MinAreaRect().Height - 25 // 2160p
                 );
 
                 // Update overlay position

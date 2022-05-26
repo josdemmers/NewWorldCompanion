@@ -5,11 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewWorldCompanion"
         xmlns:prism="http://prismlibrary.com/"
-        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:converters="clr-namespace:NewWorldCompanion.Converters"
         mc:Ignorable="d"
         Title="{Binding WindowTitle}" Height="550" Width="800"
         WindowStartupLocation="CenterScreen">
+  <mah:MetroWindow.LeftWindowCommands>
+    <mah:WindowCommands>
+      <Button Command="{Binding LaunchNWCOnGitHubCommand}" ToolTip="New World Companion on GitHub">
+        <iconPacks:PackIconMaterial Width="22"
+                                    Height="22"
+                                    Kind="Github" />
+      </Button>
+    </mah:WindowCommands>
+  </mah:MetroWindow.LeftWindowCommands>
+
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="*" />

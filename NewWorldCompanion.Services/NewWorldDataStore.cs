@@ -293,6 +293,7 @@ namespace NewWorldCompanion.Services
 
             Debug.WriteLine($"Levenshtein. Item: {itemName}, Match: {currentItem}, Distance: {currentDistance}");
 
+            //return currentDistance <= Math.Max(3, itemName.Length) ? currentItem : itemName;
             return currentDistance <= 3 ? currentItem : itemName;
         }
 

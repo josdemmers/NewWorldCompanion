@@ -39,13 +39,14 @@
     <Slider Grid.Row="0" Grid.Column="1" Minimum="1" Maximum="1000" Value="{Binding HysteresisLower}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
     <Slider Grid.Row="0" Grid.Column="2" Minimum="1" Maximum="1000" Value="{Binding HysteresisUpper}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
     <Label Grid.Row="1" Grid.Column="0" Content="Area thresholds" />
-    <Slider Grid.Row="1" Grid.Column="1" Minimum="2000" Maximum="20000" Value="{Binding AreaLower}" IsSnapToTickEnabled="True" TickFrequency="100" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
-    <Slider Grid.Row="1" Grid.Column="2" Minimum="2000" Maximum="20000" Value="{Binding AreaUpper}" IsSnapToTickEnabled="True" TickFrequency="100" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
+    <Slider Grid.Row="1" Grid.Column="1" Minimum="2000" Maximum="40000" Value="{Binding AreaLower}" IsSnapToTickEnabled="True" TickFrequency="100" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
+    <Slider Grid.Row="1" Grid.Column="2" Minimum="2000" Maximum="40000" Value="{Binding AreaUpper}" IsSnapToTickEnabled="True" TickFrequency="100" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
     <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
       <Button Content="Load Config" Margin="1" Command="{Binding RestoreDefaultsCommand}"/>
       <ComboBox Margin="1" SelectedValue="{Binding Path=SelectedPresetConfig, Mode=OneWayToSource}">
         <ComboBoxItem IsSelected="True" Content="1920x1080"/>
         <ComboBoxItem Content="2560x1440"/>
+        <ComboBoxItem Content="3840x2160"/>
       </ComboBox>
     </StackPanel>
 
