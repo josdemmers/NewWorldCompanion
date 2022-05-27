@@ -144,7 +144,7 @@ namespace NewWorldCompanion.Services
                 //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                 infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
                     decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2"):
-                $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} lowest ({nwmarketpriceJson.last_checked})";
                 infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ? 
                     infoPriceAvg : 
                     $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
@@ -186,7 +186,7 @@ namespace NewWorldCompanion.Services
                 //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                 infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
                     decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2") :
-                    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                    $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} lowest ({nwmarketpriceJson.last_checked})";
                 infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ?
                     infoPriceAvg :
                     $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";

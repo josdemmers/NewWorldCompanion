@@ -16,7 +16,7 @@ namespace NewWorldCompanion.Entities
         public string last_checked { get; set; } = string.Empty;
         //public string recent_lowest_price { get; set; } = string.Empty;
         public double recent_lowest_price { get; set; } = 0.0;
-        public List<object> avg_graph_data { get; set; } = new List<object>();
+        public List<AvgGraph> avg_graph_data { get; set; } = new List<AvgGraph>();
 
         [JsonIgnore]
         public string RecentLowestPriceAvg
@@ -30,16 +30,8 @@ namespace NewWorldCompanion.Entities
                 {
                     if (avg_graph_data.Count() > 0)
                     {
-                        JsonElement priceData = (JsonElement)avg_graph_data.Last();
-                        switch (priceData.ValueKind)
-                        {
-                            case JsonValueKind.Number:
-                                price = decimal.Parse(priceData.ToString(), style, CultureInfo.InvariantCulture).ToString("F2");
-                                break;
-                            case JsonValueKind.Array:
-                                price = decimal.Parse(priceData[1].ToString(), style, CultureInfo.InvariantCulture).ToString("F2");
-                                break;
-                        }
+                        AvgGraph priceData = avg_graph_data.Last();
+                        price = priceData.price.ToString("F2");
                     }
                 }
                 catch (Exception){}
@@ -47,5 +39,11 @@ namespace NewWorldCompanion.Entities
                 return price;
             }
         }
+    }
+
+    public class AvgGraph
+    {
+        public DateTime datetime { get; set; }
+        public double price { get; set; }
     }
 }

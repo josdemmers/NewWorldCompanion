@@ -274,7 +274,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
                         //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
                         _selectedCraftingRecipePrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
                             decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2") :
-                            $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
+                            $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} lowest ({nwmarketpriceJson.last_checked})";
                     }
                 }
                 return _selectedCraftingRecipePrice;
