@@ -33,7 +33,8 @@ A companion app for New World, to keep track of all your learned recipes and cur
 
 - Download the latest version from [Releases](https://github.com/josdemmers/NewWorldCompanion/releases)
 - Extract files and run NewWorldCompanion.exe
-  - Go to configuration and select the preset matching your resolution. 
+  - Go to configuration (ScreenProcess) and select the preset matching your resolution. 
+  - Go to configuration (Overlay) and select your server.
 - Updating from an previous version? Make sure to copy your Config folder to keep your current progress.
 
 ## Configuration
