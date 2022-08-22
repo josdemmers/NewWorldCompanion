@@ -1,4 +1,5 @@
-﻿using NewWorldCompanion.Entities;
+﻿using NewWorldCompanion.Constants;
+using NewWorldCompanion.Entities;
 using NewWorldCompanion.Helpers;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
@@ -54,9 +55,30 @@ namespace NewWorldCompanion.Services
             var assembly = Assembly.GetExecutingAssembly();
             string resourcePath = string.Empty;
 
-            // MasterItemDefinitions Crafting
+            // MasterItemDefinitions Common
             _masterItemDefinitionsJson.Clear();
             var masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
+            resourcePath = "MasterItemDefinitions_Common.json";
+            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
+            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                    _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
+                }
+            }
+
+            // MasterItemDefinitions Crafting
+            masterItemDefinitionsJson.Clear();
             resourcePath = "MasterItemDefinitions_Crafting.json";
             resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
             using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
@@ -162,6 +184,7 @@ namespace NewWorldCompanion.Services
                         string value = loc.Value;
 
                         // Supported items so far:
+                        // MasterItemDefinitions_Common.json
                         // MasterItemDefinitions_Crafting.json
                         // MasterItemDefinitions_Loot.json
                         // MasterItemDefinitions_Quest.json
@@ -214,6 +237,29 @@ namespace NewWorldCompanion.Services
 
                 if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(tradeskill) &&
                     !string.IsNullOrWhiteSpace(itemId) && !string.IsNullOrWhiteSpace(localisationId) && !string.IsNullOrWhiteSpace(localisation))
+                {
+                    craftingRecipes.Add(new CraftingRecipe
+                    {
+                        Id = id,
+                        ItemID = itemId,
+                        Localisation = localisation,
+                        Tradeskill = tradeskill
+                    });
+                }
+            }
+
+            // Workaround for adding MusicSheets as CraftingRecipe
+            foreach (var masterItemDefinitionsJson in _masterItemDefinitionsJson)
+            {
+                string id = masterItemDefinitionsJson.ItemID;
+                string tradeskill = masterItemDefinitionsJson.TradingFamily;
+                string itemId = masterItemDefinitionsJson.ItemID;
+                string localisationId = masterItemDefinitionsJson.Name;
+                string localisation = _itemDefinitionsLocalisation.GetValueOrDefault(localisationId.Trim(new char[] { '@' }).ToLower()) ?? localisationId.Trim(new char[] { '@' });
+
+                if (!string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(tradeskill) &&
+                    !string.IsNullOrWhiteSpace(itemId) && !string.IsNullOrWhiteSpace(localisationId) && !string.IsNullOrWhiteSpace(localisation) &&
+                    tradeskill.Equals(TradeskillConstants.MusicSheets))
                 {
                     craftingRecipes.Add(new CraftingRecipe
                     {

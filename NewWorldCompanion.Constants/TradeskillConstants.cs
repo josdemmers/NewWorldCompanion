@@ -10,5 +10,6 @@ namespace NewWorldCompanion.Constants
         public const string Jewelcrafting = "Jewelcrafting"; 
         public const string Smelting = "Smelting";
         public const string Weaponsmithing = "Weaponsmithing";
+        public const string MusicSheets = "MusicSheets";
     }
 }

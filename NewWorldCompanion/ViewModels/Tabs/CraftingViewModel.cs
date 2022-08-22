@@ -39,6 +39,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private BitmapSource? _imageFurnishing = null;
         private BitmapSource? _imageJewelcrafting = null;
         private BitmapSource? _imageWeaponsmithing = null;
+        private BitmapSource? _imageMusicSheets = null;
 
         private CraftingRecipe _selectedCraftingRecipe = new CraftingRecipe();
         private bool _filterRecipeLearned = true;
@@ -50,6 +51,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private bool _toggleFurnishing = true;
         private bool _toggleJewelcrafting = true;
         private bool _toggleWeaponsmithing = true;
+        private bool _toggleMusicSheets = true;
         private bool _toggleRefresh = true;
         private int _counterArcana = 0;
         private int _counterArmoring = 0;
@@ -58,6 +60,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private int _counterFurnishing = 0;
         private int _counterJewelcrafting = 0;
         private int _counterWeaponsmithing = 0;
+        private int _counterMusicSheets = 0;
         private string _itemNameFilter = string.Empty;
         private string _selectedCraftingRecipePrice = string.Empty;
         private string _selectedCraftingRecipePriceAvg = string.Empty;
@@ -123,6 +126,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
         public BitmapSource? ImageFurnishing { get => _imageFurnishing; set => SetProperty(ref _imageFurnishing, value, () => { RaisePropertyChanged(nameof(ImageFurnishing)); }); }
         public BitmapSource? ImageJewelcrafting { get => _imageJewelcrafting; set => SetProperty(ref _imageJewelcrafting, value, () => { RaisePropertyChanged(nameof(ImageJewelcrafting)); }); }
         public BitmapSource? ImageWeaponsmithing { get => _imageWeaponsmithing; set => SetProperty(ref _imageWeaponsmithing, value, () => { RaisePropertyChanged(nameof(ImageWeaponsmithing)); }); }
+        public BitmapSource? ImageMusicSheets { get => _imageMusicSheets; set => SetProperty(ref _imageMusicSheets, value, () => { RaisePropertyChanged(nameof(ImageMusicSheets)); }); }
 
         public int CounterArcana { get => _counterArcana; set => SetProperty(ref _counterArcana, value, () => { RaisePropertyChanged(nameof(CounterArcana)); }); }
         public int CounterArmoring { get => _counterArmoring; set => SetProperty(ref _counterArmoring, value, () => { RaisePropertyChanged(nameof(CounterArmoring)); }); }
@@ -131,6 +135,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
         public int CounterFurnishing { get => _counterFurnishing; set => SetProperty(ref _counterFurnishing, value, () => { RaisePropertyChanged(nameof(CounterFurnishing)); }); }
         public int CounterJewelcrafting { get => _counterJewelcrafting; set => SetProperty(ref _counterJewelcrafting, value, () => { RaisePropertyChanged(nameof(CounterJewelcrafting)); }); }
         public int CounterWeaponsmithing { get => _counterWeaponsmithing; set => SetProperty(ref _counterWeaponsmithing, value, () => { RaisePropertyChanged(nameof(CounterWeaponsmithing)); }); }
+        public int CounterMusicSheets { get => _counterMusicSheets; set => SetProperty(ref _counterMusicSheets, value, () => { RaisePropertyChanged(nameof(CounterMusicSheets)); }); }
 
         public CraftingRecipe SelectedCraftingRecipe
         {
@@ -240,6 +245,16 @@ namespace NewWorldCompanion.ViewModels.Tabs
             set
             {
                 _toggleWeaponsmithing = value;
+                CraftingRecipesFiltered?.Refresh();
+            }
+        }
+
+        public bool ToggleMusicSheets
+        {
+            get => _toggleMusicSheets;
+            set
+            {
+                _toggleMusicSheets = value;
                 CraftingRecipesFiltered?.Refresh();
             }
         }
@@ -370,6 +385,11 @@ namespace NewWorldCompanion.ViewModels.Tabs
                     recipeName.Substring(0, recipeName.IndexOf('\'')) :
                     recipeName;
 
+                // Remove '\n'
+                recipeName = recipeName.Contains("\\n") ?
+                    recipeName.Replace("\\n"," ") :
+                    recipeName;
+
                 System.Windows.Clipboard.SetText(recipeName.Trim());
             }
             catch (Exception ex)
@@ -420,6 +440,9 @@ namespace NewWorldCompanion.ViewModels.Tabs
                     break;
                 case TradeskillConstants.Weaponsmithing:
                     allowed = ToggleWeaponsmithing;
+                    break;
+                case TradeskillConstants.MusicSheets:
+                    allowed = ToggleMusicSheets;
                     break;
                 default:
                     allowed = false;
@@ -513,6 +536,16 @@ namespace NewWorldCompanion.ViewModels.Tabs
                     ImageWeaponsmithing = ImageSourceFromBitmap(new Bitmap(stream));
                 }
             }
+
+            resourcePath = "music.png";
+            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
+            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            {
+                if (stream != null)
+                {
+                    ImageMusicSheets = ImageSourceFromBitmap(new Bitmap(stream));
+                }
+            }
         }
 
         private BitmapSource ImageSourceFromBitmap(Bitmap bitmap)
@@ -553,6 +586,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
                     CounterFurnishing = CraftingRecipes.Count(r => r.Learned == false && r.Tradeskill.Equals(TradeskillConstants.Furnishing));
                     CounterJewelcrafting = CraftingRecipes.Count(r => r.Learned == false && r.Tradeskill.Equals(TradeskillConstants.Jewelcrafting));
                     CounterWeaponsmithing = CraftingRecipes.Count(r => r.Learned == false && r.Tradeskill.Equals(TradeskillConstants.Weaponsmithing));
+                    CounterMusicSheets = CraftingRecipes.Count(r => r.Learned == false && r.Tradeskill.Equals(TradeskillConstants.MusicSheets));
                 });
             }
         }

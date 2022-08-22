@@ -62,6 +62,11 @@
           <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageWeaponsmithing}"/>
         </ToggleButton>
       </mah:Badged>
+      <mah:Badged Margin="5 5 10 0" Badge="{Binding CounterMusicSheets}">
+        <ToggleButton Width="50" Height="50" Margin="4" IsChecked="{Binding ToggleMusicSheets}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+          <Image Stretch="Uniform" StretchDirection="Both" Source="{Binding ImageMusicSheets}"/>
+        </ToggleButton>
+      </mah:Badged>
     </StackPanel>
 
     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ItemNameFilter, UpdateSourceTrigger=PropertyChanged}" Width="auto"  HorizontalAlignment="Stretch" />

@@ -13,6 +13,7 @@
     <None Remove="Data\HouseItems.json" />
     <None Remove="Data\javelindata_housingitems.loc.xml" />
     <None Remove="Data\javelindata_itemdefinitions_master.loc.xml" />
+    <None Remove="Data\MasterItemDefinitions_Common.json" />
     <None Remove="Data\MasterItemDefinitions_Crafting.json" />
     <None Remove="Data\MasterItemDefinitions_Loot.json" />
     <None Remove="Data\MasterItemDefinitions_Quest.json" />
@@ -46,6 +47,7 @@
     <EmbeddedResource Include="Data\javelindata_itemdefinitions_master.loc.xml">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data\MasterItemDefinitions_Common.json" />
     <EmbeddedResource Include="Data\MasterItemDefinitions_Crafting.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>

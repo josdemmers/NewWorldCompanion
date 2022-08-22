@@ -18,6 +18,7 @@
     <None Remove="Images\engineering_trade_skill_icon_250px.png" />
     <None Remove="Images\furnishing_trade_skill_icon_250px.png" />
     <None Remove="Images\jewelcrafting_trade_skill_icon_250px.png" />
+    <None Remove="Images\music.png" />
     <None Remove="Images\splash.png" />
     <None Remove="Images\weaponsmithing_trade_skill_icon_250px.png" />
   </ItemGroup>
@@ -29,6 +30,7 @@
     <EmbeddedResource Include="Images\engineering_trade_skill_icon_250px.png" />
     <EmbeddedResource Include="Images\furnishing_trade_skill_icon_250px.png" />
     <EmbeddedResource Include="Images\jewelcrafting_trade_skill_icon_250px.png" />
+    <EmbeddedResource Include="Images\music.png" />
     <EmbeddedResource Include="Images\weaponsmithing_trade_skill_icon_250px.png" />
   </ItemGroup>
 

@@ -383,8 +383,8 @@
 	<string key="06_OnBoarding_CrystalShard_Description">A large reddish-orange crystal shard. Its use is unknown.</string>
 	<string key="06_OnBoarding_DiviningStones">Divining Stones</string>
 	<string key="06_OnBoarding_DiviningStones_Description">They look similar to lithomancy stones, but no one is certain of their real use.</string>
-	<string key="0601_0104_ShipsFlag_Description">A pirate flag taken from the ship Satisfaction on behalf of the Captain Grace O'Malley.</string>
-	<string key="0601_0104_ShipsFlag_MasterName">Grace's Personal Flag</string>
+	<string key="0601_0104_ShipsFlag_Description">A flag torn from a forlorn wreck [Mission Item]</string>
+	<string key="0601_0104_ShipsFlag_MasterName">Ship's Flag</string>
 	<string key="0602_0501_TaskmastersHeart">Taskmaster's Heart</string>
 	<string key="0602_0501_TaskmastersHeart_description">A twisted coil of flesh, pulsing with a dim light. Pulled from the chest of the Sentinel Taskmaster.</string>
 	<string key="0602_0502_JewelryBox">Jewelry Box</string>

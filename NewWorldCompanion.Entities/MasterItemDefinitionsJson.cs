@@ -10,7 +10,9 @@ namespace NewWorldCompanion.Entities
     {
         /// <value>Unique identifier for items. Nwdb uses this to identify items</value>
         public string ItemID { get; set; } = string.Empty;
-        /// <value>Matches RequiredAchievementID from CraftingRecipeJson</value> 
+        /// <value>Matches RequiredAchievementID from CraftingRecipeJson</value>
         public string SalvageAchievement { get; set; } = string.Empty;
+        /// <value>Used as Tradeskill value for MusicSheets in CraftingRecipe</value>
+        public string TradingFamily { get; set; } = string.Empty;
     }
 }
