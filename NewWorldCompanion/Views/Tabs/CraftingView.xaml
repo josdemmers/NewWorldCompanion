@@ -102,7 +102,7 @@
               <BulletDecorator Margin="0,0,5,0">
                 <Ellipse Fill="{Binding Learned, Converter={StaticResource BooleanToLearnedColorConverter}}" Width="10" Height="10"/>
               </BulletDecorator>
-              <Label Margin="0,0,10,0" Content="{Binding Path=Localisation}" />
+              <Label Margin="0,0,10,0" Content="{Binding Path=LocalisationUserFriendly}" />
             </StackPanel>
           </Border>
         </DataTemplate>
@@ -115,7 +115,7 @@
                 Margin="5"
                 Visibility="{Binding SelectedCraftingRecipe, Converter={StaticResource EmptyToVisibilityConverter}}">
       <StackPanel Orientation="Horizontal">
-        <CheckBox Content="{Binding SelectedCraftingRecipe.Localisation}"
+        <CheckBox Content="{Binding SelectedCraftingRecipe.LocalisationUserFriendly}"
                 IsChecked="{Binding SelectedCraftingRecipe.Learned}"
                 Command="{Binding CraftingRecipeLearnedCommand}"
                 CommandParameter="{Binding IsChecked, RelativeSource={RelativeSource Self}}"/>

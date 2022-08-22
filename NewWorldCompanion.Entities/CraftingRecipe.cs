@@ -12,6 +12,14 @@ namespace NewWorldCompanion.Entities
         [JsonIgnore]
         public string Localisation { get; set; } = string.Empty;
         [JsonIgnore]
+        public string LocalisationUserFriendly 
+        { 
+            get
+            {
+                return Localisation.Replace("\\n", " ");
+            }
+        }
+        [JsonIgnore]
         public string Tradeskill { get; set; } = string.Empty;
         [JsonIgnore]
         public string Url
