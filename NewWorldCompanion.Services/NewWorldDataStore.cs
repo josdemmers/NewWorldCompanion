@@ -190,7 +190,7 @@ namespace NewWorldCompanion.Services
                         // MasterItemDefinitions_Quest.json
                         if (_masterItemDefinitionsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {
-                            _itemDefinitionsLocalisation.Add(key.ToLower(), value);
+                            _itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
                     }
                 }
