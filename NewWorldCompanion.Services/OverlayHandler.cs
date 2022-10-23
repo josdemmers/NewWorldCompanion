@@ -107,14 +107,21 @@ namespace NewWorldCompanion.Services
 
         private void DrawGraphics(object? sender, DrawGraphicsEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(_itemName))
+            {
+                return;
+            }
+
             _window.X = _overlayX;
             _window.Y = _overlayY;
             _window.Width = _overlayWidth;
             _window.Height = _overlayHeigth;
 
             string itemName = _itemName;
-            // Workaround for recipe item names with three lines of text. Change back to Equals instead of StartsWith when OCR works with three lines.
-            var craftingRecipe = _craftingRecipeManager.CraftingRecipes.FirstOrDefault(r => r.Localisation.StartsWith(itemName, StringComparison.OrdinalIgnoreCase));
+            string itemId = _newWorldDataStore.GetItemId(itemName);
+            var craftingRecipe = string.IsNullOrWhiteSpace(itemId) 
+                ? _craftingRecipeManager.CraftingRecipes.FirstOrDefault(r => r.LocalisationUserFriendly.StartsWith(itemName, StringComparison.OrdinalIgnoreCase))
+                : _craftingRecipeManager.CraftingRecipes.FirstOrDefault(r => r.LocalisationUserFriendly.Equals(itemName, StringComparison.OrdinalIgnoreCase));        
 
             if (craftingRecipe != null)
             {
@@ -168,11 +175,11 @@ namespace NewWorldCompanion.Services
 
         private void DrawGraphicsRecipe(DrawGraphicsEventArgs e, CraftingRecipe craftingRecipe)
         {
-            NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(craftingRecipe.Localisation);
+            NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(craftingRecipe.LocalisationUserFriendly);
             NumberStyles style = NumberStyles.AllowDecimalPoint;
 
             bool learnedStatus = craftingRecipe.Learned;
-            string infoItemName = craftingRecipe.Localisation;
+            string infoItemName = craftingRecipe.LocalisationUserFriendly;
             string infoLearned = $"Learned: {learnedStatus}";
             string infoPrice = "Loading...";
             string infoPriceAvg = string.Empty;
@@ -250,7 +257,7 @@ namespace NewWorldCompanion.Services
                 // - Recipes
                 // - Tradable items
                 string itemName = _itemName;
-                var craftingRecipe = _craftingRecipeManager.CraftingRecipes.FirstOrDefault(r => r.Localisation.StartsWith(itemName, StringComparison.OrdinalIgnoreCase));
+                var craftingRecipe = _craftingRecipeManager.CraftingRecipes.FirstOrDefault(r => r.LocalisationUserFriendly.StartsWith(itemName, StringComparison.OrdinalIgnoreCase));
                 if (craftingRecipe != null || !_newWorldDataStore.IsBindOnPickup(itemName))
                 {
                     _window.Show();

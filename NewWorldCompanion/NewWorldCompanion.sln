@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWorldCompanion.Helpers",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWorldCompanion.Events", "..\NewWorldCompanion.Events\NewWorldCompanion.Events.csproj", "{C303697D-767D-4945-B1EE-E0E9F482AEA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewWorldCompanion.Extensions", "..\NewWorldCompanion.Extensions\NewWorldCompanion.Extensions.csproj", "{B3C4645D-19EA-4587-8F17-BD9391891E1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewWorldCompanion.Extensions", "..\NewWorldCompanion.Extensions\NewWorldCompanion.Extensions.csproj", "{B3C4645D-19EA-4587-8F17-BD9391891E1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

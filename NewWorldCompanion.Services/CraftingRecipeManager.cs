@@ -84,7 +84,7 @@ namespace NewWorldCompanion.Services
             _craftingRecipes.Sort((x, y) =>
             {
                 int result = string.Compare(x.Tradeskill, y.Tradeskill, StringComparison.Ordinal);
-                return result != 0 ? result : string.Compare(x.Localisation, y.Localisation, StringComparison.Ordinal);
+                return result != 0 ? result : string.Compare(x.LocalisationUserFriendly, y.LocalisationUserFriendly, StringComparison.Ordinal);
             });
 
             // Save recipe progress

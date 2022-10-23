@@ -202,10 +202,8 @@ namespace NewWorldCompanion.Services
                 (
                   rectangleList[0].MinAreaRect().X + rectangleList[0].MinAreaRect().Width + 5,
                   rectangleList[0].MinAreaRect().Y,
-                  (int)(rectangleList[0].MinAreaRect().Width * 3.30),
-                  //rectangleList[0].MinAreaRect().Height
-                  //rectangleList[0].MinAreaRect().Height - 17 // 1080p, 1440p
-                  rectangleList[0].MinAreaRect().Height - 25 // 2160p
+                  (int)(rectangleList[0].MinAreaRect().Width * 2.8),
+                  (int)(rectangleList[0].MinAreaRect().Height * 0.5)
                 );
 
                 // Update overlay position
@@ -213,7 +211,7 @@ namespace NewWorldCompanion.Services
                 OverlayX = _screenCaptureHandler.OffsetX + rectangleList[0].MinAreaRect().X;
                 //OverlayY = _screenCaptureHandler.OffsetY + rectangleList[0].MinAreaRect().Y - (rectangleList[0].MinAreaRect().Height + 12);
                 OverlayY = _screenCaptureHandler.OffsetY + rectangleList[0].MinAreaRect().Y - (100 + 12);
-                OverlayWidth = rectangleList[0].MinAreaRect().Width + (int)(rectangleList[0].MinAreaRect().Width * 3.25);
+                OverlayWidth = rectangleList[0].MinAreaRect().Width + (int)(rectangleList[0].MinAreaRect().Width * 2.8);
                 //OverlayHeigth = rectangleList[0].MinAreaRect().Height;
                 OverlayHeigth = 100;
 

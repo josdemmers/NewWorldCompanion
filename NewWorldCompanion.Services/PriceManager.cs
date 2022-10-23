@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace NewWorldCompanion.Services
@@ -75,22 +76,21 @@ namespace NewWorldCompanion.Services
         {
             try
             {
-                string json = await _httpClientHandler.GetRequest("https://nwmarketprices.com/servers/") ?? string.Empty;
-                var root = JsonSerializer.Deserialize<RootServers>(json);
-                var mappings = JsonSerializer.Deserialize<List<List<object>>>(root?.servers ?? string.Empty) ?? new List<List<object>>();
-                foreach (var mapping in mappings)
-                {
-                    string serverName = ((JsonElement)mapping[0]).GetString() ?? string.Empty;
-                    int serverId = ((JsonElement)mapping[1]).GetInt32();
+                string json = await _httpClientHandler.GetRequest("https://nwmarketprices.com/api/servers/") ?? string.Empty;
+                var servers = JsonSerializer.Deserialize<Dictionary<string, Server>>(json);
 
-                    if (!string.IsNullOrWhiteSpace(serverName))
+                foreach (var server in servers ?? new Dictionary<string, Server>())
+                {
+                    string serverId = server.Key;
+                    string serverName = server.Value.Name;
+
+                    if (!string.IsNullOrWhiteSpace(serverId) && !string.IsNullOrWhiteSpace(serverName))
                     {
                         _servers.Add(new PriceServer()
                         {
-                            Id = serverId,
+                            Id = int.Parse(serverId),
                             Name = serverName
                         });
-
                     }
                 }
             }
@@ -188,9 +188,10 @@ namespace NewWorldCompanion.Services
 
         #endregion
 
-        private class RootServers
+        private class Server
         {
-            public string servers { get; set; } = string.Empty;
+            [JsonPropertyName("name")]
+            public string Name { get; set; } = string.Empty;
         }
     }
 }

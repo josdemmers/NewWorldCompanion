@@ -277,8 +277,8 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
                 if(SelectedCraftingRecipe != null)
                 {
-                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.Localisation);
-                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.Localisation);
+                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
+                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
                     NumberStyles style = NumberStyles.AllowDecimalPoint;
                     if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
                     {
@@ -304,8 +304,8 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
                 if (SelectedCraftingRecipe != null)
                 {
-                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.Localisation);
-                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.Localisation);
+                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
+                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
                     if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
                     {
                         string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
@@ -337,7 +337,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
             Application.Current?.Dispatcher?.Invoke(() =>
             {
                 // Only set filter for recipe items.
-                if (CraftingRecipes.Any(recipe => recipe.Localisation.StartsWith(_ocrHandler.OcrText)))
+                if (CraftingRecipes.Any(recipe => recipe.LocalisationUserFriendly.StartsWith(_ocrHandler.OcrText)))
                 {
                     ItemNameFilter = _ocrHandler.OcrText;
                 }
@@ -376,9 +376,9 @@ namespace NewWorldCompanion.ViewModels.Tabs
                 var recipe = (CraftingRecipe)obj;
 
                 // Remove ':'
-                string recipeName = recipe.Localisation.Contains(':') ?
-                    recipe.Localisation.Substring(recipe.Localisation.IndexOf(':') + 1) :
-                    recipe.Localisation;
+                string recipeName = recipe.LocalisationUserFriendly.Contains(':') ?
+                    recipe.LocalisationUserFriendly.Substring(recipe.LocalisationUserFriendly.IndexOf(':') + 1) :
+                    recipe.LocalisationUserFriendly;
 
                 // Remove '''
                 recipeName = recipeName.Contains('\'') ?
@@ -451,7 +451,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
             if (allowed)
             {
-                allowed = string.IsNullOrWhiteSpace(ItemNameFilter) ? true : craftingRecipe.Localisation.ToLower().Contains(ItemNameFilter.ToLower());
+                allowed = string.IsNullOrWhiteSpace(ItemNameFilter) ? true : craftingRecipe.LocalisationUserFriendly.ToLower().Contains(ItemNameFilter.ToLower());
             }
 
             if (allowed)

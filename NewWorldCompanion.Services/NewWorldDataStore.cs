@@ -217,7 +217,7 @@ namespace NewWorldCompanion.Services
                         // HouseItems.json
                         if (_houseItemsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {
-                            _itemDefinitionsLocalisation.Add(key.ToLower(), value);
+                            _itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
                     }
                 }
@@ -276,7 +276,7 @@ namespace NewWorldCompanion.Services
 
         public bool IsBindOnPickup(string itemName)
         {
-            var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
+            var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Replace("\\n", " ").Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
             var item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             var houseItem = _houseItemsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             if (item != null)
@@ -292,7 +292,7 @@ namespace NewWorldCompanion.Services
 
         public string GetItemId(string itemName)
         {
-            var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
+            var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Replace("\\n", " ").Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
             MasterItemDefinitionsJson? item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             HouseItemsJson? houseItem = _houseItemsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
             if (item != null)

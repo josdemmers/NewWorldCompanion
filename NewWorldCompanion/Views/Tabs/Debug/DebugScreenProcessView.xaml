@@ -35,7 +35,7 @@
       <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
 
-    <Label Grid.Row="0" Grid.Column="0" Content="Hysteresis thresholds" />
+    <Label Grid.Row="0" Grid.Column="0" Content="Border thresholds" />
     <Slider Grid.Row="0" Grid.Column="1" Minimum="1" Maximum="1000" Value="{Binding HysteresisLower}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
     <Slider Grid.Row="0" Grid.Column="2" Minimum="1" Maximum="1000" Value="{Binding HysteresisUpper}" IsSnapToTickEnabled="True" TickFrequency="1" AutoToolTipPlacement="TopLeft" AutoToolTipPrecision="0"/>
     <Label Grid.Row="1" Grid.Column="0" Content="Area thresholds" />

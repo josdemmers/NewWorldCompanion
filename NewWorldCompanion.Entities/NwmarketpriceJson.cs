@@ -24,7 +24,7 @@ namespace NewWorldCompanion.Entities
             get 
             {
                 string price = string.Empty;
-                NumberStyles style = NumberStyles.AllowDecimalPoint;
+                //NumberStyles style = NumberStyles.AllowDecimalPoint;
 
                 try
                 {
