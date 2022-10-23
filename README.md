@@ -44,7 +44,7 @@ Note: Default settings are tested running New World with Window Mode: Fullscreen
 ### Item tooltips
 
 The app uses the tooltip of an item to read the item name. There are configuration presets for the resolutions 1920x1080, 2560x1440 and 3840x2160. To make it work with other configurations you can tweak the following settings.
-- Hysteresis thresholds: The lower you set those thresholds the more objects it will detect. This setting is unrelated to your resolution and the default value should work in most cases.
+- Border thresholds: The lower you set those thresholds the more objects it will detect. This setting is unrelated to your resolution and the default value should work in most cases.
 - Area thresholds: The min and max values for this threshold depend on your resolution. It is used to filter out unrelated objects so that only the item tooltip is recognized. The values are correct when you see a single orange outline around the item icon. As shown in the image below. If you do not see an outline start with the lowest min value and the highest max value. Then increase the min value step-by-step, and decrease the max value step-by-step. Do not keep those settings at their lowest/highest values as that will detect many other objects besides the item tooltip.
 
 ![Config-1](./readme/readme-config1.png)
