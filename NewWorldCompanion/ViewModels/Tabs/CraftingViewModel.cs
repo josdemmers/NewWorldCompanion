@@ -370,25 +370,35 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
         private void CopyRecipeNameExecute(object obj)
         {
-            // Note: New World does not accept the following special characters when using copy/paste: ':', '''.
+            // Note: New World does not accept the following special characters when using copy/paste: ':', ''', '/'.
             try
             {
                 var recipe = (CraftingRecipe)obj;
 
                 // Remove ':'
-                string recipeName = recipe.LocalisationUserFriendly.Contains(':') ?
-                    recipe.LocalisationUserFriendly.Substring(recipe.LocalisationUserFriendly.IndexOf(':') + 1) :
-                    recipe.LocalisationUserFriendly;
+                string recipeName = recipe.Localisation.Contains(':') ?
+                    recipe.Localisation.Substring(recipe.Localisation.IndexOf(':') + 1) :
+                    recipe.Localisation;
 
                 // Remove '''
                 recipeName = recipeName.Contains('\'') ?
                     recipeName.Substring(0, recipeName.IndexOf('\'')) :
                     recipeName;
 
+                // Remove '/'
+                recipeName = recipeName.Contains('/') ?
+                    recipeName.Substring(0, recipeName.IndexOf('/')) :
+                    recipeName;
+
                 // Remove '\n'
                 recipeName = recipeName.Contains("\\n") ?
-                    recipeName.Replace("\\n"," ") :
+                    recipeName.Substring(0, recipeName.IndexOf("\\n")) :
                     recipeName;
+
+                // Replace '\n'
+                //recipeName = recipeName.Contains("\\n") ?
+                //    recipeName.Replace("\\n"," ") :
+                //    recipeName;
 
                 System.Windows.Clipboard.SetText(recipeName.Trim());
             }
