@@ -25826,6 +25826,16 @@
 	<string key="MadtomToxinT1_MasterName">Madtom Toxins</string>
 	<string key="MakeGoodContainer_Description">This objects contains a gift for you.</string>
 	<string key="MakeGoodContainer_MasterName">Community Make-Good Container</string>
+	<string key="GS600Sickle_MakeGood_Description">This object contains an extra GS600 Sickle for your troubles.</string>
+	<string key="GS600Sickle_MakeGood_MasterName">GS600 Sickle Make-Good Container</string>
+	<string key="GS600SkinningKnife_MakeGood_Description">This object contains an extra GS600 Skinning Knife for your troubles.</string>
+	<string key="GS600SkinningKnife_MakeGood_MasterName">GS600 Skinning Knife Make-Good Container</string>
+	<string key="GS600Pick_MakeGood_Description">This object contains an extra GS600 Pickaxe for your troubles.</string>
+	<string key="GS600Pick_MakeGood_MasterName">GS600 Pickaxe Make-Good Container</string>
+	<string key="GS600Axe_MakeGood_Description">This object contains an extra GS600 Logging Axe for your troubles.</string>
+	<string key="GS600Axe_MakeGood_MasterName">GS600 Logging Axe Make-Good Container</string>
+	<string key="GS600Bag_MakeGood_Description">This object contains an extra GS600 Bag for your troubles.</string>
+	<string key="GS600Bag_MakeGood_MasterName">GS600 Bag Make-Good Container</string>
 	<string key="MalachiteCutT1_Description">A gem with an attunement to the Cruel I weapon trait and Spectral Ward I armor trait. Can also be used in Jewelcrafting.</string>
 	<string key="MalachiteCutT1_MasterName">Cut Flawed Malachite</string>
 	<string key="MalachiteCutT2_Description">A gem with an attunement to the Cruel II weapon trait and Spectral Ward II armor trait. Can also be used in Jewelcrafting.</string>

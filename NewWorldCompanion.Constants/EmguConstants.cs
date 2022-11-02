@@ -3,6 +3,8 @@
     public class EmguConstants
     {
         // Shape detection
+        public const int Default1600900AreaLower = 4000;
+        public const int Default1600900AreaUpper = 7000;
         public const int Default19201080AreaLower = 6000;
         public const int Default19201080AreaUpper = 8000;
         public const int Default25601440AreaLower = 10000;

@@ -186,6 +186,10 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         {
             switch ((SelectedPresetConfig as ComboBoxItem)?.Content ?? string.Empty)
             {
+                case "1600x900":
+                    AreaLower = EmguConstants.Default1600900AreaLower;
+                    AreaUpper = EmguConstants.Default1600900AreaUpper;
+                    break;
                 case "1920x1080":
                     AreaLower = EmguConstants.Default19201080AreaLower;
                     AreaUpper = EmguConstants.Default19201080AreaUpper;
