@@ -17,6 +17,9 @@ namespace NewWorldCompanion.Entities
         public DateTime last_checked { get; set; } = DateTime.MinValue;
         public double recent_lowest_price { get; set; } = 0.0;
         public List<GrapData> price_graph_data { get; set; } = new List<GrapData>();
+        /// <summary>
+        /// Lowest price seen in the most recent scan compared to the lowest price seen the previous day
+        /// </summary>
         public int price_change { get; set; }
 
         [JsonIgnore]
