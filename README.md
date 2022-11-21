@@ -2,6 +2,8 @@
 
 A companion app for New World, to keep track of all your learned recipes and current trading post prices.
 
+![Feature-1](./readme/readme-feature1.png)
+
 ## Table of Contents
 
 - [Features](https://github.com/josdemmers/NewWorldCompanion#features)
