@@ -136,25 +136,17 @@ namespace NewWorldCompanion.Services
         private void DrawGraphicsItem(DrawGraphicsEventArgs e, string itemName)
         {
             NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(itemName);
-            NumberStyles style = NumberStyles.AllowDecimalPoint;
 
             string infoItemName = itemName;
             string infoPrice = "Loading...";
-            string infoPriceAvg = string.Empty;
+            string infoPriceAvg = string.Empty;  
 
             if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
             {
-                string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
-
-                //infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ? 
-                //    nwmarketpriceJson.recent_lowest_price : 
-                //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
-                infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
-                    decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2"):
-                $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} lowest ({nwmarketpriceJson.last_checked})";
-                infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ? 
-                    infoPriceAvg : 
-                    $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
+                var priceChange = nwmarketpriceJson.price_change >= 0 ? $"+{nwmarketpriceJson.price_change}" : $"{nwmarketpriceJson.price_change}";
+                infoPrice = $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} ({priceChange}%) ({nwmarketpriceJson.last_checked_string})";
+                infoPriceAvg = nwmarketpriceJson.RecentLowestPriceAvg;
+                infoPriceAvg = string.IsNullOrWhiteSpace(infoPriceAvg) ? infoPriceAvg : $"{infoPriceAvg} (15-day avg) ({nwmarketpriceJson.last_checked_string})";
             }
 
             // Do not show Bind on pickup items.
@@ -176,7 +168,6 @@ namespace NewWorldCompanion.Services
         private void DrawGraphicsRecipe(DrawGraphicsEventArgs e, CraftingRecipe craftingRecipe)
         {
             NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(craftingRecipe.LocalisationUserFriendly);
-            NumberStyles style = NumberStyles.AllowDecimalPoint;
 
             bool learnedStatus = craftingRecipe.Learned;
             string infoItemName = craftingRecipe.LocalisationUserFriendly;
@@ -186,17 +177,10 @@ namespace NewWorldCompanion.Services
 
             if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
             {
-                string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
-
-                //infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
-                //    nwmarketpriceJson.recent_lowest_price :
-                //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
-                infoPrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
-                    decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2") :
-                    $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} lowest ({nwmarketpriceJson.last_checked})";
-                infoPriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ?
-                    infoPriceAvg :
-                    $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
+                var priceChange = nwmarketpriceJson.price_change >= 0 ? $"+{nwmarketpriceJson.price_change}" : $"{nwmarketpriceJson.price_change}";
+                infoPrice = $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} ({priceChange}%) ({nwmarketpriceJson.last_checked_string})";
+                infoPriceAvg = nwmarketpriceJson.RecentLowestPriceAvg;
+                infoPriceAvg = string.IsNullOrWhiteSpace(infoPriceAvg) ? infoPriceAvg : $"{infoPriceAvg} (15-day avg) ({nwmarketpriceJson.last_checked_string})";
             }
 
             var gfx = e.Graphics;

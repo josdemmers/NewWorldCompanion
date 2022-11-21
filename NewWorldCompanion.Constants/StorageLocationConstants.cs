@@ -3,6 +3,7 @@
     public class StorageLocationConstants
     {
         public const string Brightwood = "Brightwood";
+        public const string BrimstoneSandsNewCorsica = "Brimstone Sands - New Corsica";
         public const string CutlassKeys = "Cutlass Keys";
         public const string EbonscaleReach = "Ebonscale Reach";
         public const string EdengroveLastStand = "Edengrove - Last Stand";

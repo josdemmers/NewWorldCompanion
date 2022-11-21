@@ -51,6 +51,10 @@
 	<string key="Schematic_House_HousingItem_Table_StoneMasonTable_B_MasterName" comment="NA-Basic">Schematic: Stone Mason Table</string>
 	<string key="Schematic_House_HousingItem_Windchimes_Post_C_Description" comment="NA-Basic">A schematic that teaches you how to craft a piece of furniture. Learn the recipe for crafting.</string>
 	<string key="Schematic_House_HousingItem_Windchimes_Post_C_MasterName" comment="NA-Basic">Schematic: Broken Chime Post</string>
+	<string key="campskin_darkfae01_a_description" comment="Player Camp Skin" rel_version="CampSkin_DarkFae_1">Nobles and monst'rs alike may conv'rge and conv'rse amongst the spirits and magics of a dusk spirit's pavillion.</string>
+	<string key="campskin_darkfae01_a_mastername" comment="Player Camp Skin" rel_version="CampSkin_DarkFae_1">Court of the Dusk Spirits</string>
+	<string key="campskin_darkfae02_a_description" comment="Player Camp Skin" rel_version="CampSkin_DarkFae_2">Thyne e'rie lant'rns attracteth flutt'ring spirits, and can draweth one's attention f'r most wondrous lengths, until rest and dreams ov'rtake thee.</string>
+	<string key="campskin_darkfae02_a_mastername" comment="Player Camp Skin" rel_version="CampSkin_DarkFae_2">Blue Lant'rn Abode</string>
 	<string key="CampSkin_Egyptian01_A_description" comment="Player Camp Skin" rel_version="Campskin_Egyptian_1">A place for both scarabs and adventurers to find reprieve from the oppressive heat of Aeternum's deserts.</string>
 	<string key="CampSkin_Egyptian01_A_mastername" comment="Player Camp Skin" rel_version="Campskin_Egyptian_1">Home of the Scarab</string>
 	<string key="CampSkin_Egyptian02_A_description" comment="Player Camp Skin" rel_version="Campskin_Egyptian_2">This pyramid-like structure sports a chimney for warmth and if the cycle of death and rebirth is interrupted, it may just be your last night by the fire.</string>
@@ -5348,6 +5352,8 @@
 	<string key="1hSkinningKnifeT4_MasterName">Starmetal Skinning Knife</string>
 	<string key="1hSkinningKnifeT5_Description">1-Handed. A Skinning Knife made of Orichalcum. Used to field dress most animals.</string>
 	<string key="1hSkinningKnifeT5_MasterName">Orichalcum Skinning Knife</string>
+	<string key="1hSkinningKnifeT5_TurkeyTerror_Description" rel_version="Event_TurkeyTerror_Temp">Skinning turkeys has never been so ironic.</string>
+	<string key="1hSkinningKnifeT5_TurkeyTerror_MasterName" rel_version="Event_TurkeyTerror_Temp">Turkulon's Claw</string>
 	<string key="1hSword_Barnacles_MutT5_Description" rel_version="BB_Mut_Weapon">The golden glint in the thief's eye hid the bronze.</string>
 	<string key="1hSword_Barnacles_MutT5_MasterName" rel_version="BB_Mut_Weapon">Pirated Longsword</string>
 	<string key="1hSword_BrimstoneSands_MutT5_Description" rel_version="BS_Mut_Weapon">Raise the golden sword high and declare your victory.</string>
@@ -14957,6 +14963,8 @@
 	<string key="CoatingBeastT4_MasterName">Powerful Beast Coating</string>
 	<string key="CoatingBeastT5_Description">USE: Apply to currently drawn weapon. Gives a maximal bonus to damage against Beasts. Lasts for {[ConsumableItemDefinitions.CoatingBeastT5.DurationOverrides / 60]} minutes or upon unequip, whichever comes first. Only one Coating may be applied to a weapon at a time. Coatings stack with Weapon Traits.</string>
 	<string key="CoatingBeastT5_MasterName">Infused Beast Coating</string>
+	<string key="CoatingBeastTurkeyT5_Description" rel_version="Event_TurkeyTerror_Temp">USE: Apply to currently drawn weapon. Gives a maximal bonus to damage against Turkulon and Beasts. Lasts for {[ConsumableItemDefinitions.CoatingBeastT5.DurationOverrides / 60]} minutes or upon unequip, whichever comes first. Only one Coating may be applied to a weapon at a time. Coatings stack with Weapon Traits.</string>
+	<string key="CoatingBeastTurkeyT5_MasterName" rel_version="Event_TurkeyTerror_Temp">Infused Turkey Coating</string>
 	<string key="CoatingCorruptedT2_Description">USE: Apply to currently drawn weapon. Gives +9% damage against Corrupted. Lasts for {[ConsumableItemDefinitions.CoatingCorruptedT2.DurationOverrides / 60]} minutes or upon unequip, whichever comes first. Only one Coating may be applied to a weapon at a time. Coatings stack with Weapon Traits.</string>
 	<string key="CoatingCorruptedT2_MasterName">Common Corrupted Coating</string>
 	<string key="CoatingCorruptedT3_Description">USE: Apply to currently drawn weapon. Gives +11% damage against Corrupted. Lasts for {[ConsumableItemDefinitions.CoatingCorruptedT3.DurationOverrides / 60]} minutes or upon unequip, whichever comes first. Only one Coating may be applied to a weapon at a time. Coatings stack with Weapon Traits.</string>
@@ -29747,6 +29755,8 @@
 	<string key="PotionFamilyWardBeastT4_MasterName">Powerful Beast Ward Potion</string>
 	<string key="PotionFamilyWardBeastT5_Description">Increases damage absorption from Beasts by {[Type_StatusEffectData.PotionFamilyWardBeastT5.ABSVitalsCategory * 100]}% for {[Type_StatusEffectData.PotionFamilyWardBeastT5.BaseDuration]} seconds or after receiving damage {[Type_StatusEffectData.PotionFamilyWardBeastT5.StopOnHitCount]} times.</string>
 	<string key="PotionFamilyWardBeastT5_MasterName">Infused Beast Ward Potion</string>
+	<string key="PotionFamilyWardBeastTurkeyT5_Description" rel_version="Event_TurkeyTerror_Temp">Increases damage absorption from Turkulon by 66% and Beasts by 15% for {[Type_StatusEffectData.PotionFamilyWardBeastT5.BaseDuration]} seconds or after receiving damage {[Type_StatusEffectData.PotionFamilyWardBeastT5.StopOnHitCount]} times.</string>
+	<string key="PotionFamilyWardBeastTurkeyT5_MasterName" rel_version="Event_TurkeyTerror_Temp">Infused Turkey Ward Potion</string>
 	<string key="PotionFamilyWardCorruptedT3_Description">Increases damage absorption from Corrupted by {[Type_StatusEffectData.PotionFamilyWardCorruptedT3.ABSVitalsCategory * 100]}% for {[Type_StatusEffectData.PotionFamilyWardCorruptedT3.BaseDuration]} seconds or after receiving damage {[Type_StatusEffectData.PotionFamilyWardCorruptedT3.StopOnHitCount]} times.</string>
 	<string key="PotionFamilyWardCorruptedT3_MasterName">Strong Corrupted Ward Potion</string>
 	<string key="PotionFamilyWardCorruptedT4_Description">Increases damage absorption from Corrupted by {[Type_StatusEffectData.PotionFamilyWardCorruptedT4.ABSVitalsCategory * 100]}% for {[Type_StatusEffectData.PotionFamilyWardCorruptedT4.BaseDuration]} seconds or after receiving damage {[Type_StatusEffectData.PotionFamilyWardCorruptedT4.StopOnHitCount]} times.</string>
@@ -35381,7 +35391,7 @@
 	<string key="Skin_Head_HallowMaskSkull_MasterName" rel_version="Event_Halloween_Perm">Slithering Skull</string>
 	<string key="Skin_Head_HallowMaskJack_MasterName" rel_version="Event_Halloween_Perm">Jack-o-Lantern's Smile</string>
 	<string key="Skin_Head_HallowMaskWitch_MasterName" rel_version="Event_Halloween_Perm">The Pride of the Witch</string>
-	<string key="Skin_Head_NightmareMaskBlue_MasterName" rel_version="Event_Halloween_Perm">Nadje Attack</string>
+	<string key="Skin_Head_NightmareMaskBlue_MasterName" rel_version="Event_Halloween_Perm">Mandje Attack</string>
 	<string key="Skin_Head_NightmareMaskRed_MasterName" rel_version="Event_Halloween_Perm">Four-Eyes</string>
 	<string key="Skin_Head_NightmareMaskGreen_MasterName" rel_version="Event_Halloween_Perm">Doublemaw</string>
 	<string key="Skin_Head_NightmareMaskPurple_MasterName" rel_version="Event_Halloween_Perm">Twisted Face</string>
@@ -35500,6 +35510,8 @@
 	<string key="Skin_Nightmares_Pickaxe_Description" rel_version="ToolSkins_Nightmares_MTX">Its sharp edges are perfect for carving rock from earth or, in a pinch, flesh from bone.</string>
 	<string key="Skin_Nightmares_Sickle_Description" rel_version="ToolSkins_Nightmares_MTX">This curved horn can slice through any fibers no matter their density.</string>
 	<string key="Skin_Nightmares_SkinningKnife_Description" rel_version="ToolSkins_Nightmares_MTX">Still the knuckles of the beast retract and creak with age.</string>
+	<string key="Skin_Feet_TurkeyTerror_MasterName" rel_version="Event_TurkeyTerror_Perm">Turkulon's Juicy Calves</string>
+	<string key="Skin_Feet_TurkeyTerror_Description" rel_version="Event_TurkeyTerror_Perm">Big enough to replace your shoes and succulent enough to make you wish you'd cooked them.</string>
 	<string key="2hBlunderbuss_DarkBlasterT4_MasterName">Dark Blaster</string>
 	<string key="2hBlunderbuss_DarkBlasterT4_Description">a blunderbuss with some dark energy coming from it.</string>
 	<string key="2hGreatSword_BladeofDarknessT4_MasterName">Blade of Darkness</string>
@@ -35546,6 +35558,8 @@
 	<string key="ConcealedVault_MasterName">Concealed Vault</string>
 	<string key="NightveilCoinBag_Description" rel_version="Event_Halloween_Perm">Finally the cauldron's coughing up.</string>
 	<string key="NightveilCoinBag_MasterName" rel_version="Event_Halloween_Perm">Cauldron's Coins</string>
+	<string key="TurkeyTerrorCoinBag_Description" rel_version="Event_TurkeyTerror_Perm">Such good fortune it is to receive a bag of coin from a common turkey</string>
+	<string key="TurkeyTerrorCoinBag_MasterName" rel_version="Event_TurkeyTerror_Perm">Turkey's Treasure</string>
 	<string key="MutatorRewardContainerBronze_MasterName" rel_version="Expedition_BrimstoneSands_00">Bronze Mutator Reward Cache</string>
 	<string key="MutatorRewardContainerSilver_MasterName" rel_version="Expedition_BrimstoneSands_00">Silver Mutator Reward Cache</string>
 	<string key="MutatorRewardContainerGold_MasterName" rel_version="Expedition_BrimstoneSands_00">Gold Mutator Reward Cache</string>
@@ -35582,6 +35596,35 @@
 	<string key="MutatorRewardContainerDiff10T1_Description" rel_version="Expedition_BrimstoneSands_00">A cache of Umbral Shards and Mutator Materia.\nAwarded for completion of a Difficulty 10 Mutated Expedition with Bronze rank.</string>
 	<string key="MutatorRewardContainerDiff10T2_Description" rel_version="Expedition_BrimstoneSands_00">A cache of Umbral Shards and Mutator Materia.\nAwarded for completion of a Difficulty 10 Mutated Expedition with Silver rank.</string>
 	<string key="MutatorRewardContainerDiff10T3_Description" rel_version="Expedition_BrimstoneSands_00">A cache of Umbral Shards and Mutator Materia.\nAwarded for completion of a Difficulty 10 Mutated Expedition with Gold rank.</string>
+	<string key="Skin_Chest_JesterSmile_MasterName" rel_version="Apparel_JesterSmile">Jester's Smile</string>
+	<string key="Skin_Head_JesterSmile_MasterName" rel_version="Apparel_JesterSmile">Jester's Smile</string>
+	<string key="Skin_Legs_JesterSmile_MasterName" rel_version="Apparel_JesterSmile">Jester's Smile</string>
+	<string key="Skin_Feet_JesterSmile_MasterName" rel_version="Apparel_JesterSmile">Jester's Smile</string>
+	<string key="Skin_Hands_JesterSmile_MasterName" rel_version="Apparel_JesterSmile">Jester's Smile</string>
+	<string key="Skin_Chest_DarkFae_1_MasterName" rel_version="Apparel_DarkFae_1">Titania's Cloak</string>
+	<string key="Skin_Head_DarkFae_1_MasterName" rel_version="Apparel_DarkFae_1">Titania's Crown</string>
+	<string key="Skin_Legs_DarkFae_1_MasterName" rel_version="Apparel_DarkFae_1">Titania's Tights</string>
+	<string key="Skin_Feet_DarkFae_1_MasterName" rel_version="Apparel_DarkFae_1">Titania's Boots</string>
+	<string key="Skin_Hands_DarkFae_1_MasterName" rel_version="Apparel_DarkFae_1">Titania's Claws</string>
+	<string key="Skin_Chest_DarkFae_2_MasterName" rel_version="Apparel_DarkFae_2">Oberon's Breastplate</string>
+	<string key="Skin_Head_DarkFae_2_MasterName" rel_version="Apparel_DarkFae_2">Oberon's Crown</string>
+	<string key="Skin_Legs_DarkFae_2_MasterName" rel_version="Apparel_DarkFae_2">Oberon's Tights</string>
+	<string key="Skin_Feet_DarkFae_2_MasterName" rel_version="Apparel_DarkFae_2">Oberon's Boots</string>
+	<string key="Skin_Hands_DarkFae_2_MasterName" rel_version="Apparel_DarkFae_2">Oberon's Gauntlets</string>
+	<string key="Skin_Chest_DarkFaeDeluxe_MasterName" rel_version="Apparel_DarkFae_Deluxe_1">Dark Scion's Wings</string>
+	<string key="Skin_Head_DarkFaeDeluxe_MasterName" rel_version="Apparel_DarkFae_Deluxe_1">Dark Scion's Helm</string>
+	<string key="Skin_Legs_DarkFaeDeluxe_MasterName" rel_version="Apparel_DarkFae_Deluxe_1">Dark Scion's Legguards</string>
+	<string key="Skin_Feet_DarkFaeDeluxe_MasterName" rel_version="Apparel_DarkFae_Deluxe_1">Dark Scion Boots</string>
+	<string key="Skin_Hands_DarkFaeDeluxe_MasterName" rel_version="Apparel_DarkFae_Deluxe_1">Dark Scion Gauntlets</string>
+	<string key="Skin_Musket_DarkFae_MasterName" rel_version="Weapon_DarkFae_Musket_MTX">Twisted Undine</string>
+	<string key="Skin_Rapier_DarkFae_MasterName" rel_version="Weapon_DarkFae_Rapier_MTX">Sleeping Spindle</string>
+	<string key="Skin_Hatchet_DarkFae_MasterName" rel_version="Weapon_DarkFae_Hatchet_MTX">Spiritgem</string>
+	<string key="Skin_WarHammer_DarkFae_MasterName" rel_version="Weapon_DarkFae_Warhammer_MTX">Nymph Smasher</string>
+	<string key="Skin_Firestaff_DarkFae_MasterName" rel_version="Weapon_DarkFae_Firestaff_MTX">Dusk Spirit Fire</string>
+	<string key="Skin_IceGaunt_DarkFae_MasterName" rel_version="Weapon_DarkFae_IceGauntlet_MTX">Icesnap</string>
+	<string key="Skin_Flute_DarkFae_MasterName" rel_version="Instrument_Flute_DarkFae">Provocative Pipes</string>
+	<string key="Skin_Guitar_DarkFae_MasterName" rel_version="Instrument_Guitar_DarkFae">The Sylph Strings</string>
+	<string key="Skin_UprightBass_DarkFae_MasterName" rel_version="Instrument_URBass_DarkFae">Puck's Bass</string>
 	<string key="Skin_Chest_TwitchHallow_MasterName" rel_version="Apparel_Hallow_Twitch">Fallen Spirit's Breastplate</string>
 	<string key="Skin_Head_TwitchHallow_MasterName" rel_version="Apparel_Hallow_Twitch">Fallen Spirit's Horns</string>
 	<string key="Skin_Legs_TwitchHallow_MasterName" rel_version="Apparel_Hallow_Twitch">Fallen Spirit's Legplates</string>
@@ -35593,6 +35636,31 @@
 	<string key="Skin_Feet_BFNW2Gladiator_MasterName" rel_version="BFNW_Gladiator_Skin">Lone Gladiator's Boots</string>
 	<string key="Skin_Hands_BFNW2Gladiator_MasterName" rel_version="BFNW_Gladiator_Skin">Lone Gladiator's Gloves</string>
 	<string key="Oct2022Prime_Container_MasterName" rel_version="Entitlements_October_2022">Desert Traveler's Chest</string>
+	<string key="Nov2022Prime_Container_MasterName" rel_version="Entitlements_November_2022">REPLACEME</string>
+	<string key="Skin_Chest_JesterSmile_Description" rel_version="Apparel_JesterSmile">Turn that frown upside-down!</string>
+	<string key="Skin_Chest_JesterSmile_Description" rel_version="Apparel_JesterSmile">Turn that frown upside-down!</string>
+	<string key="Skin_Head_JesterSmile_Description" rel_version="Apparel_JesterSmile">Turn that frown upside-down!</string>
+	<string key="Skin_Legs_JesterSmile_Description" rel_version="Apparel_JesterSmile">Turn that frown upside-down!</string>
+	<string key="Skin_Feet_JesterSmile_Description" rel_version="Apparel_JesterSmile">Turn that frown upside-down!</string>
+	<string key="Skin_Hands_JesterSmile_Description" rel_version="Apparel_JesterSmile">Turn that frown upside-down!</string>
+	<string key="Skin_Chest_DarkFae_1_Description" rel_version="Apparel_DarkFae_1">Satin and opalescent inlays shimmer under the moonlight in the woods, seeking foolish mortals.</string>
+	<string key="Skin_Head_DarkFae_1_Description" rel_version="Apparel_DarkFae_1">Satin and opalescent inlays shimmer under the moonlight in the woods, seeking foolish mortals.</string>
+	<string key="Skin_Legs_DarkFae_1_Description" rel_version="Apparel_DarkFae_1">Satin and opalescent inlays shimmer under the moonlight in the woods, seeking foolish mortals.</string>
+	<string key="Skin_Feet_DarkFae_1_Description" rel_version="Apparel_DarkFae_1">Satin and opalescent inlays shimmer under the moonlight in the woods, seeking foolish mortals.</string>
+	<string key="Skin_Hands_DarkFae_1_Description" rel_version="Apparel_DarkFae_1">Satin and opalescent inlays shimmer under the moonlight in the woods, seeking foolish mortals.</string>
+	<string key="Skin_Chest_DarkFae_2_Description" rel_version="Apparel_DarkFae_2">Protective layers fit for a King.</string>
+	<string key="Skin_Head_DarkFae_2_Description" rel_version="Apparel_DarkFae_2">Protective layers fit for a King.</string>
+	<string key="Skin_Legs_DarkFae_2_Description" rel_version="Apparel_DarkFae_2">Protective layers fit for a King.</string>
+	<string key="Skin_Feet_DarkFae_2_Description" rel_version="Apparel_DarkFae_2">Protective layers fit for a King.</string>
+	<string key="Skin_Hands_DarkFae_2_Description" rel_version="Apparel_DarkFae_2">Protective layers fit for a King.</string>
+	<string key="Skin_Chest_DarkFaeDeluxe_Description" rel_version="Apparel_DarkFae_Deluxe_1">Shining with the power of moonlight, take your rightful place as ruler of the night.</string>
+	<string key="Skin_Head_DarkFaeDeluxe_Description" rel_version="Apparel_DarkFae_Deluxe_1">Shining with the power of moonlight, take your rightful place as ruler of the night.</string>
+	<string key="Skin_Legs_DarkFaeDeluxe_Description" rel_version="Apparel_DarkFae_Deluxe_1">Shining with the power of moonlight, take your rightful place as ruler of the night.</string>
+	<string key="Skin_Feet_DarkFaeDeluxe_Description" rel_version="Apparel_DarkFae_Deluxe_1">Shining with the power of moonlight, take your rightful place as ruler of the night.</string>
+	<string key="Skin_Hands_DarkFaeDeluxe_Description" rel_version="Apparel_DarkFae_Deluxe_1">Shining with the power of moonlight, take your rightful place as ruler of the night.</string>
+	<string key="Skin_Flute_DarkFae_Description" rel_version="Instrument_Flute_DarkFae">Entrance and enthrall all with your lilting melodies.</string>
+	<string key="Skin_Guitar_DarkFae_Description" rel_version="Instrument_Guitar_DarkFae">Play as lightly and sprightly as a sylph theirself.</string>
+	<string key="Skin_UprightBass_DarkFae_Description" rel_version="Instrument_URBass_DarkFae">For the mischievous musician who wishes to play in sultry, dulcet tones.</string>
 	<string key="Skin_Chest_TwitchHallow_Description" rel_version="Apparel_Hallow_Twitch">The fallen spirit creeps into your ego, not unlike moss consuming stone.</string>
 	<string key="Skin_Head_TwitchHallow_Description" rel_version="Apparel_Hallow_Twitch">The fallen spirit creeps into your ego, not unlike moss consuming stone.</string>
 	<string key="Skin_Legs_TwitchHallow_Description" rel_version="Apparel_Hallow_Twitch">The fallen spirit creeps into your ego, not unlike moss consuming stone.</string>
@@ -35604,6 +35672,7 @@
 	<string key="Skin_Feet_BFNW2Gladiator_Description" rel_version="BFNW_Gladiator_Skin">The arena has long since gone unused, but the attire of a gladiator has become almost symbolic to the people in the sands.</string>
 	<string key="Skin_Hands_BFNW2Gladiator_Description" rel_version="BFNW_Gladiator_Skin">The arena has long since gone unused, but the attire of a gladiator has become almost symbolic to the people in the sands.</string>
 	<string key="Oct2022Prime_Container_Description" rel_version="Entitlements_October_2022">A resource pack hand-crafted for a desert explorer.</string>
+	<string key="Nov2022Prime_Container_Description" rel_version="Entitlements_November_2022">REPLACEME</string>
 	<string key="Omega_Box_RuneglassALL_Description" rel_version="Feature_Runeglass">A box containing Runeglass of every type.</string>
 	<string key="Omega_Box_RuneglassALL_MasterName" rel_version="Feature_Runeglass">Omega Runeglass Box</string>
 	<string key="Omega_Box_RuneglassAmber_Description" rel_version="Feature_Runeglass">A box containing Runeglass made using Amber.</string>
@@ -35678,7 +35747,37 @@
 	<string key="WritofAdventure_Description">An account of your deeds! This is a crafting material used to craft runes.</string>
 	<string key="WritofAdventure_MasterName">Writ of Adventure</string>
 	<string key="WritofAdventure_Description">An account of your deeds! This is a crafting material used to craft runes.</string>
+	<string key="Turkey2022_Container_MasterName" rel_version="Entitlements_November_2022">Bountiful Feast of the Hunt</string>
+	<string key="Turkey2022_Container_Description" rel_version="Entitlements_November_2022">A chest of rewards packed rich with protein.</string>
+	<string key="BFriday_Container_MasterName" rel_version="Entitlements_November_2022">Mysterious Musician's Solitary Strongbox</string>
+	<string key="BFriday_Container_Description" rel_version="Entitlements_November_2022">A chest of rewards for the musically-inclined Aeternian.</string>
+	<string key="Skin_Feet_TurkeyTerror_Box_MasterName" rel_version="Event_TurkeyTerror_Perm">Turkulon's Juicy Calves Box</string>
+	<string key="Skin_Feet_TurkeyTerror_Box_Description" rel_version="Event_TurkeyTerror_Perm">Open this box to claim the skin. Apply it from the Select Skin menu.</string>
 	<string key="Oct2022Prime_Container_2_MasterName" rel_version="Entitlements_October_2022">Fruit of the Dunes Resource Chest</string>
 	<string key="Oct2022Prime_Container_2_Description" rel_version="Entitlements_October_2022">A resource chest of items hand-selected from a land of sand.</string>
+	<string key="Skin_Musket_DarkFae_Description" rel_version="Weapon_DarkFae_Musket_MTX">Ever seen a dusk spirit with a gun? Now you have.</string>
+	<string key="Skin_Rapier_DarkFae_Description" rel_version="Weapon_DarkFae_Rapier_MTX">With one prick on the finger, this blade can put the innocent right to sleep.</string>
+	<string key="Skin_Hatchet_DarkFae_Description" rel_version="Weapon_DarkFae_Hatchet_MTX">The massive gem in the center of this hatchet was acquired from the hunt after a raucous game of charades.</string>
+	<string key="Skin_WarHammer_DarkFae_Description" rel_version="Weapon_DarkFae_Warhammer_MTX">It's been said that winged creatures make satisfying crunch when smacked out of the air.</string>
+	<string key="Skin_Firestaff_DarkFae_Description" rel_version="Weapon_DarkFae_Firestaff_MTX">Magical fire pours forth from this staff, heavy with purpose in an adventurer's hand.</string>
+	<string key="Skin_IceGaunt_DarkFae_Description" rel_version="Weapon_DarkFae_IceGauntlet_MTX">With a snap of your fingers, sugarplum spirits scatter in fear.</string>
+	<string key="Skin_DarkFae_FishingPole_MasterName" rel_version="ToolSkins_DarkFae_MTX">Ichthus' Pole</string>
+	<string key="Skin_DarkFae_FishingPole_Description" rel_version="ToolSkins_DarkFae_MTX">A rather simple fishing pole for such fanciful folk.</string>
+	<string key="Skin_DarkFae_AzothScepter_MasterName" rel_version="ToolSkins_DarkFae_MTX">Titania's Scepter</string>
+	<string key="Skin_DarkFae_AzothScepter_Description" rel_version="ToolSkins_DarkFae_MTX">Used by the Eternal Queen herself for officiating ceremonies and foes alike.</string>
+	<string key="Skin_DarkFae_LoggingAxe_MasterName" rel_version="ToolSkins_DarkFae_MTX">Lumbertorrwr</string>
+	<string key="Skin_DarkFae_LoggingAxe_Description" rel_version="ToolSkins_DarkFae_MTX">A rare tool for the spirits, but it's important to trim the forest for its own health and protection.</string>
+	<string key="Skin_DarkFae_Pickaxe_MasterName" rel_version="ToolSkins_DarkFae_MTX">Dusk Spirit Wings</string>
+	<string key="Skin_DarkFae_Pickaxe_Description" rel_version="ToolSkins_DarkFae_MTX">A beautiful ornament for mining beautiful ores. You may find it refusing to mine iron though, so buyer beware.</string>
+	<string key="Skin_DarkFae_Sickle_MasterName" rel_version="ToolSkins_DarkFae_MTX">Dove Wing</string>
+	<string key="Skin_DarkFae_Sickle_Description" rel_version="ToolSkins_DarkFae_MTX">The peaceful aura from this tool relaxes the herbs as you gather them and enhances their flavors.</string>
+	<string key="Skin_DarkFae_SkinningKnife_MasterName" rel_version="ToolSkins_DarkFae_MTX">Oberon's Dagger</string>
+	<string key="Skin_DarkFae_SkinningKnife_Description" rel_version="ToolSkins_DarkFae_MTX">An ultimately ceremonial gift from a visitor to The Court. It was treasured by the receive</string>
+	<string key="OverchargedOrb_MasterName">Overcharged Gypsum Orb</string>
+	<string key="OverchargedOrb_Description">A more powerful form of Gypsum Orb. This is only given as a gift and can be used without limitations.</string>
+	<string key="CS_MGContainer_MasterName">Gift Chest</string>
+	<string key="CS_MGContainer_Description">A cache of items gifted to warriors of Aeternum.</string>
+	<string key="CS_MGContainer_60_MasterName">Gift Chest</string>
+	<string key="CS_MGContainer_60_Description">A cache of items gifted to warriors of Aeternum.</string>
 </resources>
 

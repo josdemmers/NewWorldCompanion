@@ -147,7 +147,7 @@ namespace NewWorldCompanion.Services
                                         {
                                             Debug.WriteLine($"item_name: {nwmarketpriceJson.item_name}");
                                             Debug.WriteLine($"recent_lowest_price: {nwmarketpriceJson.recent_lowest_price}");
-                                            Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked}");
+                                            Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked_string}");
 
                                             nwmarketpriceJson.item_name = string.IsNullOrEmpty(nwmarketpriceJson.item_name) ? itemName : nwmarketpriceJson.item_name;
 
@@ -161,7 +161,7 @@ namespace NewWorldCompanion.Services
                                         {
                                             item_name = itemName,
                                             recent_lowest_price = 0.00,
-                                            last_checked = "no data"
+                                            last_checked = DateTime.MinValue,
                                         };
                                     }
                                 }

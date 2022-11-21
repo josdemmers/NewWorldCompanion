@@ -14,5 +14,8 @@ namespace NewWorldCompanion.Interfaces
         string GetItemId(string itemName);
         ItemDefinition? GetItem(string itemId);
         string GetLevenshteinItemName(string itemName);
+        List<MasterItemDefinitionsJson> GetOverlayResources();
+        string GetItemLocalisation(string itemMasterName);
+        List<CraftingRecipeJson> GetRelatedRecipes(string itemId);
     }
 }

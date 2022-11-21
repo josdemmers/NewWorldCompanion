@@ -228,6 +228,9 @@ namespace NewWorldCompanion.ViewModels.Tabs
                 case StorageLocationConstants.Brightwood:
                     allowed = Storages.FirstOrDefault(s => s.Name.Equals(item.Storage, StringComparison.OrdinalIgnoreCase))?.IsEnabled ?? false;
                     break;
+                case StorageLocationConstants.BrimstoneSandsNewCorsica:
+                    allowed = Storages.FirstOrDefault(s => s.Name.Equals(item.Storage, StringComparison.OrdinalIgnoreCase))?.IsEnabled ?? false;
+                    break;
                 case StorageLocationConstants.CutlassKeys:
                     allowed = Storages.FirstOrDefault(s => s.Name.Equals(item.Storage, StringComparison.OrdinalIgnoreCase))?.IsEnabled ?? false;
                     break;
@@ -291,6 +294,11 @@ namespace NewWorldCompanion.ViewModels.Tabs
             Storages.Add(new Storage()
             {
                 Name = StorageLocationConstants.Brightwood,
+                IsEnabled = true
+            });
+            Storages.Add(new Storage()
+            {
+                Name = StorageLocationConstants.BrimstoneSandsNewCorsica,
                 IsEnabled = true
             });
             Storages.Add(new Storage()

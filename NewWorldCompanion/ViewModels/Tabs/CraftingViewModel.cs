@@ -63,7 +63,9 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private int _counterMusicSheets = 0;
         private string _itemNameFilter = string.Empty;
         private string _selectedCraftingRecipePrice = string.Empty;
+        private string _selectedCraftingRecipePriceTooltip = string.Empty;
         private string _selectedCraftingRecipePriceAvg = string.Empty;
+        private string _selectedCraftingRecipePriceAvgToolip = string.Empty;
 
         // Start of Constructor region
 
@@ -144,7 +146,9 @@ namespace NewWorldCompanion.ViewModels.Tabs
             {
                 SetProperty(ref _selectedCraftingRecipe, value, () => { RaisePropertyChanged(nameof(SelectedCraftingRecipe)); });
                 RaisePropertyChanged(nameof(SelectedCraftingRecipePrice));
+                RaisePropertyChanged(nameof(SelectedCraftingRecipePriceTooltip));
                 RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvg));
+                RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvgTooltip));
             }
         }
 
@@ -279,20 +283,33 @@ namespace NewWorldCompanion.ViewModels.Tabs
                 {
                     _priceManager.UpdatePriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
                     NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
-                    NumberStyles style = NumberStyles.AllowDecimalPoint;
                     if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
                     {
-                        string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
-
-                        //_selectedCraftingRecipePrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
-                        //    nwmarketpriceJson.recent_lowest_price :
-                        //    $"{nwmarketpriceJson.recent_lowest_price} lowest ({nwmarketpriceJson.last_checked})";
-                        _selectedCraftingRecipePrice = nwmarketpriceJson.recent_lowest_price.Equals(nwmarketpriceJson.last_checked) ?
-                            decimal.Parse(nwmarketpriceJson.recent_lowest_price.ToString(), style, CultureInfo.InvariantCulture).ToString("F2") :
-                            $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} lowest ({nwmarketpriceJson.last_checked})";
+                        var priceChange = nwmarketpriceJson.price_change >= 0 ? $"+{nwmarketpriceJson.price_change}" : $"{nwmarketpriceJson.price_change}";
+                        _selectedCraftingRecipePrice = $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} ({priceChange}%) ({nwmarketpriceJson.last_checked_string})";
                     }
                 }
                 return _selectedCraftingRecipePrice;
+            }
+        }
+
+        public string SelectedCraftingRecipePriceTooltip
+        {
+            get
+            {
+                _selectedCraftingRecipePriceTooltip = string.Empty;
+
+                if (SelectedCraftingRecipe != null)
+                {
+                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
+                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
+                    if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+                    {
+                        var priceChange = nwmarketpriceJson.price_change >= 0 ? $"+{nwmarketpriceJson.price_change}" : $"{nwmarketpriceJson.price_change}";
+                        _selectedCraftingRecipePriceTooltip = $"The lowest price at ({nwmarketpriceJson.last_checked_string}) was {nwmarketpriceJson.recent_lowest_price.ToString("F2")} ({priceChange}%)";
+                    }
+                }
+                return _selectedCraftingRecipePriceTooltip;
             }
         }
 
@@ -308,13 +325,35 @@ namespace NewWorldCompanion.ViewModels.Tabs
                     NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
                     if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
                     {
-                        string recentLowestPriceAvgList = nwmarketpriceJson.RecentLowestPriceAvg;
-                        _selectedCraftingRecipePriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvgList) ?
+                        string recentLowestPriceAvg = nwmarketpriceJson.RecentLowestPriceAvg;
+                        _selectedCraftingRecipePriceAvg = string.IsNullOrWhiteSpace(recentLowestPriceAvg) ?
                             _selectedCraftingRecipePriceAvg :
-                            $"{recentLowestPriceAvgList} lowest avg ({nwmarketpriceJson.last_checked})";
+                            $"{recentLowestPriceAvg} (15-day avg) ({nwmarketpriceJson.last_checked_string})";
                     }
                 }
                 return _selectedCraftingRecipePriceAvg;
+            }
+        }
+
+        public string SelectedCraftingRecipePriceAvgTooltip
+        {
+            get
+            {
+                _selectedCraftingRecipePriceAvgToolip = string.Empty;
+
+                if (SelectedCraftingRecipe != null)
+                {
+                    _priceManager.UpdatePriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
+                    NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(SelectedCraftingRecipe.LocalisationUserFriendly);
+                    if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+                    {
+                        string recentLowestPriceAvg = nwmarketpriceJson.RecentLowestPriceAvg;
+                        _selectedCraftingRecipePriceAvgToolip = string.IsNullOrWhiteSpace(recentLowestPriceAvg) ?
+                            _selectedCraftingRecipePriceAvgToolip :
+                            $"The lowest 15-day average price at ({nwmarketpriceJson.last_checked_string}) was {recentLowestPriceAvg}";
+                    }
+                }
+                return _selectedCraftingRecipePriceAvgToolip;
             }
         }
 
@@ -347,9 +386,10 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private void HandlePriceCacheUpdatedEvent()
         {
             RaisePropertyChanged(nameof(SelectedCraftingRecipePrice));
+            RaisePropertyChanged(nameof(SelectedCraftingRecipePriceTooltip));
             RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvg));
+            RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvgTooltip));
         }
-
 
         #endregion
 

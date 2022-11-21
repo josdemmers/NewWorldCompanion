@@ -71,6 +71,7 @@ namespace NewWorldCompanion.Services
                     };
                     // register the converter
                     options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
 
                     masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
@@ -92,6 +93,7 @@ namespace NewWorldCompanion.Services
                     };
                     // register the converter
                     options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
 
                     masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
@@ -113,6 +115,7 @@ namespace NewWorldCompanion.Services
                     };
                     // register the converter
                     options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
 
                     masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
@@ -134,6 +137,7 @@ namespace NewWorldCompanion.Services
                     };
                     // register the converter
                     options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
 
                     masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
@@ -148,8 +152,16 @@ namespace NewWorldCompanion.Services
             {
                 if (stream != null)
                 {
-                    _craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream) ?? new List<CraftingRecipeJson>();
-                    _craftingRecipesJson.RemoveAll(r => string.IsNullOrWhiteSpace(r.RequiredAchievementID));
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    _craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
                 }
             }
 
@@ -227,7 +239,7 @@ namespace NewWorldCompanion.Services
         public List<CraftingRecipe> GetCraftingRecipes()
         {
             List<CraftingRecipe> craftingRecipes = new List<CraftingRecipe>();
-            foreach (var craftingRecipeJson in _craftingRecipesJson)
+            foreach (var craftingRecipeJson in _craftingRecipesJson.FindAll(recipe => !string.IsNullOrWhiteSpace(recipe.RequiredAchievementID)))
             {
                 string id = craftingRecipeJson.RequiredAchievementID;
                 string tradeskill = craftingRecipeJson.Tradeskill;
@@ -272,6 +284,37 @@ namespace NewWorldCompanion.Services
             }
 
             return craftingRecipes;
+        }
+
+        public List<MasterItemDefinitionsJson> GetOverlayResources()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            string resourcePath = string.Empty;
+
+            // MasterItemDefinitions Crafting
+            var masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
+            resourcePath = "MasterItemDefinitions_Crafting.json";
+            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
+            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                }
+            }
+
+            return masterItemDefinitionsJson.FindAll(items => items.TradingFamily.Equals("RawResources") &&
+                items.ItemClass.Contains("+") &&
+                !items.ItemClass.Contains("WeaponSchematic"));
         }
 
         public bool IsBindOnPickup(string itemName)
@@ -341,6 +384,36 @@ namespace NewWorldCompanion.Services
 
             //return currentDistance <= Math.Max(3, itemName.Length) ? currentItem : itemName;
             return currentDistance <= 3 ? currentItem : itemName;
+        }
+
+        public string GetItemLocalisation(string itemMasterName)
+        {
+            return _itemDefinitionsLocalisation.GetValueOrDefault(itemMasterName.Trim(new char[] { '@' }).ToLower()) ?? itemMasterName.Trim(new char[] { '@' });
+        }
+
+        public List<CraftingRecipeJson> GetRelatedRecipes(string itemId)
+        {
+            // Note: The following recipes are ignored:
+            // - Empty recipe.ItemID strings because those are all from downgrade recipes.
+            // - Armor / weapons because results are random and we have no price data.
+            // - Crafting quest recipes.
+            return _craftingRecipesJson.FindAll(recipe => 
+                !string.IsNullOrWhiteSpace(recipe.ItemID) &&
+                !recipe.CraftingCategory.Equals("Armor") &&
+                !recipe.CraftingCategory.Equals("CraftingQuestRecipe") &&
+                !recipe.CraftingCategory.Equals("MagicStaves") &&
+                !recipe.CraftingCategory.Equals("Tools") &&
+                !recipe.CraftingCategory.Equals("Weapons") &&
+                !recipe.CraftingCategory.StartsWith("Salvage") &&
+                !recipe.CraftingCategory.StartsWith("TimelessShards") &&
+                (recipe.Ingredient1.Equals(itemId) ||
+                (recipe.Ingredient1.Equals(itemId.Substring(0,itemId.Length-2)) && recipe.Type1.Equals("Category_Only")) ||
+                recipe.Ingredient2.Equals(itemId) ||
+                recipe.Ingredient3.Equals(itemId) ||
+                recipe.Ingredient4.Equals(itemId) ||
+                recipe.Ingredient5.Equals(itemId) ||
+                recipe.Ingredient6.Equals(itemId) ||
+                recipe.Ingredient7.Equals(itemId)));
         }
 
         #endregion

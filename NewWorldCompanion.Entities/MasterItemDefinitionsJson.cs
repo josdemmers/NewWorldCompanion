@@ -14,5 +14,9 @@ namespace NewWorldCompanion.Entities
         public string SalvageAchievement { get; set; } = string.Empty;
         /// <value>Used as Tradeskill value for MusicSheets in CraftingRecipe</value>
         public string TradingFamily { get; set; } = string.Empty;
+        /// <value>Item category. Used to categorise, filter, and sort resources.</value>
+        public string ItemClass { get; set; } = string.Empty;
+        /// <value>Item tier. Used to sort resources.</value>
+        public int Tier { get; set; } = 0;
     }
 }

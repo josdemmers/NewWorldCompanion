@@ -1,5 +1,6 @@
 ﻿using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Extensions.DependencyInjection;
+using NewWorldCompanion.Entities;
 using NewWorldCompanion.Interfaces;
 using NewWorldCompanion.Services;
 using NewWorldCompanion.Views;
@@ -32,7 +33,8 @@ namespace NewWorldCompanion
             containerRegistry.RegisterSingleton<ISettingsManager, SettingsManager>();
             containerRegistry.RegisterSingleton<IStorageManager, StorageManager>();
             containerRegistry.RegisterSingleton<IVersionManager, VersionManager>();
-
+            containerRegistry.RegisterSingleton<IRelatedPriceManager, RelatedPriceManager>();
+            
             // Register Metro
             containerRegistry.RegisterSingleton<IDialogCoordinator, DialogCoordinator>();
         }

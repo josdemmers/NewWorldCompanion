@@ -3,27 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NewWorldCompanion.Views.Tabs.Config"
+             xmlns:local="clr-namespace:NewWorldCompanion.Views.Tabs.Config" 
+             xmlns:configvm="clr-namespace:NewWorldCompanion.ViewModels.Tabs.Config" 
+             d:DataContext="{d:DesignInstance Type=configvm:ConfigOverlayViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-  <Grid Margin="5">
-    <Grid.RowDefinitions>
-      <RowDefinition Height="Auto"/>
-      <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="Auto"/>
-      <ColumnDefinition Width="Auto"/>
-    </Grid.ColumnDefinitions>
+    <Grid Margin="5 5 0 5" 
+          Height="{Binding ActualHeight, RelativeSource ={RelativeSource AncestorType = {x:Type UserControl}}}"
+          Width="{Binding ActualWidth, RelativeSource ={RelativeSource AncestorType = {x:Type UserControl}}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-    <Label Grid.Row="0" Grid.Column="0" Content="Select server:"/>
-    <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Servers}" SelectedIndex="{Binding ServerIndex}" >
-      <ComboBox.ItemTemplate>
-        <DataTemplate>
-          <TextBlock Text="{Binding Name}" />
-        </DataTemplate>
-      </ComboBox.ItemTemplate>
-    </ComboBox>
+        <Label Grid.Row="0" Grid.Column="0" Content="Select server:"/>
+        <ComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Servers}" SelectedIndex="{Binding ServerIndex}" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
-  </Grid>
+        <TextBox Name="TextBoxFilter" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding ItemNameFilter, UpdateSourceTrigger=PropertyChanged}" Width="auto" HorizontalAlignment="Stretch" Margin="5" GotFocus="TextBoxFilter_GotFocus" LostFocus="TextBoxFilter_LostFocus"/>
+        <TextBlock Name="TextBoxFilterWatermark" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="Enter filter" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Padding="5 0 0 0" IsHitTestVisible="False" Foreground="DimGray" FontStyle="Italic"/>
+        <ToggleButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Width="25" Height="25" Margin="5 7 8 8" HorizontalAlignment="Right"
+                      IsChecked="{Binding ToggleExtendedTooltip}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}"
+                      ToolTip="Enable extented price overlay">
+            <Label Content="✔" Padding="0" Margin="0 0 0 1"/>
+        </ToggleButton>
+
+        <ListBox Grid.Row="2" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="3" 
+                 Margin="0 0 10 10"
+                 ItemsSource="{Binding Path=OverlayResourcesFiltered}" 
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"
+                 SelectedItem="{Binding SelectedOverlayResource}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel HorizontalAlignment="Left" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" MinWidth="200">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Margin="0,0,10,0" Text="{Binding Path=RawResource.NameLocalised}" />
+                            <ListBox ItemsSource="{Binding Path=Recipes}" MaxHeight="100">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel HorizontalAlignment="Left" />
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding Path=IsVisible}">
+                                            <TextBlock Margin="0,0,10,0" Text="{Binding Path=NameLocalised}" />
+                                        </CheckBox>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
 </UserControl>
