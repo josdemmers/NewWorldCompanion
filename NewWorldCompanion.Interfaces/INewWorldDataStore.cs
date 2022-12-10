@@ -17,5 +17,6 @@ namespace NewWorldCompanion.Interfaces
         List<MasterItemDefinitionsJson> GetOverlayResources();
         string GetItemLocalisation(string itemMasterName);
         List<CraftingRecipeJson> GetRelatedRecipes(string itemId);
+        CraftingRecipeJson GetCraftingRecipeDetails(string itemId);
     }
 }

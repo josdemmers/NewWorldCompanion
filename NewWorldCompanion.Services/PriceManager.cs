@@ -11,6 +11,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace NewWorldCompanion.Services
@@ -22,6 +23,7 @@ namespace NewWorldCompanion.Services
         private readonly ISettingsManager _settingsManager;
         private readonly IHttpClientHandler _httpClientHandler;
         private readonly INewWorldDataStore _newWorldDataStore;
+        private readonly IRelatedPriceManager _relatedPriceManager;
 
         private readonly object priceRequestLock = new object();
 
@@ -34,7 +36,7 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public PriceManager(IEventAggregator eventAggregator, ILogger<PriceManager> logger, ISettingsManager settingsManager, IHttpClientHandler httpClientHandler, INewWorldDataStore newWorldDataStore)
+        public PriceManager(IEventAggregator eventAggregator, ILogger<PriceManager> logger, ISettingsManager settingsManager, IHttpClientHandler httpClientHandler, INewWorldDataStore newWorldDataStore, IRelatedPriceManager relatedPriceManager)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
@@ -46,9 +48,10 @@ namespace NewWorldCompanion.Services
             _settingsManager = settingsManager;
             _httpClientHandler = httpClientHandler;
             _newWorldDataStore = newWorldDataStore;
+            _relatedPriceManager = relatedPriceManager;
 
-            // Init servers
-            UpdateServerList();
+        // Init servers
+        UpdateServerList();
         }
 
         #endregion
@@ -108,8 +111,135 @@ namespace NewWorldCompanion.Services
             return _priceCache.GetValueOrDefault(itemName, nwmarketpriceJson); ;
         }
 
+        public double GetCraftingCosts(string itemId)
+        {
+            var recipe = _newWorldDataStore.GetCraftingRecipeDetails(itemId);
+            double craftingCosts = 0;
+
+            var ingredient = string.Empty;
+            var nwmarketpriceJson = new NwmarketpriceJson();
+            var qty = recipe.Qty1;
+            if (!string.IsNullOrWhiteSpace(recipe.Ingredient1) && qty != 0)
+            {
+                ingredient = Char.IsDigit(recipe.Ingredient1.Last()) ? recipe.Ingredient1 : $"{recipe.Ingredient1}T1";
+
+                string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
+                ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
+                UpdatePriceData(ingredientName);
+                nwmarketpriceJson = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+            }
+
+            qty = recipe.Qty2;
+            if (!string.IsNullOrWhiteSpace(recipe.Ingredient2) && qty != 0)
+            {
+                ingredient = Char.IsDigit(recipe.Ingredient2.Last()) ? recipe.Ingredient2 : $"{recipe.Ingredient2}T1";
+
+                string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
+                ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
+                UpdatePriceData(ingredientName);
+                nwmarketpriceJson = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+            }
+
+            qty = recipe.Qty3;
+            if (!string.IsNullOrWhiteSpace(recipe.Ingredient3) && qty != 0)
+            {
+                ingredient = Char.IsDigit(recipe.Ingredient3.Last()) ? recipe.Ingredient3 : $"{recipe.Ingredient3}T1";
+
+                string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
+                ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
+                UpdatePriceData(ingredientName);
+                nwmarketpriceJson = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+            }
+
+            qty = recipe.Qty4;
+            if (!string.IsNullOrWhiteSpace(recipe.Ingredient4) && qty != 0)
+            {
+                ingredient = Char.IsDigit(recipe.Ingredient4.Last()) ? recipe.Ingredient4 : $"{recipe.Ingredient4}T1";
+
+                string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
+                ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
+                UpdatePriceData(ingredientName);
+                nwmarketpriceJson = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+            }
+
+            qty = recipe.Qty5;
+            if (!string.IsNullOrWhiteSpace(recipe.Ingredient5) && qty != 0)
+            {
+                ingredient = Char.IsDigit(recipe.Ingredient5.Last()) ? recipe.Ingredient5 : $"{recipe.Ingredient5}T1";
+
+                string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
+                ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
+                UpdatePriceData(ingredientName);
+                nwmarketpriceJson = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+            }
+
+            qty = recipe.Qty6;
+            if (!string.IsNullOrWhiteSpace(recipe.Ingredient6) && qty != 0)
+            {
+                ingredient = Char.IsDigit(recipe.Ingredient6.Last()) ? recipe.Ingredient6 : $"{recipe.Ingredient6}T1";
+
+                string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
+                ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
+                UpdatePriceData(ingredientName);
+                nwmarketpriceJson = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+            }
+
+            qty = recipe.Qty7;
+            if (!string.IsNullOrWhiteSpace(recipe.Ingredient7) && qty != 0)
+            {
+                ingredient = Char.IsDigit(recipe.Ingredient7.Last()) ? recipe.Ingredient7 : $"{recipe.Ingredient7}T1";
+
+                string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
+                ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
+                UpdatePriceData(ingredientName);
+                nwmarketpriceJson = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+            }
+
+            return craftingCosts;
+        }
+
+        public List<NwmarketpriceJson> GetExtendedPriceData(string itemName)
+        {
+            var extendedPriceDataList = new List<NwmarketpriceJson>();
+            var itemId = _newWorldDataStore.GetItemId(itemName);
+            var overlayResource = _relatedPriceManager.PersistableOverlayResources.FirstOrDefault(item => item.ItemId.Equals(itemId));
+            if (overlayResource != null)
+            {
+                foreach (var recipe in overlayResource.PersistableOverlayResourceRecipes)
+                {
+                    if (!recipe.IsVisible) continue;
+
+                    string recipeName = _newWorldDataStore.GetItem(recipe.ItemId)?.Name ?? string.Empty;
+                    recipeName = _newWorldDataStore.GetItemLocalisation(recipeName);
+                    if (string.IsNullOrWhiteSpace(recipeName))
+                    {
+                        continue;
+                    }
+                    UpdatePriceData(recipeName);
+
+                    var nwmarketpriceJson = new NwmarketpriceJson();
+                    nwmarketpriceJson = _priceCache.GetValueOrDefault(recipeName, nwmarketpriceJson);
+                    extendedPriceDataList.Add(nwmarketpriceJson);
+                }
+            }
+
+            return extendedPriceDataList;
+        }
+
         public void UpdatePriceData(string itemName)
         {
+            if (string.IsNullOrWhiteSpace(itemName))
+            {
+                return;
+            }
+
             if (!_priceCache.ContainsKey(itemName))
             {
                 if (!_priceRequestQueue.Contains(itemName)) _priceRequestQueue.Add(itemName);
@@ -164,6 +294,8 @@ namespace NewWorldCompanion.Services
                                             last_checked = DateTime.MinValue,
                                         };
                                     }
+
+                                    //Thread.Sleep(100);
                                 }
                                 catch (Exception ex)
                                 {
@@ -174,7 +306,14 @@ namespace NewWorldCompanion.Services
                             // Always remove from queue, even with exceptions.
                             _priceRequestQueue.RemoveAll(item => item.Equals(itemName));
                             _priceRequestQueueBusy = false;
-                            Task.Delay(100).Wait();
+
+
+                            var sw = new Stopwatch();
+                            sw.Start();
+                            //Task delay = Task.Delay(100);
+                            //await delay;
+                            Task.Delay(250).Wait();
+                            Debug.WriteLine($"async: Running for {sw.Elapsed.TotalSeconds} seconds");
 
                             if (_priceRequestQueue.Any())
                             {

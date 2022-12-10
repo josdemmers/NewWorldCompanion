@@ -81,7 +81,6 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
                 _toggleExtendedTooltip = value;
                 _settingsManager.Settings.ExtendedTooltipEnabled = value;
                 _settingsManager.SaveSettings();
-                // TODO: Notify tooltip handler
             }
         }
 

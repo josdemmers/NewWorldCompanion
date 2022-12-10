@@ -416,6 +416,13 @@ namespace NewWorldCompanion.Services
                 recipe.Ingredient7.Equals(itemId)));
         }
 
+        public CraftingRecipeJson GetCraftingRecipeDetails(string itemId)
+        {
+            var craftingRecipesJson = new CraftingRecipeJson();
+            craftingRecipesJson = _craftingRecipesJson.FirstOrDefault(recipe => recipe.ItemID.ToLower().Equals(itemId), craftingRecipesJson);
+            return craftingRecipesJson;
+        }
+
         #endregion
 
     }

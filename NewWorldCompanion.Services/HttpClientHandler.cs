@@ -68,7 +68,7 @@ namespace NewWorldCompanion.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+                _logger.LogError(ex, $"GetRequest({uri})");
 
                 return string.Empty;
             }

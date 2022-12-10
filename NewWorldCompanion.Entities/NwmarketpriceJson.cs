@@ -14,6 +14,7 @@ namespace NewWorldCompanion.Entities
     public class NwmarketpriceJson
     {
         public string item_name { get; set; } = string.Empty;
+        public string nwdb_id { get; set; } = string.Empty;
         public DateTime last_checked { get; set; } = DateTime.MinValue;
         public double recent_lowest_price { get; set; } = 0.0;
         public List<GrapData> price_graph_data { get; set; } = new List<GrapData>();

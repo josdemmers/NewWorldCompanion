@@ -17,6 +17,7 @@ namespace NewWorldCompanion.Services
     public class OverlayHandler : IOverlayHandler
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ISettingsManager _settingsManager;
         private readonly ICraftingRecipeManager _craftingRecipeManager;
         private readonly INewWorldDataStore _newWorldDataStore;
         private readonly IOcrHandler _ocrHandler;
@@ -40,7 +41,7 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public OverlayHandler(IEventAggregator eventAggregator, ICraftingRecipeManager craftingRecipeManager, INewWorldDataStore newWorldDataStore, 
+        public OverlayHandler(IEventAggregator eventAggregator, ISettingsManager settingsManager, ICraftingRecipeManager craftingRecipeManager, INewWorldDataStore newWorldDataStore,
             IOcrHandler ocrHandler, IPriceManager priceManager, IScreenProcessHandler screenProcessHandler)
         {
             // Init IEventAggregator
@@ -51,6 +52,7 @@ namespace NewWorldCompanion.Services
             _eventAggregator.GetEvent<RoiImageReadyEvent>().Subscribe(HandleRoiImageReadyEvent);
 
             // Init services
+            _settingsManager = settingsManager;
             _craftingRecipeManager = craftingRecipeManager;
             _newWorldDataStore = newWorldDataStore;
             _ocrHandler = ocrHandler;
@@ -112,11 +114,6 @@ namespace NewWorldCompanion.Services
                 return;
             }
 
-            _window.X = _overlayX;
-            _window.Y = _overlayY;
-            _window.Width = _overlayWidth;
-            _window.Height = _overlayHeigth;
-
             string itemName = _itemName;
             string itemId = _newWorldDataStore.GetItemId(itemName);
             var craftingRecipe = string.IsNullOrWhiteSpace(itemId) 
@@ -136,10 +133,11 @@ namespace NewWorldCompanion.Services
         private void DrawGraphicsItem(DrawGraphicsEventArgs e, string itemName)
         {
             NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(itemName);
+            List<NwmarketpriceJson> extendedNwmarketpriceJson = _priceManager.GetExtendedPriceData(itemName);
 
             string infoItemName = itemName;
             string infoPrice = "Loading...";
-            string infoPriceAvg = string.Empty;  
+            string infoPriceAvg = string.Empty;
 
             if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
             {
@@ -152,12 +150,35 @@ namespace NewWorldCompanion.Services
             // Do not show Bind on pickup items.
             if (!_newWorldDataStore.IsBindOnPickup(itemName))
             {
+                int ExtendedTooltipOffset = _settingsManager.Settings.ExtendedTooltipEnabled ? Math.Min(extendedNwmarketpriceJson.Count, 3) * 20 : 0;
+                // Add some extra margin
+                ExtendedTooltipOffset = ExtendedTooltipOffset == 0 ? 0 : ExtendedTooltipOffset + 40;
+
+                _window.X = _overlayX;
+                _window.Y = _overlayY - ExtendedTooltipOffset;
+                _window.Width = _overlayWidth;
+                _window.Height = _overlayHeigth + ExtendedTooltipOffset;
+
                 var gfx = e.Graphics;
                 gfx.ClearScene(_brushes["background"]);
-                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 20, infoItemName);
-                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 40, infoPrice);
-                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 60, infoPriceAvg);
-                gfx.DrawRectangle(_brushes["border"], 0, 0, _overlayWidth, _overlayHeigth, 1);
+                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, ExtendedTooltipOffset+20, infoItemName);
+                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, ExtendedTooltipOffset+40, infoPrice);
+                gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, ExtendedTooltipOffset+60, infoPriceAvg);
+                gfx.DrawRectangle(_brushes["border"], 0, 0, _overlayWidth, _overlayHeigth + ExtendedTooltipOffset, 1);
+
+                // Extended text
+                if (ExtendedTooltipOffset > 0)
+                {
+                    for (int i = 0; i < Math.Min(extendedNwmarketpriceJson.Count, 3); i++)
+                    {
+                        var craftingCosts = _priceManager.GetCraftingCosts(extendedNwmarketpriceJson[i].nwdb_id);
+                        gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, ((i+1)*20), $"{extendedNwmarketpriceJson[i].item_name} " +
+                            $"{extendedNwmarketpriceJson[i].recent_lowest_price.ToString("F2")} (Sell) " +
+                            $"{craftingCosts.ToString("F2")} (Craft) " +
+                            $"{extendedNwmarketpriceJson[i].recent_lowest_price - craftingCosts:F2} (Profit)");
+                    }
+                    gfx.DrawRectangle(_brushes["border"], 0, 0, _overlayWidth, ExtendedTooltipOffset, 1);
+                }
             }
             else
             {
@@ -182,6 +203,11 @@ namespace NewWorldCompanion.Services
                 infoPriceAvg = nwmarketpriceJson.RecentLowestPriceAvg;
                 infoPriceAvg = string.IsNullOrWhiteSpace(infoPriceAvg) ? infoPriceAvg : $"{infoPriceAvg} (15-day avg) ({nwmarketpriceJson.last_checked_string})";
             }
+
+            _window.X = _overlayX;
+            _window.Y = _overlayY;
+            _window.Width = _overlayWidth;
+            _window.Height = _overlayHeigth;
 
             var gfx = e.Graphics;
             gfx.ClearScene(_brushes["background"]);
