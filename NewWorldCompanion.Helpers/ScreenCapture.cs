@@ -28,9 +28,9 @@ namespace NewWorldCompanion.Helpers
                 region.right - region.left, region.bottom - region.top);
             var bitmapOldHandle = PInvoke.Gdi32.SelectObject(memoryDCHandle, bitmapHandle);
 
-            bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle.DangerousGetHandle(), 0, 0,
+            bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle, 0, 0,
                 region.right - region.left, region.bottom - region.top,
-                windowDCHandle.DangerousGetHandle(), region.left, region.top, SRCCOPY | CAPTUREBLT);
+                windowDCHandle, region.left, region.top, SRCCOPY | CAPTUREBLT);
 
             try
             {
@@ -71,7 +71,7 @@ namespace NewWorldCompanion.Helpers
 
             xPos = Math.Min(Math.Max(xPos - width / 2, region.left), region.right - width);
             yPos = Math.Min(Math.Max(yPos - height / 2, region.top), region.bottom - height);
-            bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle.DangerousGetHandle(), 0, 0, width, height, windowDCHandle.DangerousGetHandle(), xPos, yPos, SRCCOPY | CAPTUREBLT);
+            bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle, 0, 0, width, height, windowDCHandle, xPos, yPos, SRCCOPY | CAPTUREBLT);
 
             offsetX = xPos;
             offsetY = yPos;
@@ -118,7 +118,7 @@ namespace NewWorldCompanion.Helpers
 
             xPos = Math.Min(Math.Max(xPos - width / 2, region.left), region.right - width);
             yPos = Math.Min(Math.Max(yPos, region.top), region.bottom - height);
-            bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle.DangerousGetHandle(), 0, 0, width, height, windowDCHandle.DangerousGetHandle(), xPos, yPos, SRCCOPY | CAPTUREBLT);
+            bool status = PInvoke.Gdi32.BitBlt(memoryDCHandle, 0, 0, width, height, windowDCHandle, xPos, yPos, SRCCOPY | CAPTUREBLT);
 
             try
             {

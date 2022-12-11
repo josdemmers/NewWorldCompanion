@@ -62,15 +62,27 @@ namespace NewWorldCompanion.Services
 
         public async Task<string> GetRequest(string uri)
         {
+            HttpResponseMessage? response = null;
+            string responseAsString = string.Empty;
             try
             {
-                return await _client.GetStringAsync(uri);
+                response = await _client.GetAsync(uri);
+                responseAsString = await response.Content.ReadAsStringAsync();
+                response.EnsureSuccessStatusCode();
+                return responseAsString;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"GetRequest({uri})");
+                if (response != null)
+                {
+                    _logger.LogError(ex, $"GetRequest({uri}). Response: {responseAsString}");
+                }
+                else
+                {
+                    _logger.LogError(ex, $"GetRequest({uri}).");
+                }
 
-                return string.Empty;
+                return responseAsString;
             }
         }
 

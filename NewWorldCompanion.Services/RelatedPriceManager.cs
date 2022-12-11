@@ -75,7 +75,7 @@ namespace NewWorldCompanion.Services
             {
                 // RawResource exists
                 var rawResource = PersistableOverlayResources.FirstOrDefault(resource => resource.ItemId.Equals(itemIDRawResource));
-                if (rawResource.PersistableOverlayResourceRecipes.Any(resource => resource.ItemId.Equals(itemID)))
+                if (rawResource?.PersistableOverlayResourceRecipes.Any(resource => resource.ItemId.Equals(itemID)) ?? false)
                 {
                     // Recipe resource exists
                     var recipe = rawResource.PersistableOverlayResourceRecipes.FirstOrDefault(resource => resource.ItemId.Equals(itemID));

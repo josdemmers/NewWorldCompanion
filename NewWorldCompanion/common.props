@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-    <FileVersion>1.0.9.2</FileVersion>
-    <Version>1.0.9.2</Version>
+    <FileVersion>1.0.9.3</FileVersion>
+    <Version>1.0.9.3</Version>
     <Copyright>Copyright © 2022</Copyright>
     <TargetFramework>net6.0-windows</TargetFramework>
   </PropertyGroup>

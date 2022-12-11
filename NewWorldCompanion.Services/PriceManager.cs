@@ -294,8 +294,6 @@ namespace NewWorldCompanion.Services
                                             last_checked = DateTime.MinValue,
                                         };
                                     }
-
-                                    //Thread.Sleep(100);
                                 }
                                 catch (Exception ex)
                                 {
@@ -307,13 +305,7 @@ namespace NewWorldCompanion.Services
                             _priceRequestQueue.RemoveAll(item => item.Equals(itemName));
                             _priceRequestQueueBusy = false;
 
-
-                            var sw = new Stopwatch();
-                            sw.Start();
-                            //Task delay = Task.Delay(100);
-                            //await delay;
                             Task.Delay(250).Wait();
-                            Debug.WriteLine($"async: Running for {sw.Elapsed.TotalSeconds} seconds");
 
                             if (_priceRequestQueue.Any())
                             {

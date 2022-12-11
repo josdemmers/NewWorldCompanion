@@ -177,7 +177,7 @@ namespace NewWorldCompanion.Services
                 }
             }
 
-            // ItemDefinitionsLocalisation
+            // ItemDefinitionsLocalisation - Itemdefinitions
             _itemDefinitionsLocalisation.Clear();
             resourcePath = "javelindata_itemdefinitions_master.loc.xml";
             resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
@@ -207,6 +207,11 @@ namespace NewWorldCompanion.Services
                     }
                 }
             }
+
+            // ItemDefinitionsLocalisation - Itemdefinitions - Cleanup duplicates
+            _itemDefinitionsLocalisation.Remove("ArrowBT2_MasterName".ToLower());
+            _itemDefinitionsLocalisation.Remove("ArrowBT4_MasterName".ToLower());
+            _itemDefinitionsLocalisation.Remove("ArrowBT5_MasterName".ToLower());
 
             // ItemDefinitionsLocalisation - HouseItems
             resourcePath = "javelindata_housingitems.loc.xml";
