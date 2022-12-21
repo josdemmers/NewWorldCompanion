@@ -4,7 +4,7 @@ A companion app for New World, to keep track of all your learned recipes and cur
 
 <img src="./readme/readme-feature1.png" width="500">
 
-If you like my work you can support me on Ko-fi.
+If you like my work you can sponsor me on Ko-fi.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H1H5GCR)
 
