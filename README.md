@@ -4,6 +4,10 @@ A companion app for New World, to keep track of all your learned recipes and cur
 
 <img src="./readme/readme-feature1.png" width="500">
 
+If you like my work you can support me on Ko-fi.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H2H1H5GCR)
+
 ## Table of Contents
 
 - [Features](https://github.com/josdemmers/NewWorldCompanion#features)
