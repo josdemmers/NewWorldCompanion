@@ -79,8 +79,10 @@ namespace NewWorldCompanion.Services
                 {
                     // Recipe resource exists
                     var recipe = rawResource.PersistableOverlayResourceRecipes.FirstOrDefault(resource => resource.ItemId.Equals(itemID));
-                    recipe.IsVisible = isVisible;
-
+                    if (recipe != null)
+                    {
+                        recipe.IsVisible = isVisible;
+                    }
                 }
                 else
                 {

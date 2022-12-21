@@ -10,5 +10,6 @@ namespace NewWorldCompanion.Entities
     {
         public string Name { get; set; } = string.Empty;
         public int Id { get; set; } = 1;
+        public DateTime Updated { get; set; } = DateTime.MinValue;
     }
 }

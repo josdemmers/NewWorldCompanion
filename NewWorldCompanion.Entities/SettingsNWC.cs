@@ -12,6 +12,7 @@ namespace NewWorldCompanion.Entities
         public bool DebugModeActive { get; set; } = false;
 
         // Overlay
+        public bool TooltipEnabled { get; set; } = true;
         public bool ExtendedTooltipEnabled { get; set; } = false;
         public int PriceServerId { get; set; } = 1;
 

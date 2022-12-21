@@ -27,6 +27,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
         private ObservableCollection<OverlayResource> _overlayResources = new ObservableCollection<OverlayResource>();
 
         private OverlayResource _selectedOverlayResource = new OverlayResource();
+        private bool _toggleTooltip = false;
         private bool _toggleExtendedTooltip = false;
         private int _serverIndex = 0;
         private string _itemNameFilter = string.Empty;
@@ -73,12 +74,35 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
             }   
         }
 
+        public bool ToggleTooltip
+        {
+            get => _toggleTooltip;
+            set
+            {
+                _toggleTooltip = value;
+                RaisePropertyChanged(); 
+                if (!ToggleTooltip)
+                {
+                    ToggleExtendedTooltip = false;
+                }
+
+                _settingsManager.Settings.TooltipEnabled = value;
+                _settingsManager.SaveSettings();
+            }
+        }
+
         public bool ToggleExtendedTooltip
         {
             get => _toggleExtendedTooltip;
             set
             {
                 _toggleExtendedTooltip = value;
+                RaisePropertyChanged();
+                if (_toggleExtendedTooltip)
+                {
+                    ToggleTooltip = true;
+                }
+
                 _settingsManager.Settings.ExtendedTooltipEnabled = value;
                 _settingsManager.SaveSettings();
             }
@@ -180,6 +204,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
         private void InitOverlayResources()
         {
             // Load extended tooltip toggle
+            ToggleTooltip = _settingsManager.Settings.TooltipEnabled;
             ToggleExtendedTooltip = _settingsManager.Settings.ExtendedTooltipEnabled;
 
             // Get interesting resources for extended overlay

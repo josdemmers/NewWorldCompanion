@@ -15,14 +15,27 @@ using System.Windows.Shapes;
 
 namespace NewWorldCompanion.Views.Tabs
 {
-  /// <summary>
-  /// Interaction logic for CraftingView.xaml
-  /// </summary>
-  public partial class CraftingView : UserControl
-  {
-    public CraftingView()
+    /// <summary>
+    /// Interaction logic for CraftingView.xaml
+    /// </summary>
+    public partial class CraftingView : UserControl
     {
-      InitializeComponent();
+        public CraftingView()
+        {
+            InitializeComponent();
+        }
+
+        private void TextBoxFilter_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBoxFilterWatermark.Visibility = Visibility.Collapsed;
+        }
+
+        private void TextBoxFilter_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBoxFilter.Text))
+            {
+                TextBoxFilterWatermark.Visibility = Visibility.Visible;
+            }
+        }
     }
-  }
 }

@@ -7,7 +7,7 @@ namespace NewWorldCompanion.Interfaces
     {
         Bitmap? CurrentScreen { get; }
         Bitmap? CurrentScreenMouseArea { get; }
-        bool IsActive { get; set; }
+        bool IsActive { get; }
         string MouseCoordinates { get; }
         string MouseCoordinatesScaled { get; }
         int OffsetX { get; }

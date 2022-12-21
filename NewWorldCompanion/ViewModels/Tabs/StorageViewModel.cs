@@ -94,7 +94,11 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
                 if (ItemsFiltered?.Count == 1)
                 {
-                    SelectedItem = (Item)ItemsFiltered.GetItemAt(0);
+                    var selection = ItemsFiltered.GetItemAt(0) as Item;
+                    if (selection != null) 
+                    {
+                        SelectedItem = selection;
+                    }
                 }
             }
         }

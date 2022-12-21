@@ -69,11 +69,8 @@
             </mah:Badged>
         </StackPanel>
 
-        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ItemNameFilter, UpdateSourceTrigger=PropertyChanged}" Width="auto"  HorizontalAlignment="Stretch" />
-        <ToggleButton Grid.Row="1" Grid.Column="0" Width="25" Height="25" Margin="4" HorizontalAlignment="Right"
-                    IsChecked="{Binding ToggleRefresh}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
-            <Label Content="⟳" Padding="0" Margin="0 0 0 1"  />
-        </ToggleButton>
+        <TextBox Name="TextBoxFilter" Grid.Row="1" Grid.Column="0" Text="{Binding ItemNameFilter, UpdateSourceTrigger=PropertyChanged}" Width="auto" HorizontalAlignment="Stretch" GotFocus="TextBoxFilter_GotFocus" LostFocus="TextBoxFilter_LostFocus"/>
+        <TextBlock Name="TextBoxFilterWatermark" Grid.Row="1" Grid.Column="0" Text="Enter filter" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Padding="5 0 0 0" IsHitTestVisible="False" Foreground="DimGray" FontStyle="Italic"/>
 
         <ListBox Grid.Row="2" 
              Grid.Column="0"

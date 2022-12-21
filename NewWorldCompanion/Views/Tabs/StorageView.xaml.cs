@@ -24,5 +24,18 @@ namespace NewWorldCompanion.Views.Tabs
         {
             InitializeComponent();
         }
+
+        private void TextBoxFilter_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBoxFilterWatermark.Visibility = Visibility.Collapsed;
+        }
+
+        private void TextBoxFilter_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBoxFilter.Text))
+            {
+                TextBoxFilterWatermark.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

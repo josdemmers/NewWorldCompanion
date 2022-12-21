@@ -52,7 +52,6 @@ namespace NewWorldCompanion.ViewModels.Tabs
         private bool _toggleJewelcrafting = true;
         private bool _toggleWeaponsmithing = true;
         private bool _toggleMusicSheets = true;
-        private bool _toggleRefresh = true;
         private int _counterArcana = 0;
         private int _counterArmoring = 0;
         private int _counterCooking = 0;
@@ -260,16 +259,6 @@ namespace NewWorldCompanion.ViewModels.Tabs
             {
                 _toggleMusicSheets = value;
                 CraftingRecipesFiltered?.Refresh();
-            }
-        }
-
-        public bool ToggleRefresh
-        {
-            get => _toggleRefresh; 
-            set
-            {
-                _toggleRefresh = value;
-                _screenCaptureHandler.IsActive = value;
             }
         }
 

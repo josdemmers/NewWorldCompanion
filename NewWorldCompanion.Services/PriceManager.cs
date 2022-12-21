@@ -13,6 +13,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace NewWorldCompanion.Services
 {
@@ -50,8 +51,8 @@ namespace NewWorldCompanion.Services
             _newWorldDataStore = newWorldDataStore;
             _relatedPriceManager = relatedPriceManager;
 
-        // Init servers
-        UpdateServerList();
+            // Init servers
+            UpdateServerList();
         }
 
         #endregion
@@ -79,23 +80,30 @@ namespace NewWorldCompanion.Services
         {
             try
             {
-                string json = await _httpClientHandler.GetRequest("https://nwmarketprices.com/api/servers/") ?? string.Empty;
-                var servers = JsonSerializer.Deserialize<Dictionary<string, Server>>(json);
+                string json = await _httpClientHandler.GetRequest("https://nwmarketprices.com/api/servers_updated/") ?? string.Empty;
+                var servers = JsonSerializer.Deserialize<UpdatedServers>(json);
 
-                foreach (var server in servers ?? new Dictionary<string, Server>())
+                _servers.Clear();
+                foreach (var server in servers?.ServersLastUpdated ?? new List<List<object>>())
                 {
-                    string serverId = server.Key;
-                    string serverName = server.Value.Name;
+                    var serverId = ((JsonElement)server[0]).GetInt32();
+                    var serverName = ((JsonElement)server[1]).GetString() ?? string.Empty;
+                    var updated = ((JsonElement)server[2]).GetDateTime();
 
-                    if (!string.IsNullOrWhiteSpace(serverId) && !string.IsNullOrWhiteSpace(serverName))
+                    _servers.Add(new PriceServer()
                     {
-                        _servers.Add(new PriceServer()
-                        {
-                            Id = int.Parse(serverId),
-                            Name = serverName
-                        });
-                    }
+                        Id = serverId,
+                        Name = serverName,
+                        Updated = updated
+                    });
                 }
+
+                // Sort server list by name
+                _servers.Sort((x, y) =>
+                {
+                    int result = string.Compare(x.Name, y.Name, StringComparison.Ordinal);
+                    return result;
+                });
             }
             catch (Exception ex)
             {
@@ -319,10 +327,10 @@ namespace NewWorldCompanion.Services
 
         #endregion
 
-        private class Server
+        private class UpdatedServers
         {
-            [JsonPropertyName("name")]
-            public string Name { get; set; } = string.Empty;
+            [JsonPropertyName("server_last_updated")]
+            public List<List<object>> ServersLastUpdated { get; set; } = new List<List<object>> { };
         }
     }
 }

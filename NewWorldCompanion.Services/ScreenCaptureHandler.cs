@@ -18,6 +18,7 @@ namespace NewWorldCompanion.Services
     {
         private readonly IEventAggregator _eventAggregator;
         private readonly ILogger _logger;
+        private readonly ISettingsManager _settingsManager;
 
         private DispatcherTimer _captureTimer = new();
         private DispatcherTimer _coordinatesTimer = new();
@@ -25,7 +26,6 @@ namespace NewWorldCompanion.Services
         private Bitmap? _currentScreenMouseArea = null;
         private int _delay = 100;
         private int _delayCoordinates = 100;
-        private bool _isActive = true;
         private int _offsetX = 0;
         private int _offsetY = 0;
         private ScreenCapture _screenCapture = new ScreenCapture();
@@ -34,13 +34,16 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public ScreenCaptureHandler(IEventAggregator eventAggregator, ILogger<ScreenCaptureHandler> logger)
+        public ScreenCaptureHandler(IEventAggregator eventAggregator, ILogger<ScreenCaptureHandler> logger, ISettingsManager settingsManager)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
 
             // Init logger
             _logger = logger;
+
+            // Init services
+            _settingsManager = settingsManager;
 
             // Capture timer
             _captureTimer = new DispatcherTimer
@@ -69,7 +72,10 @@ namespace NewWorldCompanion.Services
         public Bitmap? CurrentScreenMouseArea { get => _currentScreenMouseArea; set => _currentScreenMouseArea = value; }
         public int Delay { get => _delay; set => _delay = value; }
         public int DelayCoordinates { get => _delayCoordinates; set => _delayCoordinates = value; }
-        public bool IsActive { get => _isActive; set => _isActive = value; }
+        public bool IsActive 
+        { 
+            get => _settingsManager.Settings.TooltipEnabled;
+        }
         public string MouseCoordinates { get; set; } = string.Empty;
         public string MouseCoordinatesScaled { get; set; } = string.Empty;
         public int OffsetX { get => _offsetX; set => _offsetX = value; }
