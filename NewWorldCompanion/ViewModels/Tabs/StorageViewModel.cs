@@ -145,7 +145,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
         private void HandleOcrTextReadyEvent()
         {
-            if (ToggleRefresh)
+            if (ToggleRefresh && _newWorldDataStore.Available)
             {
                 // Recording active
                 _itemName = _ocrHandler.OcrText;

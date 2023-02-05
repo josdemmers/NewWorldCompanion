@@ -50,6 +50,7 @@ namespace NewWorldCompanion.Services
             _eventAggregator.GetEvent<OverlayHideEvent>().Subscribe(HandleOverlayHideEvent);
             _eventAggregator.GetEvent<OverlayShowEvent>().Subscribe(HandleOverlayShowEvent);
             _eventAggregator.GetEvent<RoiImageReadyEvent>().Subscribe(HandleRoiImageReadyEvent);
+            _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Subscribe(HandleNewWorldDataStoreUpdatedEvent);
 
             // Init services
             _settingsManager = settingsManager;
@@ -79,14 +80,6 @@ namespace NewWorldCompanion.Services
             _window.DestroyGraphics += DestroyGraphics;
             _window.DrawGraphics += DrawGraphics;
             _window.SetupGraphics += SetupGraphics;
-
-            // Start overlay task
-            _timer = new DispatcherTimer
-            {
-                Interval = TimeSpan.FromMilliseconds(100),
-                IsEnabled = true
-            };
-            _timer.Tick += Timer_Tick; ;
         }
 
         #endregion
@@ -242,12 +235,6 @@ namespace NewWorldCompanion.Services
             _fonts["consolas"] = gfx.CreateFont("Consolas", 14);
         }
 
-        private void Timer_Tick(object? sender, EventArgs e)
-        {
-            (sender as DispatcherTimer)?.Stop();
-            StartOverlay();
-        }
-
         private void HandleOcrTextReadyEvent()
         {
             _itemName = _ocrHandler.OcrText;
@@ -289,6 +276,11 @@ namespace NewWorldCompanion.Services
             _overlayY = _screenProcessHandler.OverlayY;
             _overlayWidth = _screenProcessHandler.OverlayWidth;
             _overlayHeigth = _screenProcessHandler.OverlayHeigth;
+        }
+
+        private void HandleNewWorldDataStoreUpdatedEvent()
+        {
+            StartOverlay();
         }
 
         #endregion

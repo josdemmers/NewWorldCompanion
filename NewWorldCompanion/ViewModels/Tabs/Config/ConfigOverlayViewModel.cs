@@ -41,15 +41,13 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<PriceServerListUpdatedEvent>().Subscribe(HandlePriceServerListUpdatedEvent);
+            _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Subscribe(HandleNewWorldDataStoreUpdatedEvent);
 
             // Init services
             _settingsManager = settingsManager;
             _newWorldDataStore = newWorldDataStore;
             _priceManager = priceManager;
             _relatedPriceManager = relatedPriceManager;
-
-            // Init related prices
-            InitOverlayResources();
 
             // Init filter views
             CreateOverlayResourcesFilteredView();
@@ -153,6 +151,17 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
         private void HandlePriceServerListUpdatedEvent()
         {
             updateServerList();
+        }
+
+        private void HandleNewWorldDataStoreUpdatedEvent()
+        {
+            // As the view is accessed by the UI it will need to be created on the UI thread
+            Application.Current?.Dispatcher?.Invoke(() =>
+            {
+                // Init related prices
+                InitOverlayResources();
+                OverlayResourcesFiltered?.Refresh();
+            });
         }
 
         #endregion

@@ -27,12 +27,10 @@ namespace NewWorldCompanion.Services
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
+            _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Subscribe(HandleNewWorldDataStoreUpdatedEvent);
 
             // Init services
             _httpClientHandler = httpClientHandler;
-
-            // Init servers
-            UpdateVersionInfo();
         }
 
         #endregion
@@ -57,6 +55,11 @@ namespace NewWorldCompanion.Services
         // Start of Events region
 
         #region Events
+
+        private void HandleNewWorldDataStoreUpdatedEvent()
+        {
+            UpdateVersionInfo();
+        }
 
         #endregion
 

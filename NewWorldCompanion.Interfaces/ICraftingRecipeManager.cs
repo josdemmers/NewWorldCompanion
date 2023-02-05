@@ -5,6 +5,8 @@ namespace NewWorldCompanion.Interfaces
 {
     public interface ICraftingRecipeManager
     {
+        bool Available { get; }
+
         List<CraftingRecipe> CraftingRecipes
         {
             get;

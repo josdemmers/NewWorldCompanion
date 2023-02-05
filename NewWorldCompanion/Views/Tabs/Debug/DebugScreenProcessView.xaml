@@ -44,7 +44,8 @@
         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Horizontal">
             <Button Content="Load Config" Margin="1" Command="{Binding RestoreDefaultsCommand}"/>
             <ComboBox Margin="1" MinWidth="100" SelectedValue="{Binding Path=SelectedPresetConfig, Mode=OneWayToSource}">
-                <ComboBoxItem IsSelected="True" Content="1600x900"/>
+                <ComboBoxItem IsSelected="True" Content="Select"/>
+                <ComboBoxItem Content="1600x900"/>
                 <ComboBoxItem Content="1920x1080"/>
                 <ComboBoxItem Content="2560x1440"/>
                 <ComboBoxItem Content="3840x2160"/>

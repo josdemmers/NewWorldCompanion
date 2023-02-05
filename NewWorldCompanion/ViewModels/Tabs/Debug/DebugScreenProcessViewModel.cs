@@ -4,6 +4,7 @@ using NewWorldCompanion.Interfaces;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -20,6 +21,8 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         private BitmapSource? _roiImage = null;
         private BitmapSource? _ocrImage = null;
         private BitmapSource? _ocrImageCount = null;
+
+        private object? _selectedPresetConfig = null;
 
         // Start of Constructor region
 
@@ -39,8 +42,10 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             _screenProcessHandler = screenProcessHandler;
 
             // Init View commands
-            RestoreDefaultsCommand = new DelegateCommand(RestoreDefaultsExecute);
+            RestoreDefaultsCommand = new DelegateCommand(RestoreDefaultsExecute, CanRestoreDefaultsExecute);
         }
+
+      
 
         #endregion
 
@@ -92,7 +97,15 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
             }
         }
 
-        public object? SelectedPresetConfig { get; set; }
+        public object? SelectedPresetConfig 
+        {
+            get => _selectedPresetConfig;
+            set
+            {
+                _selectedPresetConfig = value;
+                RestoreDefaultsCommand?.RaiseCanExecuteChanged();
+            }
+        }
 
         public BitmapSource? ProcessedImage
         {
@@ -181,6 +194,12 @@ namespace NewWorldCompanion.ViewModels.Tabs.Debug
         // Start of Methods region
 
         #region Methods
+
+        private bool CanRestoreDefaultsExecute()
+        {
+            var result = ((SelectedPresetConfig as ComboBoxItem)?.Content ?? string.Empty).ToString()?.Contains("x") ?? false;
+            return result;
+        }
 
         private void RestoreDefaultsExecute()
         {

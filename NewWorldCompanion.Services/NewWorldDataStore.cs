@@ -1,5 +1,6 @@
 ﻿using NewWorldCompanion.Constants;
 using NewWorldCompanion.Entities;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Helpers;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
@@ -12,6 +13,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Shapes;
 using System.Xml.Linq;
 
 namespace NewWorldCompanion.Services
@@ -25,6 +27,14 @@ namespace NewWorldCompanion.Services
         private List<HouseItemsJson> _houseItemsJson = new List<HouseItemsJson>();
         private Dictionary<string, string> _itemDefinitionsLocalisation = new Dictionary<string, string>();
 
+        private bool _available = false;
+
+        private string _loadStatusItemDefinitions = string.Empty;
+        private string _loadStatusCraftingRecipes = string.Empty;
+        private string _loadStatusHouseItems = string.Empty;
+        private string _loadStatusLocalisation = string.Empty;
+
+
         // Start of Constructor region
 
         #region Constructor
@@ -35,7 +45,7 @@ namespace NewWorldCompanion.Services
             _eventAggregator = eventAggregator;
 
             // Init store data
-            UpdateStoreData();
+            Task.Run(() => UpdateStoreData());
         }
 
         #endregion
@@ -44,23 +54,31 @@ namespace NewWorldCompanion.Services
 
         #region Properties
 
+        public bool Available { get => _available; set => _available = value; }
+        public string LoadStatusItemDefinitions { get => _loadStatusItemDefinitions; set => _loadStatusItemDefinitions = value; }
+        public string LoadStatusCraftingRecipes { get => _loadStatusCraftingRecipes; set => _loadStatusCraftingRecipes = value; }
+        public string LoadStatusHouseItems { get => _loadStatusHouseItems; set => _loadStatusHouseItems = value; }
+        public string LoadStatusLocalisation { get => _loadStatusLocalisation; set => _loadStatusLocalisation = value; }
+
         #endregion
 
         // Start of Methods region
 
         #region Methods
 
-        private void UpdateStoreData()
+        public void UpdateStoreData()
         {
             var assembly = Assembly.GetExecutingAssembly();
             string resourcePath = string.Empty;
 
+            _loadStatusItemDefinitions = $"ItemDefinitions: 0. Loading common items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+
             // MasterItemDefinitions Common
             _masterItemDefinitionsJson.Clear();
             var masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
-            resourcePath = "MasterItemDefinitions_Common.json";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\MasterItemDefinitions_Common.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -77,12 +95,14 @@ namespace NewWorldCompanion.Services
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
                 }
             }
+
+            _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading crafting items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
 
             // MasterItemDefinitions Crafting
             masterItemDefinitionsJson.Clear();
-            resourcePath = "MasterItemDefinitions_Crafting.json";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\MasterItemDefinitions_Crafting.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -99,12 +119,14 @@ namespace NewWorldCompanion.Services
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
                 }
             }
+
+            _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading loot items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
 
             // MasterItemDefinitions Loot
             masterItemDefinitionsJson.Clear();
-            resourcePath = "MasterItemDefinitions_Loot.json";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\MasterItemDefinitions_Loot.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -121,12 +143,14 @@ namespace NewWorldCompanion.Services
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
                 }
             }
+
+            _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading quest items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
 
             // MasterItemDefinitions Quest
             masterItemDefinitionsJson.Clear();
-            resourcePath = "MasterItemDefinitions_Quest.json";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\MasterItemDefinitions_Quest.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -144,11 +168,14 @@ namespace NewWorldCompanion.Services
                 }
             }
 
+            _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}";
+            _loadStatusCraftingRecipes = $"CraftingRecipes: 0. Loading recipes";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+
             // CraftingRecipe Json
             _craftingRecipesJson.Clear();
-            resourcePath = "CraftingRecipes.json";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\CraftingRecipes.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -165,11 +192,14 @@ namespace NewWorldCompanion.Services
                 }
             }
 
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}";
+            _loadStatusHouseItems = $"HouseItems: 0. Loading items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+
             // HouseItems Json
             _houseItemsJson.Clear();
-            resourcePath = "HouseItems.json";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\HouseItems.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -177,11 +207,14 @@ namespace NewWorldCompanion.Services
                 }
             }
 
+            _loadStatusHouseItems = $"HouseItems: {_houseItemsJson.Count}";
+            _loadStatusLocalisation = $"Localisation: 0. Loading localisations";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+
             // ItemDefinitionsLocalisation - Itemdefinitions
             _itemDefinitionsLocalisation.Clear();
-            resourcePath = "javelindata_itemdefinitions_master.loc.xml";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\javelindata_itemdefinitions_master.loc.xml";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -204,6 +237,9 @@ namespace NewWorldCompanion.Services
                         {
                             _itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
+
+                        _loadStatusLocalisation = $"Localisation data: {_itemDefinitionsLocalisation.Count}";
+                        _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
                     }
                 }
             }
@@ -214,9 +250,8 @@ namespace NewWorldCompanion.Services
             _itemDefinitionsLocalisation.Remove("ArrowBT5_MasterName".ToLower());
 
             // ItemDefinitionsLocalisation - HouseItems
-            resourcePath = "javelindata_housingitems.loc.xml";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\javelindata_housingitems.loc.xml";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
@@ -236,9 +271,16 @@ namespace NewWorldCompanion.Services
                         {
                             _itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
+
+                        _loadStatusLocalisation = $"Localisation data: {_itemDefinitionsLocalisation.Count}";
+                        _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
                     }
                 }
             }
+
+            // Finished initializing data. Inform subscribers.
+            Available = true;
+            _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Publish();
         }
 
         public List<CraftingRecipe> GetCraftingRecipes()
@@ -298,9 +340,8 @@ namespace NewWorldCompanion.Services
 
             // MasterItemDefinitions Crafting
             var masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
-            resourcePath = "MasterItemDefinitions_Crafting.json";
-            resourcePath = assembly.GetManifestResourceNames().Single(str => str.EndsWith(resourcePath));
-            using (Stream? stream = assembly.GetManifestResourceStream(resourcePath))
+            resourcePath = @".\Data\MasterItemDefinitions_Crafting.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {

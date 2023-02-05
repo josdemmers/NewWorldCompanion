@@ -9,6 +9,12 @@ namespace NewWorldCompanion.Interfaces
 {
     public interface INewWorldDataStore
     {
+        bool Available { get; }
+        string LoadStatusItemDefinitions { get; }
+        string LoadStatusCraftingRecipes { get; }
+        string LoadStatusHouseItems { get; }
+        string LoadStatusLocalisation { get; }
+
         List<CraftingRecipe> GetCraftingRecipes();
         bool IsBindOnPickup(string itemName);
         string GetItemId(string itemName);
@@ -18,5 +24,6 @@ namespace NewWorldCompanion.Interfaces
         string GetItemLocalisation(string itemMasterName);
         List<CraftingRecipeJson> GetRelatedRecipes(string itemId);
         CraftingRecipeJson GetCraftingRecipeDetails(string itemId);
+        void UpdateStoreData();
     }
 }

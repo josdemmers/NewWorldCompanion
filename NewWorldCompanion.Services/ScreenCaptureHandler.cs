@@ -19,6 +19,7 @@ namespace NewWorldCompanion.Services
         private readonly IEventAggregator _eventAggregator;
         private readonly ILogger _logger;
         private readonly ISettingsManager _settingsManager;
+        private readonly INewWorldDataStore _newWorldDataStore;
 
         private DispatcherTimer _captureTimer = new();
         private DispatcherTimer _coordinatesTimer = new();
@@ -34,7 +35,7 @@ namespace NewWorldCompanion.Services
 
         #region Constructor
 
-        public ScreenCaptureHandler(IEventAggregator eventAggregator, ILogger<ScreenCaptureHandler> logger, ISettingsManager settingsManager)
+        public ScreenCaptureHandler(IEventAggregator eventAggregator, ILogger<ScreenCaptureHandler> logger, ISettingsManager settingsManager, INewWorldDataStore newWorldDataStore)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
@@ -44,6 +45,7 @@ namespace NewWorldCompanion.Services
 
             // Init services
             _settingsManager = settingsManager;
+            _newWorldDataStore = newWorldDataStore;
 
             // Capture timer
             _captureTimer = new DispatcherTimer
@@ -60,6 +62,7 @@ namespace NewWorldCompanion.Services
                 IsEnabled = true
             };
             _coordinatesTimer.Tick += CoordinatesTimer_Tick;
+            _newWorldDataStore = newWorldDataStore;
         }
 
         #endregion
@@ -118,7 +121,7 @@ namespace NewWorldCompanion.Services
         {
             bool valid = false;
 
-            if (IsActive)
+            if (IsActive && _newWorldDataStore.Available)
             {
                 try
                 {

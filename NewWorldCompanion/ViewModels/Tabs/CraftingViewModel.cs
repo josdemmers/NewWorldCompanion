@@ -77,6 +77,7 @@ namespace NewWorldCompanion.ViewModels.Tabs
             _eventAggregator = eventAggregator;
             _eventAggregator.GetEvent<OcrTextReadyEvent>().Subscribe(HandleOcrTextReadyEvent);
             _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Subscribe(HandlePriceCacheUpdatedEvent);
+            _eventAggregator.GetEvent<CraftingRecipeManagerUpdated>().Subscribe(HandleCraftingRecipeManagerUpdatedEvent);
 
             // Init logger
             _logger = logger;
@@ -97,14 +98,6 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
             // Load crafting icons
             LoadCraftingIcons();
-
-            // DispatcherTimer after ctor
-            var dispatcherTimer = new System.Windows.Threading.DispatcherTimer
-            {
-                Interval = TimeSpan.FromSeconds(1),
-                IsEnabled = true
-            };
-            dispatcherTimer.Tick += DispatcherTimer_Tick;
         }
 
         #endregion
@@ -352,13 +345,6 @@ namespace NewWorldCompanion.ViewModels.Tabs
 
         #region Events
 
-        private void DispatcherTimer_Tick(object? sender, EventArgs eventArgs)
-        {
-            (sender as System.Windows.Threading.DispatcherTimer)?.Stop();
-            UpdateCraftingRecipes();
-            UpdateCraftingCounters();
-        }
-
         private void HandleOcrTextReadyEvent()
         {
             // As the view is accessed by the UI it will need to be created on the UI thread
@@ -378,6 +364,12 @@ namespace NewWorldCompanion.ViewModels.Tabs
             RaisePropertyChanged(nameof(SelectedCraftingRecipePriceTooltip));
             RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvg));
             RaisePropertyChanged(nameof(SelectedCraftingRecipePriceAvgTooltip));
+        }
+
+        private void HandleCraftingRecipeManagerUpdatedEvent()
+        {
+            UpdateCraftingRecipes();
+            UpdateCraftingCounters();
         }
 
         #endregion

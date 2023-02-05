@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls.Dialogs;
+﻿using Emgu.CV.Cuda;
+using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Extensions.DependencyInjection;
 using NewWorldCompanion.Entities;
 using NewWorldCompanion.Interfaces;
@@ -7,6 +8,8 @@ using NewWorldCompanion.Views;
 using NLog.Extensions.Logging;
 using Prism.Ioc;
 using Prism.Unity;
+using System.IO;
+using System.Threading;
 using System.Windows;
 using Unity;
 using Unity.Microsoft.DependencyInjection;
@@ -18,6 +21,24 @@ namespace NewWorldCompanion
     /// </summary>
     public partial class App : PrismApplication
     {
+        private static Mutex _mutex = null;
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            const string appName = "NewWorldCompanion";
+
+            bool createdNew;
+
+            _mutex = new Mutex(true, appName, out createdNew);
+
+            if (!createdNew)
+            {
+                Application.Current.Shutdown();
+            }
+
+            base.OnStartup(e);
+        }
+
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register services

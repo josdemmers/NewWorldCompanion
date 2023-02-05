@@ -72,7 +72,7 @@ namespace NewWorldCompanion.Services
         {
             lock (nameLock)
             {
-                if (_screenProcessHandler.OcrImage != null)
+                if (_screenProcessHandler.OcrImage != null && _newWorldDataStore.Available)
                 {
                     try
                     {

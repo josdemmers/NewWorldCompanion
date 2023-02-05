@@ -1,4 +1,5 @@
 ﻿using NewWorldCompanion.Entities;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
@@ -16,6 +17,8 @@ namespace NewWorldCompanion.Services
 
         private List<CraftingRecipe> _craftingRecipes = new List<CraftingRecipe>();
 
+        private bool _available = false;
+
         // Start of Constructor region
 
         #region Constructor
@@ -24,12 +27,10 @@ namespace NewWorldCompanion.Services
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
+            _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Subscribe(HandleNewWorldDataStoreUpdatedEvent);
 
             // Init stores
             _newWorldDataStore = newWorldDataStore;
-
-            // Init recipes
-            LoadRecipes();
         }
 
         #endregion
@@ -40,11 +41,19 @@ namespace NewWorldCompanion.Services
 
         public List<CraftingRecipe> CraftingRecipes { get => _craftingRecipes; }
 
+        public bool Available { get => _available; set => _available = value; }
+
         #endregion
 
         // Start of Events region
 
         #region Events
+
+        private void HandleNewWorldDataStoreUpdatedEvent()
+        {
+            // Init recipes
+            LoadRecipes();
+        }
 
         #endregion
 
@@ -89,6 +98,10 @@ namespace NewWorldCompanion.Services
 
             // Save recipe progress
             SaveRecipes();
+
+            // Finished initializing data. Inform subscribers.
+            Available = true;
+            _eventAggregator.GetEvent<CraftingRecipeManagerUpdated>().Publish();
         }
 
         public void SaveRecipes()

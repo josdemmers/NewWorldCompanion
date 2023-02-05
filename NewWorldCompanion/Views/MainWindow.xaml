@@ -13,42 +13,53 @@
     mc:Ignorable="d"
     Title="{Binding WindowTitle}" Height="550" Width="800"
     WindowStartupLocation="CenterScreen">
-  <mah:MetroWindow.LeftWindowCommands>
-    <mah:WindowCommands>
-      <Button Command="{Binding LaunchNWCOnGitHubCommand}" ToolTip="New World Companion on GitHub">
-        <iconPacks:PackIconMaterial Width="22"
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+            <Button Command="{Binding LaunchNWCOnGitHubCommand}" ToolTip="New World Companion on GitHub">
+                <iconPacks:PackIconMaterial Width="22"
                                     Height="22"
                                     Kind="Github" />
-      </Button>
+            </Button>
             <Button Command="{Binding LaunchKofiCommand}" ToolTip="Support me on Ko-fi">
                 <iconPacks:PackIconMaterial Width="22"
                                     Height="22"
                                     Kind="CoffeeOutline" />
             </Button>
         </mah:WindowCommands>
-  </mah:MetroWindow.LeftWindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
 
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="*" />
-    </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-    <mah:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="0">
-      <TabItem Header="Crafting">
-        <ContentControl prism:RegionManager.RegionName="CraftingView"/>
-      </TabItem>
-      <TabItem Header="Cooldowns">
-        <ContentControl prism:RegionManager.RegionName="CooldownView"/>
-      </TabItem>
-      <TabItem Header="Storage">
-        <ContentControl prism:RegionManager.RegionName="StorageView"/>
-      </TabItem>
-      <TabItem Header="Config">
-        <ContentControl prism:RegionManager.RegionName="ConfigView"/>
-      </TabItem>
-      <TabItem Header="Debug" Visibility="{Binding Path=DebugModeActive, Converter={x:Static converters:BooleanToVisibilityConverter.Instance}}">
-        <ContentControl prism:RegionManager.RegionName="DebugView"/>
-      </TabItem>
-    </mah:MetroAnimatedSingleRowTabControl>
-  </Grid>
+        <mah:MetroAnimatedSingleRowTabControl x:Name="MainTabControl" Grid.Row="0">
+            <TabItem Header="Crafting">
+                <ContentControl prism:RegionManager.RegionName="CraftingView"/>
+            </TabItem>
+            <TabItem Header="Cooldowns">
+                <ContentControl prism:RegionManager.RegionName="CooldownView"/>
+            </TabItem>
+            <TabItem Header="Storage">
+                <ContentControl prism:RegionManager.RegionName="StorageView"/>
+            </TabItem>
+            <TabItem Header="Config">
+                <ContentControl prism:RegionManager.RegionName="ConfigView"/>
+            </TabItem>
+            <TabItem Header="Debug" Visibility="{Binding Path=DebugModeActive, Converter={x:Static converters:BooleanToVisibilityConverter.Instance}}">
+                <ContentControl prism:RegionManager.RegionName="DebugView"/>
+            </TabItem>
+        </mah:MetroAnimatedSingleRowTabControl>
+
+        <Grid Grid.Row="0" Background="Black" Opacity="0.9" Visibility="{Binding WaitingForData, Converter={StaticResource BooleanToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}">
+            <StackPanel Orientation="Vertical" Margin="20">
+                <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Loading New World data" FontSize="20" Foreground="LightGray" FontWeight="Bold"/>
+                <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusItemDefinitions}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
+                <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusCraftingRecipes}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
+                <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusHouseItems}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
+                <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusLocalisation}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+
 </mah:MetroWindow>
