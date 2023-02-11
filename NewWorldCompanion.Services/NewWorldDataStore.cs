@@ -68,7 +68,6 @@ namespace NewWorldCompanion.Services
 
         public void UpdateStoreData()
         {
-            var assembly = Assembly.GetExecutingAssembly();
             string resourcePath = string.Empty;
 
             _loadStatusItemDefinitions = $"ItemDefinitions: 0. Loading common items";
@@ -126,6 +125,30 @@ namespace NewWorldCompanion.Services
             // MasterItemDefinitions Loot
             masterItemDefinitionsJson.Clear();
             resourcePath = @".\Data\MasterItemDefinitions_Loot.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                    _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
+                }
+            }
+
+            _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading named items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+
+            // MasterItemDefinitions Named
+            masterItemDefinitionsJson.Clear();
+            resourcePath = @".\Data\MasterItemDefinitions_Named.json";
             using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
@@ -335,7 +358,6 @@ namespace NewWorldCompanion.Services
 
         public List<MasterItemDefinitionsJson> GetOverlayResources()
         {
-            var assembly = Assembly.GetExecutingAssembly();
             string resourcePath = string.Empty;
 
             // MasterItemDefinitions Crafting
@@ -361,6 +383,46 @@ namespace NewWorldCompanion.Services
             return masterItemDefinitionsJson.FindAll(items => items.TradingFamily.Equals("RawResources") &&
                 items.ItemClass.Contains("+") &&
                 !items.ItemClass.Contains("WeaponSchematic"));
+        }
+
+        public List<NamedItem> GetNamedItems()
+        {
+            string resourcePath = string.Empty;
+
+            // MasterItemDefinitions Named
+            var masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
+            resourcePath = @".\Data\MasterItemDefinitions_Named.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                }
+            }
+
+            List<NamedItem> namedItems = new List<NamedItem>();
+            foreach (var masterItem in masterItemDefinitionsJson.FindAll(items => items.ItemClass.Contains("Named")))
+            {
+
+                namedItems.Add(new NamedItem
+                {
+                    ItemClass = masterItem.ItemClass,
+                    ItemID = masterItem.ItemID,
+                    Localisation = GetItemLocalisation(masterItem.Name),
+                    Tier = masterItem.Tier
+                });
+            }
+
+            return namedItems;
         }
 
         public bool IsBindOnPickup(string itemName)

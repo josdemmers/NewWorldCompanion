@@ -127,9 +127,18 @@ namespace NewWorldCompanion.Services
                 {
                     IntPtr windowHandle = IntPtr.Zero;
                     Process[] processes = Process.GetProcessesByName("NewWorld");
+                    Process[] processesGeForceNOW = Process.GetProcessesByName("GeForceNOW");
                     foreach (Process p in processes)
                     {
                         windowHandle = p.MainWindowHandle;
+                    }
+                    foreach (Process p in processesGeForceNOW)
+                    {
+                        windowHandle = p.MainWindowHandle;
+                        if (p.MainWindowTitle.Contains("New World"))
+                        {
+                            break;
+                        }
                     }
 
                     if (windowHandle.ToInt64() > 0)
