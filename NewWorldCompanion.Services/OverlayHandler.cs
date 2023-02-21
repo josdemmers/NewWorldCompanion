@@ -23,8 +23,7 @@ namespace NewWorldCompanion.Services
         private readonly IOcrHandler _ocrHandler;
         private readonly IPriceManager _priceManager;
         private readonly IScreenProcessHandler _screenProcessHandler;
-
-        private DispatcherTimer _timer = new();
+        private readonly IStorageManager _storageManager;
 
         private readonly GraphicsWindow _window;
         private readonly Dictionary<string, SolidBrush> _brushes;
@@ -36,13 +35,14 @@ namespace NewWorldCompanion.Services
         private int _overlayY = 0;
         private int _overlayWidth = 0;
         private int _overlayHeigth = 0;
+        private double _mouseDelta = 0;
 
         // Start of Constructor region
 
         #region Constructor
 
         public OverlayHandler(IEventAggregator eventAggregator, ISettingsManager settingsManager, ICraftingRecipeManager craftingRecipeManager, INewWorldDataStore newWorldDataStore,
-            IOcrHandler ocrHandler, IPriceManager priceManager, IScreenProcessHandler screenProcessHandler)
+            IOcrHandler ocrHandler, IPriceManager priceManager, IScreenProcessHandler screenProcessHandler, IStorageManager storageManager)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
@@ -51,6 +51,7 @@ namespace NewWorldCompanion.Services
             _eventAggregator.GetEvent<OverlayShowEvent>().Subscribe(HandleOverlayShowEvent);
             _eventAggregator.GetEvent<RoiImageReadyEvent>().Subscribe(HandleRoiImageReadyEvent);
             _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Subscribe(HandleNewWorldDataStoreUpdatedEvent);
+            _eventAggregator.GetEvent<MouseDeltaUpdatedEvent>().Subscribe(HandleMouseDeltaUpdatedEvent);
 
             // Init services
             _settingsManager = settingsManager;
@@ -59,6 +60,7 @@ namespace NewWorldCompanion.Services
             _ocrHandler = ocrHandler;
             _priceManager = priceManager;
             _screenProcessHandler = screenProcessHandler;
+            _storageManager = storageManager;
 
             _brushes = new Dictionary<string, SolidBrush>();
             _fonts = new Dictionary<string, Font>();
@@ -119,7 +121,20 @@ namespace NewWorldCompanion.Services
             }
             else
             {
-                DrawGraphicsItem(e, itemName);
+                if (!_newWorldDataStore.IsNamedItem(itemName))
+                {
+                    DrawGraphicsItem(e, itemName);
+                }
+                else if (_settingsManager.Settings.NamedItemsTooltipEnabled)
+                {
+                    DrawGraphicsNamedItem(e, itemName);
+                }
+                else
+                {
+                    // Clear
+                    var gfx = e.Graphics;
+                    gfx.ClearScene();
+                }
             }
         }
 
@@ -177,6 +192,24 @@ namespace NewWorldCompanion.Services
             {
                 _window.Hide();
             }
+        }
+
+        private void DrawGraphicsNamedItem(DrawGraphicsEventArgs e, string itemName)
+        {
+            string infoItemName = itemName;
+            string infoStorage = $"Storage: {_storageManager.GetItemStorageInfo(itemName)}";
+
+            _window.X = _overlayX;
+            _window.Y = _overlayY;
+            _window.Width = _overlayWidth;
+            _window.Height = _overlayHeigth;
+
+            var gfx = e.Graphics;
+            gfx.ClearScene(_brushes["background"]);
+            gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 20, infoItemName);
+            gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 40, "Named");
+            gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, 60, infoStorage);
+            gfx.DrawRectangle(_brushes["border"], 0, 0, _overlayWidth, _overlayHeigth, 1);
         }
 
         private void DrawGraphicsRecipe(DrawGraphicsEventArgs e, CraftingRecipe craftingRecipe)
@@ -255,7 +288,7 @@ namespace NewWorldCompanion.Services
                 // - Tradable items
                 string itemName = _itemName;
                 var craftingRecipe = _craftingRecipeManager.CraftingRecipes.FirstOrDefault(r => r.LocalisationUserFriendly.StartsWith(itemName, StringComparison.OrdinalIgnoreCase));
-                if (craftingRecipe != null || !_newWorldDataStore.IsBindOnPickup(itemName))
+                if (craftingRecipe != null || !_newWorldDataStore.IsBindOnPickup(itemName) || _newWorldDataStore.IsNamedItem(itemName))
                 {
                     _window.Show();
                 }
@@ -266,8 +299,12 @@ namespace NewWorldCompanion.Services
         {
             if (_window.IsInitialized)
             {
-                _window.Hide();
-            } 
+                if ((_settingsManager.Settings.NamedItemsTooltipEnabled && _mouseDelta != 0) ||
+                    !_settingsManager.Settings.NamedItemsTooltipEnabled)
+                {
+                    _window.Hide();
+                }
+            }
         }
 
         private void HandleRoiImageReadyEvent()
@@ -281,6 +318,11 @@ namespace NewWorldCompanion.Services
         private void HandleNewWorldDataStoreUpdatedEvent()
         {
             StartOverlay();
+        }
+
+        private void HandleMouseDeltaUpdatedEvent(double delta)
+        {
+            _mouseDelta = delta;
         }
 
         #endregion

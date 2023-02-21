@@ -14,6 +14,7 @@ namespace NewWorldCompanion.Entities
         // Overlay
         public bool TooltipEnabled { get; set; } = true;
         public bool ExtendedTooltipEnabled { get; set; } = false;
+        public bool NamedItemsTooltipEnabled { get; set; } = false;
         public int PriceServerId { get; set; } = 1;
 
         // Shape detection
@@ -28,5 +29,19 @@ namespace NewWorldCompanion.Entities
         public int EmguThresholdMaxR { get; set; } = 200;
         public int EmguThresholdMaxG { get; set; } = 235;
         public int EmguThresholdMaxB { get; set; } = 255;
+
+        // Named items
+        public bool NamedItemsFilterTier2 { get; set; } = true;
+        public bool NamedItemsFilterTier3 { get; set; } = true;
+        public bool NamedItemsFilterTier4 { get; set; } = true;
+        public bool NamedItemsFilterTier5 { get; set; } = true;
+        public bool NamedItemsFilterItemClassArmor { get; set; } = true;
+        public bool NamedItemsFilterItemClassJewelry { get; set; } = true;
+        public bool NamedItemsFilterItemClassWeapon { get; set; } = true;
+        public bool NamedItemsFilterStorageCollected { get; set; } = true;
+        public bool NamedItemsFilterStorageMissing { get; set; } = true;
+        public bool NamedItemsFilterStorageDuplicates { get; set; } = true;
+        public bool NamedItemsFilterBindOnEquip { get; set; } = true;
+        public bool NamedItemsFilterBindOnPickup { get; set; } = true;
     }
 }

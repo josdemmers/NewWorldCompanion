@@ -15,6 +15,7 @@ namespace NewWorldCompanion.Interfaces
             get;
         }
 
+        string GetItemStorageInfo(string itemName);
         void SaveStorage();
     }
 }

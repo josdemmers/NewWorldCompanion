@@ -9,6 +9,7 @@ using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -116,13 +117,28 @@ namespace NewWorldCompanion.Services
 
         private void ProcessImage(Mat img)
         {
+            bool result = ProcessImageNormal(img);
+            if (!result) 
+            {
+                result = ProcessImageSwirling(img);
+            }
+            if (!result)
+            {
+                _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+            }
+        }
+
+        private bool ProcessImageNormal(Mat img)
+        {
+            bool result = true;
+
             UMat filter = new UMat();
             UMat cannyEdges = new UMat();
             Mat crop = new Mat(img.Size, DepthType.Cv8U, 3);
 
             //Convert the image to grayscale and filter out the noise
             CvInvoke.CvtColor(img, filter, ColorConversion.Bgr2Gray);
-            CvInvoke.GaussianBlur(filter, filter, new System.Drawing.Size(3, 3), 1);
+            //CvInvoke.GaussianBlur(filter, filter, new System.Drawing.Size(3, 3), 1);
 
             // Canny and edge detection
             double cannyThreshold = HysteresisLower;
@@ -149,22 +165,24 @@ namespace NewWorldCompanion.Services
                         CvInvoke.ContourArea(approxContour, false) < AreaUpper)
                     {
                         // The contour has 4 vertices.
-                        if (approxContour.Size == 4)
+                        if (approxContour.Size >= 2)
                         {
                             // Determine if all the angles in the contour are within [80, 100] degree
                             bool isRectangle = true;
                             System.Drawing.Point[] pts = approxContour.ToArray();
                             LineSegment2D[] edges = Emgu.CV.PointCollection.PolyLine(pts, true);
 
+                            int angleCounter = 0;
                             for (int j = 0; j < edges.Length; j++)
                             {
                                 double angle = Math.Abs(edges[(j + 1) % edges.Length].GetExteriorAngleDegree(edges[j]));
-                                if (angle < 80 || angle > 100)
+                                
+                                if (angle > 80 && angle < 100)
                                 {
-                                    isRectangle = false;
-                                    break;
+                                    angleCounter++;
                                 }
                             }
+                            isRectangle = angleCounter > 1;
 
                             if (isRectangle)
                             {
@@ -220,22 +238,172 @@ namespace NewWorldCompanion.Services
                     // Validate width
                     roiRectangle.Width = (roiRectangle.X + roiRectangle.Width) <= img.Width ? roiRectangle.Width : roiRectangle.Width - (roiRectangle.X + roiRectangle.Width - img.Width);
 
-                    crop = new Mat(img, roiRectangle);
-                    RoiImage = crop.ToBitmap();
-                    _eventAggregator.GetEvent<RoiImageReadyEvent>().Publish();
-                    ProcessImageOCR(crop);
+                    if (roiRectangle.Width > 0 && roiRectangle.Y > 0)
+                    {
+                        crop = new Mat(img, roiRectangle);
+                        RoiImage = crop.ToBitmap();
+                        _eventAggregator.GetEvent<RoiImageReadyEvent>().Publish();
+                        ProcessImageOCR(crop);
+                    }
+                    else
+                    {
+                        //_eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                        result = false;
+                    }
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
 
-                    _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                    //_eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                    result = false;
                 }
             }
             else
             {
-                _eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                //_eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                result = false;
             }
+            return result;
+        }
+
+        private bool ProcessImageSwirling(Mat img)
+        {
+            bool result = true;
+
+            UMat filter = new UMat();
+            UMat cannyEdges = new UMat();
+            Mat crop = new Mat(img.Size, DepthType.Cv8U, 3);
+
+            //Convert the image to grayscale and filter out the noise
+            CvInvoke.CvtColor(img, filter, ColorConversion.Bgr2Gray);
+            CvInvoke.GaussianBlur(filter, filter, new System.Drawing.Size(3, 3), 1);
+
+            // Canny and edge detection
+            double cannyThreshold = HysteresisLower;
+            double cannyThresholdLinking = HysteresisUpper;
+            CvInvoke.Canny(filter, cannyEdges, cannyThreshold, cannyThresholdLinking);
+
+            // Find rectangles
+            List<RotatedRect> rectangleList = new List<RotatedRect>();
+            VectorOfVectorOfPoint contours = new VectorOfVectorOfPoint();
+
+            CvInvoke.FindContours(cannyEdges, contours, null, RetrType.List, ChainApproxMethod.ChainApproxSimple);
+            int count = contours.Size;
+            for (int i = 0; i < count; i++)
+            {
+                using (VectorOfPoint contour = contours[i])
+                using (VectorOfPoint approxContour = new VectorOfPoint())
+                {
+                    CvInvoke.ApproxPolyDP(contour, approxContour, CvInvoke.ArcLength(contour, true) * 0.05, true);
+                    // Only consider contours with area between upper and lower values
+                    // e.g. when using 2560x1440
+                    // Equipment icon size: ca. 5000-6000
+                    // Schematic icon size: ca. 10000-10800
+                    if (CvInvoke.ContourArea(approxContour, false) > AreaLower &&
+                        CvInvoke.ContourArea(approxContour, false) < AreaUpper)
+                    {
+                        // The contour has 4 vertices.
+                        if (approxContour.Size >= 2)
+                        {
+                            // Determine if all the angles in the contour are within [80, 100] degree
+                            bool isRectangle = true;
+                            System.Drawing.Point[] pts = approxContour.ToArray();
+                            LineSegment2D[] edges = Emgu.CV.PointCollection.PolyLine(pts, true);
+
+                            int angleCounter = 0;
+                            for (int j = 0; j < edges.Length; j++)
+                            {
+                                double angle = Math.Abs(edges[(j + 1) % edges.Length].GetExteriorAngleDegree(edges[j]));
+
+                                if (angle > 80 && angle < 100)
+                                {
+                                    angleCounter++;
+                                }
+                            }
+                            isRectangle = angleCounter > 1;
+
+                            if (isRectangle)
+                            {
+                                var rotatedRec = CvInvoke.MinAreaRect(approxContour);
+                                if (!rectangleList.Exists(rec =>
+                                ((rec.Center.X - rotatedRec.Center.X > -2 && rec.Center.X - rotatedRec.Center.X < 2) || (rotatedRec.Center.X - rec.Center.X > -2 && rotatedRec.Center.X - rec.Center.X < 2)) &&
+                                ((rec.Center.Y - rotatedRec.Center.Y > -2 && rec.Center.Y - rotatedRec.Center.Y < 2) || (rotatedRec.Center.Y - rec.Center.Y > -2 && rotatedRec.Center.Y - rec.Center.Y < 2))))
+                                {
+                                    // We only want squares
+                                    float ratio = rotatedRec.Size.Width / rotatedRec.Size.Height;
+                                    if (ratio > 0.8 && ratio < 1.2)
+                                    {
+                                        rectangleList.Add(rotatedRec);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Draw rectangles
+            foreach (RotatedRect rectangle in rectangleList)
+            {
+                CvInvoke.Polylines(img, Array.ConvertAll(rectangle.GetVertices(), System.Drawing.Point.Round), true,
+                    new Bgr(Color.DarkOrange).MCvScalar, 2);
+            }
+            ProcessedImage = img.ToBitmap();
+            _eventAggregator.GetEvent<ProcessedImageReadyEvent>().Publish();
+
+            // Create roi
+            if (rectangleList.Count == 1)
+            {
+                var roiRectangle = new Rectangle
+                (
+                  rectangleList[0].MinAreaRect().X + rectangleList[0].MinAreaRect().Width + 5,
+                  rectangleList[0].MinAreaRect().Y,
+                  (int)(rectangleList[0].MinAreaRect().Width * 2.8),
+                  (int)(rectangleList[0].MinAreaRect().Height * 0.5)
+                );
+
+                // Update overlay position
+                // Note: Using a constant height of 100. So that all text rows fit the overlay for every resolution.
+                OverlayX = _screenCaptureHandler.OffsetX + rectangleList[0].MinAreaRect().X;
+                //OverlayY = _screenCaptureHandler.OffsetY + rectangleList[0].MinAreaRect().Y - (rectangleList[0].MinAreaRect().Height + 12);
+                OverlayY = _screenCaptureHandler.OffsetY + rectangleList[0].MinAreaRect().Y - (100 + 12);
+                OverlayWidth = rectangleList[0].MinAreaRect().Width + (int)(rectangleList[0].MinAreaRect().Width * 2.8);
+                //OverlayHeigth = rectangleList[0].MinAreaRect().Height;
+                OverlayHeigth = 100;
+
+                try
+                {
+                    // Validate width
+                    roiRectangle.Width = (roiRectangle.X + roiRectangle.Width) <= img.Width ? roiRectangle.Width : roiRectangle.Width - (roiRectangle.X + roiRectangle.Width - img.Width);
+
+                    if (roiRectangle.Width > 0 && roiRectangle.Y > 0)
+                    {
+                        crop = new Mat(img, roiRectangle);
+                        RoiImage = crop.ToBitmap();
+                        _eventAggregator.GetEvent<RoiImageReadyEvent>().Publish();
+                        ProcessImageOCR(crop);
+                    }
+                    else
+                    {
+                        //_eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                        result = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+
+                    //_eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                    result = false;
+                }
+            }
+            else
+            {
+                //_eventAggregator.GetEvent<OverlayHideEvent>().Publish();
+                result = false;
+            }
+            return result;
         }
 
         private void ProcessImageCount(Mat img)

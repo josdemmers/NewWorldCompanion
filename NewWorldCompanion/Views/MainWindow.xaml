@@ -40,8 +40,8 @@
             <TabItem Header="Cooldowns">
                 <ContentControl prism:RegionManager.RegionName="CooldownView"/>
             </TabItem>
-            <TabItem Header="Storage">
-                <ContentControl prism:RegionManager.RegionName="StorageView"/>
+            <TabItem Header="Items">
+                <ContentControl prism:RegionManager.RegionName="ItemsView"/>
             </TabItem>
             <TabItem Header="Config">
                 <ContentControl prism:RegionManager.RegionName="ConfigView"/>
@@ -58,6 +58,7 @@
                 <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusCraftingRecipes}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
                 <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusHouseItems}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
                 <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusLocalisation}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
+                <TextBlock Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding DataStatusLocalisationNamed}" FontSize="15" Foreground="LightGray" FontWeight="Bold"/>
             </StackPanel>
         </Grid>
     </Grid>

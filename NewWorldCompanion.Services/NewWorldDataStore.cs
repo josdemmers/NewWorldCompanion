@@ -1,10 +1,12 @@
-﻿using NewWorldCompanion.Constants;
+﻿using Microsoft.Extensions.Logging;
+using NewWorldCompanion.Constants;
 using NewWorldCompanion.Entities;
 using NewWorldCompanion.Events;
 using NewWorldCompanion.Helpers;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -21,11 +23,14 @@ namespace NewWorldCompanion.Services
     public class NewWorldDataStore : INewWorldDataStore
     {
         private readonly IEventAggregator _eventAggregator;
+        private readonly ILogger _logger;
 
         private List<MasterItemDefinitionsJson> _masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
+        private List<MasterItemDefinitionsJson> _masterItemDefinitionsJson_Named = new List<MasterItemDefinitionsJson>();
         private List<CraftingRecipeJson> _craftingRecipesJson = new List<CraftingRecipeJson>();
         private List<HouseItemsJson> _houseItemsJson = new List<HouseItemsJson>();
-        private Dictionary<string, string> _itemDefinitionsLocalisation = new Dictionary<string, string>();
+        private ConcurrentDictionary<string, string> _itemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(50, 15000);
+        private ConcurrentDictionary<string, string> _namedItemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(50, 15000);
 
         private bool _available = false;
 
@@ -33,16 +38,20 @@ namespace NewWorldCompanion.Services
         private string _loadStatusCraftingRecipes = string.Empty;
         private string _loadStatusHouseItems = string.Empty;
         private string _loadStatusLocalisation = string.Empty;
+        private string _loadStatusLocalisationNamed = string.Empty;
 
 
         // Start of Constructor region
 
         #region Constructor
 
-        public NewWorldDataStore(IEventAggregator eventAggregator)
+        public NewWorldDataStore(IEventAggregator eventAggregator, ILogger<NewWorldDataStore> logger)
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
+
+            // Init logger
+            _logger = logger;
 
             // Init store data
             Task.Run(() => UpdateStoreData());
@@ -59,6 +68,7 @@ namespace NewWorldCompanion.Services
         public string LoadStatusCraftingRecipes { get => _loadStatusCraftingRecipes; set => _loadStatusCraftingRecipes = value; }
         public string LoadStatusHouseItems { get => _loadStatusHouseItems; set => _loadStatusHouseItems = value; }
         public string LoadStatusLocalisation { get => _loadStatusLocalisation; set => _loadStatusLocalisation = value; }
+        public string LoadStatusLocalisationNamed { get => _loadStatusLocalisationNamed; set => _loadStatusLocalisationNamed = value; }
 
         #endregion
 
@@ -73,8 +83,10 @@ namespace NewWorldCompanion.Services
             _loadStatusItemDefinitions = $"ItemDefinitions: 0. Loading common items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
 
-            // MasterItemDefinitions Common
             _masterItemDefinitionsJson.Clear();
+            _masterItemDefinitionsJson_Named.Clear();
+
+            // MasterItemDefinitions Common
             var masterItemDefinitionsJson = new List<MasterItemDefinitionsJson>();
             resourcePath = @".\Data\MasterItemDefinitions_Common.json";
             using (FileStream? stream = File.OpenRead(resourcePath))
@@ -164,6 +176,7 @@ namespace NewWorldCompanion.Services
 
                     masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
+                    _masterItemDefinitionsJson_Named.AddRange(masterItemDefinitionsJson);
                 }
             }
 
@@ -232,6 +245,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusHouseItems = $"HouseItems: {_houseItemsJson.Count}";
             _loadStatusLocalisation = $"Localisation: 0. Loading localisations";
+            _loadStatusLocalisationNamed = $"Localisation (named): 0. Loading localisations";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
 
             // ItemDefinitionsLocalisation - Itemdefinitions
@@ -246,7 +260,8 @@ namespace NewWorldCompanion.Services
                                 where loc.Name.LocalName == "string"
                                 select loc;
 
-                    foreach (var loc in query)
+                    Parallel.ForEach(query, new ParallelOptions { MaxDegreeOfParallelism = 50 },
+                    loc =>
                     {
                         string key = loc.Attribute("key")?.Value ?? string.Empty;
                         string value = loc.Value;
@@ -255,22 +270,31 @@ namespace NewWorldCompanion.Services
                         // MasterItemDefinitions_Common.json
                         // MasterItemDefinitions_Crafting.json
                         // MasterItemDefinitions_Loot.json
+                        // MasterItemDefinitions_Named.json
                         // MasterItemDefinitions_Quest.json
                         if (_masterItemDefinitionsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {
                             _itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
+                        if (_masterItemDefinitionsJson_Named.Any(d => (d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false) && d.ItemClass.Contains("Named")))
+                        {
+                            _namedItemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
+                        }
 
                         _loadStatusLocalisation = $"Localisation data: {_itemDefinitionsLocalisation.Count}";
+                        _loadStatusLocalisationNamed = $"Localisation data (named): {_namedItemDefinitionsLocalisation.Count}";
                         _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
-                    }
+                    });
                 }
             }
 
             // ItemDefinitionsLocalisation - Itemdefinitions - Cleanup duplicates
-            _itemDefinitionsLocalisation.Remove("ArrowBT2_MasterName".ToLower());
-            _itemDefinitionsLocalisation.Remove("ArrowBT4_MasterName".ToLower());
-            _itemDefinitionsLocalisation.Remove("ArrowBT5_MasterName".ToLower());
+            _itemDefinitionsLocalisation.Remove("ArrowBT2_MasterName".ToLower(), out string? _);
+            _itemDefinitionsLocalisation.Remove("ArrowBT4_MasterName".ToLower(), out string? _);
+            _itemDefinitionsLocalisation.Remove("ArrowBT5_MasterName".ToLower(), out string? _);
+            // ItemDefinitionsLocalisation - Itemdefinitions - Cleanup resource / item conflicts
+            // TODO: Remove workaround when named items are separated.
+            _itemDefinitionsLocalisation.Remove("2hGreatSword_FlintT5_MasterName".ToLower(), out string? _);
 
             // ItemDefinitionsLocalisation - HouseItems
             resourcePath = @".\Data\javelindata_housingitems.loc.xml";
@@ -283,7 +307,9 @@ namespace NewWorldCompanion.Services
                                 where loc.Name.LocalName == "string"
                                 select loc;
 
-                    foreach (var loc in query)
+                    //foreach (var loc in query)
+                    Parallel.ForEach(query, new ParallelOptions { MaxDegreeOfParallelism = 50 },
+                    loc =>
                     {
                         string key = loc.Attribute("key")?.Value ?? string.Empty;
                         string value = loc.Value;
@@ -297,7 +323,7 @@ namespace NewWorldCompanion.Services
 
                         _loadStatusLocalisation = $"Localisation data: {_itemDefinitionsLocalisation.Count}";
                         _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
-                    }
+                    });
                 }
             }
 
@@ -417,8 +443,10 @@ namespace NewWorldCompanion.Services
                 {
                     ItemClass = masterItem.ItemClass,
                     ItemID = masterItem.ItemID,
-                    Localisation = GetItemLocalisation(masterItem.Name),
-                    Tier = masterItem.Tier
+                    Localisation = GetNamedItemLocalisation(masterItem.Name),
+                    Tier = masterItem.Tier,
+                    BindOnEquip = masterItem.BindOnEquip,
+                    BindOnPickup = masterItem.BindOnPickup
                 });
             }
 
@@ -441,7 +469,37 @@ namespace NewWorldCompanion.Services
             return true;
         }
 
-        public string GetItemId(string itemName)
+        public bool IsNamedItem(string itemName)
+        {
+            //var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Replace("\\n", " ").Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
+            //var item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
+
+            // TODO: Remove workaround when there is an alternative overlay for named items.
+            var localisationIds = _itemDefinitionsLocalisation.Where(x => x.Value.Replace("\\n", " ").Equals(itemName, StringComparison.OrdinalIgnoreCase));
+            if (localisationIds.Count() == 0)
+            {
+                return false;
+            }
+            else
+            {
+                _logger.LogWarning($"Item: {itemName} is not unique. There are {localisationIds.Count()} entries found");
+            }
+
+            // Check all similar named items. If one of them is not "named" return false. 
+            // Workaround need for weapon and resource that both share the name "Flint".
+            bool uniqueNamedItem = true;
+            foreach (var localisationId in localisationIds)
+            {
+                var item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId.Key}", StringComparison.OrdinalIgnoreCase));
+                if (!item.ItemClass.Contains("Named"))
+                {
+                    uniqueNamedItem = false;
+                }
+            }
+            return uniqueNamedItem;
+        }
+
+        public string GetItemId(string itemName)//
         {
             var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Replace("\\n", " ").Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
             MasterItemDefinitionsJson? item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
@@ -491,12 +549,17 @@ namespace NewWorldCompanion.Services
             Debug.WriteLine($"Levenshtein. Item: {itemName}, Match: {currentItem}, Distance: {currentDistance}");
 
             //return currentDistance <= Math.Max(3, itemName.Length) ? currentItem : itemName;
-            return currentDistance <= 3 ? currentItem : itemName;
+            return currentDistance <= 5 ? currentItem : itemName;
         }
 
         public string GetItemLocalisation(string itemMasterName)
         {
             return _itemDefinitionsLocalisation.GetValueOrDefault(itemMasterName.Trim(new char[] { '@' }).ToLower()) ?? itemMasterName.Trim(new char[] { '@' });
+        }
+
+        public string GetNamedItemLocalisation(string itemMasterName)
+        {
+            return _namedItemDefinitionsLocalisation.GetValueOrDefault(itemMasterName.Trim(new char[] { '@' }).ToLower()) ?? itemMasterName.Trim(new char[] { '@' });
         }
 
         public List<CraftingRecipeJson> GetRelatedRecipes(string itemId)

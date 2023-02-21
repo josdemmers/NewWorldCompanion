@@ -2,6 +2,7 @@
 using NewWorldCompanion.Views.Tabs;
 using NewWorldCompanion.Views.Tabs.Config;
 using NewWorldCompanion.Views.Tabs.Debug;
+using NewWorldCompanion.Views.Tabs.Items;
 using Prism.Regions;
 using System;
 
@@ -24,7 +25,9 @@ namespace NewWorldCompanion.Views
             // Regions
             regionManager.RegisterViewWithRegion("CraftingView", typeof(CraftingView));
             regionManager.RegisterViewWithRegion("CooldownView", typeof(CooldownView));
+            regionManager.RegisterViewWithRegion("ItemsView", typeof(ItemsView));
             regionManager.RegisterViewWithRegion("StorageView", typeof(StorageView));
+            regionManager.RegisterViewWithRegion("NamedItemsView", typeof(NamedItemsView));
 
             regionManager.RegisterViewWithRegion("ConfigView", typeof(ConfigView));
             regionManager.RegisterViewWithRegion("ConfigOverlayView", typeof(ConfigOverlayView));

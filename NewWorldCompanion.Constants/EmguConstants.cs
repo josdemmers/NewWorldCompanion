@@ -7,8 +7,8 @@
         public const int Default1600900AreaUpper = 7000;
         public const int Default19201080AreaLower = 6000;
         public const int Default19201080AreaUpper = 8000;
-        public const int Default25601440AreaLower = 10000;
-        public const int Default25601440AreaUpper = 15000;
+        public const int Default25601440AreaLower = 13000;
+        public const int Default25601440AreaUpper = 15500;
         public const int Default38402160AreaLower = 22600;
         public const int Default38402160AreaUpper = 26600;
 

@@ -21,7 +21,7 @@ namespace NewWorldCompanion
     /// </summary>
     public partial class App : PrismApplication
     {
-        private static Mutex _mutex = null;
+        private static Mutex? _mutex = null;
 
         protected override void OnStartup(StartupEventArgs e)
         {

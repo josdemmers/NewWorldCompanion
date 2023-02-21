@@ -1,4 +1,5 @@
 ﻿using NewWorldCompanion.Entities;
+using NewWorldCompanion.Events;
 using NewWorldCompanion.Interfaces;
 using Prism.Events;
 using System;
@@ -84,6 +85,20 @@ namespace NewWorldCompanion.Services
             using FileStream stream = File.Create(fileName);
             var options = new JsonSerializerOptions { WriteIndented = true };
             JsonSerializer.Serialize(stream, Items, options);
+
+            _eventAggregator.GetEvent<StorageManagerUpdated>().Publish();
+        }
+
+        public string GetItemStorageInfo(string itemName)
+        {
+            string storageInfo = string.Empty;
+            var items = _items.ToList().FindAll(i => i.Localisation.ToLower().Equals(itemName.ToLower()));
+            foreach ( var item in items) 
+            {
+                storageInfo = storageInfo.Length > 0 ? $"{storageInfo}, {item.Storage}" : item.Storage;
+            }
+
+            return storageInfo.Length > 0 ? storageInfo : "Missing";
         }
 
         #endregion

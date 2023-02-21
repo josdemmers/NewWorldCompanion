@@ -14,14 +14,18 @@ namespace NewWorldCompanion.Interfaces
         string LoadStatusCraftingRecipes { get; }
         string LoadStatusHouseItems { get; }
         string LoadStatusLocalisation { get; }
+        string LoadStatusLocalisationNamed { get; }
 
         List<CraftingRecipe> GetCraftingRecipes();
         bool IsBindOnPickup(string itemName);
+        bool IsNamedItem(string itemName);
         string GetItemId(string itemName);
         ItemDefinition? GetItem(string itemId);
         string GetLevenshteinItemName(string itemName);
         List<MasterItemDefinitionsJson> GetOverlayResources();
+        List<NamedItem> GetNamedItems();
         string GetItemLocalisation(string itemMasterName);
+        string GetNamedItemLocalisation(string itemMasterName);
         List<CraftingRecipeJson> GetRelatedRecipes(string itemId);
         CraftingRecipeJson GetCraftingRecipeDetails(string itemId);
         void UpdateStoreData();

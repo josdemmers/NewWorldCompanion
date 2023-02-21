@@ -72,6 +72,7 @@ namespace NewWorldCompanion.ViewModels
         public string DataStatusCraftingRecipes => _newWorldDataStore.LoadStatusCraftingRecipes;
         public string DataStatusHouseItems => _newWorldDataStore.LoadStatusHouseItems;
         public string DataStatusLocalisation => _newWorldDataStore.LoadStatusLocalisation;
+        public string DataStatusLocalisationNamed => _newWorldDataStore.LoadStatusLocalisationNamed;
 
         #endregion
 
@@ -124,6 +125,7 @@ namespace NewWorldCompanion.ViewModels
             RaisePropertyChanged(nameof(DataStatusCraftingRecipes));
             RaisePropertyChanged(nameof(DataStatusHouseItems));
             RaisePropertyChanged(nameof(DataStatusLocalisation));
+            RaisePropertyChanged(nameof(DataStatusLocalisationNamed));
         }
 
         #endregion

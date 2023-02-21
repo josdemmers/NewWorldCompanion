@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 
-namespace NewWorldCompanion.ViewModels.Tabs
+namespace NewWorldCompanion.ViewModels.Tabs.Items
 {
     public class StorageViewModel : BindableBase
     {

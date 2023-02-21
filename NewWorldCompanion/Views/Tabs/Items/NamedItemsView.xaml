@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="NewWorldCompanion.Views.Tabs.Items.NamedItemsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NewWorldCompanion.Views.Tabs.Items"
+             xmlns:converters="clr-namespace:NewWorldCompanion.Converters" 
+             xmlns:items="clr-namespace:NewWorldCompanion.ViewModels.Tabs.Items" 
+             d:DataContext="{d:DesignInstance Type=items:NamedItemsViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="TextBoxFilter" Grid.Row="0" Grid.Column="0" Text="{Binding ItemNameFilter, UpdateSourceTrigger=PropertyChanged}" Width="auto"  HorizontalAlignment="Stretch" GotFocus="TextBoxFilter_GotFocus" LostFocus="TextBoxFilter_LostFocus"/>
+        <TextBlock Name="TextBoxFilterWatermark" Grid.Row="0" Grid.Column="0" Text="Enter filter" Width="auto" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5" Padding="5 0 0 0" IsHitTestVisible="False" Foreground="DimGray" FontStyle="Italic"/>
+        <ToggleButton Grid.Row="0" Grid.Column="0" Width="25" Height="25" Margin="0 0 5 0" HorizontalAlignment="Right"
+                    IsChecked="{Binding ToggleFilter}" Style="{DynamicResource MahApps.Styles.ToggleButton.Circle}">
+            <Label Content="..." Padding="0" Margin="0 0 0 1"  />
+        </ToggleButton>
+
+        <StackPanel Background="DimGray" Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="5" Visibility="{Binding Path=ToggleFilter, Converter={x:Static converters:BooleanToVisibilityConverter.Instance}}">
+            <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                <TextBlock Margin="0 0 5 0" Text="Categories: " />
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterItemClassArmor}" Content="Armor" />
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterItemClassJewelry}" Content="Jewelry" />
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterItemClassWeapon}" Content="Weapons" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5 5 0 5">
+                <TextBlock Margin="0 0 5 0" Text="Storages: " />
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterStorageCollected}" Content="Collected" />
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterStorageMissing}" Content="Missing" />
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterStorageDuplicates}" Content="Duplicates" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5 5 0 0">
+                <TextBlock Margin="0 0 5 0" Text="Tier" />
+                <CheckBox IsChecked="{Binding FilterTier2}" />
+                <CheckBox IsChecked="{Binding FilterTier3}" />
+                <CheckBox IsChecked="{Binding FilterTier4}" />
+                <CheckBox IsChecked="{Binding FilterTier5}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5 5 0 5">
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterBindOnEquip}" Content="Bind on equip" />
+                <CheckBox Margin="0 0 5 0" IsChecked="{Binding FilterBindOnPickup}" Content="Bind on pickup" />
+            </StackPanel>
+            
+        </StackPanel>
+
+        <DataGrid Grid.Row="2" Grid.Column="0"  ItemsSource="{Binding ItemsFiltered}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Resources>
+                <DataTemplate x:Key="DateTemplate" >
+                    <Label>
+                        <Hyperlink Command="{Binding Path=DataContext.VisitNwdbCommand, RelativeSource={RelativeSource AncestorType={x:Type local:NamedItemsView}}}" CommandParameter="{Binding Url}">
+                            nwdb.info
+                        </Hyperlink>
+                    </Label>
+                </DataTemplate>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Item" Binding="{Binding Localisation}" />
+                <DataGridTextColumn Header="Storage" Binding="{Binding Storage}" />
+                <DataGridTextColumn Header="Tier" Binding="{Binding Tier}" />
+                <DataGridTemplateColumn Header="Nwdb" CellTemplate="{StaticResource DateTemplate}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

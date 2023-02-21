@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NewWorldCompanion.Views.Tabs
+namespace NewWorldCompanion.Views.Tabs.Items
 {
     /// <summary>
     /// Interaction logic for StorageView.xaml

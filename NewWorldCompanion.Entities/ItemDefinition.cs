@@ -12,5 +12,7 @@ namespace NewWorldCompanion.Entities
         public string Name { get; set; } = string.Empty;
         /// <value>Used to define if an item is tradable</value> 
         public bool BindOnPickup { get; set; } = false;
+        public bool BindOnEquip { get; set; } = false;
+
     }
 }

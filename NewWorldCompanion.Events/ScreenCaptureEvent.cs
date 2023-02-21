@@ -9,4 +9,9 @@ namespace NewWorldCompanion.Events
     public class MouseCoordinatesUpdatedEvent : PubSubEvent
     {
     }
+
+    public class MouseDeltaUpdatedEvent : PubSubEvent<double>
+    {
+
+    }
 }

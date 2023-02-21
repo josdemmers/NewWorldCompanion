@@ -27,6 +27,8 @@ namespace NewWorldCompanion.Services
         private Bitmap? _currentScreenMouseArea = null;
         private int _delay = 100;
         private int _delayCoordinates = 100;
+        private int _mouseX = 0;
+        private int _mouseY = 0;
         private int _offsetX = 0;
         private int _offsetY = 0;
         private ScreenCapture _screenCapture = new ScreenCapture();
@@ -77,7 +79,7 @@ namespace NewWorldCompanion.Services
         public int DelayCoordinates { get => _delayCoordinates; set => _delayCoordinates = value; }
         public bool IsActive 
         { 
-            get => _settingsManager.Settings.TooltipEnabled;
+            get => _settingsManager.Settings.TooltipEnabled || _settingsManager.Settings.NamedItemsTooltipEnabled;
         }
         public string MouseCoordinates { get; set; } = string.Empty;
         public string MouseCoordinatesScaled { get; set; } = string.Empty;
@@ -191,10 +193,19 @@ namespace NewWorldCompanion.Services
             var dpiScaling = Math.Round(dpi / (double)96, 2);
             MouseCoordinatesScaled = $"X: {(int)(cursorInfo.ptScreenPos.x / dpiScaling)}, Y: {(int)(cursorInfo.ptScreenPos.y / dpiScaling)}";
 
+            int x1 = _mouseX;
+            int y1 = _mouseY;
+            int x2 = cursorInfo.ptScreenPos.x;
+            int y2 = cursorInfo.ptScreenPos.y;
+            double delta = Math.Sqrt(Math.Pow((x2 - x1), 2) + Math.Pow((y2 - y1), 2));
+            _mouseX = cursorInfo.ptScreenPos.x;
+            _mouseY = cursorInfo.ptScreenPos.y;
+
             _coordinatesTimer.Interval = TimeSpan.FromMilliseconds(DelayCoordinates);
             _coordinatesTimer.IsEnabled = true;
 
             _eventAggregator.GetEvent<MouseCoordinatesUpdatedEvent>().Publish();
+            _eventAggregator.GetEvent<MouseDeltaUpdatedEvent>().Publish(delta);
         }
 
         public BitmapSource? ImageSourceFromScreenCapture()
