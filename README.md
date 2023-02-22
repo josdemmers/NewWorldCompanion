@@ -25,16 +25,6 @@ If you like my work you can sponsor me on Ko-fi.
 - Ingame overlay with price data for tradable items.
   - Supported servers: The server list is updated at each application launch. For the complete list of supported servers check: https://nwmarketprices.com/
 
-## Planned Features
-
-- [x] Add configuration section to make it easier to setup the app for different resolutions.
-- [x] Keep track of the storage content of all towns in Aeternum.
-- [x] Add timers to keep track of your cooldowns. e.g. elite chest runs, gypsum.
-- [x] Add pricing data for items you hover your mouse over.
-- [x] Add overlay to show recipe learned status directy in-game.
-- [ ] ~~Add localisation for items. Currently English only.~~
-- [ ] ~~Crafting cost calculator.~~
-
 ## Installation
 
 - Download the latest version from [Releases](https://github.com/josdemmers/NewWorldCompanion/releases)
