@@ -131,6 +131,30 @@ namespace NewWorldCompanion.Services
                 }
             }
 
+            _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading faction items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+
+            // MasterItemDefinitions Faction
+            masterItemDefinitionsJson.Clear();
+            resourcePath = @".\Data\MasterItemDefinitions_Faction.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                    _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
+                }
+            }
+
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading loot items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
 
@@ -161,6 +185,31 @@ namespace NewWorldCompanion.Services
             // MasterItemDefinitions Named
             masterItemDefinitionsJson.Clear();
             resourcePath = @".\Data\MasterItemDefinitions_Named.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    masterItemDefinitionsJson = JsonSerializer.Deserialize<List<MasterItemDefinitionsJson>>(stream, options) ?? new List<MasterItemDefinitionsJson>();
+                    _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
+                    _masterItemDefinitionsJson_Named.AddRange(masterItemDefinitionsJson);
+                }
+            }
+
+            _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading pvp items";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+
+            // MasterItemDefinitions PVP
+            masterItemDefinitionsJson.Clear();
+            resourcePath = @".\Data\MasterItemDefinitions_PVP.json";
             using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
@@ -269,8 +318,10 @@ namespace NewWorldCompanion.Services
                         // Supported items so far:
                         // MasterItemDefinitions_Common.json
                         // MasterItemDefinitions_Crafting.json
+                        // MasterItemDefinitions_Faction.json
                         // MasterItemDefinitions_Loot.json
                         // MasterItemDefinitions_Named.json
+                        // MasterItemDefinitions_PVP.json
                         // MasterItemDefinitions_Quest.json
                         if (_masterItemDefinitionsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {

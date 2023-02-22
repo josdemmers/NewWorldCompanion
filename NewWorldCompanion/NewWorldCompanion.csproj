@@ -123,10 +123,16 @@
     <None Update="Data\MasterItemDefinitions_Crafting.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Data\MasterItemDefinitions_Faction.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Data\MasterItemDefinitions_Loot.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\MasterItemDefinitions_Named.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\MasterItemDefinitions_PVP.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Data\MasterItemDefinitions_Quest.json">

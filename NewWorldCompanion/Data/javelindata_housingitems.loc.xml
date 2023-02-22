@@ -597,11 +597,11 @@ Grants +2500 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Fishing Gathering Trophy</string>
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when angling for various aquatic creatures. 
 Only works when placed in your home. 
-Grants +5000 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string>
+Grants +3500 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string>
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Fishing Gathering Trophy</string>
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when angling for various aquatic creatures. 
 Only works when placed in your home. 
-Grants +9000 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string>
+Grants +5000 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string>
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Fishing Gathering Trophy</string>
 	<string key="House_HousingItem_Buff_Harvesting_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when reaping various plants. 
 Only works when placed in your home. 
