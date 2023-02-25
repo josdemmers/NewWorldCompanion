@@ -11,11 +11,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Shapes;
 using System.Xml.Linq;
 
 namespace NewWorldCompanion.Services
@@ -29,8 +27,8 @@ namespace NewWorldCompanion.Services
         private List<MasterItemDefinitionsJson> _masterItemDefinitionsJson_Named = new List<MasterItemDefinitionsJson>();
         private List<CraftingRecipeJson> _craftingRecipesJson = new List<CraftingRecipeJson>();
         private List<HouseItemsJson> _houseItemsJson = new List<HouseItemsJson>();
-        private ConcurrentDictionary<string, string> _itemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(50, 15000);
-        private ConcurrentDictionary<string, string> _namedItemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(50, 15000);
+        private ConcurrentDictionary<string, string> _itemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(50, 16500);
+        private ConcurrentDictionary<string, string> _namedItemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(50, 3500);
 
         private bool _available = false;
 
@@ -82,6 +80,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusItemDefinitions = $"ItemDefinitions: 0. Loading common items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             _masterItemDefinitionsJson.Clear();
             _masterItemDefinitionsJson_Named.Clear();
@@ -109,6 +108,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading crafting items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // MasterItemDefinitions Crafting
             masterItemDefinitionsJson.Clear();
@@ -133,6 +133,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading faction items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // MasterItemDefinitions Faction
             masterItemDefinitionsJson.Clear();
@@ -157,6 +158,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading loot items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // MasterItemDefinitions Loot
             masterItemDefinitionsJson.Clear();
@@ -181,6 +183,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading named items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // MasterItemDefinitions Named
             masterItemDefinitionsJson.Clear();
@@ -206,6 +209,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading pvp items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // MasterItemDefinitions PVP
             masterItemDefinitionsJson.Clear();
@@ -231,6 +235,7 @@ namespace NewWorldCompanion.Services
 
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}. Loading quest items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // MasterItemDefinitions Quest
             masterItemDefinitionsJson.Clear();
@@ -256,6 +261,7 @@ namespace NewWorldCompanion.Services
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}";
             _loadStatusCraftingRecipes = $"CraftingRecipes: 0. Loading recipes";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // CraftingRecipe Json
             _craftingRecipesJson.Clear();
@@ -280,6 +286,7 @@ namespace NewWorldCompanion.Services
             _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}";
             _loadStatusHouseItems = $"HouseItems: 0. Loading items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
             // HouseItems Json
             _houseItemsJson.Clear();
@@ -296,20 +303,80 @@ namespace NewWorldCompanion.Services
             _loadStatusLocalisation = $"Localisation: 0. Loading localisations";
             _loadStatusLocalisationNamed = $"Localisation (named): 0. Loading localisations";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
-            // ItemDefinitionsLocalisation - Itemdefinitions
+            // ItemDefinitionsLocalisation
+            UpdateStoreDataLocalisation();
+
+            // Finished initializing data. Inform subscribers.
+            Available = true;
+            _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Publish();
+        }
+
+        public void UpdateStoreDataLocalisation()
+        {
+            if (File.Exists(@".\Cache\ItemDefinitionsLocalisation.json") &&
+                File.Exists(@".\Cache\ItemDefinitionsLocalisation_Named.json"))
+            {
+                LoadLocalisationFromCache();
+
+                // Update cache
+                Task.Run(() => UpdateLocalisationCache(1, false));
+            }
+            else
+            {
+                UpdateLocalisationCache(50, true);
+                UpdateStoreDataLocalisation();
+            }
+        }
+
+        private void LoadLocalisationFromCache()
+        {
             _itemDefinitionsLocalisation.Clear();
-            resourcePath = @".\Data\javelindata_itemdefinitions_master.loc.xml";
+            string resourcePath = @".\Cache\ItemDefinitionsLocalisation.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    _itemDefinitionsLocalisation = JsonSerializer.Deserialize<ConcurrentDictionary<string, string>>(stream) ?? new ConcurrentDictionary<string, string>(50, 16500);
+                }
+            }
+
+            _loadStatusLocalisation = $"Localisation data: {_itemDefinitionsLocalisation.Count}";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            _namedItemDefinitionsLocalisation.Clear();
+            resourcePath = @".\Cache\ItemDefinitionsLocalisation_Named.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    _namedItemDefinitionsLocalisation = JsonSerializer.Deserialize<ConcurrentDictionary<string, string>>(stream) ?? new ConcurrentDictionary<string, string>(50, 3500);
+                }
+            }
+
+            _loadStatusLocalisationNamed = $"Localisation data (named): {_namedItemDefinitionsLocalisation.Count}";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+        }
+
+        private void UpdateLocalisationCache(int parallelism, bool showProgress)
+        {
+            // ItemDefinitionsLocalisation - Itemdefinitions
+            ConcurrentDictionary<string, string> itemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(parallelism, 16500);
+            ConcurrentDictionary<string, string> namedItemDefinitionsLocalisation = new ConcurrentDictionary<string, string>(parallelism, 3500);
+            string resourcePath = @".\Data\javelindata_itemdefinitions_master.loc.xml";
             using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
                 {
                     var xml = XDocument.Load(stream);
-                    var query = from loc in xml.Descendants()
-                                where loc.Name.LocalName == "string"
-                                select loc;
+                    var queryResult = from loc in xml.Descendants()
+                                      where loc.Name.LocalName == "string"
+                                      select loc;
 
-                    Parallel.ForEach(query, new ParallelOptions { MaxDegreeOfParallelism = 50 },
+                    Parallel.ForEach(queryResult, new ParallelOptions { MaxDegreeOfParallelism = parallelism },
                     loc =>
                     {
                         string key = loc.Attribute("key")?.Value ?? string.Empty;
@@ -325,27 +392,30 @@ namespace NewWorldCompanion.Services
                         // MasterItemDefinitions_Quest.json
                         if (_masterItemDefinitionsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {
-                            _itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
+                            itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
                         if (_masterItemDefinitionsJson_Named.Any(d => (d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false) && d.ItemClass.Contains("Named")))
                         {
-                            _namedItemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
+                            namedItemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
 
-                        _loadStatusLocalisation = $"Localisation data: {_itemDefinitionsLocalisation.Count}";
-                        _loadStatusLocalisationNamed = $"Localisation data (named): {_namedItemDefinitionsLocalisation.Count}";
-                        _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+                        _loadStatusLocalisation = $"Localisation data: {itemDefinitionsLocalisation.Count}";
+                        _loadStatusLocalisationNamed = $"Localisation data (named): {namedItemDefinitionsLocalisation.Count}";
+                        if (showProgress)
+                        {
+                            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+                        }
                     });
                 }
             }
 
             // ItemDefinitionsLocalisation - Itemdefinitions - Cleanup duplicates
-            _itemDefinitionsLocalisation.Remove("ArrowBT2_MasterName".ToLower(), out string? _);
-            _itemDefinitionsLocalisation.Remove("ArrowBT4_MasterName".ToLower(), out string? _);
-            _itemDefinitionsLocalisation.Remove("ArrowBT5_MasterName".ToLower(), out string? _);
+            itemDefinitionsLocalisation.Remove("ArrowBT2_MasterName".ToLower(), out string? _);
+            itemDefinitionsLocalisation.Remove("ArrowBT4_MasterName".ToLower(), out string? _);
+            itemDefinitionsLocalisation.Remove("ArrowBT5_MasterName".ToLower(), out string? _);
             // ItemDefinitionsLocalisation - Itemdefinitions - Cleanup resource / item conflicts
             // TODO: Remove workaround when named items are separated.
-            _itemDefinitionsLocalisation.Remove("2hGreatSword_FlintT5_MasterName".ToLower(), out string? _);
+            itemDefinitionsLocalisation.Remove("2hGreatSword_FlintT5_MasterName".ToLower(), out string? _);
 
             // ItemDefinitionsLocalisation - HouseItems
             resourcePath = @".\Data\javelindata_housingitems.loc.xml";
@@ -354,12 +424,11 @@ namespace NewWorldCompanion.Services
                 if (stream != null)
                 {
                     var xml = XDocument.Load(stream);
-                    var query = from loc in xml.Descendants()
-                                where loc.Name.LocalName == "string"
-                                select loc;
+                    var queryResult = from loc in xml.Descendants()
+                                      where loc.Name.LocalName == "string"
+                                      select loc;
 
-                    //foreach (var loc in query)
-                    Parallel.ForEach(query, new ParallelOptions { MaxDegreeOfParallelism = 50 },
+                    Parallel.ForEach(queryResult, new ParallelOptions { MaxDegreeOfParallelism = parallelism },
                     loc =>
                     {
                         string key = loc.Attribute("key")?.Value ?? string.Empty;
@@ -369,18 +438,37 @@ namespace NewWorldCompanion.Services
                         // HouseItems.json
                         if (_houseItemsJson.Any(d => d.Name?.Equals("@" + key, StringComparison.OrdinalIgnoreCase) ?? false))
                         {
-                            _itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
+                            itemDefinitionsLocalisation.TryAdd(key.ToLower(), value);
                         }
 
-                        _loadStatusLocalisation = $"Localisation data: {_itemDefinitionsLocalisation.Count}";
-                        _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+                        _loadStatusLocalisation = $"Localisation data: {itemDefinitionsLocalisation.Count}";
+                        if (showProgress)
+                        {
+                            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+                        }
                     });
                 }
             }
 
-            // Finished initializing data. Inform subscribers.
-            Available = true;
-            _eventAggregator.GetEvent<NewWorldDataStoreUpdated>().Publish();
+            // Save cache - ItemDefinitionsLocalisation.json
+            string fileName = @".\Cache\ItemDefinitionsLocalisation.json";
+            string path = Path.GetDirectoryName(fileName) ?? string.Empty;
+            Directory.CreateDirectory(path);
+            using (FileStream stream = File.Create(fileName))
+            {
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                JsonSerializer.Serialize(stream, itemDefinitionsLocalisation, options);
+            }
+
+            // Save cache - ItemDefinitionsLocalisation_Named.json
+            fileName = @".\Cache\ItemDefinitionsLocalisation_Named.json";
+            path = Path.GetDirectoryName(fileName) ?? string.Empty;
+            Directory.CreateDirectory(path);
+            using (FileStream stream = File.Create(fileName))
+            {
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                JsonSerializer.Serialize(stream, namedItemDefinitionsLocalisation, options);
+            }
         }
 
         public List<CraftingRecipe> GetCraftingRecipes()
