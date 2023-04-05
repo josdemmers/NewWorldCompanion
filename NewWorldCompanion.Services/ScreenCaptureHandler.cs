@@ -107,6 +107,7 @@ namespace NewWorldCompanion.Services
         #endregion
 
         // Start of Methods region
+
         #region Methods
 
         private async void StartScreenCapture()

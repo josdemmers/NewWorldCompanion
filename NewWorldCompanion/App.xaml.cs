@@ -1,18 +1,15 @@
-﻿using Emgu.CV.Cuda;
+﻿using DryIoc;
+using DryIoc.Microsoft.DependencyInjection;
 using MahApps.Metro.Controls.Dialogs;
 using Microsoft.Extensions.DependencyInjection;
-using NewWorldCompanion.Entities;
 using NewWorldCompanion.Interfaces;
 using NewWorldCompanion.Services;
 using NewWorldCompanion.Views;
 using NLog.Extensions.Logging;
+using Prism.DryIoc;
 using Prism.Ioc;
-using Prism.Unity;
-using System.IO;
 using System.Threading;
 using System.Windows;
-using Unity;
-using Unity.Microsoft.DependencyInjection;
 
 namespace NewWorldCompanion
 {
@@ -37,6 +34,12 @@ namespace NewWorldCompanion
             }
 
             base.OnStartup(e);
+        }
+
+        protected override Window CreateShell()
+        {
+            var w = Container.Resolve<MainWindow>();
+            return w;
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -66,17 +69,7 @@ namespace NewWorldCompanion
             serviceCollection.AddLogging(loggingBuilder =>
                 loggingBuilder.AddNLog(configFileRelativePath: "Config/NLog.config"));
 
-            var container = new UnityContainer();
-            container.BuildServiceProvider(serviceCollection);
-
-            return new UnityContainerExtension(container);
-        }
-
-
-        protected override Window CreateShell()
-        {
-            var w = Container.Resolve<MainWindow>();
-            return w;
+            return new DryIocContainerExtension(new Container(CreateContainerRules()).WithDependencyInjectionAdapter(serviceCollection));
         }
     }
 }

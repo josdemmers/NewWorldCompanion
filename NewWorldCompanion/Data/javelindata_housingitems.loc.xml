@@ -81,7 +81,7 @@
 	<string key="house_housingitem_entitlement_winter2021_snowman_mastername" comment="MTX-Pack-04-Winter-2021" speaker="Text Updated: Sept 2021" gender="Ready for Translation" rel_version="Housing_Winter_MTX_Pack_2021">Convergence Snowman</string>
 	<string key="house_housingitem_entitlement_winter2021_wreath_a_description" comment="MTX-Pack-04-Winter-2021" speaker="Text Updated: Sept 2021" gender="Ready for Translation" rel_version="Housing_Winter_MTX_Pack_2021">A wreath that welcomes all to the holiday of Winter Convergence, a time of cheer and fear in Aeternum.</string>
 	<string key="house_housingitem_entitlement_winter2021_wreath_a_mastername" comment="MTX-Pack-04-Winter-2021" speaker="Text Updated: Sept 2021" gender="Ready for Translation" rel_version="Housing_Winter_MTX_Pack_2021">Convergence Wreath</string>
-	<string key="house_housingitem_pet_entitlement_deer_rednose_description" comment="MTX-Pack-04-Winter-2021" speaker="Text Updated: Sept 2021" gender="Ready for Translation" rel_version="Housing_Winter_MTX_Pack_2021">Complete with his own purple scarf to keep warm against the threat of Forever Winter. He loves to be pet on his warm, red nose.</string>
+	<string key="house_housingitem_pet_entitlement_deer_rednose_description" comment="MTX-Pack-04-Winter-2021" speaker="Text Updated: Sept 2021" gender="Ready for Translation" rel_version="Housing_Winter_MTX_Pack_2021">Complete with his own purple scarf to keep warm to threat of Forever Winter. He loves to be pet on his warm, red nose.</string>
 	<string key="house_housingitem_pet_entitlement_deer_rednose_mastername" comment="MTX-Pack-04-Winter-2021" speaker="Text Updated: Sept 2021" gender="Ready for Translation" rel_version="Housing_Winter_MTX_Pack_2021">Festive Deer</string>
 	<string key="house_housingitem_entitlement_lighting_lunarnewyear2022_hanginglantern01_description" comment="MTX-Pack-05-NewYears-2021" speaker="Text Updated: Nov 2021" gender="Ready for Translation" rel_version="Housing_LunarNewYear_MTX_Pack_2022">This isn't simply a single lantern. It is singularly the most perfect lantern to perfect your new year.</string>
 	<string key="house_housingitem_entitlement_lighting_lunarnewyear2022_hanginglantern01_mastername" comment="MTX-Pack-05-NewYears-2021" speaker="Text Updated: Nov 2021" gender="Ready for Translation" rel_version="Housing_LunarNewYear_MTX_Pack_2022">Lunar Hanging Lantern</string>
@@ -397,6 +397,8 @@
 	<string key="House_HousingItem_Rug_FishingNet_B_MasterName" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Fishnet Rug</string>
 	<string key="House_HousingItem_ScrollBookcase_Lg_Description" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Full of cubbies for all your paper, vellum, and papyrus. Clay tablets, too, if you're into the classics.</string>
 	<string key="House_HousingItem_ScrollBookcase_Lg_MasterName" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Rustic Wooden Scrollcase</string>
+	<string key="House_HousingItem_ShelfBottles01_description" comment="NA-Basic" speaker="Text Updated: Oct 2022" gender="Ready for Translation" rel_version="Housing_HolidayConv2022_Pack">Colorful bottles for any occasion and for any substance, from spices to poison. Just don't get them mixed up.</string>
+	<string key="House_HousingItem_ShelfBottles01_mastername" comment="NA-Basic" speaker="Text Updated: Oct 2022" gender="Ready for Translation" rel_version="Housing_HolidayConv2022_Pack">Assorted Bottles</string>
 	<string key="house_housingitem_singleshelf_a_description" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">The beauty is not in the shelf itself, but in the possibilities it contains.</string>
 	<string key="house_housingitem_singleshelf_a_mastername" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Rickety Wooden Wall Shelf</string>
 	<string key="House_HousingItem_SmallAlchemyCabinet_Description" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Perfect for a very organized person. A place for everything, and everything in its place.</string>
@@ -483,204 +485,175 @@ With two locks and steel banding, your stuff's not going anywhere.</string>
 	<string key="House_HousingItem_Writing_OpenBook_MasterName" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Open Book</string>
 	<string key="House_HousingItem_Writing_ScrollStack_A_Description" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">You were warned not to open these sealed documents until you receive the signal.</string>
 	<string key="House_HousingItem_Writing_ScrollStack_A_MasterName" comment="NA-Basic" speaker="Text Updated: June 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Sealed Scrolls</string>
-	<string key="House_HousingItem_Buff_Alchemy_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when making magical equipment. 
-Only works when placed in your home. 
-Grants a 3 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Arcana' profession.</string>
+	<string key="House_HousingItem_Buff_Alchemy_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3 to minimum Gear Score when crafting an item that requires Arcana.\n\nA trophy that inspires you a little bit when making magical equipment. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Alchemy_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Arcana Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Alchemy_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when making magical equipment. 
-Only works when placed in your home. 
-Grants a 4 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Arcana' profession.</string>
+	<string key="House_HousingItem_Buff_Alchemy_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4 to minimum Gear Score when crafting an item that requires Arcana.\n\nA trophy that inspires you when making magical equipment. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Alchemy_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Arcana Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Alchemy_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when making magical equipment. 
-Only works when placed in your home. 
-Grants a 5 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Arcana' profession.</string>
+	<string key="House_HousingItem_Buff_Alchemy_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5 to minimum Gear Score when crafting an item that requires Arcana.\n\nA trophy that inspires you a lot when making magical equipment. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Alchemy_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Arcana Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when making short-range melee weapons. 
-Only works when placed in your home. 
-Grants a 3 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Weaponsmithing' profession.</string>
+	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3 to minimum Gear Score when crafting an item that requires Weaponsmithing.\n\nA trophy that inspires you a little bit when making short-range melee weapons. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Weaponsmithing Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when making short-range melee weapons. 
-Only works when placed in your home. 
-Grants a 4 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Weaponsmithing' profession.</string>
+	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4 to minimum Gear Score when crafting an item that requires Weaponsmithing.\n\nA trophy that inspires you when making short-range melee weapons. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Weaponsmithing Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when making short-range melee weapons. 
-Only works when placed in your home. 
-Grants a 5 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Weaponsmithing' profession.</string>
+	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5 to minimum Gear Score when crafting an item that requires Weaponsmithing.\n\nA trophy that inspires you a lot when making short-range melee weapons. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Blacksmithing_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Weaponsmithing Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Cooking_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when making meals and extra portions. 
-Only works when placed in your home. 
-Grants a small chance to craft additional items when using crafting stations for your 'Cooking' profession.</string>
+	<string key="House_HousingItem_Buff_Cooking_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Small chance to craft additional items when Cooking.\n\nA trophy that inspires you a little bit when making meals and extra portions. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Cooking_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Cooking Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Cooking_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when making meals and extra portions. 
-Only works when placed in your home. 
-Grants a medium chance to craft additional items when using crafting stations for your 'Cooking' profession.</string>
+	<string key="House_HousingItem_Buff_Cooking_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Medium chance to craft additional items when Cooking.\n\nA trophy that inspires you when making meals and extra portions. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Cooking_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Cooking Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Cooking_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when making meals and extra portions. 
-Only works when placed in your home. 
-Grants a large chance to craft additional items when using crafting stations for your 'Cooking' profession.</string>
+	<string key="House_HousingItem_Buff_Cooking_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Large chance to craft additional items when Cooking.\n\nA trophy that inspires you a lot when making meals and extra portions. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Cooking_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Cooking Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 3% bonus to damage when fighting against 'The Ancients' and their skeletal creations.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T0_MasterName" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">Bloodied Ancient Combat Trophy</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T0_Description" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">+3% damage to Ancients.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3% damage to Ancients.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Ancients Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 4% bonus to damage when fighting against 'The Ancients' and their skeletal creations.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4% damage to Ancients.\n\nA trophy that inspires you when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Ancients Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 5% bonus to damage when fighting against 'The Ancients' and their skeletal creations.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5% damage to Ancients.\n\nA trophy that inspires you a lot when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Ancients_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Ancients Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 3% bonus to damage when fighting against the 'Angry Earth' and their forces of nature.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3% damage to Angry Earth.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Angry Earth Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 4% bonus to damage when fighting against the 'Angry Earth' and their forces of nature.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4% damage to Angry Earth.\n\nA trophy that inspires you when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Angry Earth Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 5% bonus to damage when fighting against the 'Angry Earth' and their forces of nature.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5% damage to Angry Earth.\n\nA trophy that inspires you a lot when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_AngryEarth_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Angry Earth Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 3% bonus to damage when hunting the wildlife of the island.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T0_MasterName" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">Bloodied Beast Combat Trophy</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T0_Description" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">+3% damage to Beasts.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3% damage to Beasts.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Wildlife Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 4% bonus to damage when hunting the wildlife of the island.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4% damage to Beasts.\n\nA trophy that inspires you when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Wildlife Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 5% bonus to damage when hunting the wildlife of the island.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5% damage to Beasts.\n\nA trophy that inspires you a lot when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Beasts_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Wildlife Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 3% bonus to damage when fighting against the 'Corrupted' and their zealot armies.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T0_MasterName" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">Bloodied Corrupted Combat Trophy</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T0_Description" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">+3% damage to Corrupted.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3% damage to Corrupted.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Corrupted Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 4% bonus to damage when fighting against the 'Corrupted' and their zealot armies.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4% damage to Corrupted.\n\nA trophy that inspires you when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Corrupted Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 5% bonus to damage when fighting against the 'Corrupted' and their zealot armies.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5% damage to Corrupted.\n\nA trophy that inspires you a lot when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Corrupted_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Corrupted Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 3% bonus to damage when fighting against 'The Lost' and their decaying and spectral hordes.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T0_MasterName" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">Bloodied Lost Combat Trophy</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T0_Description" comment="NA-Buffs" speaker="Text Updated: Feb 2023" gender="Ready for Translation" rel_version="Season_1_Perm">+3% damage to Lost.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3% damage to Lost.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Lost Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 4% bonus to damage when fighting against 'The Lost' and their decaying and spectral hordes.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4% damage to Lost.\n\nA trophy that inspires you when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Lost Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when battling certain enemies. 
-Only works when placed in your home. 
-Grants a 5% bonus to damage when fighting against 'The Lost' and their decaying and spectral hordes.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5% damage to Lost.\n\nA trophy that inspires you a lot when battling certain enemies. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Damage_Vs_Lost_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Lost Combat Trophy</string>
-	<string key="House_HousingItem_Buff_Engineering_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when making ranged weapons. 
-Only works when placed in your home. 
-Grants a 3 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Engineering' profession.</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Varangian_T1_Description" comment="NA-Buffs" speaker="Text Updated: Nov 2022" gender="Ready for Translation" rel_version="Housing_Varangian_BuffTrophies">PvE Only: +3% damage to Humans.\n\nA trophy that inspires you a little bit when battling certain enemies. Only works when placed in your home. 
+</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Varangian_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: Nov 2022" gender="Ready for Translation" rel_version="Housing_Varangian_BuffTrophies">Minor Human Combat Trophy</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Varangian_T2_Description" comment="NA-Buffs" speaker="Text Updated: Nov 2022" gender="Ready for Translation" rel_version="Housing_Varangian_BuffTrophies">PvE Only: +4% damage to Humans.\n\nA trophy that inspires you when battling certain enemies. Only works when placed in your home. 
+</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Varangian_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: Nov 2022" gender="Ready for Translation" rel_version="Housing_Varangian_BuffTrophies">Basic Human Combat Trophy</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Varangian_T3_Description" comment="NA-Buffs" speaker="Text Updated: Nov 2022" gender="Ready for Translation" rel_version="Housing_Varangian_BuffTrophies">PvE Only: +5% damage to Humans.\n\nA trophy that inspires you a lot when battling certain enemies. Only works when placed in your home. 
+</string>
+	<string key="House_HousingItem_Buff_Damage_Vs_Varangian_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: Nov 2022" gender="Ready for Translation" rel_version="Housing_Varangian_BuffTrophies">Major Human Combat Trophy</string>
+	<string key="House_HousingItem_Buff_Engineering_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3 to minimum Gear Score when crafting an item that requires Engineering.\n\nA trophy that inspires you a little bit when making ranged weapons. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Engineering_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Engineering Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Engineering_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when making ranged weapons. 
-Only works when placed in your home. 
-Grants a 4 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Engineering' profession.</string>
+	<string key="House_HousingItem_Buff_Engineering_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4 to minimum Gear Score when crafting an item that requires Engineering.\n\nA trophy that inspires you when making ranged weapons. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Engineering_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Engineering Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Engineering_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when making ranged weapons. 
-Only works when placed in your home. 
-Grants a 5 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Engineering' profession.</string>
+	<string key="House_HousingItem_Buff_Engineering_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5 to minimum Gear Score when crafting an item that requires Engineering.\n\nA trophy that inspires you a lot when making ranged weapons. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Engineering_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Engineering Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Fishing_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when angling for various aquatic creatures. 
-Only works when placed in your home. 
-Grants +2500 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Fishing_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+2500 Fishing Luck.\n\nA trophy that inspires you a little bit when angling for various aquatic creatures. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Fishing Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Fishing_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when angling for various aquatic creatures. 
-Only works when placed in your home. 
-Grants +3500 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Fishing_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3500 Fishing Luck.\n\nA trophy that inspires you when angling for various aquatic creatures. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Fishing Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Fishing_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when angling for various aquatic creatures. 
-Only works when placed in your home. 
-Grants +5000 Fishing Luck when using a 'Fishing Pole' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Fishing_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5000 Fishing Luck.\n\nA trophy that inspires you a lot when angling for various aquatic creatures. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Fishing_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Fishing Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Harvesting_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when reaping various plants. 
-Only works when placed in your home. 
-Grants +500 Harvesting Luck when using a 'Harvesting Sickle' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Harvesting_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+500 Harvesting Luck.\n\nA trophy that inspires you a little bit when reaping various plants. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Harvesting_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Harvesting Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Harvesting_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when reaping various plants. 
-Only works when placed in your home. 
-Grants +1000 Harvesting Luck when using a 'Harvesting Sickle' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Harvesting_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1000 Harvesting Luck.\n\nA trophy that inspires you when reaping various plants. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Harvesting_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Harvesting Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Harvesting_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when reaping various plants. 
-Only works when placed in your home. 
-Grants +1500 Harvesting Luck when using a 'Harvesting Sickle' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Harvesting_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1500 Harvesting Luck.\n\nA trophy that inspires you a lot when reaping various plants. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Harvesting_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Harvesting Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Logging_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when felling various trees. 
-Only works when placed in your home. 
-Grants +500 Logging Luck when using a 'Logging Axe' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Logging_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+500 Logging Luck.\n\nA trophy that inspires you a little bit when felling various trees. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Logging_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Logging Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Logging_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when felling various trees. 
-Only works when placed in your home. 
-Grants +1000 Logging Luck when using a 'Logging Axe' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Logging_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1000 Logging Luck.\n\nA trophy that inspires you when felling various trees. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Logging_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Logging Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Logging_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when felling various trees. 
-Only works when placed in your home. 
-Grants +1500 Logging Luck when using a 'Logging Axe' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Logging_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1500 Logging Luck.\n\nA trophy that inspires you a lot when felling various trees. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Logging_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Logging Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Luck_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when collecting the spoils of combat. 
-Only works when placed in your home. 
-Grants a *small bonus* to your luck when picking up loot and opening chests.</string>
+	<string key="House_HousingItem_Buff_Luck_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Small bonus to Luck when picking up loot and opening chests.\n\nA trophy that inspires you a little bit when collecting the spoils of combat. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Luck_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Loot Luck Trophy</string>
-	<string key="House_HousingItem_Buff_Luck_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when collecting the spoils of combat. 
-Only works when placed in your home. 
-Grants a *medium bonus* to your luck when picking up loot and opening chests.</string>
+	<string key="House_HousingItem_Buff_Luck_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Medium bonus to Luck when picking up loot and opening chests.\n\nA trophy that inspires you when collecting the spoils of combat. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Luck_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Loot Luck Trophy</string>
-	<string key="House_HousingItem_Buff_Luck_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when collecting the spoils of combat. 
-Only works when placed in your home. 
-Grants a *large bonus* to your luck when picking up loot and opening chests.</string>
+	<string key="House_HousingItem_Buff_Luck_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Large bonus to Luck when picking up loot and opening chests.\n\nA trophy that inspires you a lot when collecting the spoils of combat. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Luck_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Loot Luck Trophy</string>
-	<string key="House_HousingItem_Buff_Mining_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when excavating for various ore. 
-Only works when placed in your home. 
-Grants +500 Mining Luck when using a 'Mining Pick' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Mining_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+500 Mining Luck.\n\nA trophy that inspires you a little bit when excavating for various ore. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Mining_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Mining Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Mining_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when excavating for various ore. 
-Only works when placed in your home. 
-Grants +1000 Mining Luck when using a 'Mining Pick' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Mining_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1000 Mining Luck.\n\nA trophy that inspires you when excavating for various ore. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Mining_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Mining Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Mining_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when excavating for various ore. 
-Only works when placed in your home. 
-Grants +1500 Mining Luck when using a 'Mining Pick' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Mining_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1500 Mining Luck.\n\nA trophy that inspires you a lot when excavating for various ore. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Mining_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Mining Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Outfitting_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when making various types of armor and bags. 
-Only works when placed in your home. Grants a 3 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Armoring' profession.</string>
+	<string key="House_HousingItem_Buff_Outfitting_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+3 to minimum Gear Score when crafting an item that requires Armoring.\n\nA trophy that inspires you a little bit when making various types of armor and bags. Only works when placed in your home. </string>
 	<string key="House_HousingItem_Buff_Outfitting_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Armoring Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Outfitting_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when making various types of armor and bags. 
-Only works when placed in your home. 
-Grants a 4 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Armoring' profession.</string>
+	<string key="House_HousingItem_Buff_Outfitting_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+4 to minimum Gear Score when crafting an item that requires Armoring.\n\nA trophy that inspires you when making various types of armor and bags. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Outfitting_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Armoring Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Outfitting_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when making various types of armor and bags. 
-Only works when placed in your home. 
-Grants a 5 Gearscore bonus to the minimum gearscore of the item when using crafting stations for your 'Armoring' profession.</string>
+	<string key="House_HousingItem_Buff_Outfitting_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+5 to minimum Gear Score when crafting an item that requires Armoring.\n\nA trophy that inspires you a lot when making various types of armor and bags. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Outfitting_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Armoring Crafting Trophy</string>
-	<string key="House_HousingItem_Buff_Skinning_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a little bit when flaying pelts and hides. 
-Only works when placed in your home. 
-Grants +500 Skinning Luck when using a 'Skinning Knife' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Skinning_Bonus_T1_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+500 Skinning Luck.\n\nA trophy that inspires you a little bit when flaying pelts and hides. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Skinning_Bonus_T1_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Minor Skinning Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Skinning_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you when flaying pelts and hides. 
-Only works when placed in your home. 
-Grants +1000 Skinning Luck when using a 'Skinning Knife' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Skinning_Bonus_T2_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1000 Skinning Luck.\n\nA trophy that inspires you when flaying pelts and hides. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Skinning_Bonus_T2_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Basic Skinning Gathering Trophy</string>
-	<string key="House_HousingItem_Buff_Skinning_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">A trophy that inspires you a lot when flaying pelts and hides. 
-Only works when placed in your home. 
-Grants +1500 Skinning Luck when using a 'Skinning Knife' in the wilderness.</string>
+	<string key="House_HousingItem_Buff_Skinning_Bonus_T3_Description" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">+1500 Skinning Luck.\n\nA trophy that inspires you a lot when flaying pelts and hides. Only works when placed in your home. 
+</string>
 	<string key="House_HousingItem_Buff_Skinning_Bonus_T3_MasterName" comment="NA-Buffs" speaker="Text Updated: March 2021" gender="Ready for Translation" rel_version="Housing_Basic_Launch_Set">Major Skinning Gathering Trophy</string>
-	<string key="house_housingitem_buff_special_fishing_asturgeon_t1_description" comment="NA-Buffs" speaker="Text Updated: April 2022" gender="Ready for Translation" rel_version="Event_Summer_Perm">A trophy of the elusive Aeternum Sturgeon. It inspires you when fishing in various bodies of water. 
-Only works when placed in your home. 
-Grants +10% Fishing Experience when using a 'Fishing Pole' in the wilderness.</string>
+	<string key="house_housingitem_buff_special_fishing_asturgeon_t1_description" comment="NA-Buffs" speaker="Text Updated: April 2022" gender="Ready for Translation" rel_version="Event_Summer_Perm">+10% Fishing Experience.\n\nA trophy of the elusive Aeternum Sturgeon. It inspires you when fishing in various bodies of water. Only works when placed in your home. 
+</string>
 	<string key="house_housingitem_buff_special_fishing_asturgeon_t1_mastername" comment="NA-Buffs" speaker="Text Updated: April 2022" gender="Ready for Translation" rel_version="Event_Summer_Perm">Special Aeternum Sturgeon Fishing Trophy</string>
-	<string key="house_housingitem_buff_special_food_turkeyterror_t1_description" comment="NA-Buffs" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Event_TurkeyTerror_Perm">A trophy obtained from the mighty Turkulon, Feathered Avenger of Death. It inspires you when you eat a meal. 
-Only works when placed in your home. 
-Grants +25% Food Buff Time when you eat beneficial food.</string>
+	<string key="house_housingitem_buff_special_food_turkeyterror_t1_description" comment="NA-Buffs" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Event_TurkeyTerror_Perm">+25% Food Buff duration.\n\nA trophy obtained from the mighty Turkulon, Feathered Avenger of Death. It inspires you when you eat a meal. Only works when placed in your home. 
+</string>
 	<string key="house_housingitem_buff_special_food_turkeyterror_t1_mastername" comment="NA-Buffs" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Event_TurkeyTerror_Perm">Feast-o-Plenty Food Trophy</string>
 	<string key="house_housingitem_explorevista_painting_eastbrimstone01_description" comment="NA-Other" speaker="Text Updated: June 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Built by the 19th Legion long ago, the now ruined aqueduct is teeming with wildlife, and treasure is rumored to be found amongst the treacherous rubble.</string>
 	<string key="house_housingitem_explorevista_painting_eastbrimstone01_mastername" comment="NA-Other" speaker="Text Updated: June 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Scenic Painting of Lycopolis</string>
@@ -2029,7 +2002,7 @@ Such fine craftsmanship, and a style rarely seen.</string>
 	<string key="house_housingitem_lighting_legion_lightfloor01_a_mastername" comment="Set-04-Legion" speaker="Text Updated: Jan 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Yellow Brass Tall Oil Lamp</string>
 	<string key="house_housingitem_lighting_legion_lightfloor01_b_description" comment="Set-04-Legion" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Comes with a handy pull-chain to quickly extinguish or ignite the oil.</string>
 	<string key="house_housingitem_lighting_legion_lightfloor01_b_mastername" comment="Set-04-Legion" speaker="Text Updated: Jan 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Burnt Copper Tall Oil Lamp</string>
-	<string key="house_housingitem_lighting_legion_lightfloor01_c_description" comment="Set-04-Legion" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Bring the blue flames of the Ancient Guardians to the comfort of your home. Afterall, someone of your stature deserves it.</string>
+	<string key="house_housingitem_lighting_legion_lightfloor01_c_description" comment="Set-04-Legion" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Bring the blue flames of the Ancient Guardians to the comfort of your home. After all, someone of your stature deserves it.</string>
 	<string key="house_housingitem_lighting_legion_lightfloor01_c_mastername" comment="Set-04-Legion" speaker="Text Updated: Jan 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Deep Silver Tall Oil Lamp</string>
 	<string key="house_housingitem_lighting_legion_lightfloor01_d_description" comment="Set-04-Legion" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">A special copper powder mixed in the oil burns green, and makes for an amusing conversation starter with this lamp.</string>
 	<string key="house_housingitem_lighting_legion_lightfloor01_d_mastername" comment="Set-04-Legion" speaker="Text Updated: Jan 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Light Pewter Tall Oil Lamp</string>
@@ -2102,7 +2075,5 @@ This is the most solid and sturdy chest you have ever seen.</string>
 	<string key="house_housingitem_table_legion_table02_c_mastername" comment="Set-04-Legion" speaker="Text Updated: Jan 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Walnut Wood Small Table</string>
 	<string key="house_housingitem_table_legion_table02_d_description" comment="Set-04-Legion" speaker="Text Updated: Aug 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">The sight of this olive wood table fills you with a nostalgia for home you will never be able to quench.</string>
 	<string key="house_housingitem_table_legion_table02_d_mastername" comment="Set-04-Legion" speaker="Text Updated: Jan 2022" gender="Ready for Translation" rel_version="Housing_Legion_Set">Olive Wood Small Table</string>
-	<string key="House_HousingItem_ShelfBottles01_description" comment="NA-Basic" speaker="Text Updated: Oct 2022" gender="Ready for Translation" rel_version="Housing_HolidayConv2022_Pack">Colorful bottles for any occasion and for any substance, from spices to poison. Just don't get them mixed up.</string>
-	<string key="House_HousingItem_ShelfBottles01_mastername" comment="NA-Basic" speaker="Text Updated: Oct 2022" gender="Ready for Translation" rel_version="Housing_HolidayConv2022_Pack">Assorted Bottles</string>
 </resources>
 
