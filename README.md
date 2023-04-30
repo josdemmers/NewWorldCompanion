@@ -120,8 +120,10 @@ MIT
 
 ## Community
 
+### The Hidden Gaming Lair
+
 - [Discord](https://discord.gg/NTZu8Px)
-- [The Hidden Gaming Lair](https://www.th.gl/)
+- [www](https://www.th.gl/)
 
 ## Mentions
 
