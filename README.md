@@ -118,6 +118,13 @@ MIT
 - [Prism](https://github.com/PrismLibrary/Prism)
 - [TesserNet](https://github.com/CptWesley/TesserNet)
 
+## Community
+
+### The Hidden Gaming Lair
+
+- [Discord](https://discord.gg/NTZu8Px)
+- [www](https://www.th.gl/)
+
 ## Mentions
 
 The available price data is from: https://nwmarketprices.com/
