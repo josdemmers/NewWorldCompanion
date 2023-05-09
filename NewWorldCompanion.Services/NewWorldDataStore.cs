@@ -619,18 +619,18 @@ namespace NewWorldCompanion.Services
             {
                 return false;
             }
-            else
+            else if(localisationIds.Count() > 1)
             {
                 _logger.LogWarning($"Item: {itemName} is not unique. There are {localisationIds.Count()} entries found");
             }
 
             // Check all similar named items. If one of them is not "named" return false. 
-            // Workaround need for weapon and resource that both share the name "Flint".
+            // Workaround needed for weapon and resource that both share the name "Flint".
             bool uniqueNamedItem = true;
             foreach (var localisationId in localisationIds)
             {
                 var item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId.Key}", StringComparison.OrdinalIgnoreCase));
-                if (!item.ItemClass.Contains("Named"))
+                if (!item?.ItemClass.Contains("Named") ?? true)
                 {
                     uniqueNamedItem = false;
                 }
@@ -638,7 +638,7 @@ namespace NewWorldCompanion.Services
             return uniqueNamedItem;
         }
 
-        public string GetItemId(string itemName)//
+        public string GetItemId(string itemName)
         {
             var localisationId = _itemDefinitionsLocalisation.FirstOrDefault(x => x.Value.Replace("\\n", " ").Equals(itemName, StringComparison.OrdinalIgnoreCase)).Key;
             MasterItemDefinitionsJson? item = _masterItemDefinitionsJson.FirstOrDefault(i => i.Name.Equals($"@{localisationId}", StringComparison.OrdinalIgnoreCase));
