@@ -148,15 +148,13 @@ namespace NewWorldCompanion.ViewModels
 
         private void LaunchKofiExecute()
         {
+            try
             {
-                try
-                {
-                    Process.Start(new ProcessStartInfo("https://ko-fi.com/josdemmers") { UseShellExecute = true });
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
-                }
+                Process.Start(new ProcessStartInfo("https://ko-fi.com/josdemmers") { UseShellExecute = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
             }
         }
 
