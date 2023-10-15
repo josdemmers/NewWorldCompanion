@@ -88,7 +88,12 @@ namespace NewWorldCompanion.Services
                 {
                     var serverId = ((JsonElement)server[0]).GetInt32();
                     var serverName = ((JsonElement)server[1]).GetString() ?? string.Empty;
-                    var updated = ((JsonElement)server[2]).GetDateTime();
+                    var updated = default(DateTime);
+                    var updatedObj = server[2];
+                    if (updatedObj != null)
+                    {
+                        updated = ((JsonElement)updatedObj).GetDateTime();
+                    }
 
                     _servers.Add(new PriceServer()
                     {

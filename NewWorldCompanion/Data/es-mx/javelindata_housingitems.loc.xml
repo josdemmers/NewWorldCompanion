@@ -672,7 +672,7 @@
 	<string key="house_housingitem_explorevista_painting_northebonscale01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">No hay muchos lugares donde puedas estar en paz en Ebonscale Reach.</string>
 	<string key="house_housingitem_explorevista_painting_northebonscale01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco de la Laguna de Canto celestial</string>
 	<string key="house_housingitem_explorevista_painting_northfirstlight01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Aún desde la lejana Bahía Las Torres, puedes sentir el aroma de la comida de Giroux, el jefe de cocina.</string>
-	<string key="house_housingitem_explorevista_painting_northfirstlight01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco de Northfork y el Risco Rattlevine</string>
+	<string key="house_housingitem_explorevista_painting_northfirstlight01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco del viejo Northfork</string>
 	<string key="house_housingitem_explorevista_painting_northmonarchs01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Mantenerte a una distancia prudencial de los guardianes fue una buena decisión.</string>
 	<string key="house_housingitem_explorevista_painting_northmonarchs01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco de Antares</string>
 	<string key="house_housingitem_explorevista_painting_northreekwater01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Definitivamente es un paisaje raro; deberías estar orgulloso de esta obra maestra.</string>
@@ -690,7 +690,7 @@
 	<string key="house_housingitem_explorevista_painting_southebonscale01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Qué bueno que los guardias imperiales no te detuvieron antes de que plasmaras esto en un lienzo.</string>
 	<string key="house_housingitem_explorevista_painting_southebonscale01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco del Palacio Imperial</string>
 	<string key="house_housingitem_explorevista_painting_southfirstlight01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Los restos de una civilización antiguamente grandiosa. ¿Qué habrá causado su ruina?</string>
-	<string key="house_housingitem_explorevista_painting_southfirstlight01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco de Elder's Bluff</string>
+	<string key="house_housingitem_explorevista_painting_southfirstlight01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco del viejo Elder's Bluff</string>
 	<string key="house_housingitem_explorevista_painting_southmonarchs01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">La costa atrapa muchos barcos con sus peñascos, que sobresalen como dagas listas para atravesar el próximo casco.</string>
 	<string key="house_housingitem_explorevista_painting_southmonarchs01_mastername" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">Cuadro pintoresco de Ancla del hombre muerto</string>
 	<string key="house_housingitem_explorevista_painting_southmourningdale01_description" comment="NA-Other" speaker="Text Updated: Dec 2021" gender="Ready for Translation" rel_version="Feature_RewardingExploration">El agua de lluvia proveniente del norte seguirá inundándolas hasta el fin de los tiempos.</string>
@@ -2093,5 +2093,37 @@
 	<string key="House_HousingItem_Season2_PVP_RewardTrack_Dropper_description" comment="PvPRewardsTrack-Season2-2023" gender="Ready for Translation" rel_version="PvPRewardsTrack_Update">Recrea tus recuerdos favoritos con esta réplica de un arma de asedio. Pero recuerda que es solo una réplica: no ganarás ninguna guerra con esto.</string>
 	<string key="House_HousingItem_Season2_PVP_RewardTrack_Ballista_mastername" comment="PvPRewardsTrack-Season2-2023" gender="Ready for Translation" rel_version="PvPRewardsTrack_Update">Réplica de ballesta de asedio</string>
 	<string key="House_HousingItem_Season2_PVP_RewardTrack_Ballista_description" comment="PvPRewardsTrack-Season2-2023" gender="Ready for Translation" rel_version="PvPRewardsTrack_Update">Recrea tus recuerdos favoritos con esta réplica de un arma de asedio. Pero recuerda que es solo una réplica: no ganarás ninguna guerra con esto.</string>
+	<string key="House_HousingItem_QuestRewardGC_Lighting_MemoryOfFallen_mastername" comment="Quest Reward" rel_version="Quest_MSQ2_GreatCleave">Recuerdo de los caídos</string>
+	<string key="House_HousingItem_QuestRewardGC_Lighting_MemoryOfFallen_description" comment="Quest Reward" rel_version="Quest_MSQ2_GreatCleave">No es mucho, pero es todo lo que queda. Que sirva para honrar su memoria.</string>
+	<string key="House_HousingItem_ElysianWilds_MinotaurThrone_mastername" rel_version="Feature_Expansion_1">Trono del minotauro</string>
+	<string key="House_HousingItem_ElysianWilds_MinotaurThrone_description" rel_version="Feature_Expansion_1">Aunque no lo iguales en tamaño, definitivamente lo igualas en poder.</string>
+	<string key="House_HousingItem_ElysianWilds_BananaPile_mastername" rel_version="Feature_Expansion_1">Pila de bananas</string>
+	<string key="House_HousingItem_ElysianWilds_BananaPile_description" rel_version="Feature_Expansion_1">Esta cantidad de bananas es… ridícula.</string>
+	<string key="House_HousingItem_ElysianWilds_BeastNest_mastername" rel_version="Feature_Expansion_1">Nido de la bestia</string>
+	<string key="House_HousingItem_ElysianWilds_BeastNest_description" rel_version="Feature_Expansion_1">El lugar de descanso preferido de aves terrestres y marineros abandonados.</string>
+	<string key="House_HousingItem_ElysianWilds_JungleVines_mastername" rel_version="Feature_Expansion_1">Vides selváticas colgantes</string>
+	<string key="House_HousingItem_ElysianWilds_JungleVines_description" rel_version="Feature_Expansion_1">No son tan fuertes como para columpiarse, pero eso no significa que no puedas intentarlo.</string>
+	<string key="House_HousingItem_ElysianWilds_FortBanner_mastername" rel_version="Feature_Expansion_1">Estandarte andrajoso</string>
+	<string key="House_HousingItem_ElysianWilds_FortBanner_description" rel_version="Feature_Expansion_1">Aunque está viejo y raído, conserva intacto algo de su orgullo original.</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_AnubianBrute_mastername" rel_version="Feature_Expansion_1">Estatua de bruto anubino</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_AnubianBrute_description" rel_version="Feature_Expansion_1">Casi puedes sentir el paso trémulo de su imponente figura.</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_LostArcher_mastername" rel_version="Feature_Expansion_1">Estatua de un arquero perdido</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_LostArcher_description" rel_version="Feature_Expansion_1">Aunque es imposible que se mueva, es preferible no pararse frente a ella, por si acaso.</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_LostAxeman_mastername" rel_version="Feature_Expansion_1">Estatua de un hachero perdido</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_LostAxeman_description" rel_version="Feature_Expansion_1">Aunque es imposible que se mueva, es preferible no pararse frente a ella, por si acaso.</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_BeastWolf_mastername" rel_version="Feature_Expansion_1">Estatua de un lobo alfa</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_BeastWolf_description" rel_version="Feature_Expansion_1">Aunque es solo piedra, la bestia parece a punto de saltar en cualquier momento.</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_LegionSettler_mastername" rel_version="Feature_Expansion_1">Estatua de espadachín incitante</string>
+	<string key="House_HousingItem_ElysianWilds_Statue_LegionSettler_description" rel_version="Feature_Expansion_1">El grito apasionado de este guerrero olvidado resuena silencioso en los anales del tiempo.</string>
+	<string key="House_HousingItem_ElysianWilds_MonsteraFoliage_mastername" rel_version="Feature_Expansion_1">Follaje de monstera</string>
+	<string key="House_HousingItem_ElysianWilds_MonsteraFoliage_description" rel_version="Feature_Expansion_1">A pesar de su nombre, no es monstruosa. Probablemente.</string>
+	<string key="House_HousingItem_ElysianWilds_ChameleonCordata_mastername" rel_version="Feature_Expansion_1">Cordata camaleón protuberante</string>
+	<string key="House_HousingItem_ElysianWilds_ChameleonCordata_description" rel_version="Feature_Expansion_1">Esta cordata vertical está cubierta de hongos bioluminiscentes. </string>
+	<string key="House_HousingItem_ElysianWilds_CorpusLily_mastername" rel_version="Feature_Expansion_1">Azucena letal gigante</string>
+	<string key="House_HousingItem_ElysianWilds_CorpusLily_description" rel_version="Feature_Expansion_1">Estas azucenas gigantescas son tan hermosas como reconfortantes. Su polen es un potente relajante que hacer caer animales pequeños y otras presas en sus estrechos pozos de ácido.</string>
+	<string key="House_HousingItem_ElysianWilds_DragonTail_mastername" rel_version="Feature_Expansion_1">Tuya cola de dragón</string>
+	<string key="House_HousingItem_ElysianWilds_DragonTail_description" rel_version="Feature_Expansion_1">Las leyendas cuentan que, como los dragones jóvenes son muy tímidos, se esconden debajo la tierra y solo dejan ver sus colas.</string>
+	<string key="House_HousingItem_ElysianWilds_TuftedTailBush_mastername" rel_version="Feature_Expansion_1">Arbusto de cola copetuda</string>
+	<string key="House_HousingItem_ElysianWilds_TuftedTailBush_description" rel_version="Feature_Expansion_1">El plumón de esta planta se usa mucho como sustituto de las pieles y plumas de los animales. También se dice que trae buena suerte.</string>
 </resources>
 
