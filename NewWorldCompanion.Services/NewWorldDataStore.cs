@@ -257,15 +257,17 @@ namespace NewWorldCompanion.Services
                     _masterItemDefinitionsJson.AddRange(masterItemDefinitionsJson);
                 }
             }
-
+            
             _loadStatusItemDefinitions = $"ItemDefinitions: {_masterItemDefinitionsJson.Count}";
             _loadStatusCraftingRecipes = $"CraftingRecipes: 0. Loading recipes";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
             Thread.Sleep(50);
 
-            // CraftingRecipe Json
             _craftingRecipesJson.Clear();
-            resourcePath = @".\Data\CraftingRecipes.json";
+
+            // CraftingRecipe Json (CraftingRecipesArcana)
+            var craftingRecipesJson = new List<CraftingRecipeJson>();
+            resourcePath = @".\Data\CraftingRecipesArcana.json";
             using (FileStream? stream = File.OpenRead(resourcePath))
             {
                 if (stream != null)
@@ -279,10 +281,250 @@ namespace NewWorldCompanion.Services
                     options.Converters.Add(new BoolConverter());
                     options.Converters.Add(new IntConverter());
 
-                    _craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
                 }
             }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Arcana";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
 
+            // CraftingRecipe Json (CraftingRecipesArmorer)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesArmorer.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Armorer";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesCooking)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesCooking.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Cooking";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesDungeon)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesDungeon.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Dungeon";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesEngineer)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesEngineer.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Engineer";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesGypKilm)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesGypKilm.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading GypKilm";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesJeweler)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesJeweler.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Jeweler";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesMisc)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesMisc.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Misc";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesRefining)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesRefining.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Refining";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesSeasons)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesSeasons.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
+            _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}. Loading Seasons";
+            _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();
+            Thread.Sleep(50);
+
+            // CraftingRecipe Json (CraftingRecipesWeapon)
+            craftingRecipesJson.Clear();
+            resourcePath = @".\Data\CraftingRecipesWeapon.json";
+            using (FileStream? stream = File.OpenRead(resourcePath))
+            {
+                if (stream != null)
+                {
+                    // create the options
+                    var options = new JsonSerializerOptions()
+                    {
+                        WriteIndented = true
+                    };
+                    // register the converter
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new IntConverter());
+
+                    craftingRecipesJson = JsonSerializer.Deserialize<List<CraftingRecipeJson>>(stream, options) ?? new List<CraftingRecipeJson>();
+                    _craftingRecipesJson.AddRange(craftingRecipesJson);
+                }
+            }
             _loadStatusCraftingRecipes = $"CraftingRecipes: {_craftingRecipesJson.Count}";
             _loadStatusHouseItems = $"HouseItems: 0. Loading items";
             _eventAggregator.GetEvent<NewWorldDataStoreStatusUpdated>().Publish();

@@ -38,7 +38,8 @@ namespace NewWorldCompanion.Services
             _client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue
             {
                 NoCache = true
-            };          
+            };
+            _client.DefaultRequestHeaders.Add("User-Agent", "NewWorldCompanion");
             _client.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
         }
 
