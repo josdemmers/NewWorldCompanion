@@ -61,7 +61,7 @@ namespace NewWorldCompanion.Services
 
         #region Properties
 
-        public int ServerId { get => _settingsManager.Settings.PriceServerId; }
+        public string ServerId { get => _settingsManager.Settings.PriceServerIdNwm; }
         public List<PriceServer> Servers { get => _servers; set => _servers = value; }
 
         #endregion
@@ -80,20 +80,19 @@ namespace NewWorldCompanion.Services
         {
             try
             {
-                string json = await _httpClientHandler.GetRequest("https://nwmarketprices.com/api/servers_updated/") ?? string.Empty;
-                var servers = JsonSerializer.Deserialize<UpdatedServers>(json);
+                string json = await _httpClientHandler.GetRequest("https://nwmpapi.gaming.tools/servers") ?? "{}";
+                var options = new JsonSerializerOptions();
+                options.Converters.Add(new BoolConverter());
+                options.Converters.Add(new DoubleConverter());
+                options.Converters.Add(new IntConverter());
+                var servers = JsonSerializer.Deserialize<List<ServerInfo>>(json, options);
 
                 _servers.Clear();
-                foreach (var server in servers?.ServersLastUpdated ?? new List<List<object>>())
+                foreach (var server in servers ?? new List<ServerInfo>())
                 {
-                    var serverId = ((JsonElement)server[0]).GetInt32();
-                    var serverName = ((JsonElement)server[1]).GetString() ?? string.Empty;
-                    var updated = default(DateTime);
-                    var updatedObj = server[2];
-                    if (updatedObj != null)
-                    {
-                        updated = ((JsonElement)updatedObj).GetDateTime();
-                    }
+                    var serverId = server.Id;
+                    var serverName = server.Name;
+                    var updated = UnixTimeStamp.UnixTimeStampToDateTime(server.LastUpdated);
 
                     _servers.Add(new PriceServer()
                     {
@@ -120,7 +119,7 @@ namespace NewWorldCompanion.Services
 
         public NwmarketpriceJson GetPriceData(string itemName)
         {
-            var nwmarketpriceJson = new NwmarketpriceJson();            
+            var nwmarketpriceJson = new NwmarketpriceJson();
             return _priceCache.GetValueOrDefault(itemName, nwmarketpriceJson); ;
         }
 
@@ -256,7 +255,7 @@ namespace NewWorldCompanion.Services
             if (!_priceCache.ContainsKey(itemName))
             {
                 if (!_priceRequestQueue.Contains(itemName)) _priceRequestQueue.Add(itemName);
-                lock(priceRequestLock)
+                lock (priceRequestLock)
                 {
                     if (!_priceRequestQueueBusy)
                     {
@@ -269,8 +268,11 @@ namespace NewWorldCompanion.Services
                             {
                                 try
                                 {
-                                    string uri = $"https://nwmarketprices.com/0/{ServerId}?cn_id={itemId.ToLower()}";
-                                    string json = await _httpClientHandler.GetRequest(uri);
+                                    // TODO Update with https://nwmp.gaming.tools/ API.
+                                    //string uri = $"https://nwmarketprices.com/0/{ServerId}?cn_id={itemId.ToLower()}";
+                                    //string json = await _httpClientHandler.GetRequest(uri);
+                                    string uri = string.Empty;
+                                    string json = string.Empty;
 
                                     Debug.WriteLine($"uri: {uri}");
                                     Debug.WriteLine($"json: {json}");
@@ -334,8 +336,31 @@ namespace NewWorldCompanion.Services
 
         private class UpdatedServers
         {
-            [JsonPropertyName("server_last_updated")]
             public List<List<object>> ServersLastUpdated { get; set; } = new List<List<object>> { };
+        }
+
+        private class ServerInfo
+        {
+            [JsonPropertyName("id")]
+            public string Id { get; set; } = string.Empty;
+
+            [JsonPropertyName("name")]
+            public string Name { get; set; } = string.Empty;
+
+            [JsonPropertyName("type")]
+            public string Type { get; set; } = string.Empty;
+
+            [JsonPropertyName("region")]
+            public string Region { get; set; } = string.Empty;
+
+            [JsonPropertyName("last_updated")]
+            public double LastUpdated { get; set; } = 0;
+
+            [JsonPropertyName("json_url")]
+            public string JsonUrl { get; set; } = string.Empty;
+
+            [JsonPropertyName("tsv_url")]
+            public string TsvUrl{ get; set; } = string.Empty;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace NewWorldCompanion.Entities
         public bool TooltipEnabled { get; set; } = true;
         public bool ExtendedTooltipEnabled { get; set; } = false;
         public bool NamedItemsTooltipEnabled { get; set; } = false;
-        public int PriceServerId { get; set; } = 1;
+        public string PriceServerIdNwm { get; set; } = string.Empty;
 
         // Shape detection
         public int EmguAreaLower { get; set; } = 10000;

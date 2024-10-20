@@ -133,7 +133,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
 
                 if (_serverIndex >= 0 && Servers.Count > _serverIndex)
                 {
-                    _settingsManager.Settings.PriceServerId = Servers[value].Id;
+                    _settingsManager.Settings.PriceServerIdNwm = Servers[value].Id;
                     _settingsManager.SaveSettings();
                 }
             }
@@ -189,7 +189,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
             Servers.Clear();
             Servers.AddRange(_priceManager.Servers);
 
-            int serverIndex = Servers.ToList().FindIndex(s => s.Id == _settingsManager.Settings.PriceServerId);
+            int serverIndex = Servers.ToList().FindIndex(s => s.Id == _settingsManager.Settings.PriceServerIdNwm);
             if (serverIndex != -1)
             {
                 ServerIndex = serverIndex;
