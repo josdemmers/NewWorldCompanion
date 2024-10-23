@@ -935,7 +935,27 @@ namespace NewWorldCompanion.Services
 
         public string GetItemLocalisation(string itemMasterName)
         {
-            return _itemDefinitionsLocalisation.GetValueOrDefault(itemMasterName.Trim(new char[] { '@' }).ToLower()) ?? itemMasterName.Trim(new char[] { '@' });
+            string itemMasterNameClean = itemMasterName.Trim(new char[] { '@' }).ToLower();
+
+            string? localisation = _itemDefinitionsLocalisation.GetValueOrDefault(itemMasterNameClean);
+            
+            // v2 check
+            if (localisation == null)
+            {
+                itemMasterNameClean = itemMasterNameClean.Replace("_v2_", "_");
+                localisation = _itemDefinitionsLocalisation.GetValueOrDefault(itemMasterNameClean);
+            }
+
+            // tier check
+            if (localisation == null)
+            {
+                itemMasterNameClean = itemMasterNameClean.Replace("_t2", string.Empty);
+                itemMasterNameClean = itemMasterNameClean.Replace("_t3", string.Empty);
+                itemMasterNameClean = itemMasterNameClean.Replace("_t4", string.Empty);
+                localisation = _itemDefinitionsLocalisation.GetValueOrDefault(itemMasterNameClean);
+            }
+
+            return string.IsNullOrWhiteSpace(localisation) ? itemMasterName : localisation;
         }
 
         public string GetNamedItemLocalisation(string itemMasterName)
