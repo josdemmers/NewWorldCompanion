@@ -140,25 +140,25 @@ namespace NewWorldCompanion.Services
 
         private void DrawGraphicsItem(DrawGraphicsEventArgs e, string itemName)
         {
-            NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(itemName);
-            List<NwmarketpriceJson> extendedNwmarketpriceJson = _priceManager.GetExtendedPriceData(itemName);
+            Nwmarketprice nwmarketprice = _priceManager.GetPriceData(itemName);
+            List<Nwmarketprice> extendedNwmarketprice = _priceManager.GetExtendedPriceData(itemName);
 
             string infoItemName = itemName;
             string infoPrice = "Loading...";
             string infoPriceAvg = string.Empty;
 
-            if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+            if (!string.IsNullOrWhiteSpace(nwmarketprice.ItemName))
             {
-                var priceChange = nwmarketpriceJson.price_change >= 0 ? $"+{nwmarketpriceJson.price_change}" : $"{nwmarketpriceJson.price_change}";
-                infoPrice = $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} ({priceChange}%) ({nwmarketpriceJson.last_checked_string})";
-                infoPriceAvg = nwmarketpriceJson.RecentLowestPriceAvg;
-                infoPriceAvg = string.IsNullOrWhiteSpace(infoPriceAvg) ? infoPriceAvg : $"{infoPriceAvg} (15-day avg) ({nwmarketpriceJson.last_checked_string})";
+                var priceChange = nwmarketprice.PriceChange >= 0 ? $"+{nwmarketprice.PriceChange}" : $"{nwmarketprice.PriceChange}";
+                infoPrice = $"{nwmarketprice.RecentLowestPrice.ToString("F2")} ({priceChange}%) ({nwmarketprice.LastUpdatedString})";
+                infoPriceAvg = nwmarketprice.RecentLowestPriceAvg.ToString("F2");
+                infoPriceAvg = string.IsNullOrWhiteSpace(infoPriceAvg) ? infoPriceAvg : $"{infoPriceAvg} ({nwmarketprice.Days}-day avg) ({nwmarketprice.LastUpdatedString})";
             }
 
             // Do not show Bind on pickup items.
             if (!_newWorldDataStore.IsBindOnPickup(itemName))
             {
-                int ExtendedTooltipOffset = _settingsManager.Settings.ExtendedTooltipEnabled ? Math.Min(extendedNwmarketpriceJson.Count, 3) * 20 : 0;
+                int ExtendedTooltipOffset = _settingsManager.Settings.ExtendedTooltipEnabled ? Math.Min(extendedNwmarketprice.Count, 3) * 20 : 0;
                 // Add some extra margin
                 ExtendedTooltipOffset = ExtendedTooltipOffset == 0 ? 0 : ExtendedTooltipOffset + 40;
 
@@ -177,13 +177,13 @@ namespace NewWorldCompanion.Services
                 // Extended text
                 if (ExtendedTooltipOffset > 0)
                 {
-                    for (int i = 0; i < Math.Min(extendedNwmarketpriceJson.Count, 3); i++)
+                    for (int i = 0; i < Math.Min(extendedNwmarketprice.Count, 3); i++)
                     {
-                        var craftingCosts = _priceManager.GetCraftingCosts(extendedNwmarketpriceJson[i].nwdb_id);
-                        gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, ((i+1)*20), $"{extendedNwmarketpriceJson[i].item_name} " +
-                            $"{extendedNwmarketpriceJson[i].recent_lowest_price.ToString("F2")} (Sell) " +
+                        var craftingCosts = _priceManager.GetCraftingCosts(extendedNwmarketprice[i].ItemId);
+                        gfx.DrawText(_fonts["consolas"], _brushes["text"], 20, ((i+1)*20), $"{extendedNwmarketprice[i].ItemName} " +
+                            $"{extendedNwmarketprice[i].RecentLowestPrice.ToString("F2")} (Sell) " +
                             $"{craftingCosts.ToString("F2")} (Craft) " +
-                            $"{extendedNwmarketpriceJson[i].recent_lowest_price - craftingCosts:F2} (Profit)");
+                            $"{extendedNwmarketprice[i].RecentLowestPrice - craftingCosts:F2} (Profit)");
                     }
                     gfx.DrawRectangle(_brushes["border"], 0, 0, _overlayWidth, ExtendedTooltipOffset, 1);
                 }
@@ -214,7 +214,7 @@ namespace NewWorldCompanion.Services
 
         private void DrawGraphicsRecipe(DrawGraphicsEventArgs e, CraftingRecipe craftingRecipe)
         {
-            NwmarketpriceJson nwmarketpriceJson = _priceManager.GetPriceData(craftingRecipe.LocalisationUserFriendly);
+            Nwmarketprice nwmarketprice = _priceManager.GetPriceData(craftingRecipe.LocalisationUserFriendly);
 
             bool learnedStatus = craftingRecipe.Learned;
             string infoItemName = craftingRecipe.LocalisationUserFriendly;
@@ -222,12 +222,12 @@ namespace NewWorldCompanion.Services
             string infoPrice = "Loading...";
             string infoPriceAvg = string.Empty;
 
-            if (!string.IsNullOrWhiteSpace(nwmarketpriceJson.item_name))
+            if (!string.IsNullOrWhiteSpace(nwmarketprice.ItemName))
             {
-                var priceChange = nwmarketpriceJson.price_change >= 0 ? $"+{nwmarketpriceJson.price_change}" : $"{nwmarketpriceJson.price_change}";
-                infoPrice = $"{nwmarketpriceJson.recent_lowest_price.ToString("F2")} ({priceChange}%) ({nwmarketpriceJson.last_checked_string})";
-                infoPriceAvg = nwmarketpriceJson.RecentLowestPriceAvg;
-                infoPriceAvg = string.IsNullOrWhiteSpace(infoPriceAvg) ? infoPriceAvg : $"{infoPriceAvg} (15-day avg) ({nwmarketpriceJson.last_checked_string})";
+                var priceChange = nwmarketprice.PriceChange >= 0 ? $"+{nwmarketprice.PriceChange}" : $"{nwmarketprice.PriceChange}";
+                infoPrice = $"{nwmarketprice.RecentLowestPrice.ToString("F2")} ({priceChange}%) ({nwmarketprice.LastUpdatedString})";
+                infoPriceAvg = nwmarketprice.RecentLowestPriceAvg.ToString("F2");
+                infoPriceAvg = string.IsNullOrWhiteSpace(infoPriceAvg) ? infoPriceAvg : $"{infoPriceAvg} (15-day avg) ({nwmarketprice.LastUpdatedString})";
             }
 
             _window.X = _overlayX;
@@ -273,7 +273,6 @@ namespace NewWorldCompanion.Services
             _itemName = _ocrHandler.OcrText;
             if (!_itemName.Equals(_itemNamePrevious))
             {
-                _priceManager.UpdatePriceData(_itemName);
                 _itemNamePrevious = _itemName;
             }
         }

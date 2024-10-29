@@ -11,9 +11,8 @@ namespace NewWorldCompanion.Interfaces
     {
         List<PriceServer> Servers { get; }
 
-        NwmarketpriceJson GetPriceData(string itemName);
+        Nwmarketprice GetPriceData(string itemName);
         double GetCraftingCosts(string itemId);
-        List<NwmarketpriceJson> GetExtendedPriceData(string itemName);
-        void UpdatePriceData(string itemName);
+        List<Nwmarketprice> GetExtendedPriceData(string itemName);
     }
 }

@@ -7,6 +7,7 @@ using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
@@ -26,12 +27,8 @@ namespace NewWorldCompanion.Services
         private readonly INewWorldDataStore _newWorldDataStore;
         private readonly IRelatedPriceManager _relatedPriceManager;
 
-        private readonly object priceRequestLock = new object();
-
-        private Dictionary<string, NwmarketpriceJson> _priceCache = new Dictionary<string, NwmarketpriceJson>();
-        private List<string> _priceRequestQueue = new List<string>();
-        private bool _priceRequestQueueBusy = false;
         private List<PriceServer> _servers = new List<PriceServer>();
+        private ServerPriceData _serverPriceData = new ServerPriceData();
 
         // Start of Constructor region
 
@@ -41,6 +38,7 @@ namespace NewWorldCompanion.Services
         {
             // Init IEventAggregator
             _eventAggregator = eventAggregator;
+            _eventAggregator.GetEvent<SelectedServerChanged>().Subscribe(HandleSelectedServerChangedEvent);
 
             // Init logger
             _logger = logger;
@@ -69,6 +67,37 @@ namespace NewWorldCompanion.Services
         // Start of Events region
 
         #region Events
+
+        private async void HandleSelectedServerChangedEvent()
+        {
+            try
+            {
+                // Clear old data
+                _serverPriceData = new ServerPriceData();
+
+                string serverId = _settingsManager.Settings.PriceServerIdNwm;
+                PriceServer? server = _servers.FirstOrDefault(s => s.Id.Equals(serverId));
+
+                // Skip invalid servers
+                // Skip servers with no price data
+                if (server != null && server.Updated.Year > 1970)
+                {
+                    string json = await _httpClientHandler.GetRequest($"https://scdn.gaming.tools/nwmp/history/servers/{server.Id}.json.gz") ?? "{}";
+
+                    var options = new JsonSerializerOptions();
+                    options.Converters.Add(new BoolConverter());
+                    options.Converters.Add(new DoubleConverter());
+                    options.Converters.Add(new IntConverter());
+                    _serverPriceData = JsonSerializer.Deserialize<ServerPriceData>(json, options) ?? new ServerPriceData();
+                }
+
+                _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Publish();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
+            }
+        }
 
         #endregion
 
@@ -117,10 +146,33 @@ namespace NewWorldCompanion.Services
             _eventAggregator.GetEvent<PriceServerListUpdatedEvent>().Publish();
         }
 
-        public NwmarketpriceJson GetPriceData(string itemName)
+        public Nwmarketprice GetPriceData(string itemName)
         {
-            var nwmarketpriceJson = new NwmarketpriceJson();
-            return _priceCache.GetValueOrDefault(itemName, nwmarketpriceJson); ;
+            var nwmarketprice = new Nwmarketprice();
+
+            string itemId = _newWorldDataStore.GetItemId(itemName).ToLower();
+            List<PriceData> priceData = new List<PriceData>();
+            if (_serverPriceData.Daily.TryGetValue(itemId, out priceData))
+            {
+                double recentLowestPricePrev = priceData.Count >= 2 ? priceData[priceData.Count - 2].Means[0][1] / 100.0 : 0.0;
+                double recentLowestPrice = priceData.Count >= 1 ? priceData[priceData.Count - 1].Means[0][1] / 100.0 : 0.0;
+                int priceChange = recentLowestPricePrev > 0 ? (int)(((recentLowestPrice - recentLowestPricePrev) / (recentLowestPricePrev))*100.0) : 0;
+                double recentLowestPriceAvg = priceData.Average(i => i.Means[0][1] / 100.0);
+
+                int timeStamp = priceData[priceData.Count - 1].Timestamp;
+                DateTime lastUpdated = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+                lastUpdated = lastUpdated.AddSeconds(timeStamp).ToLocalTime();
+
+                nwmarketprice.ItemId = itemId;
+                nwmarketprice.ItemName = itemName;
+                nwmarketprice.Days = priceData.Count;
+                nwmarketprice.LastUpdated = lastUpdated;
+                nwmarketprice.PriceChange = priceChange;
+                nwmarketprice.RecentLowestPrice = recentLowestPrice;
+                nwmarketprice.RecentLowestPriceAvg = recentLowestPriceAvg;
+            }
+
+            return nwmarketprice;
         }
 
         public double GetCraftingCosts(string itemId)
@@ -129,7 +181,7 @@ namespace NewWorldCompanion.Services
             double craftingCosts = 0;
 
             var ingredient = string.Empty;
-            var nwmarketpriceJson = new NwmarketpriceJson();
+            var nwmarketprice = new Nwmarketprice();
             var qty = recipe.Qty1;
             if (!string.IsNullOrWhiteSpace(recipe.Ingredient1) && qty != 0)
             {
@@ -137,9 +189,8 @@ namespace NewWorldCompanion.Services
 
                 string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
                 ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
-                UpdatePriceData(ingredientName);
-                nwmarketpriceJson = GetPriceData(ingredientName);
-                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+                nwmarketprice = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketprice.RecentLowestPrice * qty);
             }
 
             qty = recipe.Qty2;
@@ -149,9 +200,8 @@ namespace NewWorldCompanion.Services
 
                 string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
                 ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
-                UpdatePriceData(ingredientName);
-                nwmarketpriceJson = GetPriceData(ingredientName);
-                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+                nwmarketprice = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketprice.RecentLowestPrice * qty);
             }
 
             qty = recipe.Qty3;
@@ -161,9 +211,8 @@ namespace NewWorldCompanion.Services
 
                 string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
                 ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
-                UpdatePriceData(ingredientName);
-                nwmarketpriceJson = GetPriceData(ingredientName);
-                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+                nwmarketprice = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketprice.RecentLowestPrice * qty);
             }
 
             qty = recipe.Qty4;
@@ -173,9 +222,8 @@ namespace NewWorldCompanion.Services
 
                 string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
                 ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
-                UpdatePriceData(ingredientName);
-                nwmarketpriceJson = GetPriceData(ingredientName);
-                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+                nwmarketprice = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketprice.RecentLowestPrice * qty);
             }
 
             qty = recipe.Qty5;
@@ -185,9 +233,8 @@ namespace NewWorldCompanion.Services
 
                 string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
                 ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
-                UpdatePriceData(ingredientName);
-                nwmarketpriceJson = GetPriceData(ingredientName);
-                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+                nwmarketprice = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketprice.RecentLowestPrice * qty);
             }
 
             qty = recipe.Qty6;
@@ -197,9 +244,8 @@ namespace NewWorldCompanion.Services
 
                 string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
                 ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
-                UpdatePriceData(ingredientName);
-                nwmarketpriceJson = GetPriceData(ingredientName);
-                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+                nwmarketprice = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketprice.RecentLowestPrice * qty);
             }
 
             qty = recipe.Qty7;
@@ -209,17 +255,16 @@ namespace NewWorldCompanion.Services
 
                 string ingredientName = _newWorldDataStore.GetItem(ingredient)?.Name ?? string.Empty;
                 ingredientName = _newWorldDataStore.GetItemLocalisation(ingredientName);
-                UpdatePriceData(ingredientName);
-                nwmarketpriceJson = GetPriceData(ingredientName);
-                craftingCosts = craftingCosts + (nwmarketpriceJson.recent_lowest_price * qty);
+                nwmarketprice = GetPriceData(ingredientName);
+                craftingCosts = craftingCosts + (nwmarketprice.RecentLowestPrice * qty);
             }
 
             return craftingCosts;
         }
 
-        public List<NwmarketpriceJson> GetExtendedPriceData(string itemName)
+        public List<Nwmarketprice> GetExtendedPriceData(string itemName)
         {
-            var extendedPriceDataList = new List<NwmarketpriceJson>();
+            var extendedPriceDataList = new List<Nwmarketprice>();
             var itemId = _newWorldDataStore.GetItemId(itemName);
             var overlayResource = _relatedPriceManager.PersistableOverlayResources.FirstOrDefault(item => item.ItemId.Equals(itemId));
             if (overlayResource != null)
@@ -234,110 +279,20 @@ namespace NewWorldCompanion.Services
                     {
                         continue;
                     }
-                    UpdatePriceData(recipeName);
 
-                    var nwmarketpriceJson = new NwmarketpriceJson();
-                    nwmarketpriceJson = _priceCache.GetValueOrDefault(recipeName, nwmarketpriceJson);
-                    extendedPriceDataList.Add(nwmarketpriceJson);
+                    var nwmarketprice = new Nwmarketprice();
+                    nwmarketprice = GetPriceData(recipeName);
+                    if (!string.IsNullOrWhiteSpace(nwmarketprice.ItemId))
+                    {
+                        extendedPriceDataList.Add(nwmarketprice);
+                    }
                 }
             }
 
             return extendedPriceDataList;
         }
 
-        public void UpdatePriceData(string itemName)
-        {
-            if (string.IsNullOrWhiteSpace(itemName))
-            {
-                return;
-            }
-
-            if (!_priceCache.ContainsKey(itemName))
-            {
-                if (!_priceRequestQueue.Contains(itemName)) _priceRequestQueue.Add(itemName);
-                lock (priceRequestLock)
-                {
-                    if (!_priceRequestQueueBusy)
-                    {
-                        _priceRequestQueueBusy = true;
-                        Task task = Task.Run(async () =>
-                        {
-                            string itemId = _newWorldDataStore.GetItemId(itemName);
-                            bool isBindOnPickup = _newWorldDataStore.IsBindOnPickup(itemName);
-                            if (!string.IsNullOrWhiteSpace(itemId) && !isBindOnPickup)
-                            {
-                                try
-                                {
-                                    // TODO Update with https://nwmp.gaming.tools/ API.
-                                    //string uri = $"https://nwmarketprices.com/0/{ServerId}?cn_id={itemId.ToLower()}";
-                                    //string json = await _httpClientHandler.GetRequest(uri);
-                                    string uri = string.Empty;
-                                    string json = string.Empty;
-
-                                    Debug.WriteLine($"uri: {uri}");
-                                    Debug.WriteLine($"json: {json}");
-
-                                    if (!string.IsNullOrWhiteSpace(json))
-                                    {
-                                        // create the options
-                                        var options = new JsonSerializerOptions()
-                                        {
-                                            WriteIndented = true
-                                        };
-                                        // register the converter
-                                        options.Converters.Add(new DoubleConverter());
-
-                                        var nwmarketpriceJson = JsonSerializer.Deserialize<NwmarketpriceJson>(json, options);
-                                        if (nwmarketpriceJson != null)
-                                        {
-                                            Debug.WriteLine($"item_name: {nwmarketpriceJson.item_name}");
-                                            Debug.WriteLine($"recent_lowest_price: {nwmarketpriceJson.recent_lowest_price}");
-                                            Debug.WriteLine($"last_checked: {nwmarketpriceJson.last_checked_string}");
-
-                                            nwmarketpriceJson.item_name = string.IsNullOrEmpty(nwmarketpriceJson.item_name) ? itemName : nwmarketpriceJson.item_name;
-
-                                            _priceCache[itemName] = nwmarketpriceJson;
-                                            _eventAggregator.GetEvent<PriceCacheUpdatedEvent>().Publish();
-                                        }
-                                    }
-                                    else
-                                    {
-                                        _priceCache[itemName] = new NwmarketpriceJson
-                                        {
-                                            item_name = itemName,
-                                            recent_lowest_price = 0.00,
-                                            last_checked = DateTime.MinValue,
-                                        };
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    _logger.LogError(ex, MethodBase.GetCurrentMethod()?.Name);
-                                }
-                            }
-
-                            // Always remove from queue, even with exceptions.
-                            _priceRequestQueue.RemoveAll(item => item.Equals(itemName));
-                            _priceRequestQueueBusy = false;
-
-                            Task.Delay(250).Wait();
-
-                            if (_priceRequestQueue.Any())
-                            {
-                                UpdatePriceData(_priceRequestQueue.First());
-                            }
-                        });
-                    }
-                }
-            }
-        }
-
         #endregion
-
-        private class UpdatedServers
-        {
-            public List<List<object>> ServersLastUpdated { get; set; } = new List<List<object>> { };
-        }
 
         private class ServerInfo
         {

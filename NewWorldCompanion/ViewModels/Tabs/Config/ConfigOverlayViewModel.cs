@@ -135,6 +135,7 @@ namespace NewWorldCompanion.ViewModels.Tabs.Config
                 {
                     _settingsManager.Settings.PriceServerIdNwm = Servers[value].Id;
                     _settingsManager.SaveSettings();
+                    _eventAggregator.GetEvent<SelectedServerChanged>().Publish();
                 }
             }
         }

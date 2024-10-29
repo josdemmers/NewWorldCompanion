@@ -14,4 +14,8 @@ namespace NewWorldCompanion.Events
     public class PriceCacheUpdatedEvent : PubSubEvent
     {
     }
+
+    public class SelectedServerChanged : PubSubEvent
+    {
+    }
 }
