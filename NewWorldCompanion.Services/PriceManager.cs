@@ -154,12 +154,12 @@ namespace NewWorldCompanion.Services
             List<PriceData> priceData = new List<PriceData>();
             if (_serverPriceData.Daily.TryGetValue(itemId, out priceData))
             {
-                double recentLowestPricePrev = priceData.Count >= 2 ? priceData[priceData.Count - 2].Means[0][1] / 100.0 : 0.0;
-                double recentLowestPrice = priceData.Count >= 1 ? priceData[priceData.Count - 1].Means[0][1] / 100.0 : 0.0;
+                double recentLowestPricePrev = priceData.Count >= 2 ? priceData[1].Means[0][1] / 100.0 : 0.0;
+                double recentLowestPrice = priceData.Count >= 1 ? priceData[0].Means[0][1] / 100.0 : 0.0;
                 int priceChange = recentLowestPricePrev > 0 ? (int)(((recentLowestPrice - recentLowestPricePrev) / (recentLowestPricePrev))*100.0) : 0;
                 double recentLowestPriceAvg = priceData.Average(i => i.Means[0][1] / 100.0);
 
-                int timeStamp = priceData[priceData.Count - 1].Timestamp;
+                int timeStamp = priceData[0].Timestamp;
                 DateTime lastUpdated = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                 lastUpdated = lastUpdated.AddSeconds(timeStamp).ToLocalTime();
 
