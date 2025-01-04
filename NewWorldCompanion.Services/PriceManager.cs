@@ -82,7 +82,7 @@ namespace NewWorldCompanion.Services
                 // Skip servers with no price data
                 if (server != null && server.Updated.Year > 1970)
                 {
-                    string json = await _httpClientHandler.GetRequest($"https://scdn.gaming.tools/nwmp/history/servers/{server.Id}.json.gz") ?? "{}";
+                    string json = await _httpClientHandler.GetRequest($"https://scdn.gaming.tools/nwmp/dev/history/servers/{server.Id}.json.gz") ?? "{}";
 
                     var options = new JsonSerializerOptions();
                     options.Converters.Add(new BoolConverter());
@@ -109,6 +109,7 @@ namespace NewWorldCompanion.Services
         {
             try
             {
+                //https://scdn.gaming.tools/nwmp/dev/history/servers.json.gz // Note: No timestamp
                 string json = await _httpClientHandler.GetRequest("https://nwmpapi.gaming.tools/servers") ?? "{}";
                 var options = new JsonSerializerOptions();
                 options.Converters.Add(new BoolConverter());
@@ -152,7 +153,7 @@ namespace NewWorldCompanion.Services
 
             string itemId = _newWorldDataStore.GetItemId(itemName).ToLower();
             List<PriceData> priceData = new List<PriceData>();
-            if (_serverPriceData.Daily.TryGetValue(itemId, out priceData))
+            if (_serverPriceData.Items.TryGetValue(itemId, out priceData))
             {
                 double recentLowestPricePrev = priceData.Count >= 2 ? priceData[1].Means[0][1] / 100.0 : 0.0;
                 double recentLowestPrice = priceData.Count >= 1 ? priceData[0].Means[0][1] / 100.0 : 0.0;

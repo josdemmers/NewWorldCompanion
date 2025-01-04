@@ -12,11 +12,8 @@ namespace NewWorldCompanion.Entities
         [JsonPropertyName("server_id")]
         public string ServerId { get; set; } = string.Empty;
 
-        [JsonPropertyName("daily")]
-        public Dictionary<string, List<PriceData>> Daily { get; set; } = new();
-
-        [JsonPropertyName("hourly")]
-        public Dictionary<string, List<PriceData>> Hourly { get; set; } = new();
+        [JsonPropertyName("items")]
+        public Dictionary<string, List<PriceData>> Items { get; set; } = new();
     }
 
     public class PriceData
