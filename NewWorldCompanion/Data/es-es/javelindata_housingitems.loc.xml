@@ -2105,5 +2105,9 @@
 	<string key="HousingItem_Corrupted_Ogre_Miniature_Statue_Description" rel_version="ConsoleLaunch">Ten cuidado: si se te cae en el pie, también puede hacerte daño.</string>
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_description" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Este acechador nocturno te observa con ojos siniestramente inteligentes, casi como los de… un humano.</string>
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_mastername" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Grimalkin de luz estelar</string>
+	<string key="House_HousingItem_Season7_VictorianSausagePainting_MasterName" comment="This item is a reference to the 'big sausage' bug/meme that happened about 2 yars ago" rel_version="Season_7_Perm">Pintura conmemorativa «Comidilla del pueblo»</string>
+	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">En conmemoración del extraño día en que, tiempo atrás, los habitantes de Aetérnum tuvieron la misma visión de la Gran Salchicha. En el marco se puede leer este poema:\n\n &lt;font face="lyshineui/fonts/Pica_Italic.font"&gt;Picada con gracia, ojos de gozo, \nUna reverencia extasiada bajo una nube de asombro. \nNada sorprende al embelesar tus sentidos \nCuando das un bocado a este embutido. \nRelámete con nuestro sublime manjar, \nPues nadie en su juicio es capaz \nDe probarlo y no dejarse llevar: \nOda a la salchicha, el mejor embutido de todos.&lt;/font&gt;</string>
+	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_MasterName" rel_version="Season_7_Perm">Trofeo de guerra (JcJ)</string>
+	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_Description" rel_version="Season_7_Perm">Un trofeo que te inspira un poco al completar contenido JcJ.\n\nOtorga una bonificación del 15 % a toda la EXP JcJ.</string>
 </resources>
 
