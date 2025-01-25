@@ -127,4 +127,4 @@ MIT
 
 ## Mentions
 
-The available price data is from: https://nwmarketprices.com/
+The available price data is from: https://nwmp.gaming.tools/
