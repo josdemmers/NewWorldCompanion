@@ -739,7 +739,7 @@ With two locks and steel banding, your stuff's not going anywhere.</string>
 	<string key="house_housingitem_pet_entitlement_rabbit_windtoy_mastername" comment="Pack-01-HolidayWinter-2021" speaker="Text Updated: Sept 2021" rel_version="Housing_HolidayConv2021_Pack">Festive "Toy" Rabbit</string>
 	<string key="house_housingitem_table_holidayconv2021_bedsidetable01_a_description" comment="Pack-01-HolidayWinter-2021" speaker="Text Updated: Sept 2021" rel_version="Housing_HolidayConv2021_Pack">For keeping your bedside drink cool overnight. Just hope it doesn't freeze while you sleep.</string>
 	<string key="house_housingitem_table_holidayconv2021_bedsidetable01_a_mastername" comment="Pack-01-HolidayWinter-2021" speaker="Text Updated: Sept 2021" rel_version="Housing_HolidayConv2021_Pack">Snowcapped Nightstand</string>
-	<string key="house_housingitem_table_holidayconv2021_table01_a_description" comment="Pack-01-HolidayWinter-2021" speaker="Text Updated: Sept 2021" rel_version="Housing_HolidayConv2021_Pack">A sturdy table for a holiday feast. Now who's turn is it to cook this time?</string>
+	<string key="house_housingitem_table_holidayconv2021_table01_a_description" comment="Pack-01-HolidayWinter-2021" speaker="Text Updated: Sept 2021" rel_version="Housing_HolidayConv2021_Pack">A sturdy table for a holiday feast. Now whose turn is it to cook this time?</string>
 	<string key="house_housingitem_table_holidayconv2021_table01_a_mastername" comment="Pack-01-HolidayWinter-2021" speaker="Text Updated: Sept 2021" rel_version="Housing_HolidayConv2021_Pack">Snowcapped Dining Table</string>
 	<string key="house_housingitem_holidayconv2022_statue_yeti_description" comment="Pack-01-HolidayWinter-2022" speaker="Text Updated: Sept 2022" rel_version="Housing_HolidayConv2022_Pack">With arms wide open to greet you for the holidays, this winter yeti will melt your heart faster than the ice it is made of.</string>
 	<string key="house_housingitem_holidayconv2022_statue_yeti_mastername" comment="Pack-01-HolidayWinter-2022" speaker="Text Updated: Sept 2022" rel_version="Housing_HolidayConv2022_Pack">Snowcapped Yeti Sculpture</string>
@@ -2120,16 +2120,18 @@ This is the most solid and sturdy chest you have ever seen.</string>
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_description" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">This midnight prowler regards you with eerily intelligent eyes, almost like those of a... a human's.</string>
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_mastername" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Starlight Grimalkin</string>
 	<string key="House_HousingItem_Season7_VictorianSausagePainting_MasterName" comment="This item is a reference to the 'big sausage' bug/meme that happened about 2 yars ago" rel_version="Season_7_Perm">“Talk of the Town” Commemorative Painting</string>
-	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">To commemorate a strange event from years past, when Aeternians collectively shared a vision of Big Sausage. On the frame’s back is scrawled this poem:\n\n
-&lt;font face="lyshineui/fonts/Pica_Italic.font"&gt;Solemnly ground, eyes over-glazed,
-\nEnraptured in reverence amidst smoky haze.
-\nA link to such ecstasy is hardly a first
-\nFrom which to be cured is simply the wurst.
-\nSo savor our savior without gristly flaw,
-\nFor frankly even one cursed haven’t the gall
-\nTo be filled with anything but awe:
-\nOde to sausage, the greatest brat of all.&lt;/font&gt;</string>
+	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">To commemorate a strange event from years past, when Aeternians collectively shared a vision of Big Sausage.</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_MasterName" rel_version="Season_7_Perm">Trophy of Warfare (PvP)</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_Description" rel_version="Season_7_Perm">A trophy that inspires you a little bit when completing PvP content.\n\nGrants a 15% bonus to all PvP XP.</string>
+	<string key="House_HousingItem_Buff_SeasonalServer_Season8_T1_MasterName" rel_version="Season_8_Perm">Trophy of Dominance (Territory)</string>
+	<string key="House_HousingItem_Buff_SeasonalServer_Season8_T1_Description" rel_version="Season_8_Perm">A trophy that contributes to your legend throughout Aeternum.\n\nGrants a 25% bonus to all Territory Reputation gained.</string>
+	<string key="housing_factionfest_reward_decor_covenant_Description" rel_version="Season_8_Perm">Decorate your house with this mystical stone that channels the essence of the Covenant Faction.</string>
+	<string key="housing_factionfest_reward_decor_covenant_MasterName" rel_version="Season_8_Perm">Covenant Warlight Stone</string>
+	<string key="housing_factionfest_reward_decor_marauder_Description" rel_version="Season_8_Perm">Decorate your house with this mystical stone that channels the essence of the Marauder Faction.</string>
+	<string key="housing_factionfest_reward_decor_marauder_MasterName" rel_version="Season_8_Perm">Marauder Warlight Stone</string>
+	<string key="housing_factionfest_reward_decor_syndicate_Description" rel_version="Season_8_Perm">Decorate your house with this mystical stone that channels the essence of the Syndicate Faction.</string>
+	<string key="housing_factionfest_reward_decor_syndicate_MasterName" rel_version="Season_8_Perm">Syndicate Warlight Stone</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_Description" rel_version="Season_8_Perm">A wonderful centerpiece to remind you that there's nothing better than a good day fishing.</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_MasterName" rel_version="Season_8_Perm">Tide Master's Collection</string>
 </resources>
 
