@@ -23,7 +23,7 @@ If you like my work you can sponsor me on Ko-fi.
 - Keep track of your learned recipes.
 - Monitor all your cooldowns.
 - Ingame overlay with price data for tradable items.
-  - Supported servers: The server list is updated at each application launch. For the complete list of supported servers check: https://nwmarketprices.com/
+  - Supported servers: The server list is updated at each application launch. For the complete list of supported servers check: https://nwmp.gaming.tools/
 
 ## Installation
 
@@ -53,7 +53,7 @@ The threshold values for OCR are used to filter out background noise. Your thres
 
 ### Overlay
 
-Select which server to use the price data from. Price data is from https://nwmarketprices.com/.
+Select which server to use the price data from. Price data is from https://nwmp.gaming.tools/.
 
 ![Config-3](./readme/readme-config3.png)
 
