@@ -2106,7 +2106,7 @@
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_description" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Dieser Mitternachtsstreuner schaut dich aus unheimlich klugen Augen an, die fast … menschlich wirken.</string>
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_mastername" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Sternenlicht-Grimalkin</string>
 	<string key="House_HousingItem_Season7_VictorianSausagePainting_MasterName" comment="This item is a reference to the 'big sausage' bug/meme that happened about 2 yars ago" rel_version="Season_7_Perm">Gedenkgemälde: Gesprächsthema Nummer 1</string>
-	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">Zum Gedenken an eine eigenartige Begebenheit aus vergangenen Zeiten, als die Aeterianer alle von einer großen Wurst träumten.</string>
+	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">Zum Gedenken an eine eigenartige Begebenheit aus vergangenen Zeiten, als die Aeterianer alle von einer großen Wurst träumten. Auf der Rückseite des Rahmens steht dieses Gedicht:\n\nFeierlich geerdet, mit glasigen Augen,\nIn Ehrfurcht erstarrt im Nebelreigen.\nDerlei Ekstase ist nicht ohne Sinn,\nDavon geheilt zu werden, ist einfach nur schlimm.\nSo lobt den Erlöser ohne Fehl und Tadel,\nDenn selbst wenn verflucht oder von Adel,\nDie Ehrfurcht ergreift einen wie ein Debakel:\nOde an die Wurst, die für alles viabel.</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_MasterName" rel_version="Season_7_Perm">Kriegstrophäe (PvP)</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_Description" rel_version="Season_7_Perm">Die Trophäe inspiriert dich beim Abschluss von PvP-Inhalten ein wenig.\n\nGewährt einen Bonus von 15 % auf alle PvP-EP.</string>
 	<string key="House_HousingItem_Buff_SeasonalServer_Season8_T1_MasterName" rel_version="Season_8_Perm">Trophäe der Dominanz (Gebiet)</string>
@@ -2117,7 +2117,7 @@
 	<string key="housing_factionfest_reward_decor_marauder_MasterName" rel_version="Season_8_Perm">Marodeur-Kriegslichtstein</string>
 	<string key="housing_factionfest_reward_decor_syndicate_Description" rel_version="Season_8_Perm">Dekoriere dein Haus mit diesem mystischen Stein, der die Essenz der Syndikatsfraktion kanalisiert.</string>
 	<string key="housing_factionfest_reward_decor_syndicate_MasterName" rel_version="Season_8_Perm">Syndikat-Kriegslichtstein</string>
-	<string key="House_HousingItem_Buff_Summer_Season9_T1_Description">Eine prächtige Trophäe, die dich daran erinnert, dass nichts über einen guten Angeltag geht.</string>
-	<string key="House_HousingItem_Buff_Summer_Season9_T1_MasterName">Gezeitenmeister-Sammlung</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_Description" rel_version="Season_8_Perm">Eine prächtige Trophäe, die dich daran erinnert, dass nichts über einen guten Angeltag geht.</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_MasterName" rel_version="Season_8_Perm">Gezeitenmeister-Sammlung</string>
 </resources>
 

@@ -2106,7 +2106,7 @@
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_description" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Este merodeador nocturno te observa con una mirada tan inteligente que resulta perturbadora, casi como la de… un ser humano.</string>
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_mastername" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Felino de luz estelar</string>
 	<string key="House_HousingItem_Season7_VictorianSausagePainting_MasterName" comment="This item is a reference to the 'big sausage' bug/meme that happened about 2 yars ago" rel_version="Season_7_Perm">Cuadro conmemorativo "En boca de todos"</string>
-	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">Para conmemorar un extraño evento del pasado, cuando los habitantes de Aeternum colectivamente compartían una visión de la gran salchicha.</string>
+	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">Para conmemorar un extraño evento del pasado, cuando los habitantes de Aeternum colectivamente compartían una visión de la gran salchicha. Atrás del cuadro, aparece este poema:\n\nMolida con calma, mirada vidriosa,\nen humo sagrado, pasión deliciosa.\nUn lazo al placer, no es novedad,\ncurarse de eso..., ¡la peor salchichidad!\nSaborea a la salvadora, sin falla o tendón,\npues ni el más maldito tuvo corazón\nde sentir otra cosa que asombro total:\n¡Oda a la salchicha, el embutido sin igual!</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_MasterName" rel_version="Season_7_Perm">Trofeo de guerra (PvP)</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_Description" rel_version="Season_7_Perm">Un trofeo que te inspira un poco mientras completas contenido de PvP.\n\nOtorga un 15 % de bonificación a toda la EXP de PvP.</string>
 	<string key="House_HousingItem_Buff_SeasonalServer_Season8_T1_MasterName" rel_version="Season_8_Perm">Trofeo de dominación (territorio)</string>
@@ -2117,7 +2117,7 @@
 	<string key="housing_factionfest_reward_decor_marauder_MasterName" rel_version="Season_8_Perm">Piedra luz bélica de saqueadores</string>
 	<string key="housing_factionfest_reward_decor_syndicate_Description" rel_version="Season_8_Perm">Decora tu casa con esta piedra mística que canaliza la esencia de la facción del sindicato.</string>
 	<string key="housing_factionfest_reward_decor_syndicate_MasterName" rel_version="Season_8_Perm">Piedra luz bélica de sindicato</string>
-	<string key="House_HousingItem_Buff_Summer_Season9_T1_Description">Un maravilloso centro de mesa para recordarte que no hay nada mejor que un buen día de pesca.</string>
-	<string key="House_HousingItem_Buff_Summer_Season9_T1_MasterName">Colección del amo de la marea</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_Description" rel_version="Season_8_Perm">Un maravilloso centro de mesa para recordarte que no hay nada mejor que un buen día de pesca.</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_MasterName" rel_version="Season_8_Perm">Colección del amo de la marea</string>
 </resources>
 

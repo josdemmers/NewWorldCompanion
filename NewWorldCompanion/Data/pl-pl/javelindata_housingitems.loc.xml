@@ -2106,7 +2106,7 @@
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_description" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Ten nocny wędrowiec patrzy na ciebie niesamowicie inteligentnymi oczami, które wyglądają niemal jak… ludzkie.</string>
 	<string key="house_housingitem_pet_entitlement_cat_Prime2024_mastername" comment="Prime Gaming 2024" rel_version="ConsoleLaunch">Światło gwiazd – Grimalkin</string>
 	<string key="House_HousingItem_Season7_VictorianSausagePainting_MasterName" comment="This item is a reference to the 'big sausage' bug/meme that happened about 2 yars ago" rel_version="Season_7_Perm">"O tym mówią wszyscy" – pamiątkowy obraz</string>
-	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">Obraz namalowany w celu upamiętnienia dziwnego wydarzenia sprzed wielu lat, podczas którego mieszkańcy Aeternum doznali zbiorowej wizji Wielkiej Kiełbasy.</string>
+	<string key="House_HousingItem_Season7_VictorianSausagePainting_Description" comment="A poem with a AABBCDCD rhyming scheme with multiple sausage puns" rel_version="Season_7_Perm">Obraz namalowany w celu upamiętnienia dziwnego wydarzenia sprzed wielu lat, podczas którego mieszkańcy Aeternum doznali zbiorowej wizji Wielkiej Kiełbasy. Z tyłu ramy ktoś napisał wiersz:\n\nWielki wzbudza aplauz i zachwytu słowa,\nWędzona kiełbasa, Aeternum królowa.\nW ekstazę wpadają panowie i panie,\nDokoła rozlega się jeno mlaskanie.\nWielb kiełbasę, bracie! Wybawcę naszego,\nCo od zła naród cały zbawi wszelkiego.\nZe wszystkich łakoci nie znam nic słodszego!\nOto oda do kiełbasy – jam na ciebie zawsze łasy.</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_MasterName" rel_version="Season_7_Perm">Trofeum wojenne (PvP)</string>
 	<string key="House_HousingItem_Buff_PVPXP_Season7_T1_Description" rel_version="Season_7_Perm">Trofeum, które trochę cię inspiruje, kiedy wykonujesz aktywności związane z PvP.\n\nZapewnia 15% premii do PD PvP.</string>
 	<string key="House_HousingItem_Buff_SeasonalServer_Season8_T1_MasterName" rel_version="Season_8_Perm">Trofeum dominacji (terytorium)</string>
@@ -2117,7 +2117,7 @@
 	<string key="housing_factionfest_reward_decor_marauder_MasterName" rel_version="Season_8_Perm">Kamień wojennego światła maruderów</string>
 	<string key="housing_factionfest_reward_decor_syndicate_Description" rel_version="Season_8_Perm">Udekoruj dom mistycznym kamieniem, przez który przepływa esencja frakcji syndykatu.</string>
 	<string key="housing_factionfest_reward_decor_syndicate_MasterName" rel_version="Season_8_Perm">Kamień wojennego światła syndykatu</string>
-	<string key="House_HousingItem_Buff_Summer_Season9_T1_Description">Wspaniała ozdoba przypominająca, że nie ma nic lepszego od dnia spędzonego na rybach.</string>
-	<string key="House_HousingItem_Buff_Summer_Season9_T1_MasterName">Kolekcja mistrza przypływów</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_Description" rel_version="Season_8_Perm">Wspaniała ozdoba przypominająca, że nie ma nic lepszego od dnia spędzonego na rybach.</string>
+	<string key="House_HousingItem_Buff_Summer_Season9_T1_MasterName" rel_version="Season_8_Perm">Kolekcja mistrza przypływów</string>
 </resources>
 
