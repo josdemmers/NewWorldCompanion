@@ -122,7 +122,7 @@ MIT
 
 ### The Hidden Gaming Lair
 
-- [Discord](https://discord.gg/NTZu8Px)
+- [Discord](https://th.gl/discord)
 - [www](https://www.th.gl/)
 
 ## Mentions
